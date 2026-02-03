@@ -1,7 +1,7 @@
 # TO DO list
 ### Part 1 : Basic working code
 - [ ] **Output.cpp** - implement `write_particles_csv`
-- [ ] **Particle.cpp** - implement `Particle::move`
+- [x] **Particle.cpp** - implement `Particle::move`
 - [ ] **ROI.cpp** - implement  `ROI::contains`
 - [ ] **Shielding.cpp** - implement `Shielding::is_shielded`
 

@@ -10,7 +10,10 @@ Particle::Particle(double x_, double y_, double z_,
       alive(true)
 {}
 
+// TODO test function
 void Particle::move(double dt) {
-    // TODO implement basic movement for particles
     // this is done by just updating the position based on velocity and time step
+    x += vx*dt;
+    y += vy*dt;
+    z += vz*dt;
 }
