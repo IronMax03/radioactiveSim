@@ -1,3 +1,10 @@
+# mac os files
+.DS_Store
+
+# compiled files
+a.out
+main
+
 # Prerequisites
 *.d
 

@@ -1,4 +1,6 @@
 # TO DO list
-- set up git hub
-- etc.
-- 
+- [x] set up git hub
+    - create repo
+    - first commit
+[ ] etc.
+ 
