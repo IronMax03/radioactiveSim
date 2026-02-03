@@ -6,7 +6,7 @@
 int main() {
     std::cout << "Initializing Radiation Protection simulation" << std::endl;
     // Simulation parameters
-    float timestep = 0.01;
+    float timestep = 0.01f;
     unsigned numIterations = 5000;
     Material lead("Lead", 10);
     Shielding shield(-1, 1, -1, 1, 1, 2, lead);
