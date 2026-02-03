@@ -4,6 +4,7 @@
 # compiled files
 a.out
 main
+shielding_sim
 
 # Prerequisites
 *.d
