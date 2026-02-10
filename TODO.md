@@ -2,8 +2,8 @@
 ### Part 1 : Basic working code
 - [ ] **Output.cpp** - implement `write_particles_csv`
 - [x] **Particle.cpp** - implement `Particle::move`
-- [ ] **ROI.cpp** - implement  `ROI::contains`
-- [ ] **Shielding.cpp** - implement `Shielding::is_shielded`
+- [x] **ROI.cpp** - implement  `ROI::contains`
+- [x] **Shielding.cpp** - implement `Shielding::is_shielded`
 
 ### Part 2 : Mandatory additions
 - [ ] **Simulation Class** - implement domain box (PR - Project.pdf slide 25)

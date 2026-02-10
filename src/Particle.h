@@ -16,6 +16,8 @@ public:
              std::string type);
 
     void move(double dt);
+
+    bool operator==(const Particle& p);
 };
 
 #endif

@@ -1,5 +1,9 @@
 ## compile project
-To compile the project, run `make` in `src/`.
+To compile the project, run `make` in `src/`.  
+To run the simulation:
+``` bash
+./shielding_sim
+```
 
 ## Structure of the code
 **src/**

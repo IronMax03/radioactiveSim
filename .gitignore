@@ -1,9 +1,15 @@
 # mac os files
 .DS_Store
 
+# Compilation files
+source.vtp
+shielding.vtp
+roi.vtp
+
 # compiled files
 a.out
 main
+test
 shielding_sim
 
 # Prerequisites
