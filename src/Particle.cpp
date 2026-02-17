@@ -18,9 +18,8 @@ void Particle::move(double dt) {
     z += vz*dt;
 }
 
-bool Particle::operator==(const Particle& p)
-{
-    return p.x == this->x   && p.y == this->y   && p.z == this->z &&
+bool Particle::operator==(const Particle& p) {
+    return p.x == this->x   && p.y == this->y   && p.z == this->z   &&
            p.vx == this->vx && p.vy == this->vy && p.vz == this->vz &&
            p.type == this->type;
 }
