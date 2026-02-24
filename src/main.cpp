@@ -3,7 +3,10 @@
 #include "GeometryOutput.h"
 #include <iostream>
 
+#include <chrono> // ! New
+
 int main() {
+    const auto startTime = std::chrono::high_resolution_clock::now();// !new
     std::cout << "Initializing Radiation Protection simulation" << std::endl;
     // Simulation parameters
     float timestep = 0.01f;
@@ -39,6 +42,10 @@ int main() {
 
     // print the results
     std::cout << "Total # particles scored in ROI: " << sim.roi.count << std::endl;
+
+    // execution time
+    const auto exTime = std::chrono::high_resolution_clock::now() - startTime; // !new
+    std::cout << "execution time: " << std::chrono::duration_cast<std::chrono::milliseconds>(exTime).count() << " ms" << std::endl; // !new
 
     return 0;
 }

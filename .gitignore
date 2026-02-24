@@ -1,6 +1,9 @@
 # mac os files
 .DS_Store
 
+# Output files
+*.csv
+
 # Compilation files
 source.vtp
 shielding.vtp
