@@ -1,5 +1,6 @@
 #include "Source.h"
 #include "utils.h"
+#include <cmath>
 
 Source::Source(double x_, double y_, double z_,
                int rate_)
@@ -9,13 +10,19 @@ Source::Source(double x_, double y_, double z_,
 
 std::vector<Particle> Source::emit() const {
     std::vector<Particle> emitted;
+
+    std::random_device rd{};
+    std::mt19937 gen{rd()};
+    std::normal_distribution<> distr(0, M_PI/16);
+
     // rate is basically the number of particles to emit at this timestep
     for (int i = 0; i < rate; ++i) {
+        double theta = distr(gen);
+        double phi = distr(gen);
 
-        // Simple mono-directional source (along +z)
-        double vx = 0.0;
-        double vy = 0.0;
-        double vz = 1.0;
+        double vx = sin(theta);
+        double vy = cos(phi) * sin(phi);
+        double vz = cos(theta) * cos(phi);
 
         // 75% of the time : proton, 25% : neutron
         std::string particle_type = "proton";

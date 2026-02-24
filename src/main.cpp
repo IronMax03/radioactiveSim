@@ -13,7 +13,8 @@ int main() {
     unsigned numIterations = 5000;
     Material lead("Lead", 10);
     Shielding shield(-1, 1, -1, 1, 1, 2, lead);
-    ROI roi(-0.5, 0.5, -0.5, 0.5, 3, 4);
+    // ROI roi(-0.5, 0.5, -0.5, 0.5, 3, 4);
+    ROI roi(-2, 2, -2, 2, 3, 4);
     Source src(0.0, 0.0, 0.0, 5);
 
     // output boxes that won't change
