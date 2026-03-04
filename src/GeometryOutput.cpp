@@ -1,6 +1,8 @@
 #include "GeometryOutput.h"
 #include <fstream>
 
+double bounding_xmin, bounding_xmax, bounding_ymin, bounding_ymax, bounding_zmin, bounding_zmax;
+
 void write_box_vtp(double xmin, double xmax,
                    double ymin, double ymax,
                    double zmin, double zmax,
@@ -45,4 +47,27 @@ void write_box_vtp(double xmin, double xmax,
     file << "</VTKFile>\n";
 
     file.close();
+
+    // update bounding box
+    bounding_xmax = bounding_xmax < xmax ? xmax : bounding_xmax;
+    bounding_ymax = bounding_ymax < ymax ? ymax : bounding_ymax;
+    bounding_zmax = bounding_zmax < zmax ? zmax : bounding_zmax;
+
+    bounding_xmin = bounding_xmin > xmin ? xmin : bounding_xmin;
+    bounding_ymin = bounding_ymin > ymin ? ymin : bounding_ymin;
+    bounding_zmin = bounding_zmin > zmin ? zmin : bounding_zmin;
+}
+
+
+void is_in_bounding_box(Particle& p)
+{
+    //normalized coordinate
+    double nx = (p.x - bounding_xmin)/(bounding_xmax - bounding_xmin);
+    double ny = (p.y - bounding_ymin)/(bounding_ymax - bounding_ymin);
+    double nz = (p.z - bounding_zmin)/(bounding_zmax - bounding_zmin);
+
+    if(nx < 0 || nx > 1 ||
+       ny < 0 || ny > 1 ||
+       nz < 0 || nz > 1)
+       p.alive = false;
 }

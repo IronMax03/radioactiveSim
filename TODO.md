@@ -6,8 +6,8 @@
 - [x] **Shielding.cpp** - implement `Shielding::is_shielded`
 
 ### Part 2 : Mandatory additions
-- [ ] **Simulation Class** - implement domain box (PR - Project.pdf slide 25)
-- [ ] implement noisy source (PR - Project.pdf slide 26)
+- [x] **Simulation Class** - implement domain box (PR - Project.pdf slide 25)
+- [x] implement noisy source (PR - Project.pdf slide 26)
 - [ ] particles scattering (PR - Project.pdf slide 27)
 - [ ] Secondaries generation (PR - Project.pdf slide 28)
 
@@ -20,4 +20,8 @@ between both particles.
 
 ### Other tasks
 - [x] set up github repo
-- [ ] Visualization
+- [x] Visualization
+
+
+### Sources 
+- [barnes-hut aproximation](https://jheer.github.io/barnes-hut/)

@@ -2,6 +2,7 @@
 #include "utils.h"
 #include "Output.h"
 #include "Source.h"
+#include "GeometryOutput.h"
 #include <cmath>
 #include <iostream>
 #include <algorithm>
@@ -30,6 +31,7 @@ void Simulation::run() {
             if (!p.alive) continue;
 
             p.move(dt);
+            is_in_bounding_box(p); //! new
 
             // handle absorbtion of particle by shielding
             if (shielding.contains(p)) {
