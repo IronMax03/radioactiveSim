@@ -1,10 +1,11 @@
 #pragma once
+#include<memory>
 
 template<typename T>
 struct LazyNode
 {
     T value;
-    unique_ptr<LazyNode> childs[4];
+    std::unique_ptr<LazyNode<T>> childs[4];
 
     /// @brief Insures the variable is accessed without been modified.
     inline T read() const { return value; }
@@ -20,7 +21,7 @@ struct LazyNode
 
     #define GET_CHILD(n) {\
     if (childs[n] == nullptr)\
-        childs[n] = make_unique<LazyNode<T>>();\
+        childs[n] = std::make_unique<LazyNode<T>>();\
     return *childs[n];\
     }
 
@@ -36,14 +37,11 @@ struct LazyNode
     #undef GET_CHILD
 };
 
-template<typename T>
 class Quadtree
 {
     private:
-        LazyNode root;
+        LazyNode<int> root;
     public:
         Quadtree();
-        ~Quadtree();
-
-        LazyNode<T>& get_root() const;
+        LazyNode<int>& get_root();
 };

@@ -23,7 +23,7 @@ void write_particles_csv(const std::vector<Particle>& particles,
     }
     else
     {
-        std::cout << "Error: Could not create or open " << filename << std::endl;
+        std::cout << "Error: Could not create or open " << filename << "." << std::endl;
         throw;
     }
 }
