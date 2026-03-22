@@ -13,16 +13,20 @@ std::vector<Particle> Source::emit() const {
 
     std::random_device rd{};
     std::mt19937 gen{rd()};
-    std::normal_distribution<> distr(0, M_PI/16);
+    std::normal_distribution<> angle_distr(0, M_PI/16);
+    std::normal_distribution<> norm_distr(1,0.25);
 
     // rate is basically the number of particles to emit at this timestep
     for (int i = 0; i < rate; ++i) {
-        double theta = distr(gen);
-        double phi = distr(gen);
 
-        double vx = sin(theta);
-        double vy = cos(phi) * sin(phi);
-        double vz = cos(theta) * cos(phi);
+        // make the source noisy by cahnging the angle and the velocity of a new particle 
+        double theta = angle_distr(gen);
+        double phi = angle_distr(gen);
+        double norm = abs(norm_distr(gen));
+
+        double vx = norm*sin(theta);
+        double vy = norm*cos(phi) * sin(phi);
+        double vz = norm*cos(theta) * cos(phi);
 
         // 75% of the time : proton, 25% : neutron
         std::string particle_type = "proton";
