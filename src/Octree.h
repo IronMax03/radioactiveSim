@@ -5,27 +5,13 @@
 template<typename T>
 struct lazy_node
 {
-    static_assert(std::is_integral_v(T) || std::is_floating_point_v(T))
+    static_assert(std::is_integral_v(T) || std::is_floating_point_v(T));
+      
+    vector3 box_center;
+    vector3 center_of_charge;
 
-    /// @brief A 3D vector. The type of the components of this vector is defined by T wich can be: int, long, short, double, float, etc.
-    struct vector3 { T x,y,z; };
-
-    /// @brief This union is intended to reuse the memory allocated for octree construction (boundaries), during N-Body forces estimation (centerOfmass).
-    /// @note In the implementation boundaries is used during the tree construction and centerOfmass is used during the estimate N-Body forces.
-    union nodeValue
-    {        
-        struct boundaries
-        { 
-            vector3 center;
-            T length; 
-        } B;
-
-        struct centerOfmass 
-        { 
-            vector3 cordinate; 
-            double mass;
-        } CM;
-    } value;
+    T box_length;
+    int total_charge;
 
     std::unique_ptr<lazy_node<T>> childs[8];
 
@@ -34,6 +20,11 @@ struct lazy_node
 
     /// @brief Return True if nth child is evaluated (exist).
     inline bool is_child_eval(int n) const { return childs[n] != nullptr; }
+
+    inline bool BH_criteria(const T& x, const T& y, const T& z, float theta) const
+    {
+        return theta > ()/
+    }
 
     /// @brief Calculate the center of mass and stores it in value.CM
     /// @warning This function destroy any value inside value.B
