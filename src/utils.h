@@ -42,12 +42,13 @@ struct vector3
     }
 
     // defines n * v, since the scalar product function above only defined for v * n.
+    /// @category Wizardrie
     friend constexpr vector3 operator*(const T &scalar, const vector3 &v) { return v * scalar; }
 
     constexpr vector3 operator/(const T &n) const 
     { 
         if (n == 0)
-            throw std::runtime_error("Math error: Attempted to divide by Zero.");
+            throw std::runtime_error("Vector Math error: Attempted to divide by Zero.");
 
         vector3 ratio;
         ratio.x = x / n;
@@ -66,7 +67,7 @@ struct vector3
     { 
         T norm = static_cast<T>(this->norm());
         if (norm == 0)
-            throw std::runtime_error("Math error: Zero norm vectors cant be normalized.");
+            throw std::runtime_error("Vector Math error: Zero norm vectors cant be normalized.");
 
         *this = *this / norm; 
     }
