@@ -18,14 +18,14 @@ int main() {
     Source src(0.0, 0.0, 0.0, 5);
 
     // output boxes that won't change
-    write_box_vtp(shield.xmin, shield.xmax,
-                  shield.ymin, shield.ymax,
-                  shield.zmin, shield.zmax,
+    write_box_vtp(shield.min_corner.x, shield.max_corner.x,
+                  shield.min_corner.y, shield.max_corner.y,
+                  shield.min_corner.z, shield.max_corner.z,
                   "shielding.vtp");
 
-    write_box_vtp(roi.xmin, roi.xmax,
-                  roi.ymin, roi.ymax,
-                  roi.zmin, roi.zmax,
+    write_box_vtp(roi.min_corner.x, roi.max_corner.x,
+                  roi.min_corner.y, roi.max_corner.y,
+                  roi.min_corner.z, roi.max_corner.z,
                   "roi.vtp");
     
     // we draw a box for the source as well, even if it's not a geometry per se

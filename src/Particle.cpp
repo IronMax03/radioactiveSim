@@ -23,9 +23,9 @@ Particle::Particle(double x_, double y_, double z_,
                    std::string t)
     : position(vector3<double>{x_,y_,z_}),
       velocity(vector3<double>{vx_,vy_,vz_}),
+      electric_charge(ec),
       type(t),
       distance_in_shield(0.0),
-      electric_charge(ec),
       alive(true)
       {}
 
