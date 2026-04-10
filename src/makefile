@@ -24,7 +24,7 @@ SRCS = \
 	Output.cpp \
 	Simulation.cpp \
 	GeometryOutput.cpp \
-	Source.cpp,
+	Source.cpp
 
 # Object files (replace .cpp by .o)
 OBJS = $(SRCS:.cpp=.o)
@@ -48,7 +48,7 @@ $(TARGET): $(OBJS)
 
 # Remove compiled files
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(TARGET) $(TEST_OBJS) $(TEST_TARGET)
 
 # Rebuild from scratch
 rebuild: clean all
@@ -60,7 +60,7 @@ run: $(TARGET)
 .PHONY: all clean rebuild run
 
 # Test code
-test: clean $(TEST_TARGET)
+test: clean run $(TEST_TARGET)
 	./$(TEST_TARGET)
 
 $(TEST_TARGET): test.cpp $(TEST_OBJS)

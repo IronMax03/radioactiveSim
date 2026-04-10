@@ -15,7 +15,7 @@ roi.vtp
 # compiled files
 a.out
 main
-test
+runTests
 shielding_sim
 
 # Prerequisites
