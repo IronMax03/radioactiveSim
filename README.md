@@ -4,6 +4,14 @@ To run the simulation:
 ``` bash
 ./shielding_sim
 ```
+## test project
+
+To run test `doctest` **v2.5.1** must be installed in `src/dependencies`.
+
+When this is done run the following commend from `src` to compile and run tests.
+``` bash
+make test
+```
 
 ## Structure of the code
 **src/**

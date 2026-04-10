@@ -4,8 +4,8 @@ Shielding::Shielding(double xmin_, double xmax_,
                      double ymin_, double ymax_,
                      double zmin_, double zmax_,
                      Material m)
-    : min_corner(xmin_, ymin_, zmin_),
-      max_corner(xmax_, ymax_, zmax_),
+    : min_corner(vector3<double>{xmin_, ymin_, zmin_}),
+      max_corner(vector3<double>{xmax_, ymax_, zmax_}),
       material(m)
 {
   if (min_corner.x > max_corner.x || min_corner.y > max_corner.y || min_corner.z > max_corner.z)
@@ -18,7 +18,7 @@ bool Shielding::contains(const Particle& p) const
 {
     // implement the method that checks if a particle is inside the shielding
     // normalized coordinates
-    vector3<double> n = (p.position - min_corner) / (max_corner - min_corner);
+    vector3<double> n = (p.position - min_corner) / (max_corner - min_corner).norm();
 
     return n.x >= 0 && n.x <= 1 &&
            n.y >= 0 && n.y <= 1 &&
