@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cassert>
+
+#include "dependencies/doctest.h"
 #include "Particle.h"
 #include "ROI.h"
 #include "Output.h"
@@ -9,6 +11,10 @@ using namespace std;
 
 int main()
 {   
+    cout << "==============================" << endl;
+    cout << "doctest version: " << DOCTEST_VERSION << endl;
+    cout << "==============================" << endl;
+
     // particules
     Particle p(0,0,0,1,0,0, "proton ");
 

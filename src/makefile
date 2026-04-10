@@ -11,6 +11,10 @@ CXXFLAGS = -std=c++17 -Wall -Wextra -O2
 # Executable name
 TARGET = shielding_sim
 
+# Test build
+TEST_TARGET = runTests
+TEST_OBJS = $(filter-out main.o,$(OBJS))
+
 # Source files
 SRCS = \
 	main.cpp \
@@ -20,7 +24,8 @@ SRCS = \
 	Output.cpp \
 	Simulation.cpp \
 	GeometryOutput.cpp \
-	Source.cpp
+	Octree.cpp \
+	Source.cpp,
 
 # Object files (replace .cpp by .o)
 OBJS = $(SRCS:.cpp=.o)
@@ -54,3 +59,10 @@ run: $(TARGET)
 	./$(TARGET)
 
 .PHONY: all clean rebuild run
+
+# Test code
+test: $(TEST_TARGET)
+	./$(TEST_TARGET)
+
+$(TEST_TARGET): test.cpp $(TEST_OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^

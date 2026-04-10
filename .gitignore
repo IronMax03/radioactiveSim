@@ -1,3 +1,6 @@
+# Dependency files
+doctest.h
+
 # mac os files
 .DS_Store
 
