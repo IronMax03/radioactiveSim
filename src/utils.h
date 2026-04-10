@@ -5,6 +5,7 @@
 #include <type_traits>
 #include <stdexcept>
 #include <cmath>
+#include<fstream>
 
 /// @brief A 3D vector. The type of the components of this vector is defined by T wich can be: int, long, short, double, float, etc.
 template<typename T>
@@ -23,6 +24,8 @@ struct vector3
         return sum;
     }
 
+    constexpr void operator+=(const vector3 &n) { (*this) = (*this) + n; }
+
     constexpr vector3 operator-(const vector3 &n) const
     {
         vector3 diff;
@@ -31,6 +34,8 @@ struct vector3
         diff.z = z - n.z;
         return diff;
     }
+
+    constexpr void operator-=(const vector3 &n) { (*this) = (*this) - n; }
 
     constexpr vector3 operator*(const T &n) const 
     { 
@@ -42,11 +47,17 @@ struct vector3
     }
 
     // defines n * v, since the scalar product function above only defined for v * n.
-    /// @category Wizardrie
+    /// @category wizardry
     friend constexpr vector3 operator*(const T &scalar, const vector3 &v) { return v * scalar; }
 
+    constexpr void operator*=(const T &n) { (*this) = (*this) * n; }
+
+    constexpr T operator*(const vector3 &n) const { return x*n.x + y*n.y + z*n.z; }
+
+    constexpr void operator*=(const vector3 &n) { (*this) = (*this) * n; }
+
     constexpr vector3 operator/(const T &n) const 
-    { 
+    {
         if (n == 0)
             throw std::runtime_error("Vector Math error: Attempted to divide by Zero.");
 
@@ -57,7 +68,17 @@ struct vector3
         return ratio;
     }
 
-    constexpr T operator*(const vector3 &n) const { return x*n.x + y*n.y + z*n.z; }
+    constexpr vector3 operator/=(const T &n) { (*this) = (*this) / n; }
+
+    constexpr bool operator==(const vector3 &n) const { return x == n.x && y == n.y && z == n.z; }
+
+
+    /// @brief Overload the << operator to print the vector in the format (x, y, z).
+    friend std::ostream& operator<<(std::ostream& os, const vector3& vec) 
+    {
+        os << "(" << vec.x << "," << vec.y << "," << vec.z << ")";
+        return os;
+    }
 
     /// @return the euclidien norm of the vector as a double.
     inline double norm() const { return std::sqrt((*this) * (*this)); }
@@ -73,6 +94,7 @@ struct vector3
     }
 };
 
+/// @brief Return a random double in the range [0, 1) using a Mersenne Twister random number generator.
 inline double uniform01() {
     static std::mt19937 gen(42);
     static std::uniform_real_distribution<double> dist(0.0, 1.0);
