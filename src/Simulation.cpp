@@ -35,7 +35,7 @@ void Simulation::run() {
 
             // handle absorbtion of particle by shielding
             if (shielding.contains(p)) {
-                p.distance_in_shield += dt * std::sqrt(p.vx*p.vx + p.vy*p.vy + p.vz*p.vz);
+                p.distance_in_shield += dt * std::sqrt(p.velocity * p.velocity);
 
                 double survival = std::exp(-p.distance_in_shield / shielding.material.mean_free_path);
                 if (uniform01() > survival) {
@@ -73,7 +73,7 @@ void Simulation::print() {
     std::cout << "--- Simulation parameters ---" << std::endl;
     std::cout << "| dt = " << dt << ", number of steps = " << steps << " => total time = " << steps * dt << std::endl;
     std::cout << "| Source at ("<< source.x<<","<< source.y<<","<< source.z<<"), rate = "<< source.rate << " particles/dt = "<< source.rate/dt << " particles/second" << std::endl;
-    std::cout << "| Shielding at ("<< 0.5*(shielding.xmin+shielding.xmax)<<","<< 0.5*(shielding.ymin+shielding.ymax)<<","<< 0.5*(shielding.zmin+shielding.zmax)<<"), made of "<< shielding.material.name << std::endl;
-    std::cout << "| ROI at ("<< 0.5*(roi.xmin+roi.xmax)<<","<< 0.5*(roi.ymin+roi.ymax)<<","<< 0.5*(roi.zmin+roi.zmax)<<")" << std::endl;
+    std::cout << "| Shielding at "<< (shielding.min_corner + shielding.max_corner) / 2 << ", made of "<< shielding.material.name << std::endl;
+    std::cout << "| ROI at "<< (roi.min_corner + roi.max_corner) / 2 << std::endl;
     std::cout << "-----------------------------" << std::endl;
 }

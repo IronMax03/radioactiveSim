@@ -62,9 +62,9 @@ void write_box_vtp(double xmin, double xmax,
 void is_in_bounding_box(Particle& p)
 {
     //normalized coordinate
-    double nx = (p.x - bounding_xmin)/(bounding_xmax - bounding_xmin);
-    double ny = (p.y - bounding_ymin)/(bounding_ymax - bounding_ymin);
-    double nz = (p.z - bounding_zmin)/(bounding_zmax - bounding_zmin);
+    double nx = (p.position.x - bounding_xmin)/(bounding_xmax - bounding_xmin);
+    double ny = (p.position.y - bounding_ymin)/(bounding_ymax - bounding_ymin);
+    double nz = (p.position.z - bounding_zmin)/(bounding_zmax - bounding_zmin);
 
     if(nx < 0 || nx > 1 ||
        ny < 0 || ny > 1 ||

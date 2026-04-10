@@ -17,7 +17,7 @@ void write_particles_csv(const std::vector<Particle>& particles,
         tempStream << "x,y,z,alive,type\n";
 
         for(Particle p: particles)
-            tempStream << p.x << "," << p.y << "," << p.z << "," << p.alive << "," << p.type << "\n";
+            tempStream << p.position.x << "," << p.position.y << "," << p.position.z << "," << p.alive << "," << p.type << "\n";
 
         tempStream.close();
     }
