@@ -1,13 +1,15 @@
 #ifndef PARTICLE_H
 #define PARTICLE_H
 
+#include "utils.h"
+
 #include <string>
 
 class Particle {
 public:
-    double x, y, z;
-    double vx, vy, vz;
-    int electric_charge; // ! new, coulomb unit
+    vector3<double> position; //double x, y, z;
+    vector3<double> velocity; //double vx, vy, vz;
+    int electric_charge; // ! new, coulomb units
     std::string type;
     double distance_in_shield;
     bool alive;

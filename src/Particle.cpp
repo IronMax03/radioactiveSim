@@ -3,8 +3,8 @@
 Particle::Particle(double x_, double y_, double z_,
                    double vx_, double vy_, double vz_,
                    std::string t)
-    : x(x_), y(y_), z(z_),
-      vx(vx_), vy(vy_), vz(vz_),
+    : position(vector3<double>{x_,y_,z_}),
+      velocity(vector3<double>{vx_,vy_,vz_}),
       type(t),
       distance_in_shield(0.0),
       alive(true)
@@ -21,8 +21,8 @@ Particle::Particle(double x_, double y_, double z_,
                    double vx_, double vy_, double vz_,
                    int ec,
                    std::string t)
-    : x(x_), y(y_), z(z_),
-      vx(vx_), vy(vy_), vz(vz_),
+    : position(vector3<double>{x_,y_,z_}),
+      velocity(vector3<double>{vx_,vy_,vz_}),
       type(t),
       distance_in_shield(0.0),
       electric_charge(ec),
@@ -31,15 +31,5 @@ Particle::Particle(double x_, double y_, double z_,
 
 void Particle::move(double dt) 
 {
-    x += vx*dt;
-    y += vy*dt;
-    z += vz*dt;
+    position += velocity * dt;
 }
-
-bool Particle::operator==(const Particle& p) 
-{
-    return p.x == this->x   && p.y == this->y   && p.z == this->z   &&
-           p.vx == this->vx && p.vy == this->vy && p.vz == this->vz &&
-           p.type == this->type;
-}
-
