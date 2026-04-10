@@ -1,4 +1,7 @@
 #pragma once
+
+#include "Particle.h"
+
 #include <memory>
 #include <type_traits>
 
@@ -14,6 +17,8 @@ struct lazy_node
     int total_charge;
 
     std::unique_ptr<lazy_node<T>> childs[8];
+    std::shared_ptr<Particle> particle;
+
 
     /// @brief Insures the variable is accessed without been modified.
     inline T read() const { return value; }
@@ -23,17 +28,24 @@ struct lazy_node
 
     inline bool BH_criteria(const T& x, const T& y, const T& z, float theta) const
     {
-        return theta > ()/
+        
     }
 
     /// @brief Calculate the center of mass and stores it in value.CM
     /// @warning This function destroy any value inside value.B
-    inline void eval() 
+    inline void eval()
     { 
-        for (auto& std::unique_ptr<lazy_node<T>>: c)
+        center_of_charge = particle->// ! position
+        total_charge = particle->electric_charge;
+
+        for (std::unique_ptr<lazy_node<T>>& c: childs)
         {
             if (c != nullptr)
-                c.eval();
+            {
+                c->eval();
+                total_charge += c->total_charge;
+                center_of_charge = (center_of_charge + c->center_of_charge)/2;
+            }
         }
     }
 
@@ -42,6 +54,11 @@ struct lazy_node
     { 
         childs[n] = std::make_unique<lazy_node<T>>(); 
         childs[n]->eval();
+    }
+
+    inline void instantiate_child(const size_t& n)
+    {
+        
     }
 
     /// @brief Return the nth child.
