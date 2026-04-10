@@ -6,7 +6,9 @@
 
 class Shielding {
 public:
-    double xmin, xmax, ymin, ymax, zmin, zmax;
+    //double xmin, xmax, ymin, ymax, zmin, zmax;
+    vector3<double> min_corner;
+    vector3<double> max_corner;
     Material material;
 
     Shielding(double xmin, double xmax,
