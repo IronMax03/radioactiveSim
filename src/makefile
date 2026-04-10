@@ -24,7 +24,6 @@ SRCS = \
 	Output.cpp \
 	Simulation.cpp \
 	GeometryOutput.cpp \
-	Octree.cpp \
 	Source.cpp,
 
 # Object files (replace .cpp by .o)
@@ -61,7 +60,7 @@ run: $(TARGET)
 .PHONY: all clean rebuild run
 
 # Test code
-test: $(TEST_TARGET)
+test: clean $(TEST_TARGET)
 	./$(TEST_TARGET)
 
 $(TEST_TARGET): test.cpp $(TEST_OBJS)
