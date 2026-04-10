@@ -3,23 +3,22 @@
 ROI::ROI(double xmin_, double xmax_,
          double ymin_, double ymax_,
          double zmin_, double zmax_)
-    : xmin(xmin_), xmax(xmax_),
-      ymin(ymin_), ymax(ymax_),
-      zmin(zmin_), zmax(zmax_),
+    : min_corner(vector3<double>{xmin_, ymin_, zmin_}),
+      max_corner(vector3<double>{xmax_, ymax_, zmax_}),
       count(0)
 {}
 
+/// @brief Return True if the particle is inside the ROI, False otherwise.
 inline bool ROI::contains(const Particle& p) const {
     //normalized coordinate
-    double nx = (p.x - xmin)/(xmax - xmin);
-    double ny = (p.y - ymin)/(ymax - ymin);
-    double nz = (p.z - zmin)/(zmax - zmin);
+    vector3<double> n = (p.position - min_corner) / (max_corner - min_corner).norm();
 
-    return nx >= 0 && nx <= 1 &&
-           ny >= 0 && ny <= 1 &&
-           nz >= 0 && nz <= 1;
+    return n.x >= 0 && n.x <= 1 &&
+           n.y >= 0 && n.y <= 1 &&
+           n.z >= 0 && n.z <= 1;
 }
 
+/// @brief If the particle is alive and inside the ROI, increment the count and mark the particle as not alive anymore.
 void ROI::score(Particle& p) {
     if (p.alive && contains(p)) {
         count++;

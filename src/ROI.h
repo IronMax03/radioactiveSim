@@ -5,7 +5,8 @@
 
 class ROI {
 public:
-    double xmin, xmax, ymin, ymax, zmin, zmax;
+    vector3<double> min_corner;
+    vector3<double> max_corner;
     int count;
 
     ROI(double xmin, double xmax,
