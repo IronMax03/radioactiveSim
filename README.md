@@ -8,6 +8,10 @@ To run the simulation:
 
 To run test `doctest` **v2.5.1** must be installed in `src/dependencies`.
 
+``` bash
+curl -LO https://raw.githubusercontent.com/doctest/doctest/refs/heads/master/doctest/doctest.h
+```
+
 When this is done run the following commend from `src` to compile and run tests.
 ``` bash
 make test
