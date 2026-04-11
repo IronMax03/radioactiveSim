@@ -5,13 +5,25 @@
 #include <memory>
 #include <type_traits>
 
+
+/// @brief A lazy node for the octree data structure.
+/// @tparam T The type of the coordinates. Must be a numeric type (int, float, double, etc.).
+/// @note Spatial indexing is done using morton indices, which means that the children of a node are indexed as follows:
+///          0: lower-left-back
+///          1: lower-right-back
+///          2: upper-left-back
+///          3: upper-right-back
+///          4: lower-left-front
+///          5: lower-right-front
+///          6: upper-left-front
+///          7: upper-right-front
 template<typename T>
 struct lazy_node
 {
-    static_assert(std::is_integral_v(T) || std::is_floating_point_v(T));
+    static_assert(std::is_integral_v<T> || std::is_floating_point_v<T>);
       
-    vector3 box_center;
-    vector3 center_of_charge;
+    vector3<T> box_center;
+    vector3<T> center_of_charge;
 
     T box_length;
     int total_charge;
@@ -19,23 +31,25 @@ struct lazy_node
     std::unique_ptr<lazy_node<T>> childs[8];
     std::shared_ptr<Particle> particle;
 
-
-    /// @brief Insures the variable is accessed without been modified.
-    inline T read() const { return value; }
-
     /// @brief Return True if nth child is evaluated (exist).
-    inline bool is_child_eval(int n) const { return childs[n] != nullptr; }
+    constexpr bool is_child_inst(int n) const { return childs[n] != nullptr; }
 
-    inline bool BH_criteria(const T& x, const T& y, const T& z, float theta) const
-    {
-        
-    }
+    /// @brief Return True if the barnes hut criteria is satisfied current node.
+    /// @param x X coordinate of the position of the particle we want to calculate the force from this node on.
+    /// @param y Y coordinate of the position of the particle we want to calculate the force from this node on.
+    /// @param z Z coordinate of the position of the particle we want to calculate the force from this node on.
+    /// @param theta Theta parameter for the barnes hut criteria.
+    constexpr bool BH_criteria(const T& x, const T& y, const T& z, float theta) const { return BH_criteria(vector3<T>{x,y,z}, theta);}
 
-    /// @brief Calculate the center of mass and stores it in value.CM
-    /// @warning This function destroy any value inside value.B
+    /// @brief Return True if the barnes hut criteria is satisfied current node.
+    /// @param position Position of the particle we want to calculate the force from this node on.
+    /// @param theta Theta parameter for the barnes hut criteria.
+    constexpr bool BH_criteria(vector3<T> position, float theta) const { return box_length / (center_of_charge - position).norm() < theta; }
+
+    /// @brief Calculate the center of mass and total charge
     inline void eval()
     { 
-        center_of_charge = particle->// ! position
+        center_of_charge = particle->position;
         total_charge = particle->electric_charge;
 
         for (std::unique_ptr<lazy_node<T>>& c: childs)
@@ -49,35 +63,35 @@ struct lazy_node
         }
     }
 
-    /// @brief evaluate the child at index n.
-    inline void eval(const size_t& n) 
-    { 
-        childs[n] = std::make_unique<lazy_node<T>>(); 
-        childs[n]->eval();
-    }
+    /// @brief Calculate the center of mass and total charge of the n-th child
+    inline void eval(const size_t& n) { get(n).eval(); }
 
     inline void instantiate_child(const size_t& n)
     {
-        
+        if (n > 7)
+            throw  std::runtime_error("lazy_node.instantiate_child(n): n must be smaller or equal to 7.");
+
+        childs[n] = std::make_unique<lazy_node<T>>(); 
     }
 
     /// @brief Return the nth child.
-    inline lazy_node& get(unsigned int id) 
+    /// @param n The index of the child to return. The indices are defined by the morton indices.
+    inline lazy_node& get(const size_t& n) 
     {
-        if (id > 15)
-            throw  std::out_of_range::out_of_range("lazy_node.get(id): id is bigger then 15.");
-        else if (childs[id] == nullptr)
-            eval(id);
-        return *childs[id];
+        if (n > 7)
+            throw  std::runtime_error("lazy_node.get(n): n must be smaller or equal to 7.");
+        else if (childs[n] == nullptr)
+            instantiate_child(n);
+        return *childs[n];
     }
 };
 
 
-// electro dynamic Octree
+/// @brief A spatial partitioning octree data structure for implementing the Barnes-Hut algorithm.
 class Octree
 {
-    private:
-        lazy_node<int> root;
+   // private:
+        //lazy_node<int> root;
 
     public:
         Octree();
