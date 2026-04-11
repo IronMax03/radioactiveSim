@@ -7,7 +7,7 @@
 #include "Particle.h"
 #include "ROI.h"
 #include "Output.h"
-//#include "Quadtree.h"
+#include "Octree.h"
 
 using namespace std;
 
@@ -25,6 +25,8 @@ TEST_CASE("Vector3 operations")
     CHECK(v1 * 2.0 == vector3<double>{2.0, 4.0, 6.0});
     CHECK(2.0 * v1 == v1 * 2.0);
     CHECK(v1 / 2.0 == vector3<double>{0.5, 1.0, 1.5});
+    CHECK_THROWS(v1 / 0.0);
+    CHECK_THROWS(v2 / 0.0);
     CHECK(v1 * v2 == 32.0);
     CHECK(v1.norm() == std::sqrt(14.0));
 }
@@ -35,6 +37,11 @@ TEST_CASE("Vector3 stream output")
     std::ostringstream oss;
     oss << v;
     CHECK(oss.str() == "(1.1,2,3)");
+
+    vector3<int> v2{};
+    oss.str("");
+    oss << v2;
+    CHECK(oss.str() == "(0,0,0)");
 }
 
 
@@ -59,39 +66,62 @@ TEST_CASE("ROI contains")
 }
 
 
-/*
-TEST_CASE("LazyNode basic behavior") 
+
+TEST_CASE("LazyNode Octree behavior") 
 {
-    LazyNode<int> n;
-    n.value = 4;
+    lazy_node <int> n;
 
-    CHECK(n.read() == n.value);
-    CHECK_FALSE(n.is_eval_00() || n.is_eval_01() || n.is_eval_10() || n.is_eval_11());
+    for (size_t i = 0; i <= 7; i++)
+    {
+        CHECK_FALSE(n.is_child_inst(i));
+        CHECK_FALSE(n.childs[i] != nullptr);
+    }
+    
+    n.instantiate_child(0);
+    n.instantiate_child(4);
+    n.instantiate_child(7);
 
-    n.get_00().value = 0;
-    CHECK(n.is_eval_00());
-    CHECK(n.get_00().read() == 0);
+    CHECK(n.is_child_inst(0));
 
-    n.get_01().value = 1;
-    CHECK(n.is_eval_01());
-    CHECK(n.get_01().read() == 1);
+    n.get(0).instantiate_child(1);
 
-    n.get_10().value = 2;
-    CHECK(n.is_eval_10());
-    CHECK(n.get_10().read() == 2);
+    CHECK(n.is_child_inst(0));
+    CHECK(n.is_child_inst(4));
+    CHECK(n.is_child_inst(7));
 
-    n.get_11().value = 3;
-    CHECK(n.is_eval_11());
-    CHECK(n.get_11().read() == 3);
+    CHECK_FALSE(n.is_child_inst(1));
+    CHECK_FALSE(n.is_child_inst(2));
+    CHECK_FALSE(n.is_child_inst(3));
+    CHECK_FALSE(n.is_child_inst(5));
+    CHECK_FALSE(n.is_child_inst(6));
 
-    n.get_11().get_00().value = -1;
-    CHECK(n.get_11().get_00().read() == -1);
+    CHECK(n.childs[0]->is_child_inst(1));
+    CHECK(n.childs[0]->childs[1] != nullptr);
+
+    n.get(2);
+    CHECK(n.is_child_inst(2));
 }
 
-TEST_CASE("Quadtree root") 
+TEST_CASE("LazyNode Barnes-Hut functionality") 
 {
-    Quadtree q;
-    q.get_root().value = 3;
+    lazy_node <int> n;
+    
+    n.get(0).total_charge = 3;
+    n.get(0).center_of_charge = vector3<int>{2, 0, 0};
 
-    CHECK(q.get_root().value == 3);
-}*/
+    n.get(0).get(1).total_charge = 5;
+    n.get(0).get(1).center_of_charge = vector3<int>{0, 2, 0};
+}
+
+TEST_CASE("LazyNode error handling") 
+{
+    lazy_node <int> n;
+    CHECK_THROWS(n.instantiate_child(8));
+    CHECK_THROWS(n.get(8));
+}
+
+
+TEST_CASE("Quadtree") 
+{
+
+}
