@@ -1,0 +1,98 @@
+\doxysection{vector3\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structvector3}{}\label{structvector3}\index{vector3$<$ T $>$@{vector3$<$ T $>$}}
+
+
+A 3D vector. The type of the components of this vector is defined by T wich can be:\+ int, long, short, double, float, etc.  
+
+
+
+
+{\ttfamily \+\#include $<$utils.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structvector3_a3682f8c6a3d1d17cb27cc973671bf940}\label{structvector3_a3682f8c6a3d1d17cb27cc973671bf940} 
+constexpr \doxymbox{\hyperlink{structvector3}{vector3}} {\bfseries operator+} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n) const
+\item 
+\Hypertarget{structvector3_a08199270a0b2c3b4bf83271e32e9834e}\label{structvector3_a08199270a0b2c3b4bf83271e32e9834e} 
+constexpr void {\bfseries operator+=} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n)
+\item 
+\Hypertarget{structvector3_a7293bf16ce442e7204768642e102b1d1}\label{structvector3_a7293bf16ce442e7204768642e102b1d1} 
+constexpr \doxymbox{\hyperlink{structvector3}{vector3}} {\bfseries operator-\/} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n) const
+\item 
+\Hypertarget{structvector3_a85543db9036c6a5b7e7e34851828280a}\label{structvector3_a85543db9036c6a5b7e7e34851828280a} 
+constexpr void {\bfseries operator-\/=} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n)
+\item 
+\Hypertarget{structvector3_a6dea10ae87718193c6c2444303a0076e}\label{structvector3_a6dea10ae87718193c6c2444303a0076e} 
+constexpr \doxymbox{\hyperlink{structvector3}{vector3}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (const T \&n) const
+\item 
+\Hypertarget{structvector3_a3d4dcc635150fce8aa862689ea7a448a}\label{structvector3_a3d4dcc635150fce8aa862689ea7a448a} 
+constexpr void {\bfseries operator\texorpdfstring{$\ast$}{*}=} (const T \&n)
+\item 
+\Hypertarget{structvector3_a295a28907a6fa9bb8e1fa19bab7574b0}\label{structvector3_a295a28907a6fa9bb8e1fa19bab7574b0} 
+constexpr T {\bfseries operator\texorpdfstring{$\ast$}{*}} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n) const
+\item 
+\Hypertarget{structvector3_a009c5aaaf7e6cc78c9fdcffc6d691752}\label{structvector3_a009c5aaaf7e6cc78c9fdcffc6d691752} 
+constexpr void {\bfseries operator\texorpdfstring{$\ast$}{*}=} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n)
+\item 
+\Hypertarget{structvector3_ac94075318e38b8d81f244335f79e14e5}\label{structvector3_ac94075318e38b8d81f244335f79e14e5} 
+constexpr \doxymbox{\hyperlink{structvector3}{vector3}} {\bfseries operator/\+} (const T \&n) const
+\item 
+\Hypertarget{structvector3_a70b1c3a1064bc5f50b84adc23f64e187}\label{structvector3_a70b1c3a1064bc5f50b84adc23f64e187} 
+constexpr \doxymbox{\hyperlink{structvector3}{vector3}} {\bfseries operator/\+=} (const T \&n)
+\item 
+\Hypertarget{structvector3_ae656dca00d6fdc38d829adf2e67d475b}\label{structvector3_ae656dca00d6fdc38d829adf2e67d475b} 
+constexpr bool {\bfseries operator==} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n) const
+\item 
+double \doxymbox{\hyperlink{structvector3_a4405b7efa1f89f60923c4008647c9be0}{norm}} () const
+\item 
+\Hypertarget{structvector3_aa5916ec6ffe3ad4b5143261669108557}\label{structvector3_aa5916ec6ffe3ad4b5143261669108557} 
+void {\bfseries normalize} ()
+\begin{DoxyCompactList}\small\item\em Normalize the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structvector3_a5b466692e9550284d17a1bee6a6b8518}\label{structvector3_a5b466692e9550284d17a1bee6a6b8518} 
+T {\bfseries x} \{\}
+\item 
+\Hypertarget{structvector3_a1faa20a703bae3d1a673856466758383}\label{structvector3_a1faa20a703bae3d1a673856466758383} 
+T {\bfseries y} \{\}
+\item 
+\Hypertarget{structvector3_a90c50e80a32423d5cc76f40e5f53ffbe}\label{structvector3_a90c50e80a32423d5cc76f40e5f53ffbe} 
+T {\bfseries z} \{\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structvector3_a91c7ef5ad9bd738cfbaf684ef2266c39}\label{structvector3_a91c7ef5ad9bd738cfbaf684ef2266c39} 
+constexpr \doxymbox{\hyperlink{structvector3}{vector3}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (const T \&scalar, const \doxymbox{\hyperlink{structvector3}{vector3}} \&v)
+\item 
+\Hypertarget{structvector3_a73162c181f68ea321c51f6de3e39dfb2}\label{structvector3_a73162c181f68ea321c51f6de3e39dfb2} 
+std::\+ostream \& {\bfseries operator$<$$<$} (std::\+ostream \&os, const \doxymbox{\hyperlink{structvector3}{vector3}} \&vec)
+\begin{DoxyCompactList}\small\item\em Overload the \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to print the vector in the format (x, y, z). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct vector3$<$ T $>$}
+A 3D vector. The type of the components of this vector is defined by T wich can be:\+ int, long, short, double, float, etc. 
+
+\label{doc-func-members}
+\Hypertarget{structvector3_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structvector3_a4405b7efa1f89f60923c4008647c9be0}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!norm@{norm}}
+\index{norm@{norm}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily \label{structvector3_a4405b7efa1f89f60923c4008647c9be0} 
+template$<$typename T$>$ \\
+double \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+norm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the euclidien norm of the vector as a double. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+\doxymbox{\hyperlink{utils_8h}{utils.\+h}}\end{DoxyCompactItemize}

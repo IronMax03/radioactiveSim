@@ -1,0 +1,36 @@
+\doxysection{src/\+test.cpp File Reference}
+\hypertarget{test_8cpp}{}\label{test_8cpp}\index{src/test.cpp@{src/test.cpp}}
+
+
+This file contains unit tests for the utility functions and data structures used in the simulation. The tests are implemented using the doctest framework, which is a lightweight and easy-\/to-\/use C++ testing framework.  
+
+
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include "{}dependencies/\+doctest.\+h"{}}\newline
+{\ttfamily \+\#include "{}Particle.\+h"{}}\newline
+{\ttfamily \+\#include "{}ROI.\+h"{}}\newline
+{\ttfamily \+\#include "{}Output.\+h"{}}\newline
+{\ttfamily \+\#include "{}Octree.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{test_8cpp_a0e251f3a7500c1b4fdd07fbce304a85a}\label{test_8cpp_a0e251f3a7500c1b4fdd07fbce304a85a} 
+{\bfseries TEST\+\_\+\+SUITE} ("{}Vector3 struct"{})
+\item 
+\Hypertarget{test_8cpp_a247411ae69f4606fffdbebb272d7ef15}\label{test_8cpp_a247411ae69f4606fffdbebb272d7ef15} 
+{\bfseries TEST\+\_\+\+SUITE} ("{}Particle"{})
+\item 
+\Hypertarget{test_8cpp_ab22c5fa707a25091b6fb43a55a1d3f2d}\label{test_8cpp_ab22c5fa707a25091b6fb43a55a1d3f2d} 
+{\bfseries TEST\+\_\+\+SUITE} ("{}ROI"{})
+\item 
+\Hypertarget{test_8cpp_ad9e19f5d49602140a35bde948737b3bf}\label{test_8cpp_ad9e19f5d49602140a35bde948737b3bf} 
+{\bfseries TEST\+\_\+\+SUITE} ("{}electrodynamic implementation via Barnes-\/Hut method"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains unit tests for the utility functions and data structures used in the simulation. The tests are implemented using the doctest framework, which is a lightweight and easy-\/to-\/use C++ testing framework. 
+
+\begin{DoxyNote}{Note}
+doctest.\+h must be downloaded from the official doctest repository and placed in the dependencies folder for this file to compile and run correctly. 
+\end{DoxyNote}

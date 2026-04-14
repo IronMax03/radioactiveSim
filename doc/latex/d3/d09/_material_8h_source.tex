@@ -1,0 +1,20 @@
+\doxysection{Material.\+h}
+\hypertarget{_material_8h_source}{}\label{_material_8h_source}\index{src/Material.h@{src/Material.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MATERIAL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MATERIAL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{struct\ }Material\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{double}\ mean\_free\_path;\ \textcolor{comment}{//\ meters}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ Material(std::string\ n\ =\ \textcolor{stringliteral}{"{}Vacuum"{}},\ \textcolor{keywordtype}{double}\ mfp\ =\ 1e9)}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ :\ name(n),\ mean\_free\_path(mfp)\ \{\}}
+\DoxyCodeLine{00012\ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

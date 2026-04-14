@@ -1,0 +1,44 @@
+\chapter{compile project }
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{compile project@{compile project}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+
+
+To compile the project, run {\ttfamily make} in {\ttfamily src/\+}. ~\newline
+ To run the simulation:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ bash}
+\DoxyCodeLine{./shielding\_sim}
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{test project}{test project}}\label{md__r_e_a_d_m_e_autotoc_md1}
+To run test {\ttfamily doctest} {\bfseries{v2.\+5.\+1}} must be installed in {\ttfamily src/\+dependencies}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ bash}
+\DoxyCodeLine{curl\ -\/LO\ https://raw.githubusercontent.com/doctest/doctest/refs/heads/master/doctest/doctest.h}
+
+\end{DoxyCode}
+
+
+When this is done run the following commend from {\ttfamily src} to compile and run tests. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ bash}
+\DoxyCodeLine{make\ test}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Structure of the code}{Structure of the code}}\label{md__r_e_a_d_m_e_autotoc_md2}
+{\bfseries{src/\+}}
+\begin{DoxyItemize}
+\item {\bfseries{Particle.\+h/\+cpp:\+}} properties of particles
+\item {\bfseries{Shielding.\+h/\+cpp:\+}} defines the shielding
+\item {\bfseries{Material.\+h/\+cpp:\+}} possible materials for the shielding
+\item {\bfseries{Source.\+h/\+cpp:\+}} how the particles are emitted
+\item {\bfseries{ROI.\+h/\+cpp:\+}} the Region Of Interest, a simple box
+\item {\bfseries{Simulation.\+h/\+cpp:\+}} contains the simulation parameters (source, material used, etc…)
+\item {\bfseries{Output.\+h/\+cpp:\+}} handles the outputs of the simulation
+\item {\bfseries{Geometry\+Output.\+h/\+cpp:\+}} handles the outputs of boxes (ROI, Shielding, Source)
+\item {\bfseries{utils.\+h:\+}} useful functions, used only for random number generation for now
+\item {\bfseries{main.\+cpp:\+}} create and launch a Simulation object 
+\end{DoxyItemize}

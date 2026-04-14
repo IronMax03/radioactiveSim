@@ -1,0 +1,58 @@
+\doxysection{src/\+utils.h File Reference}
+\hypertarget{utils_8h}{}\label{utils_8h}\index{src/utils.h@{src/utils.h}}
+
+
+This file contains utility functions and data structures used in the simulation.  
+
+
+{\ttfamily \+\#include $<$random$>$}\newline
+{\ttfamily \+\#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \+\#include $<$stdexcept$>$}\newline
+{\ttfamily \+\#include $<$cmath$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structvector3}{vector3$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em A 3D vector. The type of the components of this vector is defined by T wich can be:\+ int, long, short, double, float, etc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{utils_8h_a9a99ce05b0cc43df1e62dd059648e899}\label{utils_8h_a9a99ce05b0cc43df1e62dd059648e899} 
+double {\bfseries uniform01} ()
+\begin{DoxyCompactList}\small\item\em Return a random double in the range \+[0, 1) using a Mersenne Twister random number generator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\double \doxymbox{\hyperlink{utils_8h_a822a6abad40d2de0d2cd246f81af5fac}{distance}} (const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&v0, const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&v1)
+\begin{DoxyCompactList}\small\item\em Return the distance between v0 and v1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains utility functions and data structures used in the simulation. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{utils_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{utils_8h_a822a6abad40d2de0d2cd246f81af5fac}\index{utils.h@{utils.h}!distance@{distance}}
+\index{distance@{distance}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily \label{utils_8h_a822a6abad40d2de0d2cd246f81af5fac} 
+template$<$typename T$>$ \\
+double distance (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&}]{v0}{, }\item[{const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&}]{v1}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the distance between v0 and v1. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The vector element data type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em v0} & the first vector. \\
+\hline
+{\em v1} & the second vector. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,35 @@
+\doxysection{Octree Class Reference}
+\hypertarget{class_octree}{}\label{class_octree}\index{Octree@{Octree}}
+
+
+A spatial partitioning octree data structure for implementing the Barnes-\/\+Hut algorithm.  
+
+
+
+
+{\ttfamily \+\#include $<$Octree.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_octree_a70bedbd8ed0478406f63c39dd20e72e9}\label{class_octree_a70bedbd8ed0478406f63c39dd20e72e9} 
+{\bfseries Octree} (nt bound\+\_\+xmin, nt bound\+\_\+xmax, nt bound\+\_\+ymin, nt bound\+\_\+ymax, nt bound\+\_\+zmin, nt bound\+\_\+zmax)
+\item 
+\Hypertarget{class_octree_ae2786956f35ae09138ea6768295f0660}\label{class_octree_ae2786956f35ae09138ea6768295f0660} 
+\doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}}$<$ nt $>$ \& {\bfseries get\+\_\+root} ()
+\item 
+\Hypertarget{class_octree_a6ad44acf3890a47e191fa6d9d8b63087}\label{class_octree_a6ad44acf3890a47e191fa6d9d8b63087} 
+void {\bfseries set\+\_\+default\+\_\+field} (\doxymbox{\hyperlink{class_octree}{Octree}} def)
+\item 
+\Hypertarget{class_octree_a8e45cc24d31571cca553f86af40c7326}\label{class_octree_a8e45cc24d31571cca553f86af40c7326} 
+void {\bfseries add\+\_\+point} (const \doxymbox{\hyperlink{class_particle}{Particle}} \&p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A spatial partitioning octree data structure for implementing the Barnes-\/\+Hut algorithm. 
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+src/\+Octree.\+h\item 
+src/\+Octree.\+cpp\end{DoxyCompactItemize}

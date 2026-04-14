@@ -1,0 +1,28 @@
+\doxysection{Shielding.\+h}
+\hypertarget{_shielding_8h_source}{}\label{_shielding_8h_source}\index{src/Shielding.h@{src/Shielding.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SHIELDING\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SHIELDING\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Material.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Particle.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }Shielding\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//double\ xmin,\ xmax,\ ymin,\ ymax,\ zmin,\ zmax;}}
+\DoxyCodeLine{00010\ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3<double>}}\ min\_corner;}
+\DoxyCodeLine{00011\ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3<double>}}\ max\_corner;}
+\DoxyCodeLine{00012\ \ \ \ \ \doxymbox{\hyperlink{struct_material}{Material}}\ material;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ Shielding(\textcolor{keywordtype}{double}\ xmin,\ \textcolor{keywordtype}{double}\ xmax,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ymin,\ \textcolor{keywordtype}{double}\ ymax,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ zmin,\ \textcolor{keywordtype}{double}\ zmax,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_material}{Material}}\ m);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ contains(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_particle}{Particle}}\&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

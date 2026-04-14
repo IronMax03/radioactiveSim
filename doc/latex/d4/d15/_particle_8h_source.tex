@@ -1,0 +1,35 @@
+\doxysection{Particle.\+h}
+\hypertarget{_particle_8h_source}{}\label{_particle_8h_source}\index{src/Particle.h@{src/Particle.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARTICLE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARTICLE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }Particle\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3<double>}}\ position;\ \textcolor{comment}{//double\ x,\ y,\ z;}}
+\DoxyCodeLine{00011\ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3<double>}}\ velocity;\ \textcolor{comment}{//double\ vx,\ vy,\ vz;}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ electric\_charge;\ \textcolor{comment}{//\ !\ new,\ coulomb\ units}}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ type;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ distance\_in\_shield;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ alive;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ Particle(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ vx,\ \textcolor{keywordtype}{double}\ vy,\ \textcolor{keywordtype}{double}\ vz,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ type);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ Particle(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ vx,\ \textcolor{keywordtype}{double}\ vy,\ \textcolor{keywordtype}{double}\ vz,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ec,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ type);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_particle_a952cf3e369a2580bf0f56545f4577171}{move}}(\textcolor{keywordtype}{double}\ dt);}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

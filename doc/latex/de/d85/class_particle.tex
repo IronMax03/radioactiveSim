@@ -1,0 +1,66 @@
+\doxysection{Particle Class Reference}
+\hypertarget{class_particle}{}\label{class_particle}\index{Particle@{Particle}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_particle_a2ee948a7db884d814a6a5971a45dd2ca}\label{class_particle_a2ee948a7db884d814a6a5971a45dd2ca} 
+{\bfseries Particle} (double x, double y, double z, double vx, double vy, double vz, std::\+string type)
+\item 
+\Hypertarget{class_particle_ae76d15f7af3d1070a0eb494fc54b1f45}\label{class_particle_ae76d15f7af3d1070a0eb494fc54b1f45} 
+{\bfseries Particle} (double x, double y, double z, double vx, double vy, double vz, int ec, std::\+string type)
+\item 
+void \doxymbox{\hyperlink{class_particle_a952cf3e369a2580bf0f56545f4577171}{move}} (double dt)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_particle_a62e09cb8b75fc0e83472779dbcf097e5}\label{class_particle_a62e09cb8b75fc0e83472779dbcf097e5} 
+\doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries position}
+\item 
+\Hypertarget{class_particle_a3118c47b933c96ab93b7d49eb7cc79a4}\label{class_particle_a3118c47b933c96ab93b7d49eb7cc79a4} 
+\doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries velocity}
+\item 
+\Hypertarget{class_particle_ae90740a152e14b96632dd9c3fc631f3b}\label{class_particle_ae90740a152e14b96632dd9c3fc631f3b} 
+int {\bfseries electric\+\_\+charge}
+\item 
+\Hypertarget{class_particle_ac5b51d11f535f3b806fff965414e0410}\label{class_particle_ac5b51d11f535f3b806fff965414e0410} 
+std::\+string {\bfseries type}
+\item 
+\Hypertarget{class_particle_a94a340bb5ba69aa7ce14dac62c88a0ee}\label{class_particle_a94a340bb5ba69aa7ce14dac62c88a0ee} 
+double {\bfseries distance\+\_\+in\+\_\+shield}
+\item 
+\Hypertarget{class_particle_affebffa1e11f05041c9c46e8b684275b}\label{class_particle_affebffa1e11f05041c9c46e8b684275b} 
+bool {\bfseries alive}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_particle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_particle_a952cf3e369a2580bf0f56545f4577171}\index{Particle@{Particle}!move@{move}}
+\index{move@{move}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily \label{class_particle_a952cf3e369a2580bf0f56545f4577171} 
+void Particle::\+move (\begin{DoxyParamCaption}\item[{double}]{dt}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & if dt is negative or zero. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+this error can be ignored whith a try catch if the final user wants to use a negative or zero time step. 
+
+This error is mainly here to prevent the user from accidentally using a negative or zero time step, which would lead to undefined behavior in the simulation. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+src/\+Particle.\+h\item 
+src/\+Particle.\+cpp\end{DoxyCompactItemize}

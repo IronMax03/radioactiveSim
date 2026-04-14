@@ -1,0 +1,32 @@
+\doxysection{ROI Class Reference}
+\hypertarget{class_r_o_i}{}\label{class_r_o_i}\index{ROI@{ROI}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_r_o_i_a67126028e1eeb8ba2ae4f9cc376dfedc}\label{class_r_o_i_a67126028e1eeb8ba2ae4f9cc376dfedc} 
+{\bfseries ROI} (double xmin, double xmax, double ymin, double ymax, double zmin, double zmax)
+\item 
+\Hypertarget{class_r_o_i_a94668fb2b467f311e8f7d968df364bb1}\label{class_r_o_i_a94668fb2b467f311e8f7d968df364bb1} 
+bool {\bfseries contains} (const \doxymbox{\hyperlink{class_particle}{Particle}} \&p) const
+\begin{DoxyCompactList}\small\item\em Return True if the particle is inside the \doxylink{class_r_o_i}{ROI}, False otherwise. \end{DoxyCompactList}\item 
+\Hypertarget{class_r_o_i_a248ca15794b3c1b4d848325f2d2e1701}\label{class_r_o_i_a248ca15794b3c1b4d848325f2d2e1701} 
+void {\bfseries score} (\doxymbox{\hyperlink{class_particle}{Particle}} \&p)
+\begin{DoxyCompactList}\small\item\em If the particle is alive and inside the \doxylink{class_r_o_i}{ROI}, increment the count and mark the particle as not alive anymore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_r_o_i_a24447cb999a1ba708da2fcb1e1e60b98}\label{class_r_o_i_a24447cb999a1ba708da2fcb1e1e60b98} 
+\doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries min\+\_\+corner}
+\item 
+\Hypertarget{class_r_o_i_a575c217b27c5a295365b2e4e694c7304}\label{class_r_o_i_a575c217b27c5a295365b2e4e694c7304} 
+\doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries max\+\_\+corner}
+\item 
+\Hypertarget{class_r_o_i_ac032cef5856b7bae56e87d28e4be2b16}\label{class_r_o_i_ac032cef5856b7bae56e87d28e4be2b16} 
+int {\bfseries count}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+src/\+ROI.\+h\item 
+src/\+ROI.\+cpp\end{DoxyCompactItemize}
