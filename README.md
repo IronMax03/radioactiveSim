@@ -37,7 +37,7 @@ make test
 ### Generate documentation
 In order to generate documentation, `doxygen` must be installed on the system. Then run the following command from the repository root:
 ``` bash
-doxygen Doxyfile
+make gen-doc
 ```
 
 ### Structure of the code
