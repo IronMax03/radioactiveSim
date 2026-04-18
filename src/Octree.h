@@ -1,3 +1,7 @@
+/**
+ * @file Octree.h
+ * @brief This file contains the definition of the Octree class, which is a spatial partition.
+ */
 #pragma once
 
 #include "Particle.h"
@@ -34,17 +38,19 @@ struct lazy_node
     /// @brief Return True if nth child is evaluated (exist).
     constexpr bool is_child_inst(int n) const { return childs[n] != nullptr; }
 
+    constexpr double Calc_BH_criteria(vector3<T> position) const { return box_length / (center_of_charge - position).norm(); }
+
     /// @brief Return True if the barnes hut criteria is satisfied current node.
     /// @param x X coordinate of the position of the particle we want to calculate the force from this node on.
     /// @param y Y coordinate of the position of the particle we want to calculate the force from this node on.
     /// @param z Z coordinate of the position of the particle we want to calculate the force from this node on.
     /// @param theta Theta parameter for the barnes hut criteria.
-    constexpr bool BH_criteria(const T& x, const T& y, const T& z, float theta) const { return BH_criteria(vector3<T>{x,y,z}, theta);}
+    constexpr bool BH_criteria(const T& x, const T& y, const T& z, float theta) const { return Calc_BH_criteria(vector3<T>{x,y,z}) < theta; }
 
     /// @brief Return True if the barnes hut criteria is satisfied current node.
     /// @param position Position of the particle we want to calculate the force from this node on.
     /// @param theta Theta parameter for the barnes hut criteria.
-    constexpr bool BH_criteria(vector3<T> position, float theta) const { return box_length / (center_of_charge - position).norm() < theta; }
+    constexpr bool BH_criteria(vector3<T> position, float theta) const { return Calc_BH_criteria(position) < theta; }
 
     /// @brief Calculate the center of mass and total charge
     inline void eval()
@@ -90,14 +96,21 @@ struct lazy_node
 /// @brief A spatial partitioning octree data structure for implementing the Barnes-Hut algorithm.
 class Octree
 {
-   // private:
-        //lazy_node<int> root;
+    private:
+        /// @brief The type of the coordinates of the octree. Must be a numeric type (int, float, double, etc.).
+        typedef int nt;
+
+        lazy_node<nt> root;
+
+        size_t convert_to_morton_code(const vector3<nt>& position) const;
+        lazy_node<nt> build(const lazy_node<nt>& node, const Particle& particles);
 
     public:
-        Octree();
-        lazy_node<int>& get_root();
+        Octree(nt bound_xmin, nt bound_xmax, nt bound_ymin, nt bound_ymax, nt bound_zmin, nt bound_zmax);
+
+        lazy_node<nt>& get_root();
 
         void set_default_field(Octree def);
-        void add_point();
+        void add_point(const Particle& p);
 
 };
