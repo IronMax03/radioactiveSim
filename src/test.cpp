@@ -5,14 +5,11 @@
  * @note doctest.h must be downloaded from the official doctest repository and placed in the dependencies folder for this file to compile and run correctly.
 */
 
-#include <iostream>
-
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
 #include "dependencies/doctest.h"
 #include "Particle.h"
 #include "ROI.h"
-#include "Output.h"
 #include "Octree.h"
 
 using namespace std;
@@ -84,17 +81,33 @@ TEST_SUITE("Vector3 struct")
 
 TEST_SUITE("Particle")
 {
-    TEST_CASE(".move(double dt)") 
+    TEST_CASE("Particle Constructor") 
     {
-        Particle p(0,0,0,1,0,0, "proton ");
+        Particle p(1.0, 2.0, 3.0, 0.1, 0.2, 0.3, "proton");
+        CHECK_EQ(p.position, vector3<double>{1.0, 2.0, 3.0});
+        CHECK_EQ(p.velocity, vector3<double>{0.1, 0.2, 0.3});
+        CHECK_EQ(p.electric_charge, 1);
+        CHECK_EQ(p.type, "proton");
+        CHECK_EQ(p.distance_in_shield, 0.0);
+        CHECK(p.alive);
+
+        CHECK_THROWS(Particle(1.0, 2.0, 3.0, 0.1, 0.2, 0.3, "invalid_type"));
+        CHECK_EQ(Particle(1.0, 2.0, 3.0, 0.1, 0.2, 0.3, "neutron").electric_charge, 0);
+        CHECK_EQ(Particle(1.0, 2.0, 3.0, 0.1, 0.2, 0.3, "electron").electric_charge, -1);
+    }
+
+
+    TEST_CASE("Particle.move(double dt)") 
+    {
+        Particle p(0,0,0,1,0,0, "proton");
 
         p.move(0.01);
-        CHECK(p.position == Particle(0.01,0,0,1,0,0, "proton ").position);
+        CHECK(p.position == Particle(0.01,0,0,1,0,0, "proton").position);
 
         for(size_t i = 0; i < 3; i++)
             p.move(0.01);
         
-        CHECK(p.position == Particle(0.04,0,0,1,0,0, "proton ").position);
+        CHECK(p.position == Particle(0.04,0,0,1,0,0, "proton").position);
         CHECK_THROWS(p.move(-0.05));
         CHECK_THROWS(p.move(0));
     }
@@ -105,7 +118,7 @@ TEST_SUITE("ROI")
     TEST_CASE("contains") 
     {
         ROI temp(0, 1, 0, -1, 0, 1);
-        const Particle p(0.5, 0, 0.5, 0, 0, 0, "proton ");
+        const Particle p(0.5, 0, 0.5, 0, 0, 0, "proton");
         CHECK(temp.contains(p));
     }
 }
@@ -113,6 +126,8 @@ TEST_SUITE("ROI")
 
 TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
 {
+
+
     TEST_CASE("LazyNode Octree behavior") 
     {
         lazy_node <int> n;
@@ -155,6 +170,31 @@ TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
             CHECK_THROWS(n.get(8));
             CHECK_THROWS(n.get(-1));
         }
+
+        SUBCASE("spatial subdivision (child_index function)")
+        {
+            lazy_node <double> d;
+            d.bounding_box.center = vector3<double>{0.0, 0.0, 0.0};
+            d.bounding_box.length = 2.0;
+
+            CHECK_EQ(d.child_index(vector3<double>{-1.0, -1.0, -1.0}), 0u);
+            CHECK_EQ(d.child_index(vector3<double>{1.0, -1.0, -1.0}), 1u);
+            CHECK_EQ(d.child_index(vector3<double>{-1.0, 1.0, -1.0}), 2u);
+            CHECK_EQ(d.child_index(vector3<double>{-1.0, -1.0, 1.0}), 4u);
+            CHECK_EQ(d.child_index(vector3<double>{1.0, 1.0, -1.0}), 3u);
+            CHECK_EQ(d.child_index(vector3<double>{-1.0, 1.0, 1.0}), 6u);
+            CHECK_EQ(d.child_index(vector3<double>{1.0, -1.0, 1.0}), 5u);
+            CHECK_EQ(d.child_index(vector3<double>{1.0, 1.0, 1.0}), 7u);
+
+            CHECK_EQ(d.child_index(vector3<double>{0.0, 0.0, 0.0}), 7u);
+
+            CHECK_THROWS(d.child_index(vector3<double>{-2.0, 0.0, 0.0}));
+            CHECK_THROWS(d.child_index(vector3<double>{0.0, -2.0, 0.0}));
+            CHECK_THROWS(d.child_index(vector3<double>{0.0, 0.0, -2.0}));
+            CHECK_THROWS(d.child_index(vector3<double>{2.0, 0.0, 0.0}));
+            CHECK_THROWS(d.child_index(vector3<double>{0.0, 2.0, 0.0}));
+            CHECK_THROWS(d.child_index(vector3<double>{0.0, 0.0, 2.0}));
+        }
     }
 
     TEST_CASE("LazyNode Barnes-Hut functionality") 
@@ -165,23 +205,23 @@ TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
         SUBCASE("child value assignment and retrieval")
         {
             n.get(0).total_charge = 3;
-            CHECK(n.get(0).total_charge == 3);
+            CHECK_EQ(n.get(0).total_charge, 3);
             n.get(0).center_of_charge = vector3<int>{2, 0, 0};
-            CHECK(n.get(0).center_of_charge == vector3<int>{2, 0, 0});
+            CHECK_EQ(n.get(0).center_of_charge, vector3<int>{2, 0, 0});
 
             n.get(0).get(1).total_charge = 5;
             n.get(0).get(1).center_of_charge = vector3<int>{0, 2, 0};
-            CHECK(n.get(0).get(1).center_of_charge == vector3<int>{0, 2, 0});
+            CHECK_EQ(n.get(0).get(1).center_of_charge, vector3<int>{0, 2, 0});
 
             d.get(0).total_charge = 3;
-            CHECK(d.get(0).total_charge == 3);
+            CHECK_EQ(d.get(0).total_charge, 3);
             d.get(0).center_of_charge = vector3<double>{2.5, 0.0, 0.0};
-            CHECK(d.get(0).center_of_charge == vector3<double>{2.5, 0.0, 0.0}); 
+            CHECK_EQ(d.get(0).center_of_charge, vector3<double>{2.5, 0.0, 0.0}); 
         }
 
         SUBCASE("Barnes-Hut criteria")
         {
-            n.box_length = 1.0;
+            n.bounding_box.length = 1.0;
             n.center_of_charge = vector3<int>{0, 0, 0};
 
             CHECK_FALSE(n.BH_criteria(1.0, 0.0, 0.0, 1.0));
@@ -189,9 +229,27 @@ TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
             CHECK(n.BH_criteria(2.0, 0.0, 0.0, 2.5));
 
             d.center_of_charge = vector3<double>{4.2, 4, -7.2};
-            d.box_length = 1.93;
+            d.bounding_box.length = 1.93;
             CHECK(d.BH_criteria(37, 69, 76, 1.5));
             CHECK_FALSE(d.BH_criteria(37, 69, 76, 0.005));
+        }
+
+        SUBCASE("Center of charge evaluation")
+        {
+            d.get(0).get(0).total_charge = 3;
+            d.get(0).get(0).center_of_charge = vector3<double>{2.0, 0.0, 0.0};
+
+            d.get(0).get(1).total_charge = 5;
+            d.get(0).get(1).center_of_charge = vector3<double>{0.0, 2.0, 0.0};
+
+            d.get(0).eval();
+
+            CHECK_EQ(d.get(0).total_charge, 8);
+            CHECK_EQ(d.get(0).center_of_charge, vector3<double>{(3*2.0 + 5*0.0)/8, (3*0.0 + 5*2.0)/8, 0.0});
+
+            d.get(3).eval();
+            CHECK_EQ(d.get(3).total_charge, 0);
+            CHECK_EQ(d.get(3).center_of_charge, vector3<double>{0.0, 0.0, 0.0});
         }
     }
 
@@ -208,6 +266,29 @@ TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
 
     TEST_CASE("Quadtree") 
     {
-        
+        SUBCASE("Add particle to octree")
+        {
+            Octree o(vector3<double>{0, 0, 0}, vector3<double>{10, 10, 10});
+            o.add_particle(Particle(1.0, 1.0, 1.0, 0.0, 0.0, 0.0, "proton"));
+
+            CHECK_EQ(o.get_root().particle->position, vector3<double>{1.0, 1.0, 1.0});
+            CHECK_EQ(o.get_root().particle->electric_charge, 1);
+
+            o.add_particle(Particle(9.0, 9.0, 9.0, 0.0, 0.0, 0.0, "electron"));
+
+            // check electron
+            CHECK(o.get_root().is_child_inst(7));
+            CHECK(o.get_root().get(7).is_leaf());
+            CHECK_EQ(o.get_root().get(7).particle->position, vector3<double>{9.0, 9.0, 9.0});
+            CHECK_EQ(o.get_root().get(7).particle->electric_charge, -1);
+            CHECK_EQ(o.get_root().get(7).particle->type, "electron");
+            
+            // check proton
+            CHECK(o.get_root().is_child_inst(0));
+            CHECK(o.get_root().get(0).is_leaf());
+            CHECK_EQ(o.get_root().get(0).particle->position, vector3<double>{1.0, 1.0, 1.0});
+            CHECK_EQ(o.get_root().get(0).particle->electric_charge, 1);
+            CHECK_EQ(o.get_root().get(0).particle->type, "proton");
+        }
     }
 }

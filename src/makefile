@@ -24,7 +24,8 @@ SRCS = \
 	Output.cpp \
 	Simulation.cpp \
 	GeometryOutput.cpp \
-	Source.cpp
+	Source.cpp \
+	Octree.cpp 
 
 # Object files (replace .cpp by .o)
 OBJS = $(SRCS:.cpp=.o)

@@ -6,6 +6,7 @@
 
 #include "Particle.h"
 
+#include <cstddef>
 #include <memory>
 #include <type_traits>
 
@@ -25,20 +26,56 @@ template<typename T>
 struct lazy_node
 {
     static_assert(std::is_integral_v<T> || std::is_floating_point_v<T>);
-      
-    vector3<T> box_center;
-    vector3<T> center_of_charge;
+    
+    struct 
+    {
+        T length;
+        vector3<T> center;
+    } bounding_box;
 
-    T box_length;
-    int total_charge;
+    vector3<T> center_of_charge;
+    int total_charge; // The unit is coulombs
 
     std::unique_ptr<lazy_node<T>> childs[8];
     std::shared_ptr<Particle> particle;
 
-    /// @brief Return True if nth child is evaluated (exist).
-    constexpr bool is_child_inst(int n) const { return childs[n] != nullptr; }
+    /// @param p The position of the particle.
+    /// @return The child index of the particle position using morton indices.
+    /// @throws std::runtime_error if the particle position is not within the bounding box of the node.
+    constexpr size_t child_index(const vector3<T>& p) const 
+    {
+        if (p.x < bounding_box.center.x - bounding_box.length/2 || 
+            p.y < bounding_box.center.y - bounding_box.length/2 || 
+            p.z < bounding_box.center.z - bounding_box.length/2 ||
+            p.x > bounding_box.center.x + bounding_box.length/2 ||
+            p.y > bounding_box.center.y + bounding_box.length/2 ||
+            p.z > bounding_box.center.z + bounding_box.length/2)
+            throw std::runtime_error("lazy_node.child_index(p): Particle position must be within the bounding box of the node.");
 
-    constexpr double Calc_BH_criteria(vector3<T> position) const { return box_length / (center_of_charge - position).norm(); }
+        size_t child_index = 0;
+        
+        // Determine the child index of the particle based on morton indices.
+        if (p.x >= bounding_box.center.x)
+            child_index = child_index | 0b001; // equivalent to child_index += 1;
+        if (p.y >= bounding_box.center.y)
+            child_index = child_index | 0b010;// equivalent to child_index += 2;
+        if (p.z >= bounding_box.center.z)
+            child_index = child_index | 0b100;// equivalent to child_index += 4;
+
+        return child_index;
+    }
+
+    /// @brief Return True if nth child is evaluated (exist).
+    constexpr bool is_child_inst(const size_t& n) const { return childs[n] != nullptr; }
+
+    /// @brief Return True if the node is a leaf (has no children).
+    constexpr bool is_leaf() const { return !(is_child_inst(0) || is_child_inst(1) || is_child_inst(2) || is_child_inst(3) ||
+                                              is_child_inst(4) || is_child_inst(5) || is_child_inst(6) || is_child_inst(7)); }
+
+    /// @brief Calculate the barnes hut criteria for the current node and a given position.
+    /// @param position Position of the particle we want to calculate the force from this node on.
+    /// @return The barnes hut criteria for the current node and the given position.
+    constexpr double Calc_BH_criteria(vector3<T> position) const { return bounding_box.length / (center_of_charge - position).norm(); }
 
     /// @brief Return True if the barnes hut criteria is satisfied current node.
     /// @param x X coordinate of the position of the particle we want to calculate the force from this node on.
@@ -55,16 +92,31 @@ struct lazy_node
     /// @brief Calculate the center of mass and total charge
     inline void eval()
     { 
-        center_of_charge = particle->position;
-        total_charge = particle->electric_charge;
+        // recursion base case.
+        if (is_leaf())
+        {
+            if (particle != nullptr)
+            {
+                center_of_charge = particle->position;
+                total_charge = particle->electric_charge;
+            }
+            else 
+                throw std::runtime_error("lazy_node.eval(): Leaf nodes must have a particle to be evaluated.");
+
+            return;
+        }
+            
+        center_of_charge = vector3<T>{0, 0, 0};
+        total_charge = 0;
 
         for (std::unique_ptr<lazy_node<T>>& c: childs)
         {
+
             if (c != nullptr)
             {
                 c->eval();
+                center_of_charge = (total_charge*center_of_charge + c->total_charge*c->center_of_charge)/(total_charge + c->total_charge);
                 total_charge += c->total_charge;
-                center_of_charge = (center_of_charge + c->center_of_charge)/2;
             }
         }
     }
@@ -72,6 +124,8 @@ struct lazy_node
     /// @brief Calculate the center of mass and total charge of the n-th child
     inline void eval(const size_t& n) { get(n).eval(); }
 
+    /// @brief Instantiate the nth child if it is not already instantiated.
+    /// @param n The index of the child to instantiate. The indices are defined by the morton indices.
     inline void instantiate_child(const size_t& n)
     {
         if (n > 7)
@@ -92,25 +146,25 @@ struct lazy_node
     }
 };
 
+/// @brief The type of the coordinates of the octree. Must be a numeric type (int, float, double, etc.).
+typedef double nt;
 
 /// @brief A spatial partitioning octree data structure for implementing the Barnes-Hut algorithm.
 class Octree
 {
     private:
-        /// @brief The type of the coordinates of the octree. Must be a numeric type (int, float, double, etc.).
-        typedef int nt;
-
         lazy_node<nt> root;
 
-        size_t convert_to_morton_code(const vector3<nt>& position) const;
-        lazy_node<nt> build(const lazy_node<nt>& node, const Particle& particles);
+        /// @brief This is a private helper function for the public add_particle function.
+        void add_particle(const Particle& p, lazy_node<nt>& node);
 
     public:
-        Octree(nt bound_xmin, nt bound_xmax, nt bound_ymin, nt bound_ymax, nt bound_zmin, nt bound_zmax);
+        Octree(vector3<nt> minVec, vector3<nt> maxVec);
 
         lazy_node<nt>& get_root();
 
         void set_default_field(Octree def);
-        void add_point(const Particle& p);
+        void add_particle(const Particle& p);
 
+        void build(const lazy_node<nt>& node, const std::vector<Particle>& particles);
 };
