@@ -19,6 +19,8 @@ Particle::Particle(double x_, double y_, double z_,
         electric_charge = 0;
     else if (t == "electron")
         electric_charge = -1;
+    else
+        throw std::runtime_error("Particle constructor error: Invalid particle type. Valid types are: 'proton', 'neutron', and 'electron'.");
 }
 
 Particle::Particle(double x_, double y_, double z_,
