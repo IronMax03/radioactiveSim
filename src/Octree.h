@@ -69,8 +69,15 @@ struct lazy_node
     constexpr bool is_child_inst(const size_t& n) const { return childs[n] != nullptr; }
 
     /// @brief Return True if the node is a leaf (has no children).
-    constexpr bool is_leaf() const { return !(is_child_inst(0) || is_child_inst(1) || is_child_inst(2) || is_child_inst(3) ||
-                                              is_child_inst(4) || is_child_inst(5) || is_child_inst(6) || is_child_inst(7)); }
+    constexpr bool is_leaf() const 
+    { 
+        for (const auto& c : childs) 
+        {
+            if (c != nullptr)
+                return false;
+        }
+        return true;
+    }
 
     /// @brief Calculate the barnes hut criteria for the current node and a given position.
     /// @param position Position of the particle we want to calculate the force from this node on.
@@ -132,6 +139,11 @@ struct lazy_node
             throw  std::runtime_error("lazy_node.instantiate_child(n): n must be smaller or equal to 7.");
 
         childs[n] = std::make_unique<lazy_node<T>>(); 
+        childs[n]->bounding_box.length = bounding_box.length / 2;
+        childs[n]->bounding_box.center = bounding_box.center;
+        childs[n]->bounding_box.center.x += (n & 1) ? bounding_box.length/4 : -bounding_box.length/4;
+        childs[n]->bounding_box.center.y += (n & 2) ? bounding_box.length/4 : -bounding_box.length/4;
+        childs[n]->bounding_box.center.z += (n & 4) ? bounding_box.length/4 : -bounding_box.length/4;
     }
 
     /// @brief Return the nth child.
@@ -161,10 +173,12 @@ class Octree
     public:
         Octree(vector3<nt> minVec, vector3<nt> maxVec);
 
-        lazy_node<nt>& get_root();
+        const lazy_node<nt>& get_root() const;
 
         void set_default_field(Octree def);
         void add_particle(const Particle& p);
 
-        void build(const lazy_node<nt>& node, const std::vector<Particle>& particles);
+        void build(const std::vector<Particle>& particles);
+
+        double calc_force(const Particle& p) const;
 };

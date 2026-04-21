@@ -15,8 +15,11 @@ Octree::Octree(vector3<nt> minVec, vector3<nt> maxVec)
         root.bounding_box.length = std::abs(temp.z);
 }
 
-lazy_node<nt>& Octree::get_root() { return root; } //! need to be changed 
+const lazy_node<nt>& Octree::get_root() const { return root; }
 
+/// @brief This is a private helper function for the public add_particle function. It adds a particle to the octree by recursively traversing the tree and adding the particle to the appropriate node.
+/// @param p The particle to add to the octree.
+/// @param node The root node of the octree or subtree to add the particle to.
 void Octree::add_particle(const Particle& p, lazy_node<nt>& node)
 {
     if (node.is_leaf() && node.particle == nullptr)
@@ -35,10 +38,14 @@ void Octree::add_particle(const Particle& p, lazy_node<nt>& node)
     }
 }
 
+/// @brief Add a particle to the octree. This is a public wrapper function for the private add_particle function that takes a node as an argument.
+/// @param p The particle to add to the octree.
 void Octree::add_particle(const Particle& p) { add_particle(p, this->root); }
 
-/*
-void Octree::build(const lazy_node<nt>& node, const std::vector<Particle>& particles)
+/// @brief Build the octree from a vector of particles.
+/// @param particles The vector of particles to build the octree from.
+void Octree::build(const std::vector<Particle>& particles)
 {
-
-}*/
+    for (const auto& p : particles)
+        add_particle(p, this->root);
+}
