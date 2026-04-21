@@ -126,11 +126,11 @@ TEST_SUITE("ROI")
 
 TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
 {
-
-
     TEST_CASE("LazyNode Octree behavior") 
     {
         lazy_node <int> n;
+        n.bounding_box.center = vector3<int>{0, 0, 0}; 
+        n.bounding_box.length = 8;
 
         SUBCASE("child instantiation")
         {
@@ -141,12 +141,20 @@ TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
             }
             
             n.instantiate_child(0);
+            CHECK_EQ(n.get(0).bounding_box.center, vector3<int>{-2, -2, -2});
+            CHECK_EQ(n.get(0).bounding_box.length, 4);
             n.instantiate_child(4);
+            CHECK_EQ(n.get(4).bounding_box.center, vector3<int>{-2, -2, 2});
+            CHECK_EQ(n.get(4).bounding_box.length, 4);
             n.instantiate_child(7);
+            CHECK_EQ(n.get(7).bounding_box.center, vector3<int>{2, 2, 2});
+            CHECK_EQ(n.get(7).bounding_box.length, 4);
 
             CHECK(n.is_child_inst(0));
 
             n.get(0).instantiate_child(1);
+            CHECK_EQ(n.get(0).get(1).bounding_box.center, vector3<int>{-1, -1, -2});
+            CHECK_EQ(n.get(0).get(1).bounding_box.length, 2);
 
             CHECK(n.is_child_inst(0));
             CHECK(n.is_child_inst(4));
