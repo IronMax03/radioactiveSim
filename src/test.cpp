@@ -153,7 +153,7 @@ TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
             CHECK(n.is_child_inst(0));
 
             n.get(0).instantiate_child(1);
-            CHECK_EQ(n.get(0).get(1).bounding_box.center, vector3<int>{-1, -1, -2});
+            CHECK_EQ(n.get(0).get(1).bounding_box.center, vector3<int>{-1, -3, -3});
             CHECK_EQ(n.get(0).get(1).bounding_box.length, 2);
 
             CHECK(n.is_child_inst(0));
@@ -285,18 +285,19 @@ TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
             o.add_particle(Particle(9.0, 9.0, 9.0, 0.0, 0.0, 0.0, "electron"));
 
             // check electron
-            CHECK(o.get_root().is_child_inst(7));
-            CHECK(o.get_root().get(7).is_leaf());
-            CHECK_EQ(o.get_root().get(7).particle->position, vector3<double>{9.0, 9.0, 9.0});
-            CHECK_EQ(o.get_root().get(7).particle->electric_charge, -1);
-            CHECK_EQ(o.get_root().get(7).particle->type, "electron");
+            CHECK(o.get_root().is_child_inst(0b111));
+            CHECK(o.get_root().get(0b111).is_leaf());
+            CHECK_EQ(o.get_root().get(0b111).particle->position, vector3<double>{9.0, 9.0, 9.0});
+            CHECK_EQ(o.get_root().get(0b111).particle->electric_charge, -1);
+            CHECK_EQ(o.get_root().get(0b111).particle->type, "electron");
             
             // check proton
-            CHECK(o.get_root().is_child_inst(0));
-            CHECK(o.get_root().get(0).is_leaf());
-            CHECK_EQ(o.get_root().get(0).particle->position, vector3<double>{1.0, 1.0, 1.0});
-            CHECK_EQ(o.get_root().get(0).particle->electric_charge, 1);
-            CHECK_EQ(o.get_root().get(0).particle->type, "proton");
+            CHECK(o.get_root().particle == nullptr);
+            CHECK(o.get_root().is_child_inst(0b000));
+            CHECK(o.get_root().get(0b000).is_leaf());
+            CHECK_EQ(o.get_root().get(0b000).particle->position, vector3<double>{1.0, 1.0, 1.0});
+            CHECK_EQ(o.get_root().get(0b000).particle->electric_charge, 1);
+            CHECK_EQ(o.get_root().get(0b000).particle->type, "proton");
         }
     }
 }

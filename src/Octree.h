@@ -107,8 +107,7 @@ struct lazy_node
                 center_of_charge = particle->position;
                 total_charge = particle->electric_charge;
             }
-            else 
-                throw std::runtime_error("lazy_node.eval(): Leaf nodes must have a particle to be evaluated.");
+
 
             return;
         }
@@ -121,6 +120,9 @@ struct lazy_node
 
             if (c != nullptr)
             {
+                if (is_leaf() && c->particle != nullptr)
+                    continue; // if the current node is a leaf and the child has a particle, we can skip the evaluation of the child since we will use the particle of the child to calculate the center of charge and total charge of the current node.;
+
                 c->eval();
                 center_of_charge = (total_charge*center_of_charge + c->total_charge*c->center_of_charge)/(total_charge + c->total_charge);
                 total_charge += c->total_charge;
@@ -129,6 +131,7 @@ struct lazy_node
     }
 
     /// @brief Calculate the center of mass and total charge of the n-th child
+    /// @param n The index of the child to evaluate. The indices are defined by the morton indices.
     inline void eval(const size_t& n) { get(n).eval(); }
 
     /// @brief Instantiate the nth child if it is not already instantiated.
@@ -146,6 +149,16 @@ struct lazy_node
         childs[n]->bounding_box.center.z += (n & 4) ? bounding_box.length/4 : -bounding_box.length/4;
     }
 
+    /// @brief Instantiate the nth child and set its particle to the given particle.
+    /// @param n The index of the child to instantiate. The indices are defined by the morton indices.
+    /// @param p The particle to set the nth child to.
+    inline void create_child(const size_t& n, const Particle& p)
+    {
+        instantiate_child(n);
+        childs[n]->particle = std::make_shared<Particle>(p);
+    }
+
+
     /// @brief Return the nth child.
     /// @param n The index of the child to return. The indices are defined by the morton indices.
     inline lazy_node& get(const size_t& n) 
@@ -153,7 +166,7 @@ struct lazy_node
         if (n > 7)
             throw  std::runtime_error("lazy_node.get(n): n must be smaller or equal to 7.");
         else if (childs[n] == nullptr)
-            instantiate_child(n);
+            instantiate_child(n); // create a dummy particle to instantiate the child if it is not already instantiated.
         return *childs[n];
     }
 };
@@ -167,18 +180,15 @@ class Octree
     private:
         lazy_node<nt> root;
 
-        /// @brief This is a private helper function for the public add_particle function.
         void add_particle(const Particle& p, lazy_node<nt>& node);
 
     public:
         Octree(vector3<nt> minVec, vector3<nt> maxVec);
 
-        const lazy_node<nt>& get_root() const;
+        lazy_node<nt>& get_root();
+        double calc_force(const Particle& p) const;
 
         void set_default_field(Octree def);
         void add_particle(const Particle& p);
-
         void build(const std::vector<Particle>& particles);
-
-        double calc_force(const Particle& p) const;
 };

@@ -14,6 +14,8 @@ public:
     double distance_in_shield;
     bool alive;
 
+    Particle();
+
     Particle(double x, double y, double z,
              double vx, double vy, double vz,
              std::string type);

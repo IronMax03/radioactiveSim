@@ -4,6 +4,14 @@
  */
 #include "Particle.h"
 
+Particle::Particle() 
+    : position(vector3<double>{0, 0, 0}), 
+    velocity(vector3<double>{0, 0, 0}), 
+    electric_charge(0), 
+    type(""), 
+    distance_in_shield(0.0), 
+    alive(false) {}
+
 Particle::Particle(double x_, double y_, double z_,
                    double vx_, double vy_, double vz_,
                    std::string t)
