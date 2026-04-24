@@ -3,6 +3,7 @@ doctest.h
 
 # mac os files
 .DS_Store
+.VSCodeCounter
 
 # Output files
 *.csv
