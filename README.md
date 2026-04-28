@@ -8,25 +8,15 @@ Coulomb interactions between particles are approximated with the [Barnes-Hut alg
 
 ## Table of Contents
 
-1. [Project Description](#project-description)
-2. [Project File Structure](#project-file-structure)
-3. [Prerequisites](#prerequisites)
-4. [Running the Simulation](#running-the-simulation)
-5. [Running the Tests](#running-the-tests)
-6. [Makefile Reference](#makefile-reference)
-7. [API Documentation](#api-documentation)
-8. [Bug Reporting](#bug-reporting)
+1. [Project File Structure](#project-file-structure)
+2. [Prerequisites](#prerequisites)
+3. [Running the Simulation](#running-the-simulation)
+4. [Running the Tests](#running-the-tests)
+5. [Makefile Reference](#makefile-reference)
+6. [API Documentation](#api-documentation)
+7. [Bug Reporting](#bug-reporting)
 
 ---
-
-## Project Description
-
-The simulation proceeds in discrete time steps:
-
-1. The **Source** emits new particles each step.
-2. Every live particle is moved according to its velocity and the electrostatic forces computed by the **Octree** (Barnes-Hut).
-3. Particles that enter the **Shielding** volume are attenuated or absorbed depending on the chosen material.
-4. Particles inside the **ROI** are scored and periodically written to CSV files in `src/output/`.
 
 ---
 
