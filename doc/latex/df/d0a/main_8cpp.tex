@@ -1,0 +1,24 @@
+\doxysection{src/\+main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+
+
+Entry point for the radioactive particle transport simulation.  
+
+
+{\ttfamily \+\#include "{}Simulation.\+h"{}}\newline
+{\ttfamily \+\#include "{}Material.\+h"{}}\newline
+{\ttfamily \+\#include "{}Geometry\+Output.\+h"{}}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$chrono$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entry point for the radioactive particle transport simulation. 
+
+Sets up the physical geometry (shielding, \doxylink{class_r_o_i}{ROI}, source), writes initial VTP geometry files for visualisation, then constructs and runs the \doxylink{class_simulation}{Simulation}. Execution time is measured and printed at the end. 

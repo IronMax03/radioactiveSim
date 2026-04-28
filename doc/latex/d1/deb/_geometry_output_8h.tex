@@ -1,0 +1,99 @@
+\doxysection{src/\+\+Geometry\+Output.h File Reference}
+\hypertarget{_geometry_output_8h}{}\label{_geometry_output_8h}\index{src/GeometryOutput.h@{src/GeometryOutput.h}}
+
+
+Declarations for geometry output utilities:\+ writing bounding-\/box meshes in VTP format and enforcing the simulation domain boundary.  
+
+
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include "{}Particle.\+h"{}}\newline
+{\ttfamily \+\#include "{}Box.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{_geometry_output_8h_a2d4cd95a2fcfac7e868e3a88a9e37bc9}{write\+\_\+box\+\_\+vtp}} (double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, const std::\+string \&filename)
+\begin{DoxyCompactList}\small\item\em Write an axis-\/aligned box as a VTK Poly\+Data ({\ttfamily }.vtp) file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_geometry_output_8h_a3321b9d5762e1f011da0c0e235c36864}{is\+\_\+in\+\_\+bounding\+\_\+box}} (\doxymbox{\hyperlink{class_particle}{Particle}} \&p)
+\begin{DoxyCompactList}\small\item\em Kill a particle if it has left the global bounding box. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declarations for geometry output utilities:\+ writing bounding-\/box meshes in VTP format and enforcing the simulation domain boundary. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{_geometry_output_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_geometry_output_8h_a3321b9d5762e1f011da0c0e235c36864}\index{GeometryOutput.h@{GeometryOutput.h}!is\_in\_bounding\_box@{is\_in\_bounding\_box}}
+\index{is\_in\_bounding\_box@{is\_in\_bounding\_box}!GeometryOutput.h@{GeometryOutput.h}}
+\doxysubsubsection{\texorpdfstring{is\_in\_bounding\_box()}{is\_in\_bounding\_box()}}
+{\footnotesize\ttfamily \label{_geometry_output_8h_a3321b9d5762e1f011da0c0e235c36864} 
+void is\+\_\+in\+\_\+bounding\+\_\+box (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_particle}{Particle}} \&}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Kill a particle if it has left the global bounding box. 
+
+The global bounding box is the union of all boxes passed to \doxylink{_geometry_output_8h_a2d4cd95a2fcfac7e868e3a88a9e37bc9}{write\+\_\+box\+\_\+vtp()}. If {\ttfamily p} is outside this box its {\ttfamily alive} flag is set to {\ttfamily false}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The particle to test and potentially deactivate.\\
+\hline
+\end{DoxyParams}
+Kill a particle if it has left the global bounding box.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The particle to test and potentially deactivate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_geometry_output_8h_a2d4cd95a2fcfac7e868e3a88a9e37bc9}\index{GeometryOutput.h@{GeometryOutput.h}!write\_box\_vtp@{write\_box\_vtp}}
+\index{write\_box\_vtp@{write\_box\_vtp}!GeometryOutput.h@{GeometryOutput.h}}
+\doxysubsubsection{\texorpdfstring{write\_box\_vtp()}{write\_box\_vtp()}}
+{\footnotesize\ttfamily \label{_geometry_output_8h_a2d4cd95a2fcfac7e868e3a88a9e37bc9} 
+void write\+\_\+box\+\_\+vtp (\begin{DoxyParamCaption}\item[{double}]{xmin}{, }\item[{double}]{xmax}{, }\item[{double}]{ymin}{, }\item[{double}]{ymax}{, }\item[{double}]{zmin}{, }\item[{double}]{zmax}{, }\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Write an axis-\/aligned box as a VTK Poly\+Data ({\ttfamily }.vtp) file. 
+
+The box is represented as a mesh of 8 vertices and 6 quad faces. Additionally, the function tracks the global bounding box of all boxes written so far (used by \doxylink{_geometry_output_8h_a3321b9d5762e1f011da0c0e235c36864}{is\+\_\+in\+\_\+bounding\+\_\+box()}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em xmin} & Minimum x-\/coordinate of the box (metres). \\
+\hline
+{\em xmax} & Maximum x-\/coordinate of the box (metres). \\
+\hline
+{\em ymin} & Minimum y-\/coordinate of the box (metres). \\
+\hline
+{\em ymax} & Maximum y-\/coordinate of the box (metres). \\
+\hline
+{\em zmin} & Minimum z-\/coordinate of the box (metres). \\
+\hline
+{\em zmax} & Maximum z-\/coordinate of the box (metres). \\
+\hline
+{\em filename} & Path to the output {\ttfamily }.vtp file.\\
+\hline
+\end{DoxyParams}
+Write an axis-\/aligned box as a VTK Poly\+Data ({\ttfamily }.vtp) file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em xmin} & Minimum x-\/coordinate of the box (metres). \\
+\hline
+{\em xmax} & Maximum x-\/coordinate of the box (metres). \\
+\hline
+{\em ymin} & Minimum y-\/coordinate of the box (metres). \\
+\hline
+{\em ymax} & Maximum y-\/coordinate of the box (metres). \\
+\hline
+{\em zmin} & Minimum z-\/coordinate of the box (metres). \\
+\hline
+{\em zmax} & Maximum z-\/coordinate of the box (metres). \\
+\hline
+{\em filename} & Path to the output {\ttfamily }.vtp file. \\
+\hline
+\end{DoxyParams}

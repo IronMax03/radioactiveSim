@@ -1,0 +1,141 @@
+\indexentry{Box@{Box}|hyperpage}{5}
+\indexentry{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}|hyperpage}{5}
+\indexentry{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!BH\_criteria@{BH\_criteria}|hyperpage}{6}
+\indexentry{BH\_criteria@{BH\_criteria}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}|hyperpage}{6}
+\indexentry{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!BH\_criteria@{BH\_criteria}|hyperpage}{7}
+\indexentry{BH\_criteria@{BH\_criteria}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}|hyperpage}{7}
+\indexentry{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!Calc\_BH\_criteria@{Calc\_BH\_criteria}|hyperpage}{7}
+\indexentry{Calc\_BH\_criteria@{Calc\_BH\_criteria}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}|hyperpage}{7}
+\indexentry{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!child\_index@{child\_index}|hyperpage}{7}
+\indexentry{child\_index@{child\_index}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}|hyperpage}{7}
+\indexentry{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!eval@{eval}|hyperpage}{7}
+\indexentry{eval@{eval}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}|hyperpage}{7}
+\indexentry{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!get@{get}|hyperpage}{8}
+\indexentry{get@{get}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}|hyperpage}{8}
+\indexentry{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!instantiate\_child@{instantiate\_child}|hyperpage}{8}
+\indexentry{instantiate\_child@{instantiate\_child}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}|hyperpage}{8}
+\indexentry{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!read@{read}|hyperpage}{8}
+\indexentry{read@{read}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}|hyperpage}{8}
+\indexentry{Material@{Material}|hyperpage}{9}
+\indexentry{Material@{Material}!Material@{Material}|hyperpage}{9}
+\indexentry{Material@{Material}!Material@{Material}|hyperpage}{9}
+\indexentry{Octree@{Octree}|hyperpage}{10}
+\indexentry{Octree@{Octree}!Octree@{Octree}|hyperpage}{10}
+\indexentry{Octree@{Octree}!Octree@{Octree}|hyperpage}{10}
+\indexentry{Octree@{Octree}!add\_particle@{add\_particle}|hyperpage}{11}
+\indexentry{add\_particle@{add\_particle}!Octree@{Octree}|hyperpage}{11}
+\indexentry{Octree@{Octree}!build@{build}|hyperpage}{11}
+\indexentry{build@{build}!Octree@{Octree}|hyperpage}{11}
+\indexentry{Octree@{Octree}!calc\_force@{calc\_force}|hyperpage}{11}
+\indexentry{calc\_force@{calc\_force}!Octree@{Octree}|hyperpage}{11}
+\indexentry{Octree@{Octree}!get\_root@{get\_root}|hyperpage}{12}
+\indexentry{get\_root@{get\_root}!Octree@{Octree}|hyperpage}{12}
+\indexentry{Octree@{Octree}!set\_default\_field@{set\_default\_field}|hyperpage}{12}
+\indexentry{set\_default\_field@{set\_default\_field}!Octree@{Octree}|hyperpage}{12}
+\indexentry{Octree@{Octree}!set\_theta@{set\_theta}|hyperpage}{12}
+\indexentry{set\_theta@{set\_theta}!Octree@{Octree}|hyperpage}{12}
+\indexentry{Particle@{Particle}|hyperpage}{13}
+\indexentry{Particle@{Particle}!Particle@{Particle}|hyperpage}{14}
+\indexentry{Particle@{Particle}!Particle@{Particle}|hyperpage}{14}
+\indexentry{Particle@{Particle}!Particle@{Particle}|hyperpage}{14}
+\indexentry{Particle@{Particle}!Particle@{Particle}|hyperpage}{14}
+\indexentry{Particle@{Particle}!Particle@{Particle}|hyperpage}{15}
+\indexentry{Particle@{Particle}!Particle@{Particle}|hyperpage}{15}
+\indexentry{Particle@{Particle}!move@{move}|hyperpage}{16}
+\indexentry{move@{move}!Particle@{Particle}|hyperpage}{16}
+\indexentry{ROI@{ROI}|hyperpage}{17}
+\indexentry{ROI@{ROI}!ROI@{ROI}|hyperpage}{18}
+\indexentry{ROI@{ROI}!ROI@{ROI}|hyperpage}{18}
+\indexentry{ROI@{ROI}!contains@{contains}|hyperpage}{19}
+\indexentry{contains@{contains}!ROI@{ROI}|hyperpage}{19}
+\indexentry{ROI@{ROI}!score@{score}|hyperpage}{19}
+\indexentry{score@{score}!ROI@{ROI}|hyperpage}{19}
+\indexentry{Shielding@{Shielding}|hyperpage}{20}
+\indexentry{Shielding@{Shielding}!Shielding@{Shielding}|hyperpage}{20}
+\indexentry{Shielding@{Shielding}!Shielding@{Shielding}|hyperpage}{20}
+\indexentry{Shielding@{Shielding}!contains@{contains}|hyperpage}{21}
+\indexentry{contains@{contains}!Shielding@{Shielding}|hyperpage}{21}
+\indexentry{Simulation@{Simulation}|hyperpage}{22}
+\indexentry{Simulation@{Simulation}!Simulation@{Simulation}|hyperpage}{23}
+\indexentry{Simulation@{Simulation}!Simulation@{Simulation}|hyperpage}{23}
+\indexentry{Simulation@{Simulation}!print@{print}|hyperpage}{23}
+\indexentry{print@{print}!Simulation@{Simulation}|hyperpage}{23}
+\indexentry{Simulation@{Simulation}!run@{run}|hyperpage}{23}
+\indexentry{run@{run}!Simulation@{Simulation}|hyperpage}{23}
+\indexentry{Source@{Source}|hyperpage}{24}
+\indexentry{Source@{Source}!Source@{Source}|hyperpage}{25}
+\indexentry{Source@{Source}!Source@{Source}|hyperpage}{25}
+\indexentry{Source@{Source}!emit@{emit}|hyperpage}{25}
+\indexentry{emit@{emit}!Source@{Source}|hyperpage}{25}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{26}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!norm@{norm}|hyperpage}{27}
+\indexentry{norm@{norm}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{27}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{27}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{27}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{27}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{27}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}|hyperpage}{28}
+\indexentry{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{28}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}|hyperpage}{28}
+\indexentry{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{28}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!operator+@{operator+}|hyperpage}{28}
+\indexentry{operator+@{operator+}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{28}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!operator+=@{operator+=}|hyperpage}{29}
+\indexentry{operator+=@{operator+=}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{29}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!operator-\/@{operator-\/}|hyperpage}{29}
+\indexentry{operator-\/@{operator-\/}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{29}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!operator-\/=@{operator-\/=}|hyperpage}{29}
+\indexentry{operator-\/=@{operator-\/=}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{29}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!operator/@{operator/}|hyperpage}{30}
+\indexentry{operator/@{operator/}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{30}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!operator/=@{operator/=}|hyperpage}{30}
+\indexentry{operator/=@{operator/=}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{30}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!operator==@{operator==}|hyperpage}{30}
+\indexentry{operator==@{operator==}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{30}
+\indexentry{vector3$<$ T $>$@{vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{31}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vector3$<$ T $>$@{vector3$<$ T $>$}|hyperpage}{31}
+\indexentry{src/Box.h@{src/Box.h}|hyperpage}{33}
+\indexentry{src/GeometryOutput.cpp@{src/GeometryOutput.cpp}|hyperpage}{34}
+\indexentry{GeometryOutput.cpp@{GeometryOutput.cpp}!is\_in\_bounding\_box@{is\_in\_bounding\_box}|hyperpage}{34}
+\indexentry{is\_in\_bounding\_box@{is\_in\_bounding\_box}!GeometryOutput.cpp@{GeometryOutput.cpp}|hyperpage}{34}
+\indexentry{GeometryOutput.cpp@{GeometryOutput.cpp}!write\_box\_vtp@{write\_box\_vtp}|hyperpage}{34}
+\indexentry{write\_box\_vtp@{write\_box\_vtp}!GeometryOutput.cpp@{GeometryOutput.cpp}|hyperpage}{34}
+\indexentry{src/GeometryOutput.h@{src/GeometryOutput.h}|hyperpage}{35}
+\indexentry{GeometryOutput.h@{GeometryOutput.h}!is\_in\_bounding\_box@{is\_in\_bounding\_box}|hyperpage}{36}
+\indexentry{is\_in\_bounding\_box@{is\_in\_bounding\_box}!GeometryOutput.h@{GeometryOutput.h}|hyperpage}{36}
+\indexentry{GeometryOutput.h@{GeometryOutput.h}!write\_box\_vtp@{write\_box\_vtp}|hyperpage}{36}
+\indexentry{write\_box\_vtp@{write\_box\_vtp}!GeometryOutput.h@{GeometryOutput.h}|hyperpage}{36}
+\indexentry{src/GeometryOutput.h@{src/GeometryOutput.h}|hyperpage}{37}
+\indexentry{src/main.cpp@{src/main.cpp}|hyperpage}{37}
+\indexentry{src/Material.h@{src/Material.h}|hyperpage}{37}
+\indexentry{src/Material.h@{src/Material.h}|hyperpage}{38}
+\indexentry{src/Octree.cpp@{src/Octree.cpp}|hyperpage}{38}
+\indexentry{src/Octree.h@{src/Octree.h}|hyperpage}{38}
+\indexentry{src/Octree.h@{src/Octree.h}|hyperpage}{39}
+\indexentry{src/Output.cpp@{src/Output.cpp}|hyperpage}{41}
+\indexentry{Output.cpp@{Output.cpp}!write\_particles\_csv@{write\_particles\_csv}|hyperpage}{42}
+\indexentry{write\_particles\_csv@{write\_particles\_csv}!Output.cpp@{Output.cpp}|hyperpage}{42}
+\indexentry{src/Output.h@{src/Output.h}|hyperpage}{42}
+\indexentry{Output.h@{Output.h}!write\_particles\_csv@{write\_particles\_csv}|hyperpage}{42}
+\indexentry{write\_particles\_csv@{write\_particles\_csv}!Output.h@{Output.h}|hyperpage}{42}
+\indexentry{src/Output.h@{src/Output.h}|hyperpage}{43}
+\indexentry{src/Particle.cpp@{src/Particle.cpp}|hyperpage}{43}
+\indexentry{src/Particle.h@{src/Particle.h}|hyperpage}{43}
+\indexentry{src/Particle.h@{src/Particle.h}|hyperpage}{44}
+\indexentry{src/ROI.cpp@{src/ROI.cpp}|hyperpage}{44}
+\indexentry{src/ROI.h@{src/ROI.h}|hyperpage}{45}
+\indexentry{src/ROI.h@{src/ROI.h}|hyperpage}{45}
+\indexentry{src/Shielding.cpp@{src/Shielding.cpp}|hyperpage}{45}
+\indexentry{src/Shielding.h@{src/Shielding.h}|hyperpage}{46}
+\indexentry{src/Shielding.h@{src/Shielding.h}|hyperpage}{46}
+\indexentry{src/Simulation.cpp@{src/Simulation.cpp}|hyperpage}{46}
+\indexentry{src/Simulation.h@{src/Simulation.h}|hyperpage}{47}
+\indexentry{src/Simulation.h@{src/Simulation.h}|hyperpage}{47}
+\indexentry{src/Source.cpp@{src/Source.cpp}|hyperpage}{48}
+\indexentry{src/Source.h@{src/Source.h}|hyperpage}{48}
+\indexentry{src/Source.h@{src/Source.h}|hyperpage}{48}
+\indexentry{src/test.cpp@{src/test.cpp}|hyperpage}{49}
+\indexentry{src/utils.h@{src/utils.h}|hyperpage}{49}
+\indexentry{utils.h@{utils.h}!distance@{distance}|hyperpage}{50}
+\indexentry{distance@{distance}!utils.h@{utils.h}|hyperpage}{50}
+\indexentry{src/utils.h@{src/utils.h}|hyperpage}{51}

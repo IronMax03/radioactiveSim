@@ -1,0 +1,49 @@
+\doxysection{src/\+\+Output.cpp File Reference}
+\hypertarget{_output_8cpp}{}\label{_output_8cpp}\index{src/Output.cpp@{src/Output.cpp}}
+
+
+Implementation of CSV output utilities for particle state persistence.  
+
+
+{\ttfamily \+\#include "{}Output.\+h"{}}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{_output_8cpp_a8c707c93df80cb11a8792e34072a764a}{write\+\_\+particles\+\_\+csv}} (const std::\+vector$<$ \doxymbox{\hyperlink{class_particle}{Particle}} $>$ \&particles, const std::\+string \&filename)
+\begin{DoxyCompactList}\small\item\em Write the state of a collection of particles to a CSV file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of CSV output utilities for particle state persistence. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{_output_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_output_8cpp_a8c707c93df80cb11a8792e34072a764a}\index{Output.cpp@{Output.cpp}!write\_particles\_csv@{write\_particles\_csv}}
+\index{write\_particles\_csv@{write\_particles\_csv}!Output.cpp@{Output.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_particles\_csv()}{write\_particles\_csv()}}
+{\footnotesize\ttfamily \label{_output_8cpp_a8c707c93df80cb11a8792e34072a764a} 
+void write\+\_\+particles\+\_\+csv (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{class_particle}{Particle}} $>$ \&}]{particles}{, }\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Write the state of a collection of particles to a CSV file. 
+
+Creates or overwrites {\ttfamily filename} and writes a header row followed by one data row per particle with columns:\+ {\ttfamily x}, {\ttfamily y}, {\ttfamily z}, {\ttfamily alive}, {\ttfamily type}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em particles} & The collection of particles to serialise. \\
+\hline
+{\em filename} & Path to the output CSV file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em If} & the file cannot be opened an error message is printed to {\ttfamily stdout} and the exception is re-\/thrown. \\
+\hline
+\end{DoxyExceptions}
