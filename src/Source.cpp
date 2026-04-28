@@ -44,7 +44,7 @@ std::vector<Particle> Source::emit() const {
 
         // 75% of the time : proton, 25% : neutron
         std::string particle_type = "proton";
-        if (uniform01() > 0.75)
+        if (uniform01() > 1)
             particle_type = "neutron";
 
         // create a particle on the spot and store it

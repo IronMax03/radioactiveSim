@@ -21,16 +21,16 @@ void write_particles_csv(const std::vector<Particle>& particles,
     // The CSV file should have a header with the following columns:
     // x,y,z,alive,type
     // don't forget to close the file at the end
-
+ 
     std::ofstream tempStream(filename);
-
+ 
     if(tempStream.is_open())
     {
-        tempStream << "x,y,z,alive,type\n";
-
-        for(Particle p: particles)
-            tempStream << p.position.x << "," << p.position.y << "," << p.position.z << "," << p.alive << "," << p.type << "\n";
-
+        tempStream << "x,y,z,alive,type,vx,vy,vz\n";
+ 
+        for(const Particle& p: particles)
+            tempStream << p.position.x << "," << p.position.y << "," << p.position.z << "," << p.alive << "," << p.type << "," << p.velocity.x << "," << p.velocity.y << "," << p.velocity.z << "\n";
+ 
         tempStream.close();
     }
     else

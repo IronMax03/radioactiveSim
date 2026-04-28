@@ -6,7 +6,7 @@
 
 #include <string>
 #include "Particle.h"
-#include "Box.hpp"
+#include "Box.h"
 
 /// @brief Write an axis-aligned box as a VTK PolyData (@c .vtp) file.
 ///

@@ -9,6 +9,7 @@
 #include "Shielding.h"
 #include "ROI.h"
 #include "Source.h"
+#include "Octree.h"
 
 /// @brief Top-level simulation driver.
 ///

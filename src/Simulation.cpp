@@ -46,6 +46,44 @@ void Simulation::run() {
                         new_particles.begin(),
                         new_particles.end());
 
+        // --- Electrostatic forces via Barnes-Hut ---
+        // Build an octree from all living *charged* particles and compute
+        // the Coulomb acceleration on every charged particle.
+        // Neutral particles (neutrons) neither exert nor feel Coulomb forces.
+        {
+            // Count charged particles and find their bounding cube.
+            int n_charged = 0;
+            double lo =  1e30, hi = -1e30;
+            for (const auto& p : particles) {
+                if (!p.alive || p.electric_charge == 0) continue;
+                ++n_charged;
+                lo = std::min({lo, p.position.x, p.position.y, p.position.z});
+                hi = std::max({hi, p.position.x, p.position.y, p.position.z});
+            }
+
+            if (n_charged >= 2) {
+                double margin = std::max(1.0, (hi - lo) * 0.01);
+                vector3<double> minVec{lo - margin, lo - margin, lo - margin};
+                vector3<double> maxVec{hi + margin, hi + margin, hi + margin};
+
+                Octree octree(minVec, maxVec);
+                octree.set_theta(0.5f);
+
+                for (const auto& p : particles)
+                    if (p.alive && p.electric_charge != 0)
+                        octree.add_particle(p);
+
+                for (auto& p : particles) {
+                    if (!p.alive || p.electric_charge == 0) continue;
+                    octree.calc_force(p);
+                    // calc_force stores the raw Coulomb force in p.acceleration.
+                    // Convert to acceleration: a = F / m  (mass in proton-mass units).
+                    if (p.mass > 0)
+                        p.acceleration = p.acceleration / p.mass;
+                }
+            }
+        }
+
         // Move particles
         for (auto& p : particles) {
             if (!p.alive) continue;

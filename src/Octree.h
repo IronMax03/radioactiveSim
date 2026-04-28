@@ -124,8 +124,10 @@ struct lazy_node
                     continue; // if the current node is a leaf and the child has a particle, we can skip the evaluation of the child since we will use the particle of the child to calculate the center of charge and total charge of the current node.;
 
                 c->eval();
-                center_of_charge = (total_charge*center_of_charge + c->total_charge*c->center_of_charge)/(total_charge + c->total_charge);
-                total_charge += c->total_charge;
+                int combined = total_charge + c->total_charge;
+                if (combined != 0)
+                    center_of_charge = (total_charge*center_of_charge + c->total_charge*c->center_of_charge)/combined;
+                total_charge = combined;
             }
         }
     }
@@ -181,8 +183,18 @@ class Octree
 {
     private:
         lazy_node<nt> root;
+        float theta = 0.5f; ///< Barnes-Hut opening-angle parameter.
+        static constexpr int max_depth = 50; ///< Prevents infinite recursion from coincident particles.
 
-        void add_particle(const Particle& p, lazy_node<nt>& node);
+        void add_particle(const Particle& p, lazy_node<nt>& node, int depth = 0);
+
+        /// @brief Recursive Barnes-Hut traversal that accumulates the net
+        ///        Coulomb force on @p p from all charges represented by @p node.
+        /// @param p      Target particle (force is accumulated into p.acceleration).
+        /// @param node   Current node in the traversal.
+        /// @param force  Running force accumulator (modified in-place).
+        void calc_force_recursive(const Particle& p, lazy_node<nt>& node,
+                                  vector3<double>& force);
 
     public:
         /// @brief Construct an Octree covering the axis-aligned box defined by @p minVec and @p maxVec.
@@ -208,6 +220,13 @@ class Octree
         ///        Equivalent to calling add_particle() for each particle in @p particles.
         /// @param particles The collection of particles to insert into the octree.
         void build(const std::vector<Particle>& particles);
+
+        /// @brief Set the Barnes-Hut opening-angle parameter.
+        /// @param t Values closer to 0 give higher accuracy; typical default is 0.5.
+        void set_theta(float t) { theta = t; }
+
+        /// @brief Return the current Barnes-Hut opening-angle parameter.
+        float get_theta() const { return theta; }
 
         /// @brief Return a mutable reference to the root node of the octree.
         /// @note Intended for testing and future scaling. In production code prefer

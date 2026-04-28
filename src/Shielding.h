@@ -6,7 +6,7 @@
 
 #include "Material.h"
 #include "Particle.h"
-#include "Box.hpp"
+#include "Box.h"
 
 /// @brief An axis-aligned rectangular volume of shielding material.
 ///
