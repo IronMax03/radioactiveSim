@@ -1,5 +1,18 @@
+/// @file Shielding.cpp
+/// @brief Implementation of the Shielding class methods.
+
 #include "Shielding.h"
 
+/// @brief Construct a shielding volume from explicit axis-aligned bounds and a material.
+/// @param xmin_ Minimum x-coordinate (metres).
+/// @param xmax_ Maximum x-coordinate (metres).
+/// @param ymin_ Minimum y-coordinate (metres).
+/// @param ymax_ Maximum y-coordinate (metres).
+/// @param zmin_ Minimum z-coordinate (metres).
+/// @param zmax_ Maximum z-coordinate (metres).
+/// @param m     Material that fills the volume.
+/// @throws std::invalid_argument if any min coordinate exceeds the corresponding max,
+///         or if the min and max corners are identical (zero-volume box).
 Shielding::Shielding(double xmin_, double xmax_,
                      double ymin_, double ymax_,
                      double zmin_, double zmax_,
@@ -14,6 +27,10 @@ Shielding::Shielding(double xmin_, double xmax_,
     throw std::invalid_argument("Invalid shielding dimensions: min corner and max corner cannot be the same point.");
 }
 
+/// @brief Test whether a particle is currently inside the shielding volume.
+///        Uses normalised coordinates relative to the bounding box extents.
+/// @param p The particle to test.
+/// @return @c true if all normalised coordinates of @p p are in [0, 1], @c false otherwise.
 bool Shielding::contains(const Particle& p) const 
 {
     // implement the method that checks if a particle is inside the shielding

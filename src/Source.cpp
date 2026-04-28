@@ -1,13 +1,27 @@
+/// @file Source.cpp
+/// @brief Implementation of the Source class methods.
+
 #include "Source.h"
 #include "utils.h"
 #include <cmath>
 
+/// @brief Construct a source at the specified position with the given emission rate.
+/// @param x_    X-coordinate of the source (metres).
+/// @param y_    Y-coordinate of the source (metres).
+/// @param z_    Z-coordinate of the source (metres).
+/// @param rate_ Number of particles to emit per time step.
 Source::Source(double x_, double y_, double z_,
                int rate_)
     : x(x_), y(y_), z(z_),
       rate(rate_)
 {}
 
+/// @brief Emit one batch of particles for the current time step.
+///        Direction angles (theta, phi) and speed norm are drawn from normal
+///        distributions to produce a realistic, slightly spread-out beam.
+///        Particle type is chosen randomly: 75 % proton, 25 % neutron.
+/// @return A vector of @c rate newly created Particle objects, all originating
+///         from the source position.
 std::vector<Particle> Source::emit() const {
     std::vector<Particle> emitted;
 

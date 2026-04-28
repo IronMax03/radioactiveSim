@@ -1,9 +1,9 @@
-/**
- * @file Particle.cpp
- * @brief This file contains the implementation of the Particle class methods.
- */
+/// @file Particle.cpp
+/// @brief Implementation of the Particle class methods.
+
 #include "Particle.h"
 
+/// @brief Default constructor. Initialises all kinematic fields to zero and marks the particle as dead.
 Particle::Particle()
     : position(vector3<double>{0, 0, 0}),
     velocity(vector3<double>{0, 0, 0}),
@@ -14,6 +14,16 @@ Particle::Particle()
     distance_in_shield(0.0),
     alive(false) {}
 
+/// @brief Construct a particle from position, velocity, and type string.
+///        Mass and electric charge are inferred automatically from @p t.
+/// @param x_  Initial x-coordinate.
+/// @param y_  Initial y-coordinate.
+/// @param z_  Initial z-coordinate.
+/// @param vx_ Initial x-component of velocity.
+/// @param vy_ Initial y-component of velocity.
+/// @param vz_ Initial z-component of velocity.
+/// @param t   Particle type string. Accepted values: @c "proton", @c "neutron".
+/// @throws std::runtime_error if @p t is not a recognised particle type.
 Particle::Particle(double x_, double y_, double z_,
                    double vx_, double vy_, double vz_,
                    std::string t)
@@ -38,6 +48,16 @@ Particle::Particle(double x_, double y_, double z_,
         throw std::runtime_error("Particle constructor error: Invalid particle type. Valid types are: 'proton', 'neutron', and 'electron'.");
 }
 
+/// @brief Construct a particle with explicitly provided mass, charge, and type.
+/// @param x_  Initial x-coordinate.
+/// @param y_  Initial y-coordinate.
+/// @param z_  Initial z-coordinate.
+/// @param vx_ Initial x-component of velocity.
+/// @param vy_ Initial y-component of velocity.
+/// @param vz_ Initial z-component of velocity.
+/// @param m   Mass in units of proton mass.
+/// @param ec  Electric charge in coulomb units.
+/// @param t   Particle type label.
 Particle::Particle(double x_, double y_, double z_,
                    double vx_, double vy_, double vz_,
                     double m,

@@ -1,5 +1,15 @@
+/// @file ROI.cpp
+/// @brief Implementation of the ROI (Region Of Interest) class methods.
+
 #include "ROI.h"
 
+/// @brief Construct a ROI from explicit axis-aligned bounds.
+/// @param xmin_ Minimum x-coordinate (metres).
+/// @param xmax_ Maximum x-coordinate (metres).
+/// @param ymin_ Minimum y-coordinate (metres).
+/// @param ymax_ Maximum y-coordinate (metres).
+/// @param zmin_ Minimum z-coordinate (metres).
+/// @param zmax_ Maximum z-coordinate (metres).
 ROI::ROI(double xmin_, double xmax_,
          double ymin_, double ymax_,
          double zmin_, double zmax_)
