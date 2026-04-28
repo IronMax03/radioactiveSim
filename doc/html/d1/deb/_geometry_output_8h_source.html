@@ -91,27 +91,31 @@ $(function(){initNavTree('d1/deb/_geometry_output_8h_source.html','../../',''); 
   <div class="headertitle"><div class="title">GeometryOutput.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Particle.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="../../d8/df1/_box_8hpp.html">Box.hpp</a>&quot;</span></div>
+<a href="../../d1/deb/_geometry_output_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keywordtype">void</span> write_box_vtp(<span class="keywordtype">double</span> xmin, <span class="keywordtype">double</span> xmax,</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>                   <span class="keywordtype">double</span> ymin, <span class="keywordtype">double</span> ymax,</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>                   <span class="keywordtype">double</span> zmin, <span class="keywordtype">double</span> zmax,</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>                   <span class="keyword">const</span> std::string&amp; filename);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keywordtype">void</span> is_in_bounding_box(<a class="code hl_class" href="../../de/d85/class_particle.html">Particle</a>&amp; p);</div>
-<div class="ttc" id="a_box_8hpp_html"><div class="ttname"><a href="../../d8/df1/_box_8hpp.html">Box.hpp</a></div><div class="ttdoc">Defines the Box class representing a 3D box in space, used for shielding and geometry output.</div></div>
-<div class="ttc" id="aclass_particle_html"><div class="ttname"><a href="../../de/d85/class_particle.html">Particle</a></div><div class="ttdef"><b>Definition</b> Particle.h:7</div></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="../../d4/d15/_particle_8h.html">Particle.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Box.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/deb/_geometry_output_8h.html#a2d4cd95a2fcfac7e868e3a88a9e37bc9">write_box_vtp</a>(<span class="keywordtype">double</span> xmin, <span class="keywordtype">double</span> xmax,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                   <span class="keywordtype">double</span> ymin, <span class="keywordtype">double</span> ymax,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                   <span class="keywordtype">double</span> zmin, <span class="keywordtype">double</span> zmax,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                   <span class="keyword">const</span> std::string&amp; filename);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/deb/_geometry_output_8h.html#a3321b9d5762e1f011da0c0e235c36864">is_in_bounding_box</a>(<a class="code hl_class" href="../../de/d85/class_particle.html">Particle</a>&amp; p);</div>
+<div class="ttc" id="a_geometry_output_8h_html_a2d4cd95a2fcfac7e868e3a88a9e37bc9"><div class="ttname"><a href="../../d1/deb/_geometry_output_8h.html#a2d4cd95a2fcfac7e868e3a88a9e37bc9">write_box_vtp</a></div><div class="ttdeci">void write_box_vtp(double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, const std::string &amp;filename)</div><div class="ttdoc">Write an axis-aligned box as a VTK PolyData (.vtp) file.</div><div class="ttdef"><b>Definition</b> GeometryOutput.cpp:22</div></div>
+<div class="ttc" id="a_geometry_output_8h_html_a3321b9d5762e1f011da0c0e235c36864"><div class="ttname"><a href="../../d1/deb/_geometry_output_8h.html#a3321b9d5762e1f011da0c0e235c36864">is_in_bounding_box</a></div><div class="ttdeci">void is_in_bounding_box(Particle &amp;p)</div><div class="ttdoc">Kill a particle if it has left the global bounding box.</div><div class="ttdef"><b>Definition</b> GeometryOutput.cpp:83</div></div>
+<div class="ttc" id="a_particle_8h_html"><div class="ttname"><a href="../../d4/d15/_particle_8h.html">Particle.h</a></div><div class="ttdoc">Declaration of the Particle class, representing a physical particle (e.g. proton or neutron) tracked ...</div></div>
+<div class="ttc" id="aclass_particle_html"><div class="ttname"><a href="../../de/d85/class_particle.html">Particle</a></div><div class="ttdoc">Represents a single physical particle moving through the simulation domain.</div><div class="ttdef"><b>Definition</b> Particle.h:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>GeometryOutput.h</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="../../d1/deb/_geometry_output_8h.html">GeometryOutput.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

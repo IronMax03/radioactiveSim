@@ -2,7 +2,7 @@
 \hypertarget{structvector3}{}\label{structvector3}\index{vector3$<$ T $>$@{vector3$<$ T $>$}}
 
 
-A 3D vector. The type of the components of this vector is defined by T wich can be:\+ int, long, short, double, float, etc.  
+A generic 3-\/D vector whose component type is {\ttfamily T}.  
 
 
 
@@ -12,39 +12,28 @@ A 3D vector. The type of the components of this vector is defined by T wich can 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{structvector3_a3682f8c6a3d1d17cb27cc973671bf940}\label{structvector3_a3682f8c6a3d1d17cb27cc973671bf940} 
-constexpr \doxymbox{\hyperlink{structvector3}{vector3}} {\bfseries operator+} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n) const
-\item 
-\Hypertarget{structvector3_a08199270a0b2c3b4bf83271e32e9834e}\label{structvector3_a08199270a0b2c3b4bf83271e32e9834e} 
-constexpr void {\bfseries operator+=} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n)
-\item 
-\Hypertarget{structvector3_a7293bf16ce442e7204768642e102b1d1}\label{structvector3_a7293bf16ce442e7204768642e102b1d1} 
-constexpr \doxymbox{\hyperlink{structvector3}{vector3}} {\bfseries operator-\/} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n) const
-\item 
-\Hypertarget{structvector3_a85543db9036c6a5b7e7e34851828280a}\label{structvector3_a85543db9036c6a5b7e7e34851828280a} 
-constexpr void {\bfseries operator-\/=} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n)
-\item 
-\Hypertarget{structvector3_a6dea10ae87718193c6c2444303a0076e}\label{structvector3_a6dea10ae87718193c6c2444303a0076e} 
-constexpr \doxymbox{\hyperlink{structvector3}{vector3}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (const T \&n) const
-\item 
-\Hypertarget{structvector3_a3d4dcc635150fce8aa862689ea7a448a}\label{structvector3_a3d4dcc635150fce8aa862689ea7a448a} 
-constexpr void {\bfseries operator\texorpdfstring{$\ast$}{*}=} (const T \&n)
-\item 
-\Hypertarget{structvector3_a295a28907a6fa9bb8e1fa19bab7574b0}\label{structvector3_a295a28907a6fa9bb8e1fa19bab7574b0} 
-constexpr T {\bfseries operator\texorpdfstring{$\ast$}{*}} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n) const
-\item 
-\Hypertarget{structvector3_a009c5aaaf7e6cc78c9fdcffc6d691752}\label{structvector3_a009c5aaaf7e6cc78c9fdcffc6d691752} 
-constexpr void {\bfseries operator\texorpdfstring{$\ast$}{*}=} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n)
-\item 
-\Hypertarget{structvector3_ac94075318e38b8d81f244335f79e14e5}\label{structvector3_ac94075318e38b8d81f244335f79e14e5} 
-constexpr \doxymbox{\hyperlink{structvector3}{vector3}} {\bfseries operator/\+} (const T \&n) const
-\item 
-\Hypertarget{structvector3_a70b1c3a1064bc5f50b84adc23f64e187}\label{structvector3_a70b1c3a1064bc5f50b84adc23f64e187} 
-constexpr \doxymbox{\hyperlink{structvector3}{vector3}} {\bfseries operator/\+=} (const T \&n)
-\item 
-\Hypertarget{structvector3_ae656dca00d6fdc38d829adf2e67d475b}\label{structvector3_ae656dca00d6fdc38d829adf2e67d475b} 
-constexpr bool {\bfseries operator==} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n) const
-\item 
+constexpr \doxymbox{\hyperlink{structvector3}{vector3}} \doxymbox{\hyperlink{structvector3_a3682f8c6a3d1d17cb27cc973671bf940}{operator+}} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n) const
+\begin{DoxyCompactList}\small\item\em Element-\/wise addition. \end{DoxyCompactList}\item 
+constexpr void \doxymbox{\hyperlink{structvector3_a08199270a0b2c3b4bf83271e32e9834e}{operator+=}} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n)
+\begin{DoxyCompactList}\small\item\em In-\/place element-\/wise addition. \end{DoxyCompactList}\item 
+constexpr \doxymbox{\hyperlink{structvector3}{vector3}} \doxymbox{\hyperlink{structvector3_a7293bf16ce442e7204768642e102b1d1}{operator-\/}} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n) const
+\begin{DoxyCompactList}\small\item\em Element-\/wise subtraction. \end{DoxyCompactList}\item 
+constexpr void \doxymbox{\hyperlink{structvector3_a85543db9036c6a5b7e7e34851828280a}{operator-\/=}} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n)
+\begin{DoxyCompactList}\small\item\em In-\/place element-\/wise subtraction. \end{DoxyCompactList}\item 
+constexpr \doxymbox{\hyperlink{structvector3}{vector3}} \doxymbox{\hyperlink{structvector3_a6dea10ae87718193c6c2444303a0076e}{operator\texorpdfstring{$\ast$}{*}}} (const T \&n) const
+\begin{DoxyCompactList}\small\item\em Scalar multiplication (vector \texorpdfstring{$\ast$}{*} scalar). \end{DoxyCompactList}\item 
+constexpr void \doxymbox{\hyperlink{structvector3_a3d4dcc635150fce8aa862689ea7a448a}{operator\texorpdfstring{$\ast$}{*}=}} (const T \&n)
+\begin{DoxyCompactList}\small\item\em In-\/place scalar multiplication. \end{DoxyCompactList}\item 
+constexpr T \doxymbox{\hyperlink{structvector3_a295a28907a6fa9bb8e1fa19bab7574b0}{operator\texorpdfstring{$\ast$}{*}}} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n) const
+\begin{DoxyCompactList}\small\item\em Dot product. \end{DoxyCompactList}\item 
+constexpr void \doxymbox{\hyperlink{structvector3_a009c5aaaf7e6cc78c9fdcffc6d691752}{operator\texorpdfstring{$\ast$}{*}=}} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n)
+\begin{DoxyCompactList}\small\item\em In-\/place component-\/wise multiplication (replaces each component with the dot product). \end{DoxyCompactList}\item 
+constexpr \doxymbox{\hyperlink{structvector3}{vector3}} \doxymbox{\hyperlink{structvector3_ac94075318e38b8d81f244335f79e14e5}{operator/\+}} (const T \&n) const
+\begin{DoxyCompactList}\small\item\em Scalar division. \end{DoxyCompactList}\item 
+constexpr \doxymbox{\hyperlink{structvector3}{vector3}} \doxymbox{\hyperlink{structvector3_a70b1c3a1064bc5f50b84adc23f64e187}{operator/\+=}} (const T \&n)
+\begin{DoxyCompactList}\small\item\em In-\/place scalar division. Divides each component by {\ttfamily n} and stores the result in {\ttfamily \texorpdfstring{$\ast$}{*}this}. \end{DoxyCompactList}\item 
+constexpr bool \doxymbox{\hyperlink{structvector3_ae656dca00d6fdc38d829adf2e67d475b}{operator==}} (const \doxymbox{\hyperlink{structvector3}{vector3}} \&n) const
+\begin{DoxyCompactList}\small\item\em Equality comparison. \end{DoxyCompactList}\item 
 double \doxymbox{\hyperlink{structvector3_a4405b7efa1f89f60923c4008647c9be0}{norm}} () const
 \item 
 \Hypertarget{structvector3_aa5916ec6ffe3ad4b5143261669108557}\label{structvector3_aa5916ec6ffe3ad4b5143261669108557} 
@@ -65,9 +54,8 @@ T {\bfseries z} \{\}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{structvector3_a91c7ef5ad9bd738cfbaf684ef2266c39}\label{structvector3_a91c7ef5ad9bd738cfbaf684ef2266c39} 
-constexpr \doxymbox{\hyperlink{structvector3}{vector3}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (const T \&scalar, const \doxymbox{\hyperlink{structvector3}{vector3}} \&v)
-\item 
+constexpr \doxymbox{\hyperlink{structvector3}{vector3}} \doxymbox{\hyperlink{structvector3_a91c7ef5ad9bd738cfbaf684ef2266c39}{operator\texorpdfstring{$\ast$}{*}}} (const T \&scalar, const \doxymbox{\hyperlink{structvector3}{vector3}} \&v)
+\begin{DoxyCompactList}\small\item\em Scalar multiplication (scalar \texorpdfstring{$\ast$}{*} vector) — commutative companion to {\ttfamily operator\texorpdfstring{$\ast$}{*}(\+T)}. \end{DoxyCompactList}\item 
 \Hypertarget{structvector3_a73162c181f68ea321c51f6de3e39dfb2}\label{structvector3_a73162c181f68ea321c51f6de3e39dfb2} 
 std::\+ostream \& {\bfseries operator$<$$<$} (std::\+ostream \&os, const \doxymbox{\hyperlink{structvector3}{vector3}} \&vec)
 \begin{DoxyCompactList}\small\item\em Overload the \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator to print the vector in the format (x, y, z). \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -76,7 +64,14 @@ std::\+ostream \& {\bfseries operator$<$$<$} (std::\+ostream \&os, const \doxymb
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$typename T$>$\newline
 struct vector3$<$ T $>$}
-A 3D vector. The type of the components of this vector is defined by T wich can be:\+ int, long, short, double, float, etc. 
+A generic 3-\/D vector whose component type is {\ttfamily T}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Component type. Must be an integral or floating-\/point type (enforced via {\ttfamily static\+\_\+assert}).\\
+\hline
+\end{DoxyTemplParams}
+Supports element-\/wise addition, subtraction, scalar multiplication/\+division, dot product, Euclidean norm, normalisation, equality comparison, and stream output. 
 
 \label{doc-func-members}
 \Hypertarget{structvector3_doc-func-members}
@@ -91,8 +86,239 @@ double \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+norm (\begin{Do
 \begin{DoxyReturn}{Returns}
 the euclidien norm of the vector as a double. 
 \end{DoxyReturn}
+\Hypertarget{structvector3_a6dea10ae87718193c6c2444303a0076e}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{structvector3_a6dea10ae87718193c6c2444303a0076e} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{structvector3}{vector3}} \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const T \&}]{n}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Scalar multiplication (vector \texorpdfstring{$\ast$}{*} scalar). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Scalar multiplier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Each component of {\ttfamily \texorpdfstring{$\ast$}{*}this} multiplied by {\ttfamily n}. 
+\end{DoxyReturn}
+\Hypertarget{structvector3_a295a28907a6fa9bb8e1fa19bab7574b0}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{structvector3_a295a28907a6fa9bb8e1fa19bab7574b0} 
+template$<$typename T$>$ \\
+T \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&}]{n}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Dot product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Right-\/hand-\/side vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scalar dot product {\ttfamily x\texorpdfstring{$\ast$}{*}n}.x + y\texorpdfstring{$\ast$}{*}n.y + z\texorpdfstring{$\ast$}{*}n.z. 
+\end{DoxyReturn}
+\Hypertarget{structvector3_a3d4dcc635150fce8aa862689ea7a448a}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{structvector3_a3d4dcc635150fce8aa862689ea7a448a} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const T \&}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+In-\/place scalar multiplication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Scalar multiplier. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structvector3_a009c5aaaf7e6cc78c9fdcffc6d691752}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{structvector3_a009c5aaaf7e6cc78c9fdcffc6d691752} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+In-\/place component-\/wise multiplication (replaces each component with the dot product). 
+
+\begin{DoxyNote}{Note}
+Due to the implementation delegating to the scalar dot-\/product {\ttfamily operator\texorpdfstring{$\ast$}{*}(vector3)}, the resulting assignment of a scalar {\ttfamily T} to a {\ttfamily \doxylink{structvector3}{vector3}} is unusual and may not compile for all types. Prefer explicit dot-\/product usage where needed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Right-\/hand-\/side vector. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structvector3_a3682f8c6a3d1d17cb27cc973671bf940}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{structvector3_a3682f8c6a3d1d17cb27cc973671bf940} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{structvector3}{vector3}} \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+operator+ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&}]{n}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Element-\/wise addition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Right-\/hand-\/side vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Component-\/wise sum of {\ttfamily \texorpdfstring{$\ast$}{*}this} and {\ttfamily n}. 
+\end{DoxyReturn}
+\Hypertarget{structvector3_a08199270a0b2c3b4bf83271e32e9834e}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \label{structvector3_a08199270a0b2c3b4bf83271e32e9834e} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+operator+= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+In-\/place element-\/wise addition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Right-\/hand-\/side vector. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structvector3_a7293bf16ce442e7204768642e102b1d1}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{structvector3_a7293bf16ce442e7204768642e102b1d1} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{structvector3}{vector3}} \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+operator-\/ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&}]{n}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Element-\/wise subtraction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Right-\/hand-\/side vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Component-\/wise difference {\ttfamily \texorpdfstring{$\ast$}{*}this} -\/ {\ttfamily n}. 
+\end{DoxyReturn}
+\Hypertarget{structvector3_a85543db9036c6a5b7e7e34851828280a}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \label{structvector3_a85543db9036c6a5b7e7e34851828280a} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+operator-\/= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+In-\/place element-\/wise subtraction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Right-\/hand-\/side vector. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structvector3_ac94075318e38b8d81f244335f79e14e5}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \label{structvector3_ac94075318e38b8d81f244335f79e14e5} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{structvector3}{vector3}} \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+operator/\+ (\begin{DoxyParamCaption}\item[{const T \&}]{n}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Scalar division. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Scalar divisor. Must not be zero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Each component of {\ttfamily \texorpdfstring{$\ast$}{*}this} divided by {\ttfamily n}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & if {\ttfamily n} is zero. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{structvector3_a70b1c3a1064bc5f50b84adc23f64e187}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \label{structvector3_a70b1c3a1064bc5f50b84adc23f64e187} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{structvector3}{vector3}} \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+operator/\+= (\begin{DoxyParamCaption}\item[{const T \&}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+In-\/place scalar division. Divides each component by {\ttfamily n} and stores the result in {\ttfamily \texorpdfstring{$\ast$}{*}this}. 
+
+\begin{DoxyNote}{Note}
+The declared return type is {\ttfamily \doxylink{structvector3}{vector3}} but the function body does not include an explicit {\ttfamily return} statement; treat this as an in-\/place mutation only. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Scalar divisor. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structvector3_ae656dca00d6fdc38d829adf2e67d475b}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{structvector3_ae656dca00d6fdc38d829adf2e67d475b} 
+template$<$typename T$>$ \\
+bool \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$::\+operator== (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&}]{n}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Equality comparison. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Right-\/hand-\/side vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if all three components are equal. 
+\end{DoxyReturn}
+
+
+\label{doc-related-members}
+\Hypertarget{structvector3_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{structvector3_a91c7ef5ad9bd738cfbaf684ef2266c39}\index{vector3$<$ T $>$@{vector3$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!vector3$<$ T $>$@{vector3$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}}{operator*}}
+{\footnotesize\ttfamily \label{structvector3_a91c7ef5ad9bd738cfbaf684ef2266c39} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{structvector3}{vector3}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const T \&}]{scalar}{, }\item[{const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Scalar multiplication (scalar \texorpdfstring{$\ast$}{*} vector) — commutative companion to {\ttfamily operator\texorpdfstring{$\ast$}{*}(\+T)}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Scalar multiplier. \\
+\hline
+{\em v} & Vector operand. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Each component of {\ttfamily v} multiplied by {\ttfamily scalar}. 
+\end{DoxyReturn}
 
 
 The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
 \item 
-src/\+utils.\+h\end{DoxyCompactItemize}
+src/\+\doxymbox{\hyperlink{utils_8h}{utils.\+h}}\end{DoxyCompactItemize}

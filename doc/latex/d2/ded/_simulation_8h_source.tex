@@ -1,30 +1,38 @@
 \doxysection{Simulation.\+h}
 \hypertarget{_simulation_8h_source}{}\label{_simulation_8h_source}\index{src/Simulation.h@{src/Simulation.h}}
-
+\doxymbox{\hyperlink{_simulation_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Particle.h"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Shielding.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ROI.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Source.h"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }Simulation\ \{}
-\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{double}\ dt;}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ steps;}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_particle_8h}{Particle.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_shielding_8h}{Shielding.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_r_o_i_8h}{ROI.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_source_8h}{Source.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_octree_8h}{Octree.h}}"{}}}
 \DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \ \ \ \ \doxymbox{\hyperlink{class_source}{Source}}\ source;}
-\DoxyCodeLine{00015\ \ \ \ \ std::vector<Particle>\ particles;}
-\DoxyCodeLine{00016\ \ \ \ \ \doxymbox{\hyperlink{class_shielding}{Shielding}}\ shielding;}
-\DoxyCodeLine{00017\ \ \ \ \ \doxymbox{\hyperlink{class_r_o_i}{ROI}}\ roi;}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ Simulation(\textcolor{keywordtype}{double}\ dt,\ \textcolor{keywordtype}{unsigned}\ steps,\ \doxymbox{\hyperlink{class_source}{Source}}\ sr,}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_shielding}{Shielding}}\ s,\ \doxymbox{\hyperlink{class_r_o_i}{ROI}}\ r);}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_simulation_ae5c367f87c0b5dc9740bc6d00e44e72c}{run}}();}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ print();}
-\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_simulation_ab9aef2b60ae1933e64a1ebb1c3b4e9c2}{Simulation}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_simulation_af43e498bfc83c777db5f5ac4025ff923}{dt}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \doxymbox{\hyperlink{class_simulation_ab9556a6f49d03a8ea25f7f42fe256082}{steps}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \doxymbox{\hyperlink{class_source}{Source}}\ \doxymbox{\hyperlink{class_simulation_a2daffe4caebb766c0c050fccb89a1fb3}{source}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ std::vector<Particle>\ \doxymbox{\hyperlink{class_simulation_a43630d63fec2527d729ef58c14cfc132}{particles}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \doxymbox{\hyperlink{class_shielding}{Shielding}}\ \doxymbox{\hyperlink{class_simulation_a00174871f9b2ef8c21cfd1f0996a94e6}{shielding}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \doxymbox{\hyperlink{class_r_o_i}{ROI}}\ \doxymbox{\hyperlink{class_simulation_a200e0e49c49a5ff2f906c59c42bcddc8}{roi}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00046\ \ \ \ \ \doxymbox{\hyperlink{class_simulation_ab9aef2b60ae1933e64a1ebb1c3b4e9c2}{Simulation}}(\textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_simulation_af43e498bfc83c777db5f5ac4025ff923}{dt}},\ \textcolor{keywordtype}{unsigned}\ \doxymbox{\hyperlink{class_simulation_ab9556a6f49d03a8ea25f7f42fe256082}{steps}},\ \doxymbox{\hyperlink{class_source}{Source}}\ sr,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_shielding}{Shielding}}\ s,\ \doxymbox{\hyperlink{class_r_o_i}{ROI}}\ r);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_simulation_ae5c367f87c0b5dc9740bc6d00e44e72c}{run}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_simulation_a09ed6991fa2444be1bcc43e7b5a48a13}{print}}();}
+\DoxyCodeLine{00056\ \};}
 
 \end{DoxyCode}

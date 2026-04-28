@@ -1,6 +1,19 @@
 var searchData=
 [
-  ['vector3_0',['vector3',['../dd/d53/structvector3.html',1,'']]],
-  ['vector3_3c_20double_20_3e_1',['vector3&lt; double &gt;',['../dd/d53/structvector3.html',1,'']]],
-  ['vector3_3c_20nt_20_3e_2',['vector3&lt; nt &gt;',['../dd/d53/structvector3.html',1,'']]]
+  ['score_0',['score',['../d2/d47/class_r_o_i.html#a248ca15794b3c1b4d848325f2d2e1701',1,'ROI']]],
+  ['set_5fdefault_5ffield_1',['set_default_field',['../de/da5/class_octree.html#a6ad44acf3890a47e191fa6d9d8b63087',1,'Octree']]],
+  ['set_5ftheta_2',['set_theta',['../de/da5/class_octree.html#abf8682844f57cbe4ac2baf9d4e362c82',1,'Octree']]],
+  ['shielding_3',['Shielding',['../d6/dbd/class_shielding.html',1,'Shielding'],['../d6/dbd/class_shielding.html#aefdc50abf3bf18a7371fcd3cbbb047df',1,'Shielding::Shielding()']]],
+  ['shielding_4',['shielding',['../dd/d14/class_simulation.html#a00174871f9b2ef8c21cfd1f0996a94e6',1,'Simulation']]],
+  ['shielding_2ecpp_5',['Shielding.cpp',['../dd/dda/_shielding_8cpp.html',1,'']]],
+  ['shielding_2eh_6',['Shielding.h',['../de/d71/_shielding_8h.html',1,'']]],
+  ['simulation_7',['Simulation',['../dd/d14/class_simulation.html',1,'Simulation'],['../dd/d14/class_simulation.html#ab9aef2b60ae1933e64a1ebb1c3b4e9c2',1,'Simulation::Simulation()']]],
+  ['simulation_2ecpp_8',['Simulation.cpp',['../db/d98/_simulation_8cpp.html',1,'']]],
+  ['simulation_2eh_9',['Simulation.h',['../d2/ded/_simulation_8h.html',1,'']]],
+  ['source_10',['Source',['../d8/d74/class_source.html',1,'Source'],['../d8/d74/class_source.html#af7bb98b31a1c16a819cd31b332742cb5',1,'Source::Source()']]],
+  ['source_11',['source',['../dd/d14/class_simulation.html#a2daffe4caebb766c0c050fccb89a1fb3',1,'Simulation']]],
+  ['source_2ecpp_12',['Source.cpp',['../dd/d6e/_source_8cpp.html',1,'']]],
+  ['source_2eh_13',['Source.h',['../db/df9/_source_8h.html',1,'']]],
+  ['steps_14',['steps',['../dd/d14/class_simulation.html#ab9556a6f49d03a8ea25f7f42fe256082',1,'Simulation']]],
+  ['steps_5felapsed_15',['steps_elapsed',['../d8/d74/class_source.html#acc4ad938c2f92302e307f847e6ca3500',1,'Source']]]
 ];

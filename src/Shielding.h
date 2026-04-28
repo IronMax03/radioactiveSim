@@ -12,7 +12,8 @@
 ///
 /// The Shielding class defines a box-shaped region of space that attenuates
 /// particles passing through it according to the mean free path of its material.
-class Shielding {
+class Shielding 
+{
 public:
     /// @brief Minimum corner of the axis-aligned bounding box (metres).
     vector3<double> min_corner;

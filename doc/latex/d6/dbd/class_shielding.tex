@@ -1,29 +1,133 @@
 \doxysection{Shielding Class Reference}
 \hypertarget{class_shielding}{}\label{class_shielding}\index{Shielding@{Shielding}}
+
+
+An axis-\/aligned rectangular volume of shielding material.  
+
+
+
+
+{\ttfamily \+\#include $<$Shielding.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_shielding_aefdc50abf3bf18a7371fcd3cbbb047df}\label{class_shielding_aefdc50abf3bf18a7371fcd3cbbb047df} 
-{\bfseries Shielding} (double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, \doxymbox{\hyperlink{struct_material}{Material}} m)
-\item 
-\Hypertarget{class_shielding_a2b029bed5b783f4555e84dfac93d4496}\label{class_shielding_a2b029bed5b783f4555e84dfac93d4496} 
-bool {\bfseries contains} (const \doxymbox{\hyperlink{class_particle}{Particle}} \&p) const
-\end{DoxyCompactItemize}
+\doxymbox{\hyperlink{class_shielding_aefdc50abf3bf18a7371fcd3cbbb047df}{Shielding}} (double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, \doxymbox{\hyperlink{struct_material}{Material}} m)
+\begin{DoxyCompactList}\small\item\em Construct a shielding volume from explicit axis-\/aligned bounds and a material. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_shielding_a2b029bed5b783f4555e84dfac93d4496}{contains}} (const \doxymbox{\hyperlink{class_particle}{Particle}} \&p) const
+\begin{DoxyCompactList}\small\item\em Test whether a particle is currently inside the shielding volume. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_shielding_a05deacaaaa9bbcac807e2658e0331fdd}\label{class_shielding_a05deacaaaa9bbcac807e2658e0331fdd} 
 \doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries min\+\_\+corner}
-\item 
+\begin{DoxyCompactList}\small\item\em Minimum corner of the axis-\/aligned bounding box (metres). \end{DoxyCompactList}\item 
 \Hypertarget{class_shielding_aeb953127c23574c017ddfdca4d805052}\label{class_shielding_aeb953127c23574c017ddfdca4d805052} 
 \doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries max\+\_\+corner}
-\item 
+\begin{DoxyCompactList}\small\item\em Maximum corner of the axis-\/aligned bounding box (metres). \end{DoxyCompactList}\item 
 \Hypertarget{class_shielding_a46b89d3cc4f457e0e75b68469c79ab03}\label{class_shielding_a46b89d3cc4f457e0e75b68469c79ab03} 
 \doxymbox{\hyperlink{struct_material}{Material}} {\bfseries material}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Physical material that fills this shielding volume. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An axis-\/aligned rectangular volume of shielding material. 
+
+The \doxylink{class_shielding}{Shielding} class defines a box-\/shaped region of space that attenuates particles passing through it according to the mean free path of its material. 
+
+\label{doc-constructors}
+\Hypertarget{class_shielding_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_shielding_aefdc50abf3bf18a7371fcd3cbbb047df}\index{Shielding@{Shielding}!Shielding@{Shielding}}
+\index{Shielding@{Shielding}!Shielding@{Shielding}}
+\doxysubsubsection{\texorpdfstring{Shielding()}{Shielding()}}
+{\footnotesize\ttfamily \label{class_shielding_aefdc50abf3bf18a7371fcd3cbbb047df} 
+Shielding::\+\+Shielding (\begin{DoxyParamCaption}\item[{double}]{xmin\+\_\+}{, }\item[{double}]{xmax\+\_\+}{, }\item[{double}]{ymin\+\_\+}{, }\item[{double}]{ymax\+\_\+}{, }\item[{double}]{zmin\+\_\+}{, }\item[{double}]{zmax\+\_\+}{, }\item[{\doxymbox{\hyperlink{struct_material}{Material}}}]{m}{}\end{DoxyParamCaption})}
+
+
+
+Construct a shielding volume from explicit axis-\/aligned bounds and a material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xmin} & Minimum x-\/coordinate of the shielding box (metres). \\
+\hline
+{\em xmax} & Maximum x-\/coordinate of the shielding box (metres). \\
+\hline
+{\em ymin} & Minimum y-\/coordinate of the shielding box (metres). \\
+\hline
+{\em ymax} & Maximum y-\/coordinate of the shielding box (metres). \\
+\hline
+{\em zmin} & Minimum z-\/coordinate of the shielding box (metres). \\
+\hline
+{\em zmax} & Maximum z-\/coordinate of the shielding box (metres). \\
+\hline
+{\em m} & \doxylink{struct_material}{Material} that fills the shielding volume. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+invalid\+\_\+argument} & if any min coordinate is greater than the corresponding max, or if min and max corners coincide (zero-\/volume box).\\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em xmin\+\_\+} & Minimum x-\/coordinate (metres). \\
+\hline
+{\em xmax\+\_\+} & Maximum x-\/coordinate (metres). \\
+\hline
+{\em ymin\+\_\+} & Minimum y-\/coordinate (metres). \\
+\hline
+{\em ymax\+\_\+} & Maximum y-\/coordinate (metres). \\
+\hline
+{\em zmin\+\_\+} & Minimum z-\/coordinate (metres). \\
+\hline
+{\em zmax\+\_\+} & Maximum z-\/coordinate (metres). \\
+\hline
+{\em m} & \doxylink{struct_material}{Material} that fills the volume. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+invalid\+\_\+argument} & if any min coordinate exceeds the corresponding max, or if the min and max corners are identical (zero-\/volume box). \\
+\hline
+\end{DoxyExceptions}
+
+
+\label{doc-func-members}
+\Hypertarget{class_shielding_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_shielding_a2b029bed5b783f4555e84dfac93d4496}\index{Shielding@{Shielding}!contains@{contains}}
+\index{contains@{contains}!Shielding@{Shielding}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily \label{class_shielding_a2b029bed5b783f4555e84dfac93d4496} 
+bool Shielding::\+contains (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_particle}{Particle}} \&}]{p}{}\end{DoxyParamCaption}) const}
+
+
+
+Test whether a particle is currently inside the shielding volume. 
+
+Test whether a particle is currently inside the shielding volume. Uses normalised coordinates relative to the bounding box extents.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The particle to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if {\ttfamily p} is within the shielding box, {\ttfamily false} otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The particle to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if all normalised coordinates of {\ttfamily p} are in \+[0, 1]\+, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
 \item 
-src/\+Shielding.\+h\item 
-src/\+Shielding.\+cpp\end{DoxyCompactItemize}
+src/\+\doxymbox{\hyperlink{_shielding_8h}{Shielding.\+h}}\item 
+src/\+\doxymbox{\hyperlink{_shielding_8cpp}{Shielding.\+cpp}}\end{DoxyCompactItemize}

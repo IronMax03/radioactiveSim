@@ -91,30 +91,154 @@ $(function(){initNavTree('d2/d47/class_r_o_i.html','../../','d2/de7/class_r_o_i-
   <div class="headertitle"><div class="title">ROI Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>An axis-aligned bounding box used to score particles entering the region.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d6/d79/_r_o_i_8h_source.html">ROI.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a67126028e1eeb8ba2ae4f9cc376dfedc" id="r_a67126028e1eeb8ba2ae4f9cc376dfedc"><td class="memItemLeft"><a id="a67126028e1eeb8ba2ae4f9cc376dfedc" name="a67126028e1eeb8ba2ae4f9cc376dfedc"></a>
-&#160;</td><td class="memItemRight"><b>ROI</b> (double xmin, double xmax, double ymin, double ymax, double zmin, double zmax)</td></tr>
-<tr class="memitem:a94668fb2b467f311e8f7d968df364bb1" id="r_a94668fb2b467f311e8f7d968df364bb1"><td class="memItemLeft"><a id="a94668fb2b467f311e8f7d968df364bb1" name="a94668fb2b467f311e8f7d968df364bb1"></a>
-bool&#160;</td><td class="memItemRight"><b>contains</b> (const <a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;p) const</td></tr>
-<tr class="memdesc:a94668fb2b467f311e8f7d968df364bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return True if the particle is inside the <a class="el" href="../../d2/d47/class_r_o_i.html">ROI</a>, False otherwise. <br /></td></tr>
-<tr class="memitem:a248ca15794b3c1b4d848325f2d2e1701" id="r_a248ca15794b3c1b4d848325f2d2e1701"><td class="memItemLeft"><a id="a248ca15794b3c1b4d848325f2d2e1701" name="a248ca15794b3c1b4d848325f2d2e1701"></a>
-void&#160;</td><td class="memItemRight"><b>score</b> (<a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;p)</td></tr>
-<tr class="memdesc:a248ca15794b3c1b4d848325f2d2e1701"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the particle is alive and inside the <a class="el" href="../../d2/d47/class_r_o_i.html">ROI</a>, increment the count and mark the particle as not alive anymore. <br /></td></tr>
+<tr class="memitem:a67126028e1eeb8ba2ae4f9cc376dfedc" id="r_a67126028e1eeb8ba2ae4f9cc376dfedc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a67126028e1eeb8ba2ae4f9cc376dfedc">ROI</a> (double xmin, double xmax, double ymin, double ymax, double zmin, double zmax)</td></tr>
+<tr class="memdesc:a67126028e1eeb8ba2ae4f9cc376dfedc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a> from explicit axis-aligned bounds.  <br /></td></tr>
+<tr class="memitem:a94668fb2b467f311e8f7d968df364bb1" id="r_a94668fb2b467f311e8f7d968df364bb1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a94668fb2b467f311e8f7d968df364bb1">contains</a> (const <a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;p) const</td></tr>
+<tr class="memdesc:a94668fb2b467f311e8f7d968df364bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether a particle is currently inside the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a>.  <br /></td></tr>
+<tr class="memitem:a248ca15794b3c1b4d848325f2d2e1701" id="r_a248ca15794b3c1b4d848325f2d2e1701"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a248ca15794b3c1b4d848325f2d2e1701">score</a> (<a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;p)</td></tr>
+<tr class="memdesc:a248ca15794b3c1b4d848325f2d2e1701"><td class="mdescLeft">&#160;</td><td class="mdescRight">Score a particle if it is alive and inside the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a>. Increments <code>count</code> and marks the particle as dead to prevent double-counting.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a24447cb999a1ba708da2fcb1e1e60b98" id="r_a24447cb999a1ba708da2fcb1e1e60b98"><td class="memItemLeft"><a id="a24447cb999a1ba708da2fcb1e1e60b98" name="a24447cb999a1ba708da2fcb1e1e60b98"></a>
 <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; double &gt;&#160;</td><td class="memItemRight"><b>min_corner</b></td></tr>
+<tr class="memdesc:a24447cb999a1ba708da2fcb1e1e60b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum corner of the axis-aligned bounding box (metres). <br /></td></tr>
 <tr class="memitem:a575c217b27c5a295365b2e4e694c7304" id="r_a575c217b27c5a295365b2e4e694c7304"><td class="memItemLeft"><a id="a575c217b27c5a295365b2e4e694c7304" name="a575c217b27c5a295365b2e4e694c7304"></a>
 <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; double &gt;&#160;</td><td class="memItemRight"><b>max_corner</b></td></tr>
+<tr class="memdesc:a575c217b27c5a295365b2e4e694c7304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum corner of the axis-aligned bounding box (metres). <br /></td></tr>
 <tr class="memitem:ac032cef5856b7bae56e87d28e4be2b16" id="r_ac032cef5856b7bae56e87d28e4be2b16"><td class="memItemLeft"><a id="ac032cef5856b7bae56e87d28e4be2b16" name="ac032cef5856b7bae56e87d28e4be2b16"></a>
 int&#160;</td><td class="memItemRight"><b>count</b></td></tr>
+<tr class="memdesc:ac032cef5856b7bae56e87d28e4be2b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cumulative count of particles scored inside this <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a>. <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An axis-aligned bounding box used to score particles entering the region. </p>
+<p>The <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a> counts each live <a class="el" href="../../de/d85/class_particle.html" title="Represents a single physical particle moving through the simulation domain.">Particle</a> that enters its volume and marks that particle as no longer alive so it is not counted more than once. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a67126028e1eeb8ba2ae4f9cc376dfedc" name="a67126028e1eeb8ba2ae4f9cc376dfedc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67126028e1eeb8ba2ae4f9cc376dfedc">&#9670;&#160;</a></span>ROI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROI::ROI </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>xmin_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>xmax_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ymin_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ymax_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>zmin_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>zmax_</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a> from explicit axis-aligned bounds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xmin</td><td>Minimum x-coordinate of the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a> (metres). </td></tr>
+    <tr><td class="paramname">xmax</td><td>Maximum x-coordinate of the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a> (metres). </td></tr>
+    <tr><td class="paramname">ymin</td><td>Minimum y-coordinate of the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a> (metres). </td></tr>
+    <tr><td class="paramname">ymax</td><td>Maximum y-coordinate of the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a> (metres). </td></tr>
+    <tr><td class="paramname">zmin</td><td>Minimum z-coordinate of the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a> (metres). </td></tr>
+    <tr><td class="paramname">zmax</td><td>Maximum z-coordinate of the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a> (metres).</td></tr>
+    <tr><td class="paramname">xmin_</td><td>Minimum x-coordinate (metres). </td></tr>
+    <tr><td class="paramname">xmax_</td><td>Maximum x-coordinate (metres). </td></tr>
+    <tr><td class="paramname">ymin_</td><td>Minimum y-coordinate (metres). </td></tr>
+    <tr><td class="paramname">ymax_</td><td>Maximum y-coordinate (metres). </td></tr>
+    <tr><td class="paramname">zmin_</td><td>Minimum z-coordinate (metres). </td></tr>
+    <tr><td class="paramname">zmax_</td><td>Maximum z-coordinate (metres). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a94668fb2b467f311e8f7d968df364bb1" name="a94668fb2b467f311e8f7d968df364bb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94668fb2b467f311e8f7d968df364bb1">&#9670;&#160;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ROI::contains </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test whether a particle is currently inside the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a>. </p>
+<p>Return True if the particle is inside the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a>, False otherwise.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The particle to test. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if <code class="param">p</code> is within the axis-aligned bounding box, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a248ca15794b3c1b4d848325f2d2e1701" name="a248ca15794b3c1b4d848325f2d2e1701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248ca15794b3c1b4d848325f2d2e1701">&#9670;&#160;</a></span>score()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ROI::score </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Score a particle if it is alive and inside the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a>. Increments <code>count</code> and marks the particle as dead to prevent double-counting. </p>
+<p>If the particle is alive and inside the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a>, increment the count and mark the particle as not alive anymore.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The particle to evaluate. Modified in-place if scored. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="../../d6/d79/_r_o_i_8h_source.html">ROI.h</a></li>
-<li>src/<b>ROI.cpp</b></li>
+<li>src/<a class="el" href="../../d1/d2f/_r_o_i_8cpp.html">ROI.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

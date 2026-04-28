@@ -1,32 +1,127 @@
 \doxysection{ROI Class Reference}
 \hypertarget{class_r_o_i}{}\label{class_r_o_i}\index{ROI@{ROI}}
+
+
+An axis-\/aligned bounding box used to score particles entering the region.  
+
+
+
+
+{\ttfamily \+\#include $<$ROI.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_r_o_i_a67126028e1eeb8ba2ae4f9cc376dfedc}\label{class_r_o_i_a67126028e1eeb8ba2ae4f9cc376dfedc} 
-{\bfseries ROI} (double xmin, double xmax, double ymin, double ymax, double zmin, double zmax)
-\item 
-\Hypertarget{class_r_o_i_a94668fb2b467f311e8f7d968df364bb1}\label{class_r_o_i_a94668fb2b467f311e8f7d968df364bb1} 
-bool {\bfseries contains} (const \doxymbox{\hyperlink{class_particle}{Particle}} \&p) const
-\begin{DoxyCompactList}\small\item\em Return True if the particle is inside the \doxylink{class_r_o_i}{ROI}, False otherwise. \end{DoxyCompactList}\item 
-\Hypertarget{class_r_o_i_a248ca15794b3c1b4d848325f2d2e1701}\label{class_r_o_i_a248ca15794b3c1b4d848325f2d2e1701} 
-void {\bfseries score} (\doxymbox{\hyperlink{class_particle}{Particle}} \&p)
-\begin{DoxyCompactList}\small\item\em If the particle is alive and inside the \doxylink{class_r_o_i}{ROI}, increment the count and mark the particle as not alive anymore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxymbox{\hyperlink{class_r_o_i_a67126028e1eeb8ba2ae4f9cc376dfedc}{ROI}} (double xmin, double xmax, double ymin, double ymax, double zmin, double zmax)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{class_r_o_i}{ROI} from explicit axis-\/aligned bounds. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_r_o_i_a94668fb2b467f311e8f7d968df364bb1}{contains}} (const \doxymbox{\hyperlink{class_particle}{Particle}} \&p) const
+\begin{DoxyCompactList}\small\item\em Test whether a particle is currently inside the \doxylink{class_r_o_i}{ROI}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_r_o_i_a248ca15794b3c1b4d848325f2d2e1701}{score}} (\doxymbox{\hyperlink{class_particle}{Particle}} \&p)
+\begin{DoxyCompactList}\small\item\em Score a particle if it is alive and inside the \doxylink{class_r_o_i}{ROI}. Increments {\ttfamily count} and marks the particle as dead to prevent double-\/counting. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_r_o_i_a24447cb999a1ba708da2fcb1e1e60b98}\label{class_r_o_i_a24447cb999a1ba708da2fcb1e1e60b98} 
 \doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries min\+\_\+corner}
-\item 
+\begin{DoxyCompactList}\small\item\em Minimum corner of the axis-\/aligned bounding box (metres). \end{DoxyCompactList}\item 
 \Hypertarget{class_r_o_i_a575c217b27c5a295365b2e4e694c7304}\label{class_r_o_i_a575c217b27c5a295365b2e4e694c7304} 
 \doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries max\+\_\+corner}
-\item 
+\begin{DoxyCompactList}\small\item\em Maximum corner of the axis-\/aligned bounding box (metres). \end{DoxyCompactList}\item 
 \Hypertarget{class_r_o_i_ac032cef5856b7bae56e87d28e4be2b16}\label{class_r_o_i_ac032cef5856b7bae56e87d28e4be2b16} 
 int {\bfseries count}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Cumulative count of particles scored inside this \doxylink{class_r_o_i}{ROI}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An axis-\/aligned bounding box used to score particles entering the region. 
+
+The \doxylink{class_r_o_i}{ROI} counts each live \doxylink{class_particle}{Particle} that enters its volume and marks that particle as no longer alive so it is not counted more than once. 
+
+\label{doc-constructors}
+\Hypertarget{class_r_o_i_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_r_o_i_a67126028e1eeb8ba2ae4f9cc376dfedc}\index{ROI@{ROI}!ROI@{ROI}}
+\index{ROI@{ROI}!ROI@{ROI}}
+\doxysubsubsection{\texorpdfstring{ROI()}{ROI()}}
+{\footnotesize\ttfamily \label{class_r_o_i_a67126028e1eeb8ba2ae4f9cc376dfedc} 
+ROI::\+\+ROI (\begin{DoxyParamCaption}\item[{double}]{xmin\+\_\+}{, }\item[{double}]{xmax\+\_\+}{, }\item[{double}]{ymin\+\_\+}{, }\item[{double}]{ymax\+\_\+}{, }\item[{double}]{zmin\+\_\+}{, }\item[{double}]{zmax\+\_\+}{}\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{class_r_o_i}{ROI} from explicit axis-\/aligned bounds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xmin} & Minimum x-\/coordinate of the \doxylink{class_r_o_i}{ROI} (metres). \\
+\hline
+{\em xmax} & Maximum x-\/coordinate of the \doxylink{class_r_o_i}{ROI} (metres). \\
+\hline
+{\em ymin} & Minimum y-\/coordinate of the \doxylink{class_r_o_i}{ROI} (metres). \\
+\hline
+{\em ymax} & Maximum y-\/coordinate of the \doxylink{class_r_o_i}{ROI} (metres). \\
+\hline
+{\em zmin} & Minimum z-\/coordinate of the \doxylink{class_r_o_i}{ROI} (metres). \\
+\hline
+{\em zmax} & Maximum z-\/coordinate of the \doxylink{class_r_o_i}{ROI} (metres).\\
+\hline
+{\em xmin\+\_\+} & Minimum x-\/coordinate (metres). \\
+\hline
+{\em xmax\+\_\+} & Maximum x-\/coordinate (metres). \\
+\hline
+{\em ymin\+\_\+} & Minimum y-\/coordinate (metres). \\
+\hline
+{\em ymax\+\_\+} & Maximum y-\/coordinate (metres). \\
+\hline
+{\em zmin\+\_\+} & Minimum z-\/coordinate (metres). \\
+\hline
+{\em zmax\+\_\+} & Maximum z-\/coordinate (metres). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_r_o_i_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_r_o_i_a94668fb2b467f311e8f7d968df364bb1}\index{ROI@{ROI}!contains@{contains}}
+\index{contains@{contains}!ROI@{ROI}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily \label{class_r_o_i_a94668fb2b467f311e8f7d968df364bb1} 
+bool ROI::\+contains (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_particle}{Particle}} \&}]{p}{}\end{DoxyParamCaption}) const}
+
+
+
+Test whether a particle is currently inside the \doxylink{class_r_o_i}{ROI}. 
+
+Return True if the particle is inside the \doxylink{class_r_o_i}{ROI}, False otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The particle to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if {\ttfamily p} is within the axis-\/aligned bounding box, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_r_o_i_a248ca15794b3c1b4d848325f2d2e1701}\index{ROI@{ROI}!score@{score}}
+\index{score@{score}!ROI@{ROI}}
+\doxysubsubsection{\texorpdfstring{score()}{score()}}
+{\footnotesize\ttfamily \label{class_r_o_i_a248ca15794b3c1b4d848325f2d2e1701} 
+void ROI::\+score (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_particle}{Particle}} \&}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Score a particle if it is alive and inside the \doxylink{class_r_o_i}{ROI}. Increments {\ttfamily count} and marks the particle as dead to prevent double-\/counting. 
+
+If the particle is alive and inside the \doxylink{class_r_o_i}{ROI}, increment the count and mark the particle as not alive anymore.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The particle to evaluate. Modified in-\/place if scored. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
 \item 
-src/\+ROI.\+h\item 
-src/\+ROI.\+cpp\end{DoxyCompactItemize}
+src/\+\doxymbox{\hyperlink{_r_o_i_8h}{ROI.\+h}}\item 
+src/\+\doxymbox{\hyperlink{_r_o_i_8cpp}{ROI.\+cpp}}\end{DoxyCompactItemize}

@@ -25,16 +25,25 @@ public:
     /// @brief Z-coordinate of the source position (metres).
     double z;
 
-    /// @brief Number of particles emitted per time step.
+    /// @brief Number of particles emitted per time step (at t = 0).
     int rate;
+
+    /// @brief Radioactive half-life in time steps.
+    ///        After @c half_life steps the effective emission rate halves.
+    ///        Defaults to @c 1e9 (essentially no decay).
+    double half_life;
+
+    /// @brief Internal step counter (mutable so emit() can stay logically const).
+    mutable int steps_elapsed = 0;
 
     /// @brief Construct a source at a given position with a given emission rate.
     /// @param x    X-coordinate of the source (metres).
     /// @param y    Y-coordinate of the source (metres).
     /// @param z    Z-coordinate of the source (metres).
     /// @param rate Number of particles to emit per time step. Must be positive.
+    /// @param half_life Decay half-life in time steps (default: effectively infinite).
     Source(double x, double y, double z,
-           int rate);
+           int rate, double half_life = 1e9);
 
     /// @brief Emit one batch of particles for the current time step.
     ///        The number of particles returned equals @c rate.

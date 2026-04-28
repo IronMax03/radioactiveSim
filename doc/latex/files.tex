@@ -1,17 +1,24 @@
 \doxysection{File List}
 Here is a list of all documented files with brief descriptions:\+\begin{DoxyCompactList}
-\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_box_8hpp}{Box.\+hpp}} \\*Defines the \doxylink{class_box}{Box} class representing a 3D box in space, used for shielding and geometry output }{\pageref{_box_8hpp}}{}
-\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_geometry_output_8h_source}{Geometry\+Output.\+h}} }{\pageref{_geometry_output_8h_source}}{}
-\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_material_8h_source}{Material.\+h}} }{\pageref{_material_8h_source}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_box_8h_source}{Box.\+h}} }{\pageref{_box_8h_source}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_geometry_output_8cpp}{Geometry\+Output.\+cpp}} \\*Implementation of geometry output utilities:\+ VTP mesh writing and global bounding-\/box particle culling }{\pageref{_geometry_output_8cpp}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_geometry_output_8h}{Geometry\+Output.\+h}} \\*Declarations for geometry output utilities:\+ writing bounding-\/box meshes in VTP format and enforcing the simulation domain boundary }{\pageref{_geometry_output_8h}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{main_8cpp}{main.\+cpp}} \\*Entry point for the radioactive particle transport simulation }{\pageref{main_8cpp}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_material_8h}{Material.\+h}} \\*Declaration of the \doxylink{struct_material}{Material} struct, which describes the physical properties of a shielding material relevant to particle attenuation }{\pageref{_material_8h}}{}
 \item\contentsline{section}{src/\+\doxymbox{\hyperlink{_octree_8cpp}{Octree.\+cpp}} \\*This file contains the implementation of the \doxylink{class_octree}{Octree} class and its member functions }{\pageref{_octree_8cpp}}{}
 \item\contentsline{section}{src/\+\doxymbox{\hyperlink{_octree_8h}{Octree.\+h}} \\*This file contains the definition of the \doxylink{class_octree}{Octree} class and \doxylink{structlazy__node}{lazy\+\_\+node} }{\pageref{_octree_8h}}{}
-\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_output_8h_source}{Output.\+h}} }{\pageref{_output_8h_source}}{}
-\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_particle_8cpp}{Particle.\+cpp}} \\*This file contains the implementation of the \doxylink{class_particle}{Particle} class methods }{\pageref{_particle_8cpp}}{}
-\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_particle_8h_source}{Particle.\+h}} }{\pageref{_particle_8h_source}}{}
-\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_r_o_i_8h_source}{ROI.\+h}} }{\pageref{_r_o_i_8h_source}}{}
-\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_shielding_8h_source}{Shielding.\+h}} }{\pageref{_shielding_8h_source}}{}
-\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_simulation_8h_source}{Simulation.\+h}} }{\pageref{_simulation_8h_source}}{}
-\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_source_8h_source}{Source.\+h}} }{\pageref{_source_8h_source}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_output_8cpp}{Output.\+cpp}} \\*Implementation of CSV output utilities for particle state persistence }{\pageref{_output_8cpp}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_output_8h}{Output.\+h}} \\*Declarations for CSV output utilities used to persist particle state }{\pageref{_output_8h}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_particle_8cpp}{Particle.\+cpp}} \\*Implementation of the \doxylink{class_particle}{Particle} class methods }{\pageref{_particle_8cpp}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_particle_8h}{Particle.\+h}} \\*Declaration of the \doxylink{class_particle}{Particle} class, representing a physical particle (e.\+g. proton or neutron) tracked throughout the simulation }{\pageref{_particle_8h}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_r_o_i_8cpp}{ROI.\+cpp}} \\*Implementation of the \doxylink{class_r_o_i}{ROI} (Region Of Interest) class methods }{\pageref{_r_o_i_8cpp}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_r_o_i_8h}{ROI.\+h}} \\*Declaration of the \doxylink{class_r_o_i}{ROI} (Region Of Interest) class, which defines an axis-\/aligned box used to score particles that pass through it }{\pageref{_r_o_i_8h}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_shielding_8cpp}{Shielding.\+cpp}} \\*Implementation of the \doxylink{class_shielding}{Shielding} class methods }{\pageref{_shielding_8cpp}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_shielding_8h}{Shielding.\+h}} \\*Declaration of the \doxylink{class_shielding}{Shielding} class, which models an axis-\/aligned rectangular shielding volume filled with a given material }{\pageref{_shielding_8h}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_simulation_8cpp}{Simulation.\+cpp}} \\*Implementation of the \doxylink{class_simulation}{Simulation} class methods }{\pageref{_simulation_8cpp}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_simulation_8h}{Simulation.\+h}} \\*Declaration of the \doxylink{class_simulation}{Simulation} class, which orchestrates the full radioactive particle transport simulation }{\pageref{_simulation_8h}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_source_8cpp}{Source.\+cpp}} \\*Implementation of the \doxylink{class_source}{Source} class methods }{\pageref{_source_8cpp}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{_source_8h}{Source.\+h}} \\*Declaration of the \doxylink{class_source}{Source} class, which models a radioactive point source that emits particles isotropically at a configurable rate }{\pageref{_source_8h}}{}
 \item\contentsline{section}{src/\+\doxymbox{\hyperlink{test_8cpp}{test.\+cpp}} \\*This file contains unit tests for the utility functions and data structures used in the simulation }{\pageref{test_8cpp}}{}
-\item\contentsline{section}{src/\+\doxymbox{\hyperlink{utils_8h_source}{utils.\+h}} }{\pageref{utils_8h_source}}{}
+\item\contentsline{section}{src/\+\doxymbox{\hyperlink{utils_8h}{utils.\+h}} \\*Utility types and functions shared across the simulation }{\pageref{utils_8h}}{}
 \end{DoxyCompactList}

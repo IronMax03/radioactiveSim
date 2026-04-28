@@ -1,32 +1,110 @@
 \doxysection{Source Class Reference}
 \hypertarget{class_source}{}\label{class_source}\index{Source@{Source}}
+
+
+Models a radioactive point source that emits particles every time step.  
+
+
+
+
+{\ttfamily \+\#include $<$Source.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_source_a285cd103a60c84b992940280c9f5dcf7}\label{class_source_a285cd103a60c84b992940280c9f5dcf7} 
-{\bfseries Source} (double x, double y, double z, int rate)
-\item 
-\Hypertarget{class_source_a4e866367450b565fcc29078878018759}\label{class_source_a4e866367450b565fcc29078878018759} 
-std::\+vector$<$ \doxymbox{\hyperlink{class_particle}{Particle}} $>$ {\bfseries emit} () const
-\end{DoxyCompactItemize}
+\doxymbox{\hyperlink{class_source_af7bb98b31a1c16a819cd31b332742cb5}{Source}} (double \doxymbox{\hyperlink{class_source_ae0e7e5bfd8c3116d91e6015fe2d8a7bd}{x}}, double \doxymbox{\hyperlink{class_source_ae72db92a96c217019d06cab995b93d7b}{y}}, double \doxymbox{\hyperlink{class_source_ac9ce9f792814763198e8f9f778950b00}{z}}, int \doxymbox{\hyperlink{class_source_a906290ff71b92466c193b08633e19ae9}{rate}}, double \doxymbox{\hyperlink{class_source_a5beaff1c1f283a9a13b03a1862c68ad8}{half\+\_\+life}}=1e9)
+\begin{DoxyCompactList}\small\item\em Construct a source at a given position with a given emission rate. \end{DoxyCompactList}\item 
+std::\+vector$<$ \doxymbox{\hyperlink{class_particle}{Particle}} $>$ \doxymbox{\hyperlink{class_source_a4e866367450b565fcc29078878018759}{emit}} () const
+\begin{DoxyCompactList}\small\item\em Emit one batch of particles for the current time step. The number of particles returned equals {\ttfamily rate}. Each particle\textquotesingle{}s direction and speed are sampled from normal distributions, and its type is chosen randomly (75 \% proton, 25 \% neutron). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_source_ae0e7e5bfd8c3116d91e6015fe2d8a7bd}\label{class_source_ae0e7e5bfd8c3116d91e6015fe2d8a7bd} 
 double {\bfseries x}
-\item 
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the source position (metres). \end{DoxyCompactList}\item 
 \Hypertarget{class_source_ae72db92a96c217019d06cab995b93d7b}\label{class_source_ae72db92a96c217019d06cab995b93d7b} 
 double {\bfseries y}
-\item 
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the source position (metres). \end{DoxyCompactList}\item 
 \Hypertarget{class_source_ac9ce9f792814763198e8f9f778950b00}\label{class_source_ac9ce9f792814763198e8f9f778950b00} 
 double {\bfseries z}
-\item 
+\begin{DoxyCompactList}\small\item\em Z-\/coordinate of the source position (metres). \end{DoxyCompactList}\item 
 \Hypertarget{class_source_a906290ff71b92466c193b08633e19ae9}\label{class_source_a906290ff71b92466c193b08633e19ae9} 
 int {\bfseries rate}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Number of particles emitted per time step (at t = 0). \end{DoxyCompactList}\item 
+\Hypertarget{class_source_a5beaff1c1f283a9a13b03a1862c68ad8}\label{class_source_a5beaff1c1f283a9a13b03a1862c68ad8} 
+double {\bfseries half\+\_\+life}
+\begin{DoxyCompactList}\small\item\em Radioactive half-\/life in time steps. After {\ttfamily half\+\_\+life} steps the effective emission rate halves. Defaults to {\ttfamily 1e9} (essentially no decay). \end{DoxyCompactList}\item 
+\Hypertarget{class_source_acc4ad938c2f92302e307f847e6ca3500}\label{class_source_acc4ad938c2f92302e307f847e6ca3500} 
+int {\bfseries steps\+\_\+elapsed} = 0
+\begin{DoxyCompactList}\small\item\em Internal step counter (mutable so \doxylink{class_source_a4e866367450b565fcc29078878018759}{emit()} can stay logically const). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Models a radioactive point source that emits particles every time step. 
+
+The source is located at a fixed 3-\/D position and emits a given number of particles per time step. Each emitted particle has a randomised direction and speed drawn from statistical distributions, and its type (proton or neutron) is chosen randomly with a 3:\+1 proton-\/to-\/neutron ratio. 
+
+\label{doc-constructors}
+\Hypertarget{class_source_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_source_af7bb98b31a1c16a819cd31b332742cb5}\index{Source@{Source}!Source@{Source}}
+\index{Source@{Source}!Source@{Source}}
+\doxysubsubsection{\texorpdfstring{Source()}{Source()}}
+{\footnotesize\ttfamily \label{class_source_af7bb98b31a1c16a819cd31b332742cb5} 
+Source::\+\+Source (\begin{DoxyParamCaption}\item[{double}]{x\+\_\+}{, }\item[{double}]{y\+\_\+}{, }\item[{double}]{z\+\_\+}{, }\item[{int}]{rate\+\_\+}{, }\item[{double}]{half\+\_\+life\+\_\+}{ = {\ttfamily 1e9}}\end{DoxyParamCaption})}
+
+
+
+Construct a source at a given position with a given emission rate. 
+
+Construct a source at the specified position with the given emission rate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{class_source_ae0e7e5bfd8c3116d91e6015fe2d8a7bd}{x}} & X-\/coordinate of the source (metres). \\
+\hline
+{\em \doxylink{class_source_ae72db92a96c217019d06cab995b93d7b}{y}} & Y-\/coordinate of the source (metres). \\
+\hline
+{\em \doxylink{class_source_ac9ce9f792814763198e8f9f778950b00}{z}} & Z-\/coordinate of the source (metres). \\
+\hline
+{\em \doxylink{class_source_a906290ff71b92466c193b08633e19ae9}{rate}} & Number of particles to emit per time step. Must be positive. \\
+\hline
+{\em \doxylink{class_source_a5beaff1c1f283a9a13b03a1862c68ad8}{half\+\_\+life}} & Decay half-\/life in time steps (default:\+ effectively infinite).\\
+\hline
+{\em x\+\_\+} & X-\/coordinate of the source (metres). \\
+\hline
+{\em y\+\_\+} & Y-\/coordinate of the source (metres). \\
+\hline
+{\em z\+\_\+} & Z-\/coordinate of the source (metres). \\
+\hline
+{\em rate\+\_\+} & Number of particles to emit per time step. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_source_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_source_a4e866367450b565fcc29078878018759}\index{Source@{Source}!emit@{emit}}
+\index{emit@{emit}!Source@{Source}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily \label{class_source_a4e866367450b565fcc29078878018759} 
+std::\+vector$<$ \doxymbox{\hyperlink{class_particle}{Particle}} $>$ Source::\+emit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Emit one batch of particles for the current time step. The number of particles returned equals {\ttfamily rate}. Each particle\textquotesingle{}s direction and speed are sampled from normal distributions, and its type is chosen randomly (75 \% proton, 25 \% neutron). 
+
+Emit one batch of particles for the current time step. Direction angles (theta, phi) and speed norm are drawn from normal distributions to produce a realistic, slightly spread-\/out beam. \doxylink{class_particle}{Particle} type is chosen randomly:\+ 75 \% proton, 25 \% neutron.
+
+\begin{DoxyReturn}{Returns}
+A vector containing the newly emitted \doxylink{class_particle}{Particle} objects.
+
+A vector of {\ttfamily rate} newly created \doxylink{class_particle}{Particle} objects, all originating from the source position. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
 \item 
-src/\+Source.\+h\item 
-src/\+Source.\+cpp\end{DoxyCompactItemize}
+src/\+\doxymbox{\hyperlink{_source_8h}{Source.\+h}}\item 
+src/\+\doxymbox{\hyperlink{_source_8cpp}{Source.\+cpp}}\end{DoxyCompactItemize}

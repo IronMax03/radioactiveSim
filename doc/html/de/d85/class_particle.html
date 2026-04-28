@@ -91,35 +91,241 @@ $(function(){initNavTree('de/d85/class_particle.html','../../','df/de0/class_par
   <div class="headertitle"><div class="title">Particle Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a single physical particle moving through the simulation domain.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d4/d15/_particle_8h_source.html">Particle.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2ee948a7db884d814a6a5971a45dd2ca" id="r_a2ee948a7db884d814a6a5971a45dd2ca"><td class="memItemLeft"><a id="a2ee948a7db884d814a6a5971a45dd2ca" name="a2ee948a7db884d814a6a5971a45dd2ca"></a>
-&#160;</td><td class="memItemRight"><b>Particle</b> (double x, double y, double z, double vx, double vy, double vz, std::string type)</td></tr>
-<tr class="memitem:acf830f9e25ec182d6a39f04d705b41ba" id="r_acf830f9e25ec182d6a39f04d705b41ba"><td class="memItemLeft"><a id="acf830f9e25ec182d6a39f04d705b41ba" name="acf830f9e25ec182d6a39f04d705b41ba"></a>
-&#160;</td><td class="memItemRight"><b>Particle</b> (double x, double y, double z, double vx, double vy, double vz, double m, int ec, std::string type)</td></tr>
+<tr class="memitem:a40f4c7e248029d72e7714b7802d5e5e1" id="r_a40f4c7e248029d72e7714b7802d5e5e1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a40f4c7e248029d72e7714b7802d5e5e1">Particle</a> ()</td></tr>
+<tr class="memdesc:a40f4c7e248029d72e7714b7802d5e5e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Creates a stationary, uncharged, dead particle at the origin.  <br /></td></tr>
+<tr class="memitem:a2ee948a7db884d814a6a5971a45dd2ca" id="r_a2ee948a7db884d814a6a5971a45dd2ca"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2ee948a7db884d814a6a5971a45dd2ca">Particle</a> (double x, double y, double z, double vx, double vy, double vz, std::string <a class="el" href="#ac5b51d11f535f3b806fff965414e0410">type</a>)</td></tr>
+<tr class="memdesc:a2ee948a7db884d814a6a5971a45dd2ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a particle with position, velocity, and type. Mass and electric charge are inferred from <code class="param">type</code>.  <br /></td></tr>
+<tr class="memitem:acf830f9e25ec182d6a39f04d705b41ba" id="r_acf830f9e25ec182d6a39f04d705b41ba"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acf830f9e25ec182d6a39f04d705b41ba">Particle</a> (double x, double y, double z, double vx, double vy, double vz, double m, int ec, std::string <a class="el" href="#ac5b51d11f535f3b806fff965414e0410">type</a>)</td></tr>
+<tr class="memdesc:acf830f9e25ec182d6a39f04d705b41ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a particle with position, velocity, explicit mass, charge, and type.  <br /></td></tr>
 <tr class="memitem:a952cf3e369a2580bf0f56545f4577171" id="r_a952cf3e369a2580bf0f56545f4577171"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a952cf3e369a2580bf0f56545f4577171">move</a> (double dt)</td></tr>
-<tr class="memdesc:a952cf3e369a2580bf0f56545f4577171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the particle by updating its position and velocity based on its acceleration and the time step dt.  <br /></td></tr>
+<tr class="memdesc:a952cf3e369a2580bf0f56545f4577171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the particle by one time step <code class="param">dt</code>. Updates velocity from acceleration, then position from velocity.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a62e09cb8b75fc0e83472779dbcf097e5" id="r_a62e09cb8b75fc0e83472779dbcf097e5"><td class="memItemLeft"><a id="a62e09cb8b75fc0e83472779dbcf097e5" name="a62e09cb8b75fc0e83472779dbcf097e5"></a>
 <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; double &gt;&#160;</td><td class="memItemRight"><b>position</b></td></tr>
+<tr class="memdesc:a62e09cb8b75fc0e83472779dbcf097e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current 3-D position of the particle (metres). <br /></td></tr>
 <tr class="memitem:a3118c47b933c96ab93b7d49eb7cc79a4" id="r_a3118c47b933c96ab93b7d49eb7cc79a4"><td class="memItemLeft"><a id="a3118c47b933c96ab93b7d49eb7cc79a4" name="a3118c47b933c96ab93b7d49eb7cc79a4"></a>
 <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; double &gt;&#160;</td><td class="memItemRight"><b>velocity</b></td></tr>
+<tr class="memdesc:a3118c47b933c96ab93b7d49eb7cc79a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current 3-D velocity of the particle (metres per second). <br /></td></tr>
 <tr class="memitem:ad8f5fb3077746ec9034c4e57f164b44e" id="r_ad8f5fb3077746ec9034c4e57f164b44e"><td class="memItemLeft"><a id="ad8f5fb3077746ec9034c4e57f164b44e" name="ad8f5fb3077746ec9034c4e57f164b44e"></a>
 <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; double &gt;&#160;</td><td class="memItemRight"><b>acceleration</b></td></tr>
+<tr class="memdesc:ad8f5fb3077746ec9034c4e57f164b44e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current 3-D acceleration of the particle (metres per second squared). <br /></td></tr>
 <tr class="memitem:ae6d46dc24a6666d526f211151fecca5f" id="r_ae6d46dc24a6666d526f211151fecca5f"><td class="memItemLeft"><a id="ae6d46dc24a6666d526f211151fecca5f" name="ae6d46dc24a6666d526f211151fecca5f"></a>
 double&#160;</td><td class="memItemRight"><b>mass</b></td></tr>
+<tr class="memdesc:ae6d46dc24a6666d526f211151fecca5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mass of the particle expressed in units of proton mass. <br /></td></tr>
 <tr class="memitem:ae90740a152e14b96632dd9c3fc631f3b" id="r_ae90740a152e14b96632dd9c3fc631f3b"><td class="memItemLeft"><a id="ae90740a152e14b96632dd9c3fc631f3b" name="ae90740a152e14b96632dd9c3fc631f3b"></a>
 int&#160;</td><td class="memItemRight"><b>electric_charge</b></td></tr>
+<tr class="memdesc:ae90740a152e14b96632dd9c3fc631f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Electric charge of the particle in coulomb units (integer). <br /></td></tr>
 <tr class="memitem:ac5b51d11f535f3b806fff965414e0410" id="r_ac5b51d11f535f3b806fff965414e0410"><td class="memItemLeft"><a id="ac5b51d11f535f3b806fff965414e0410" name="ac5b51d11f535f3b806fff965414e0410"></a>
 std::string&#160;</td><td class="memItemRight"><b>type</b></td></tr>
+<tr class="memdesc:ac5b51d11f535f3b806fff965414e0410"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/d85/class_particle.html" title="Represents a single physical particle moving through the simulation domain.">Particle</a> species identifier (e.g. <code>"proton"</code> or <code>"neutron"</code>). <br /></td></tr>
 <tr class="memitem:a94a340bb5ba69aa7ce14dac62c88a0ee" id="r_a94a340bb5ba69aa7ce14dac62c88a0ee"><td class="memItemLeft"><a id="a94a340bb5ba69aa7ce14dac62c88a0ee" name="a94a340bb5ba69aa7ce14dac62c88a0ee"></a>
 double&#160;</td><td class="memItemRight"><b>distance_in_shield</b></td></tr>
+<tr class="memdesc:a94a340bb5ba69aa7ce14dac62c88a0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cumulative distance the particle has travelled inside a shielding volume (metres). <br /></td></tr>
 <tr class="memitem:affebffa1e11f05041c9c46e8b684275b" id="r_affebffa1e11f05041c9c46e8b684275b"><td class="memItemLeft"><a id="affebffa1e11f05041c9c46e8b684275b" name="affebffa1e11f05041c9c46e8b684275b"></a>
 bool&#160;</td><td class="memItemRight"><b>alive</b></td></tr>
+<tr class="memdesc:affebffa1e11f05041c9c46e8b684275b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the particle is still active in the simulation. Set to <code>false</code> once the particle is absorbed or leaves the domain. <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a single physical particle moving through the simulation domain. </p>
+<p>A <a class="el" href="../../de/d85/class_particle.html" title="Represents a single physical particle moving through the simulation domain.">Particle</a> carries kinematic state (position, velocity, acceleration), physical properties (mass, electric charge, type), and bookkeeping information used by the simulation loop (distance travelled inside a shield, alive flag). </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a40f4c7e248029d72e7714b7802d5e5e1" name="a40f4c7e248029d72e7714b7802d5e5e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f4c7e248029d72e7714b7802d5e5e1">&#9670;&#160;</a></span>Particle() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Particle::Particle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default constructor. Creates a stationary, uncharged, dead particle at the origin. </p>
+<p>Default constructor. Initialises all kinematic fields to zero and marks the particle as dead. </p>
+
+</div>
+</div>
+<a id="a2ee948a7db884d814a6a5971a45dd2ca" name="a2ee948a7db884d814a6a5971a45dd2ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ee948a7db884d814a6a5971a45dd2ca">&#9670;&#160;</a></span>Particle() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Particle::Particle </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>y_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>z_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>vx_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>vy_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>vz_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a particle with position, velocity, and type. Mass and electric charge are inferred from <code class="param">type</code>. </p>
+<p>Construct a particle from position, velocity, and type string. Mass and electric charge are inferred automatically from <code class="param">t</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Initial x-coordinate (metres). </td></tr>
+    <tr><td class="paramname">y</td><td>Initial y-coordinate (metres). </td></tr>
+    <tr><td class="paramname">z</td><td>Initial z-coordinate (metres). </td></tr>
+    <tr><td class="paramname">vx</td><td>Initial x-component of velocity (m/s). </td></tr>
+    <tr><td class="paramname">vy</td><td>Initial y-component of velocity (m/s). </td></tr>
+    <tr><td class="paramname">vz</td><td>Initial z-component of velocity (m/s). </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ac5b51d11f535f3b806fff965414e0410" title="Particle species identifier (e.g. &quot;proton&quot; or &quot;neutron&quot;).">type</a></td><td><a class="el" href="../../de/d85/class_particle.html" title="Represents a single physical particle moving through the simulation domain.">Particle</a> species. Accepted values: <code>"proton"</code>, <code>"neutron"</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if <code class="param">type</code> is not a recognised particle species.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x_</td><td>Initial x-coordinate. </td></tr>
+    <tr><td class="paramname">y_</td><td>Initial y-coordinate. </td></tr>
+    <tr><td class="paramname">z_</td><td>Initial z-coordinate. </td></tr>
+    <tr><td class="paramname">vx_</td><td>Initial x-component of velocity. </td></tr>
+    <tr><td class="paramname">vy_</td><td>Initial y-component of velocity. </td></tr>
+    <tr><td class="paramname">vz_</td><td>Initial z-component of velocity. </td></tr>
+    <tr><td class="paramname">t</td><td><a class="el" href="../../de/d85/class_particle.html" title="Represents a single physical particle moving through the simulation domain.">Particle</a> type string. Accepted values: <code>"proton"</code>, <code>"neutron"</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if <code class="param">t</code> is not a recognised particle type. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acf830f9e25ec182d6a39f04d705b41ba" name="acf830f9e25ec182d6a39f04d705b41ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf830f9e25ec182d6a39f04d705b41ba">&#9670;&#160;</a></span>Particle() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Particle::Particle </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>y_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>z_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>vx_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>vy_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>vz_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>m</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ec</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a particle with position, velocity, explicit mass, charge, and type. </p>
+<p>Construct a particle with explicitly provided mass, charge, and type.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Initial x-coordinate (metres). </td></tr>
+    <tr><td class="paramname">y</td><td>Initial y-coordinate (metres). </td></tr>
+    <tr><td class="paramname">z</td><td>Initial z-coordinate (metres). </td></tr>
+    <tr><td class="paramname">vx</td><td>Initial x-component of velocity (m/s). </td></tr>
+    <tr><td class="paramname">vy</td><td>Initial y-component of velocity (m/s). </td></tr>
+    <tr><td class="paramname">vz</td><td>Initial z-component of velocity (m/s). </td></tr>
+    <tr><td class="paramname">m</td><td>Mass in units of proton mass. </td></tr>
+    <tr><td class="paramname">ec</td><td>Electric charge in coulomb units. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ac5b51d11f535f3b806fff965414e0410" title="Particle species identifier (e.g. &quot;proton&quot; or &quot;neutron&quot;).">type</a></td><td><a class="el" href="../../de/d85/class_particle.html" title="Represents a single physical particle moving through the simulation domain.">Particle</a> species label.</td></tr>
+    <tr><td class="paramname">x_</td><td>Initial x-coordinate. </td></tr>
+    <tr><td class="paramname">y_</td><td>Initial y-coordinate. </td></tr>
+    <tr><td class="paramname">z_</td><td>Initial z-coordinate. </td></tr>
+    <tr><td class="paramname">vx_</td><td>Initial x-component of velocity. </td></tr>
+    <tr><td class="paramname">vy_</td><td>Initial y-component of velocity. </td></tr>
+    <tr><td class="paramname">vz_</td><td>Initial z-component of velocity. </td></tr>
+    <tr><td class="paramname">m</td><td>Mass in units of proton mass. </td></tr>
+    <tr><td class="paramname">ec</td><td>Electric charge in coulomb units. </td></tr>
+    <tr><td class="paramname">t</td><td><a class="el" href="../../de/d85/class_particle.html" title="Represents a single physical particle moving through the simulation domain.">Particle</a> type label. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a952cf3e369a2580bf0f56545f4577171" name="a952cf3e369a2580bf0f56545f4577171"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a952cf3e369a2580bf0f56545f4577171">&#9670;&#160;</a></span>move()</h2>
@@ -136,7 +342,20 @@ bool&#160;</td><td class="memItemRight"><b>alive</b></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Move the particle by updating its position and velocity based on its acceleration and the time step dt. </p>
+<p>Advance the particle by one time step <code class="param">dt</code>. Updates velocity from acceleration, then position from velocity. </p>
+<p>Move the particle by updating its position and velocity based on its acceleration and the time step dt.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Time step duration (seconds). Must be strictly positive. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if <code class="param">dt</code> is less than or equal to zero.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dt</td><td>The time step to move the particle. Must be positive and not equal to zero. </td></tr>

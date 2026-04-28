@@ -1,26 +1,30 @@
 \doxysection{Shielding.\+h}
 \hypertarget{_shielding_8h_source}{}\label{_shielding_8h_source}\index{src/Shielding.h@{src/Shielding.h}}
-
+\doxymbox{\hyperlink{_shielding_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Material.h"{}}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Particle.h"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_box_8hpp}{Box.hpp}}"{}}}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }Shielding\ \{}
-\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//double\ xmin,\ xmax,\ ymin,\ ymax,\ zmin,\ zmax;}}
-\DoxyCodeLine{00010\ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3<double>}}\ min\_corner;}
-\DoxyCodeLine{00011\ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3<double>}}\ max\_corner;}
-\DoxyCodeLine{00012\ \ \ \ \ \doxymbox{\hyperlink{struct_material}{Material}}\ material;}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \ \ \ \ Shielding(\textcolor{keywordtype}{double}\ xmin,\ \textcolor{keywordtype}{double}\ xmax,}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ymin,\ \textcolor{keywordtype}{double}\ ymax,}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ zmin,\ \textcolor{keywordtype}{double}\ zmax,}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_material}{Material}}\ m);}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ contains(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_particle}{Particle}}\&\ p)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_material_8h}{Material.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_particle_8h}{Particle.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Box.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_shielding_aefdc50abf3bf18a7371fcd3cbbb047df}{Shielding}}\ }
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3<double>}}\ \doxymbox{\hyperlink{class_shielding_a05deacaaaa9bbcac807e2658e0331fdd}{min\_corner}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3<double>}}\ \doxymbox{\hyperlink{class_shielding_aeb953127c23574c017ddfdca4d805052}{max\_corner}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ \doxymbox{\hyperlink{struct_material}{Material}}\ \doxymbox{\hyperlink{class_shielding_a46b89d3cc4f457e0e75b68469c79ab03}{material}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00037\ \ \ \ \ \doxymbox{\hyperlink{class_shielding_aefdc50abf3bf18a7371fcd3cbbb047df}{Shielding}}(\textcolor{keywordtype}{double}\ xmin,\ \textcolor{keywordtype}{double}\ xmax,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ymin,\ \textcolor{keywordtype}{double}\ ymax,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ zmin,\ \textcolor{keywordtype}{double}\ zmax,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_material}{Material}}\ m);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_shielding_a2b029bed5b783f4555e84dfac93d4496}{contains}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_particle}{Particle}}\&\ p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \};}
 
 \end{DoxyCode}

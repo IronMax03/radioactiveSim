@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['norm_0',['norm',['../dd/d53/structvector3.html#a4405b7efa1f89f60923c4008647c9be0',1,'vector3']]],
-  ['normalize_1',['normalize',['../dd/d53/structvector3.html#aa5916ec6ffe3ad4b5143261669108557',1,'vector3']]],
-  ['nt_2',['nt',['../d4/da8/_octree_8h.html#a837d9894112773d3fda9ee117ebe0a42',1,'Octree.h']]]
+  ['lazy_5fnode_0',['lazy_node',['../dd/d85/structlazy__node.html',1,'']]],
+  ['lazy_5fnode_3c_20nt_20_3e_1',['lazy_node&lt; nt &gt;',['../dd/d85/structlazy__node.html',1,'']]]
 ];

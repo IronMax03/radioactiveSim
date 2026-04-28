@@ -99,22 +99,61 @@ $(function(){initNavTree('de/da5/class_octree.html','../../','dc/d4a/class_octre
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a046f8573a9cd686026baead26527778a" id="r_a046f8573a9cd686026baead26527778a"><td class="memItemLeft"><a id="a046f8573a9cd686026baead26527778a" name="a046f8573a9cd686026baead26527778a"></a>
-&#160;</td><td class="memItemRight"><b>Octree</b> (<a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; <a class="el" href="../../d4/da8/_octree_8h.html#a837d9894112773d3fda9ee117ebe0a42">nt</a> &gt; minVec, <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; <a class="el" href="../../d4/da8/_octree_8h.html#a837d9894112773d3fda9ee117ebe0a42">nt</a> &gt; maxVec)</td></tr>
-<tr class="memitem:a6ad44acf3890a47e191fa6d9d8b63087" id="r_a6ad44acf3890a47e191fa6d9d8b63087"><td class="memItemLeft"><a id="a6ad44acf3890a47e191fa6d9d8b63087" name="a6ad44acf3890a47e191fa6d9d8b63087"></a>
-void&#160;</td><td class="memItemRight"><b>set_default_field</b> (<a class="el" href="../../de/da5/class_octree.html">Octree</a> def)</td></tr>
+<tr class="memitem:a046f8573a9cd686026baead26527778a" id="r_a046f8573a9cd686026baead26527778a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a046f8573a9cd686026baead26527778a">Octree</a> (<a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; <a class="el" href="../../d4/da8/_octree_8h.html#a837d9894112773d3fda9ee117ebe0a42">nt</a> &gt; minVec, <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; <a class="el" href="../../d4/da8/_octree_8h.html#a837d9894112773d3fda9ee117ebe0a42">nt</a> &gt; maxVec)</td></tr>
+<tr class="memdesc:a046f8573a9cd686026baead26527778a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="../../de/da5/class_octree.html" title="A spatial partitioning octree data structure for implementing the Barnes-Hut algorithm.">Octree</a> covering the axis-aligned box defined by <code class="param">minVec</code> and <code class="param">maxVec</code>. The root node's bounding box is the smallest cube that contains the input box.  <br /></td></tr>
+<tr class="memitem:a6ad44acf3890a47e191fa6d9d8b63087" id="r_a6ad44acf3890a47e191fa6d9d8b63087"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6ad44acf3890a47e191fa6d9d8b63087">set_default_field</a> (<a class="el" href="../../de/da5/class_octree.html">Octree</a> def)</td></tr>
+<tr class="memdesc:a6ad44acf3890a47e191fa6d9d8b63087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the default field of the octree (reserved for future use).  <br /></td></tr>
 <tr class="memitem:a05531d715b666bdf0cc63dd67b5191c4" id="r_a05531d715b666bdf0cc63dd67b5191c4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a05531d715b666bdf0cc63dd67b5191c4">add_particle</a> (const <a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;p)</td></tr>
-<tr class="memdesc:a05531d715b666bdf0cc63dd67b5191c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a particle to the octree. This is a public wrapper function for the private add_particle function that takes a node as an argument.  <br /></td></tr>
-<tr class="memitem:aab0e872e9963fe536e9884bf078e4258" id="r_aab0e872e9963fe536e9884bf078e4258"><td class="memItemLeft"><a id="aab0e872e9963fe536e9884bf078e4258" name="aab0e872e9963fe536e9884bf078e4258"></a>
-void&#160;</td><td class="memItemRight"><b>calc_force</b> (<a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;p)</td></tr>
+<tr class="memdesc:a05531d715b666bdf0cc63dd67b5191c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a single particle to the octree (public wrapper).  <br /></td></tr>
+<tr class="memitem:aab0e872e9963fe536e9884bf078e4258" id="r_aab0e872e9963fe536e9884bf078e4258"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aab0e872e9963fe536e9884bf078e4258">calc_force</a> (<a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;p)</td></tr>
+<tr class="memdesc:aab0e872e9963fe536e9884bf078e4258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the electrostatic force acting on <code class="param">p</code> using the Barnes-Hut approximation and store the result in <code class="param">p.acceleration</code>.  <br /></td></tr>
 <tr class="memitem:a834963289ae58c88ec625a52739f73a9" id="r_a834963289ae58c88ec625a52739f73a9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a834963289ae58c88ec625a52739f73a9">build</a> (const std::vector&lt; <a class="el" href="../../de/d85/class_particle.html">Particle</a> &gt; &amp;particles)</td></tr>
-<tr class="memdesc:a834963289ae58c88ec625a52739f73a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the octree from a vector of particles.  <br /></td></tr>
+<tr class="memdesc:a834963289ae58c88ec625a52739f73a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the entire octree from a flat vector of particles. Equivalent to calling add_particle() for each particle in <code class="param">particles</code>.  <br /></td></tr>
+<tr class="memitem:abf8682844f57cbe4ac2baf9d4e362c82" id="r_abf8682844f57cbe4ac2baf9d4e362c82"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abf8682844f57cbe4ac2baf9d4e362c82">set_theta</a> (float t)</td></tr>
+<tr class="memdesc:abf8682844f57cbe4ac2baf9d4e362c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Barnes-Hut opening-angle parameter.  <br /></td></tr>
+<tr class="memitem:ae9110da64c18d7683f0edaf598ef5593" id="r_ae9110da64c18d7683f0edaf598ef5593"><td class="memItemLeft"><a id="ae9110da64c18d7683f0edaf598ef5593" name="ae9110da64c18d7683f0edaf598ef5593"></a>
+float&#160;</td><td class="memItemRight"><b>get_theta</b> () const</td></tr>
+<tr class="memdesc:ae9110da64c18d7683f0edaf598ef5593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current Barnes-Hut opening-angle parameter. <br /></td></tr>
 <tr class="memitem:a251845ac6def2d95c5cc1fc89c6eb69c" id="r_a251845ac6def2d95c5cc1fc89c6eb69c"><td class="memItemLeft"><a class="el" href="../../dd/d85/structlazy__node.html">lazy_node</a>&lt; <a class="el" href="../../d4/da8/_octree_8h.html#a837d9894112773d3fda9ee117ebe0a42">nt</a> &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a251845ac6def2d95c5cc1fc89c6eb69c">get_root</a> ()</td></tr>
-<tr class="memdesc:a251845ac6def2d95c5cc1fc89c6eb69c"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the root node of the octree.  <br /></td></tr>
+<tr class="memdesc:a251845ac6def2d95c5cc1fc89c6eb69c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a mutable reference to the root node of the octree.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A spatial partitioning octree data structure for implementing the Barnes-Hut algorithm. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a046f8573a9cd686026baead26527778a" name="a046f8573a9cd686026baead26527778a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a046f8573a9cd686026baead26527778a">&#9670;&#160;</a></span>Octree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Octree::Octree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; <a class="el" href="../../d4/da8/_octree_8h.html#a837d9894112773d3fda9ee117ebe0a42">nt</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>minVec</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; <a class="el" href="../../d4/da8/_octree_8h.html#a837d9894112773d3fda9ee117ebe0a42">nt</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>maxVec</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct an <a class="el" href="../../de/da5/class_octree.html" title="A spatial partitioning octree data structure for implementing the Barnes-Hut algorithm.">Octree</a> covering the axis-aligned box defined by <code class="param">minVec</code> and <code class="param">maxVec</code>. The root node's bounding box is the smallest cube that contains the input box. </p>
+<p>Construct an <a class="el" href="../../de/da5/class_octree.html" title="A spatial partitioning octree data structure for implementing the Barnes-Hut algorithm.">Octree</a> that covers the axis-aligned box [minVec, maxVec]. The root bounding box becomes the smallest cube enclosing that box.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">minVec</td><td>Minimum corner of the initial bounding volume. </td></tr>
+    <tr><td class="paramname">maxVec</td><td>Maximum corner of the initial bounding volume.</td></tr>
+    <tr><td class="paramname">minVec</td><td>Minimum corner of the region to partition. </td></tr>
+    <tr><td class="paramname">maxVec</td><td>Maximum corner of the region to partition. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a05531d715b666bdf0cc63dd67b5191c4" name="a05531d715b666bdf0cc63dd67b5191c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05531d715b666bdf0cc63dd67b5191c4">&#9670;&#160;</a></span>add_particle()</h2>
 
@@ -130,9 +169,11 @@ void&#160;</td><td class="memItemRight"><b>calc_force</b> (<a class="el" href=".
       </table>
 </div><div class="memdoc">
 
-<p>Add a particle to the octree. This is a public wrapper function for the private add_particle function that takes a node as an argument. </p>
+<p>Add a single particle to the octree (public wrapper). </p>
+<p>Add a particle to the octree. This is a public wrapper function for the private add_particle function that takes a node as an argument.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">p</td><td>The particle to insert.</td></tr>
     <tr><td class="paramname">p</td><td>The particle to add to the octree. </td></tr>
   </table>
   </dd>
@@ -155,10 +196,45 @@ void&#160;</td><td class="memItemRight"><b>calc_force</b> (<a class="el" href=".
       </table>
 </div><div class="memdoc">
 
-<p>Build the octree from a vector of particles. </p>
+<p>Build the entire octree from a flat vector of particles. Equivalent to calling add_particle() for each particle in <code class="param">particles</code>. </p>
+<p>Build the octree from a vector of particles.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">particles</td><td>The collection of particles to insert into the octree.</td></tr>
     <tr><td class="paramname">particles</td><td>The vector of particles to build the octree from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aab0e872e9963fe536e9884bf078e4258" name="aab0e872e9963fe536e9884bf078e4258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab0e872e9963fe536e9884bf078e4258">&#9670;&#160;</a></span>calc_force()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Octree::calc_force </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the electrostatic force acting on <code class="param">p</code> using the Barnes-Hut approximation and store the result in <code class="param">p.acceleration</code>. </p>
+<p>Compute the net electrostatic force on <code class="param">p</code> via the Barnes-Hut approximation and update <code class="param">p.acceleration</code> accordingly.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The particle for which to compute the force. Modified in-place.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The tree must already be populated (via <a class="el" href="#a834963289ae58c88ec625a52739f73a9" title="Build the entire octree from a flat vector of particles. Equivalent to calling add_particle() for eac...">build()</a> / add_particle()). This function first calls eval() on the root to (re-)compute aggregate charges and centres-of-charge, then performs the recursive traversal.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The particle for which to compute the acceleration. Modified in-place. </td></tr>
   </table>
   </dd>
 </dl>
@@ -180,8 +256,69 @@ void&#160;</td><td class="memItemRight"><b>calc_force</b> (<a class="el" href=".
       </table>
 </div><div class="memdoc">
 
-<p>return the root node of the octree. </p>
+<p>Return a mutable reference to the root node of the octree. </p>
+<p>return the root node of the octree.</p>
+<dl class="section note"><dt>Note</dt><dd>Intended for testing and future scaling. In production code prefer the higher-level interface (add_particle, calc_force, build). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the root <a class="el" href="../../dd/d85/structlazy__node.html" title="A lazy node for the octree data structure.">lazy_node</a>.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This function is intended for future scaling purposes, the current implementation is intrusive for testing purposes and should be replaced with a encapsulated version. </dd></dl>
+
+</div>
+</div>
+<a id="a6ad44acf3890a47e191fa6d9d8b63087" name="a6ad44acf3890a47e191fa6d9d8b63087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ad44acf3890a47e191fa6d9d8b63087">&#9670;&#160;</a></span>set_default_field()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Octree::set_default_field </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/da5/class_octree.html">Octree</a></td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replace the default field of the octree (reserved for future use). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">def</td><td>The default-field octree to apply. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abf8682844f57cbe4ac2baf9d4e362c82" name="abf8682844f57cbe4ac2baf9d4e362c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf8682844f57cbe4ac2baf9d4e362c82">&#9670;&#160;</a></span>set_theta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Octree::set_theta </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the Barnes-Hut opening-angle parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Values closer to 0 give higher accuracy; typical default is 0.5. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

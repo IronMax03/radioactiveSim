@@ -6,8 +6,8 @@
 \DoxyCodeLine{00004\ }
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Particle.h"{}}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}utils.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_particle_8h}{Particle.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{utils_8h}{utils.h}}"{}}}
 \DoxyCodeLine{00009\ }
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <cstddef>}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
@@ -98,65 +98,79 @@
 \DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ if\ the\ current\ node\ is\ a\ leaf\ and\ the\ child\ has\ a\ particle,\ we\ can\ skip\ the\ evaluation\ of\ the\ child\ since\ we\ will\ use\ the\ particle\ of\ the\ child\ to\ calculate\ the\ center\ of\ charge\ and\ total\ charge\ of\ the\ current\ node.;}}
 \DoxyCodeLine{00125\ }
 \DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c-\/>eval();}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ center\_of\_charge\ =\ (total\_charge*center\_of\_charge\ +\ c-\/>total\_charge*c-\/>center\_of\_charge)/(total\_charge\ +\ c-\/>total\_charge);}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ total\_charge\ +=\ c-\/>total\_charge;}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00131\ \ \ \ \ \}}
-\DoxyCodeLine{00132\ }
-\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{structlazy__node_afd48d66cb75a8e4ade75a0e2a8177757}{eval}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ n)\ \{\ \doxymbox{\hyperlink{structlazy__node_a314e8b919ed648b4a5a782b19d115aa3}{get}}(n).\doxymbox{\hyperlink{structlazy__node_acaa9b90bd0ed2100c5bc563d5f9a6294}{eval}}();\ \}}
-\DoxyCodeLine{00136\ }
-\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{structlazy__node_a95549e9732b24f2993ce5d4f6d741aa5}{instantiate\_child}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ n)}
-\DoxyCodeLine{00140\ \ \ \ \ \{}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >\ 7)}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \ std::runtime\_error(\textcolor{stringliteral}{"{}lazy\_node.instantiate\_child(n):\ n\ must\ be\ smaller\ or\ equal\ to\ 7."{}});}
-\DoxyCodeLine{00143\ }
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ childs[n]\ =\ std::make\_unique<lazy\_node<T>>();\ }
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ childs[n]-\/>bounding\_box.length\ =\ bounding\_box.length\ /\ 2;}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ childs[n]-\/>bounding\_box.center\ =\ bounding\_box.center;}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ childs[n]-\/>bounding\_box.center.x\ +=\ (n\ \&\ 1)\ ?\ bounding\_box.length/4\ :\ -\/bounding\_box.length/4;}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ childs[n]-\/>bounding\_box.center.y\ +=\ (n\ \&\ 2)\ ?\ bounding\_box.length/4\ :\ -\/bounding\_box.length/4;}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ childs[n]-\/>bounding\_box.center.z\ +=\ (n\ \&\ 4)\ ?\ bounding\_box.length/4\ :\ -\/bounding\_box.length/4;}
-\DoxyCodeLine{00150\ \ \ \ \ \}}
-\DoxyCodeLine{00151\ }
-\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structlazy__node}{lazy\_node}}\&\ \doxymbox{\hyperlink{structlazy__node_a35132440f36641c8eb18106bacd4ed0f}{read}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ n)\textcolor{keyword}{\ const\ }}
-\DoxyCodeLine{00155\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >\ 7)}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \ std::runtime\_error(\textcolor{stringliteral}{"{}lazy\_node.read(n):\ n\ must\ be\ smaller\ or\ equal\ to\ 7."{}});}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (childs[n]\ ==\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}lazy\_node.read(n):\ child\ is\ not\ instantiated."{}});}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *childs[n];}
-\DoxyCodeLine{00161\ \ \ \ \ \}}
-\DoxyCodeLine{00162\ }
-\DoxyCodeLine{00163\ }
-\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keyword}{inline}\ \doxymbox{\hyperlink{structlazy__node}{lazy\_node}}\&\ \doxymbox{\hyperlink{structlazy__node_a314e8b919ed648b4a5a782b19d115aa3}{get}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ n)\ }
-\DoxyCodeLine{00167\ \ \ \ \ \{}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >\ 7)}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \ std::runtime\_error(\textcolor{stringliteral}{"{}lazy\_node.get(n):\ n\ must\ be\ smaller\ or\ equal\ to\ 7."{}});}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (childs[n]\ ==\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structlazy__node_a95549e9732b24f2993ce5d4f6d741aa5}{instantiate\_child}}(n);\ \textcolor{comment}{//\ create\ a\ dummy\ particle\ to\ instantiate\ the\ child\ if\ it\ is\ not\ already\ instantiated.}}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *childs[n];}
-\DoxyCodeLine{00173\ \ \ \ \ \}}
-\DoxyCodeLine{00174\ \};}
-\DoxyCodeLine{00175\ }
-\DoxyCodeLine{00177\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}};}
-\DoxyCodeLine{00178\ }
-\DoxyCodeLine{00180\ \textcolor{keyword}{class\ }Octree}
-\DoxyCodeLine{00181\ \{}
-\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structlazy__node}{lazy\_node<nt>}}\ root;}
-\DoxyCodeLine{00184\ }
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ add\_particle(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_particle}{Particle}}\&\ p,\ \doxymbox{\hyperlink{structlazy__node}{lazy\_node<nt>}}\&\ node);}
-\DoxyCodeLine{00186\ }
-\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ Octree(\doxymbox{\hyperlink{structvector3}{vector3<nt>}}\ minVec,\ \doxymbox{\hyperlink{structvector3}{vector3<nt>}}\ maxVec);}
-\DoxyCodeLine{00189\ }
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_default\_field(Octree\ def);}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ add\_particle(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_particle}{Particle}}\&\ p);}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ calc\_force(\doxymbox{\hyperlink{class_particle}{Particle}}\&\ p);}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_octree_a834963289ae58c88ec625a52739f73a9}{build}}(\textcolor{keyword}{const}\ std::vector<Particle>\&\ particles);}
-\DoxyCodeLine{00194\ }
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structlazy__node}{lazy\_node<nt>}}\&\ \doxymbox{\hyperlink{class_octree_a251845ac6def2d95c5cc1fc89c6eb69c}{get\_root}}();}
-\DoxyCodeLine{00196\ \};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ combined\ =\ total\_charge\ +\ c-\/>total\_charge;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (combined\ !=\ 0)}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ center\_of\_charge\ =\ (total\_charge*center\_of\_charge\ +\ c-\/>total\_charge*c-\/>center\_of\_charge)/combined;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ total\_charge\ =\ combined;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{structlazy__node_afd48d66cb75a8e4ade75a0e2a8177757}{eval}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ n)\ \{\ \doxymbox{\hyperlink{structlazy__node_a314e8b919ed648b4a5a782b19d115aa3}{get}}(n).\doxymbox{\hyperlink{structlazy__node_acaa9b90bd0ed2100c5bc563d5f9a6294}{eval}}();\ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{structlazy__node_a95549e9732b24f2993ce5d4f6d741aa5}{instantiate\_child}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ n)}
+\DoxyCodeLine{00142\ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >\ 7)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \ std::runtime\_error(\textcolor{stringliteral}{"{}lazy\_node.instantiate\_child(n):\ n\ must\ be\ smaller\ or\ equal\ to\ 7."{}});}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ childs[n]\ =\ std::make\_unique<lazy\_node<T>>();\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ childs[n]-\/>bounding\_box.length\ =\ bounding\_box.length\ /\ 2;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ childs[n]-\/>bounding\_box.center\ =\ bounding\_box.center;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ childs[n]-\/>bounding\_box.center.x\ +=\ (n\ \&\ 1)\ ?\ bounding\_box.length/4\ :\ -\/bounding\_box.length/4;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ childs[n]-\/>bounding\_box.center.y\ +=\ (n\ \&\ 2)\ ?\ bounding\_box.length/4\ :\ -\/bounding\_box.length/4;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ childs[n]-\/>bounding\_box.center.z\ +=\ (n\ \&\ 4)\ ?\ bounding\_box.length/4\ :\ -\/bounding\_box.length/4;}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structlazy__node}{lazy\_node}}\&\ \doxymbox{\hyperlink{structlazy__node_a35132440f36641c8eb18106bacd4ed0f}{read}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ n)\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{00157\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >\ 7)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \ std::runtime\_error(\textcolor{stringliteral}{"{}lazy\_node.read(n):\ n\ must\ be\ smaller\ or\ equal\ to\ 7."{}});}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (childs[n]\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}lazy\_node.read(n):\ child\ is\ not\ instantiated."{}});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *childs[n];}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{inline}\ \doxymbox{\hyperlink{structlazy__node}{lazy\_node}}\&\ \doxymbox{\hyperlink{structlazy__node_a314e8b919ed648b4a5a782b19d115aa3}{get}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ n)\ }
+\DoxyCodeLine{00169\ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ >\ 7)}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \ std::runtime\_error(\textcolor{stringliteral}{"{}lazy\_node.get(n):\ n\ must\ be\ smaller\ or\ equal\ to\ 7."{}});}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (childs[n]\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structlazy__node_a95549e9732b24f2993ce5d4f6d741aa5}{instantiate\_child}}(n);\ \textcolor{comment}{//\ create\ a\ dummy\ particle\ to\ instantiate\ the\ child\ if\ it\ is\ not\ already\ instantiated.}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *childs[n];}
+\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00179\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00182\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_octree_a046f8573a9cd686026baead26527778a}{Octree}}}
+\DoxyCodeLine{00183\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structlazy__node}{lazy\_node<nt>}}\ root;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ theta\ =\ 0.5f;\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ max\_depth\ =\ 50;\ }
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ add\_particle(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_particle}{Particle}}\&\ p,\ \doxymbox{\hyperlink{structlazy__node}{lazy\_node<nt>}}\&\ node,\ \textcolor{keywordtype}{int}\ depth\ =\ 0);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ calc\_force\_recursive(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_particle}{Particle}}\&\ p,\ \doxymbox{\hyperlink{structlazy__node}{lazy\_node<nt>}}\&\ node,}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3<double>}}\&\ force);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_octree_a046f8573a9cd686026baead26527778a}{Octree}}(\doxymbox{\hyperlink{structvector3}{vector3<nt>}}\ minVec,\ \doxymbox{\hyperlink{structvector3}{vector3<nt>}}\ maxVec);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_octree_a6ad44acf3890a47e191fa6d9d8b63087}{set\_default\_field}}(\doxymbox{\hyperlink{class_octree_a046f8573a9cd686026baead26527778a}{Octree}}\ def);}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ add\_particle(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_particle}{Particle}}\&\ p);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_octree_aab0e872e9963fe536e9884bf078e4258}{calc\_force}}(\doxymbox{\hyperlink{class_particle}{Particle}}\&\ p);}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_octree_a834963289ae58c88ec625a52739f73a9}{build}}(\textcolor{keyword}{const}\ std::vector<Particle>\&\ particles);}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_octree_abf8682844f57cbe4ac2baf9d4e362c82}{set\_theta}}(\textcolor{keywordtype}{float}\ t)\ \{\ theta\ =\ t;\ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{class_octree_ae9110da64c18d7683f0edaf598ef5593}{get\_theta}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ theta;\ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structlazy__node}{lazy\_node<nt>}}\&\ \doxymbox{\hyperlink{class_octree_a251845ac6def2d95c5cc1fc89c6eb69c}{get\_root}}();}
+\DoxyCodeLine{00236\ \};}
 
 \end{DoxyCode}

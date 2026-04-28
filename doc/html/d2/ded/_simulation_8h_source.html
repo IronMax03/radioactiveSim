@@ -91,43 +91,64 @@ $(function(){initNavTree('d2/ded/_simulation_8h_source.html','../../',''); });
   <div class="headertitle"><div class="title">Simulation.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Particle.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Shielding.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;ROI.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Source.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../dd/d14/class_simulation.html">    9</a></span><span class="keyword">class </span>Simulation {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">double</span> dt;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">unsigned</span> steps;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_class" href="../../d8/d74/class_source.html">Source</a> source;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    std::vector&lt;Particle&gt; particles;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="../../d6/dbd/class_shielding.html">Shielding</a> shielding;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="../../d2/d47/class_r_o_i.html">ROI</a> roi;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    Simulation(<span class="keywordtype">double</span> dt, <span class="keywordtype">unsigned</span> steps, <a class="code hl_class" href="../../d8/d74/class_source.html">Source</a> sr,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>               <a class="code hl_class" href="../../d6/dbd/class_shielding.html">Shielding</a> s, <a class="code hl_class" href="../../d2/d47/class_r_o_i.html">ROI</a> r);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d14/class_simulation.html#ae5c367f87c0b5dc9740bc6d00e44e72c">run</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> print();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+<a href="../../d2/ded/_simulation_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="../../d4/d15/_particle_8h.html">Particle.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/d71/_shielding_8h.html">Shielding.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="../../d6/d79/_r_o_i_8h.html">ROI.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/df9/_source_8h.html">Source.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="../../d4/da8/_octree_8h.html">Octree.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../dd/d14/class_simulation.html">   20</a></span><span class="keyword">class </span><a class="code hl_function" href="../../dd/d14/class_simulation.html#ab9aef2b60ae1933e64a1ebb1c3b4e9c2">Simulation</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../dd/d14/class_simulation.html#af43e498bfc83c777db5f5ac4025ff923">   23</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="../../dd/d14/class_simulation.html#af43e498bfc83c777db5f5ac4025ff923">dt</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../dd/d14/class_simulation.html#ab9556a6f49d03a8ea25f7f42fe256082">   26</a></span>    <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="../../dd/d14/class_simulation.html#ab9556a6f49d03a8ea25f7f42fe256082">steps</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../dd/d14/class_simulation.html#a2daffe4caebb766c0c050fccb89a1fb3">   29</a></span>    <a class="code hl_class" href="../../d8/d74/class_source.html">Source</a> <a class="code hl_variable" href="../../dd/d14/class_simulation.html#a2daffe4caebb766c0c050fccb89a1fb3">source</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../dd/d14/class_simulation.html#a43630d63fec2527d729ef58c14cfc132">   32</a></span>    std::vector&lt;Particle&gt; <a class="code hl_variable" href="../../dd/d14/class_simulation.html#a43630d63fec2527d729ef58c14cfc132">particles</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../dd/d14/class_simulation.html#a00174871f9b2ef8c21cfd1f0996a94e6">   35</a></span>    <a class="code hl_class" href="../../d6/dbd/class_shielding.html">Shielding</a> <a class="code hl_variable" href="../../dd/d14/class_simulation.html#a00174871f9b2ef8c21cfd1f0996a94e6">shielding</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../dd/d14/class_simulation.html#a200e0e49c49a5ff2f906c59c42bcddc8">   38</a></span>    <a class="code hl_class" href="../../d2/d47/class_r_o_i.html">ROI</a> <a class="code hl_variable" href="../../dd/d14/class_simulation.html#a200e0e49c49a5ff2f906c59c42bcddc8">roi</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="../../dd/d14/class_simulation.html#ab9aef2b60ae1933e64a1ebb1c3b4e9c2">Simulation</a>(<span class="keywordtype">double</span> <a class="code hl_variable" href="../../dd/d14/class_simulation.html#af43e498bfc83c777db5f5ac4025ff923">dt</a>, <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="../../dd/d14/class_simulation.html#ab9556a6f49d03a8ea25f7f42fe256082">steps</a>, <a class="code hl_class" href="../../d8/d74/class_source.html">Source</a> sr,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>               <a class="code hl_class" href="../../d6/dbd/class_shielding.html">Shielding</a> s, <a class="code hl_class" href="../../d2/d47/class_r_o_i.html">ROI</a> r);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d14/class_simulation.html#ae5c367f87c0b5dc9740bc6d00e44e72c">run</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d14/class_simulation.html#a09ed6991fa2444be1bcc43e7b5a48a13">print</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
 </div>
-<div class="ttc" id="aclass_r_o_i_html"><div class="ttname"><a href="../../d2/d47/class_r_o_i.html">ROI</a></div><div class="ttdef"><b>Definition</b> ROI.h:5</div></div>
-<div class="ttc" id="aclass_shielding_html"><div class="ttname"><a href="../../d6/dbd/class_shielding.html">Shielding</a></div><div class="ttdef"><b>Definition</b> Shielding.h:7</div></div>
-<div class="ttc" id="aclass_simulation_html_ae5c367f87c0b5dc9740bc6d00e44e72c"><div class="ttname"><a href="../../dd/d14/class_simulation.html#ae5c367f87c0b5dc9740bc6d00e44e72c">Simulation::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition</b> Simulation.cpp:16</div></div>
-<div class="ttc" id="aclass_source_html"><div class="ttname"><a href="../../d8/d74/class_source.html">Source</a></div><div class="ttdef"><b>Definition</b> Source.h:7</div></div>
+<div class="ttc" id="a_octree_8h_html"><div class="ttname"><a href="../../d4/da8/_octree_8h.html">Octree.h</a></div><div class="ttdoc">This file contains the definition of the Octree class and lazy_node.</div></div>
+<div class="ttc" id="a_particle_8h_html"><div class="ttname"><a href="../../d4/d15/_particle_8h.html">Particle.h</a></div><div class="ttdoc">Declaration of the Particle class, representing a physical particle (e.g. proton or neutron) tracked ...</div></div>
+<div class="ttc" id="a_r_o_i_8h_html"><div class="ttname"><a href="../../d6/d79/_r_o_i_8h.html">ROI.h</a></div><div class="ttdoc">Declaration of the ROI (Region Of Interest) class, which defines an axis-aligned box used to score pa...</div></div>
+<div class="ttc" id="a_shielding_8h_html"><div class="ttname"><a href="../../de/d71/_shielding_8h.html">Shielding.h</a></div><div class="ttdoc">Declaration of the Shielding class, which models an axis-aligned rectangular shielding volume filled ...</div></div>
+<div class="ttc" id="a_source_8h_html"><div class="ttname"><a href="../../db/df9/_source_8h.html">Source.h</a></div><div class="ttdoc">Declaration of the Source class, which models a radioactive point source that emits particles isotrop...</div></div>
+<div class="ttc" id="aclass_r_o_i_html"><div class="ttname"><a href="../../d2/d47/class_r_o_i.html">ROI</a></div><div class="ttdoc">An axis-aligned bounding box used to score particles entering the region.</div><div class="ttdef"><b>Definition</b> ROI.h:13</div></div>
+<div class="ttc" id="aclass_shielding_html"><div class="ttname"><a href="../../d6/dbd/class_shielding.html">Shielding</a></div><div class="ttdoc">An axis-aligned rectangular volume of shielding material.</div><div class="ttdef"><b>Definition</b> Shielding.h:16</div></div>
+<div class="ttc" id="aclass_simulation_html_a00174871f9b2ef8c21cfd1f0996a94e6"><div class="ttname"><a href="../../dd/d14/class_simulation.html#a00174871f9b2ef8c21cfd1f0996a94e6">Simulation::shielding</a></div><div class="ttdeci">Shielding shielding</div><div class="ttdoc">The shielding volume that attenuates particles passing through it.</div><div class="ttdef"><b>Definition</b> Simulation.h:35</div></div>
+<div class="ttc" id="aclass_simulation_html_a09ed6991fa2444be1bcc43e7b5a48a13"><div class="ttname"><a href="../../dd/d14/class_simulation.html#a09ed6991fa2444be1bcc43e7b5a48a13">Simulation::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Print a human-readable summary of the simulation parameters to stdout.</div><div class="ttdef"><b>Definition</b> Simulation.cpp:171</div></div>
+<div class="ttc" id="aclass_simulation_html_a200e0e49c49a5ff2f906c59c42bcddc8"><div class="ttname"><a href="../../dd/d14/class_simulation.html#a200e0e49c49a5ff2f906c59c42bcddc8">Simulation::roi</a></div><div class="ttdeci">ROI roi</div><div class="ttdoc">The region of interest used to score particles.</div><div class="ttdef"><b>Definition</b> Simulation.h:38</div></div>
+<div class="ttc" id="aclass_simulation_html_a2daffe4caebb766c0c050fccb89a1fb3"><div class="ttname"><a href="../../dd/d14/class_simulation.html#a2daffe4caebb766c0c050fccb89a1fb3">Simulation::source</a></div><div class="ttdeci">Source source</div><div class="ttdoc">The radioactive point source that emits particles each time step.</div><div class="ttdef"><b>Definition</b> Simulation.h:29</div></div>
+<div class="ttc" id="aclass_simulation_html_a43630d63fec2527d729ef58c14cfc132"><div class="ttname"><a href="../../dd/d14/class_simulation.html#a43630d63fec2527d729ef58c14cfc132">Simulation::particles</a></div><div class="ttdeci">std::vector&lt; Particle &gt; particles</div><div class="ttdoc">List of particles currently active in the simulation.</div><div class="ttdef"><b>Definition</b> Simulation.h:32</div></div>
+<div class="ttc" id="aclass_simulation_html_ab9556a6f49d03a8ea25f7f42fe256082"><div class="ttname"><a href="../../dd/d14/class_simulation.html#ab9556a6f49d03a8ea25f7f42fe256082">Simulation::steps</a></div><div class="ttdeci">unsigned steps</div><div class="ttdoc">Total number of time steps to simulate.</div><div class="ttdef"><b>Definition</b> Simulation.h:26</div></div>
+<div class="ttc" id="aclass_simulation_html_ab9aef2b60ae1933e64a1ebb1c3b4e9c2"><div class="ttname"><a href="../../dd/d14/class_simulation.html#ab9aef2b60ae1933e64a1ebb1c3b4e9c2">Simulation::Simulation</a></div><div class="ttdeci">Simulation(double dt, unsigned steps, Source sr, Shielding s, ROI r)</div><div class="ttdoc">Construct a simulation with all required physical parameters.</div><div class="ttdef"><b>Definition</b> Simulation.cpp:19</div></div>
+<div class="ttc" id="aclass_simulation_html_ae5c367f87c0b5dc9740bc6d00e44e72c"><div class="ttname"><a href="../../dd/d14/class_simulation.html#ae5c367f87c0b5dc9740bc6d00e44e72c">Simulation::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Execute the simulation for steps time steps. Each step: emits new particles, moves all live particles...</div><div class="ttdef"><b>Definition</b> Simulation.cpp:26</div></div>
+<div class="ttc" id="aclass_simulation_html_af43e498bfc83c777db5f5ac4025ff923"><div class="ttname"><a href="../../dd/d14/class_simulation.html#af43e498bfc83c777db5f5ac4025ff923">Simulation::dt</a></div><div class="ttdeci">double dt</div><div class="ttdoc">Time step duration in seconds.</div><div class="ttdef"><b>Definition</b> Simulation.h:23</div></div>
+<div class="ttc" id="aclass_source_html"><div class="ttname"><a href="../../d8/d74/class_source.html">Source</a></div><div class="ttdoc">Models a radioactive point source that emits particles every time step.</div><div class="ttdef"><b>Definition</b> Source.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Simulation.h</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="../../d2/ded/_simulation_8h.html">Simulation.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

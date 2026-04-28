@@ -1,51 +1,117 @@
 \doxysection{Simulation Class Reference}
 \hypertarget{class_simulation}{}\label{class_simulation}\index{Simulation@{Simulation}}
+
+
+Top-\/level simulation driver.  
+
+
+
+
+{\ttfamily \+\#include $<$Simulation.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_simulation_ab9aef2b60ae1933e64a1ebb1c3b4e9c2}\label{class_simulation_ab9aef2b60ae1933e64a1ebb1c3b4e9c2} 
-{\bfseries Simulation} (double dt, unsigned steps, \doxymbox{\hyperlink{class_source}{Source}} sr, \doxymbox{\hyperlink{class_shielding}{Shielding}} s, \doxymbox{\hyperlink{class_r_o_i}{ROI}} r)
-\item 
+\doxymbox{\hyperlink{class_simulation_ab9aef2b60ae1933e64a1ebb1c3b4e9c2}{Simulation}} (double \doxymbox{\hyperlink{class_simulation_af43e498bfc83c777db5f5ac4025ff923}{dt}}, unsigned \doxymbox{\hyperlink{class_simulation_ab9556a6f49d03a8ea25f7f42fe256082}{steps}}, \doxymbox{\hyperlink{class_source}{Source}} sr, \doxymbox{\hyperlink{class_shielding}{Shielding}} s, \doxymbox{\hyperlink{class_r_o_i}{ROI}} r)
+\begin{DoxyCompactList}\small\item\em Construct a simulation with all required physical parameters. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_simulation_ae5c367f87c0b5dc9740bc6d00e44e72c}{run}} ()
-\item 
-\Hypertarget{class_simulation_a09ed6991fa2444be1bcc43e7b5a48a13}\label{class_simulation_a09ed6991fa2444be1bcc43e7b5a48a13} 
-void {\bfseries print} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Execute the simulation for {\ttfamily steps} time steps. Each step:\+ emits new particles, moves all live particles, handles shielding absorption, scores the \doxylink{class_r_o_i}{ROI}, and writes periodic CSV output. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_simulation_a09ed6991fa2444be1bcc43e7b5a48a13}{print}} ()
+\begin{DoxyCompactList}\small\item\em Print a human-\/readable summary of the simulation parameters to {\ttfamily stdout}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_simulation_af43e498bfc83c777db5f5ac4025ff923}\label{class_simulation_af43e498bfc83c777db5f5ac4025ff923} 
 double {\bfseries dt}
-\item 
+\begin{DoxyCompactList}\small\item\em Time step duration in seconds. \end{DoxyCompactList}\item 
 \Hypertarget{class_simulation_ab9556a6f49d03a8ea25f7f42fe256082}\label{class_simulation_ab9556a6f49d03a8ea25f7f42fe256082} 
 unsigned {\bfseries steps}
-\item 
+\begin{DoxyCompactList}\small\item\em Total number of time steps to simulate. \end{DoxyCompactList}\item 
 \Hypertarget{class_simulation_a2daffe4caebb766c0c050fccb89a1fb3}\label{class_simulation_a2daffe4caebb766c0c050fccb89a1fb3} 
 \doxymbox{\hyperlink{class_source}{Source}} {\bfseries source}
-\item 
+\begin{DoxyCompactList}\small\item\em The radioactive point source that emits particles each time step. \end{DoxyCompactList}\item 
 \Hypertarget{class_simulation_a43630d63fec2527d729ef58c14cfc132}\label{class_simulation_a43630d63fec2527d729ef58c14cfc132} 
 std::\+vector$<$ \doxymbox{\hyperlink{class_particle}{Particle}} $>$ {\bfseries particles}
-\item 
+\begin{DoxyCompactList}\small\item\em List of particles currently active in the simulation. \end{DoxyCompactList}\item 
 \Hypertarget{class_simulation_a00174871f9b2ef8c21cfd1f0996a94e6}\label{class_simulation_a00174871f9b2ef8c21cfd1f0996a94e6} 
 \doxymbox{\hyperlink{class_shielding}{Shielding}} {\bfseries shielding}
-\item 
+\begin{DoxyCompactList}\small\item\em The shielding volume that attenuates particles passing through it. \end{DoxyCompactList}\item 
 \Hypertarget{class_simulation_a200e0e49c49a5ff2f906c59c42bcddc8}\label{class_simulation_a200e0e49c49a5ff2f906c59c42bcddc8} 
 \doxymbox{\hyperlink{class_r_o_i}{ROI}} {\bfseries roi}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The region of interest used to score particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Top-\/level simulation driver. 
+
+The \doxylink{class_simulation}{Simulation} class owns all physical objects (source, shielding, \doxylink{class_r_o_i}{ROI}) and the list of live particles. Calling \doxylink{class_simulation_ae5c367f87c0b5dc9740bc6d00e44e72c}{run()} advances the simulation for the configured number of time steps, handling emission, movement, shielding absorption, \doxylink{class_r_o_i}{ROI} scoring, and periodic CSV output. 
+
+\label{doc-constructors}
+\Hypertarget{class_simulation_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_simulation_ab9aef2b60ae1933e64a1ebb1c3b4e9c2}\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{Simulation()}{Simulation()}}
+{\footnotesize\ttfamily \label{class_simulation_ab9aef2b60ae1933e64a1ebb1c3b4e9c2} 
+Simulation::\+\+Simulation (\begin{DoxyParamCaption}\item[{double}]{dt\+\_\+}{, }\item[{unsigned}]{steps\+\_\+}{, }\item[{\doxymbox{\hyperlink{class_source}{Source}}}]{src}{, }\item[{\doxymbox{\hyperlink{class_shielding}{Shielding}}}]{s}{, }\item[{\doxymbox{\hyperlink{class_r_o_i}{ROI}}}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Construct a simulation with all required physical parameters. 
+
+Construct a \doxylink{class_simulation}{Simulation} with the given physical parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{class_simulation_af43e498bfc83c777db5f5ac4025ff923}{dt}} & Time step duration (seconds). \\
+\hline
+{\em \doxylink{class_simulation_ab9556a6f49d03a8ea25f7f42fe256082}{steps}} & Number of time steps to run. \\
+\hline
+{\em sr} & Radioactive source configuration. \\
+\hline
+{\em s} & \doxylink{class_shielding}{Shielding} volume and material. \\
+\hline
+{\em r} & Region of interest for particle scoring.\\
+\hline
+{\em dt\+\_\+} & Time step duration (seconds). \\
+\hline
+{\em steps\+\_\+} & Total number of time steps to run. \\
+\hline
+{\em src} & Radioactive source configuration. \\
+\hline
+{\em s} & \doxylink{class_shielding}{Shielding} volume and material. \\
+\hline
+{\em r} & Region of interest for scoring particles. \\
+\hline
+\end{DoxyParams}
 
 
 \label{doc-func-members}
 \Hypertarget{class_simulation_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_simulation_ae5c367f87c0b5dc9740bc6d00e44e72c}\index{Simulation@{Simulation}!run@{run}}
+\Hypertarget{class_simulation_a09ed6991fa2444be1bcc43e7b5a48a13}\index{Simulation@{Simulation}!print@{print}}
+\index{print@{print}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily \label{class_simulation_a09ed6991fa2444be1bcc43e7b5a48a13} 
+void Simulation::\+print (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Print a human-\/readable summary of the simulation parameters to {\ttfamily stdout}. 
+
+Print a human-\/readable summary of the simulation parameters to {\ttfamily stdout}. Includes time step, number of steps, total simulated time, source position and rate, shielding centre and material, and \doxylink{class_r_o_i}{ROI} centre. \Hypertarget{class_simulation_ae5c367f87c0b5dc9740bc6d00e44e72c}\index{Simulation@{Simulation}!run@{run}}
 \index{run@{run}!Simulation@{Simulation}}
 \doxysubsubsection{\texorpdfstring{run()}{run()}}
 {\footnotesize\ttfamily \label{class_simulation_ae5c367f87c0b5dc9740bc6d00e44e72c} 
 void Simulation::\+run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-new
+
+
+Execute the simulation for {\ttfamily steps} time steps. Each step:\+ emits new particles, moves all live particles, handles shielding absorption, scores the \doxylink{class_r_o_i}{ROI}, and writes periodic CSV output. 
+
+Execute the simulation for the configured number of time steps. new
 
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
 \item 
-src/\+Simulation.\+h\item 
-src/\+Simulation.\+cpp\end{DoxyCompactItemize}
+src/\+\doxymbox{\hyperlink{_simulation_8h}{Simulation.\+h}}\item 
+src/\+\doxymbox{\hyperlink{_simulation_8cpp}{Simulation.\+cpp}}\end{DoxyCompactItemize}

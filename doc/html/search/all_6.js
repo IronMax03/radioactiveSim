@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lazy_5fnode_0',['lazy_node',['../dd/d85/structlazy__node.html',1,'']]],
-  ['lazy_5fnode_3c_20nt_20_3e_1',['lazy_node&lt; nt &gt;',['../dd/d85/structlazy__node.html',1,'']]]
+  ['half_5flife_0',['half_life',['../d8/d74/class_source.html#a5beaff1c1f283a9a13b03a1862c68ad8',1,'Source']]]
 ];

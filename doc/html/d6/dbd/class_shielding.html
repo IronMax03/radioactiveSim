@@ -91,26 +91,157 @@ $(function(){initNavTree('d6/dbd/class_shielding.html','../../','d4/d34/class_sh
   <div class="headertitle"><div class="title">Shielding Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>An axis-aligned rectangular volume of shielding material.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../de/d71/_shielding_8h_source.html">Shielding.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aefdc50abf3bf18a7371fcd3cbbb047df" id="r_aefdc50abf3bf18a7371fcd3cbbb047df"><td class="memItemLeft"><a id="aefdc50abf3bf18a7371fcd3cbbb047df" name="aefdc50abf3bf18a7371fcd3cbbb047df"></a>
-&#160;</td><td class="memItemRight"><b>Shielding</b> (double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, <a class="el" href="../../d3/d0a/struct_material.html">Material</a> m)</td></tr>
-<tr class="memitem:a2b029bed5b783f4555e84dfac93d4496" id="r_a2b029bed5b783f4555e84dfac93d4496"><td class="memItemLeft"><a id="a2b029bed5b783f4555e84dfac93d4496" name="a2b029bed5b783f4555e84dfac93d4496"></a>
-bool&#160;</td><td class="memItemRight"><b>contains</b> (const <a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;p) const</td></tr>
+<tr class="memitem:aefdc50abf3bf18a7371fcd3cbbb047df" id="r_aefdc50abf3bf18a7371fcd3cbbb047df"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aefdc50abf3bf18a7371fcd3cbbb047df">Shielding</a> (double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, <a class="el" href="../../d3/d0a/struct_material.html">Material</a> m)</td></tr>
+<tr class="memdesc:aefdc50abf3bf18a7371fcd3cbbb047df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a shielding volume from explicit axis-aligned bounds and a material.  <br /></td></tr>
+<tr class="memitem:a2b029bed5b783f4555e84dfac93d4496" id="r_a2b029bed5b783f4555e84dfac93d4496"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2b029bed5b783f4555e84dfac93d4496">contains</a> (const <a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;p) const</td></tr>
+<tr class="memdesc:a2b029bed5b783f4555e84dfac93d4496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether a particle is currently inside the shielding volume.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a05deacaaaa9bbcac807e2658e0331fdd" id="r_a05deacaaaa9bbcac807e2658e0331fdd"><td class="memItemLeft"><a id="a05deacaaaa9bbcac807e2658e0331fdd" name="a05deacaaaa9bbcac807e2658e0331fdd"></a>
 <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; double &gt;&#160;</td><td class="memItemRight"><b>min_corner</b></td></tr>
+<tr class="memdesc:a05deacaaaa9bbcac807e2658e0331fdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum corner of the axis-aligned bounding box (metres). <br /></td></tr>
 <tr class="memitem:aeb953127c23574c017ddfdca4d805052" id="r_aeb953127c23574c017ddfdca4d805052"><td class="memItemLeft"><a id="aeb953127c23574c017ddfdca4d805052" name="aeb953127c23574c017ddfdca4d805052"></a>
 <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; double &gt;&#160;</td><td class="memItemRight"><b>max_corner</b></td></tr>
+<tr class="memdesc:aeb953127c23574c017ddfdca4d805052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum corner of the axis-aligned bounding box (metres). <br /></td></tr>
 <tr class="memitem:a46b89d3cc4f457e0e75b68469c79ab03" id="r_a46b89d3cc4f457e0e75b68469c79ab03"><td class="memItemLeft"><a id="a46b89d3cc4f457e0e75b68469c79ab03" name="a46b89d3cc4f457e0e75b68469c79ab03"></a>
 <a class="el" href="../../d3/d0a/struct_material.html">Material</a>&#160;</td><td class="memItemRight"><b>material</b></td></tr>
+<tr class="memdesc:a46b89d3cc4f457e0e75b68469c79ab03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical material that fills this shielding volume. <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An axis-aligned rectangular volume of shielding material. </p>
+<p>The <a class="el" href="../../d6/dbd/class_shielding.html" title="An axis-aligned rectangular volume of shielding material.">Shielding</a> class defines a box-shaped region of space that attenuates particles passing through it according to the mean free path of its material. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aefdc50abf3bf18a7371fcd3cbbb047df" name="aefdc50abf3bf18a7371fcd3cbbb047df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefdc50abf3bf18a7371fcd3cbbb047df">&#9670;&#160;</a></span>Shielding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Shielding::Shielding </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>xmin_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>xmax_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ymin_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ymax_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>zmin_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>zmax_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d0a/struct_material.html">Material</a></td>          <td class="paramname"><span class="paramname"><em>m</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a shielding volume from explicit axis-aligned bounds and a material. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xmin</td><td>Minimum x-coordinate of the shielding box (metres). </td></tr>
+    <tr><td class="paramname">xmax</td><td>Maximum x-coordinate of the shielding box (metres). </td></tr>
+    <tr><td class="paramname">ymin</td><td>Minimum y-coordinate of the shielding box (metres). </td></tr>
+    <tr><td class="paramname">ymax</td><td>Maximum y-coordinate of the shielding box (metres). </td></tr>
+    <tr><td class="paramname">zmin</td><td>Minimum z-coordinate of the shielding box (metres). </td></tr>
+    <tr><td class="paramname">zmax</td><td>Maximum z-coordinate of the shielding box (metres). </td></tr>
+    <tr><td class="paramname">m</td><td><a class="el" href="../../d3/d0a/struct_material.html" title="Describes the physical properties of a shielding material.">Material</a> that fills the shielding volume. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>if any min coordinate is greater than the corresponding max, or if min and max corners coincide (zero-volume box).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xmin_</td><td>Minimum x-coordinate (metres). </td></tr>
+    <tr><td class="paramname">xmax_</td><td>Maximum x-coordinate (metres). </td></tr>
+    <tr><td class="paramname">ymin_</td><td>Minimum y-coordinate (metres). </td></tr>
+    <tr><td class="paramname">ymax_</td><td>Maximum y-coordinate (metres). </td></tr>
+    <tr><td class="paramname">zmin_</td><td>Minimum z-coordinate (metres). </td></tr>
+    <tr><td class="paramname">zmax_</td><td>Maximum z-coordinate (metres). </td></tr>
+    <tr><td class="paramname">m</td><td><a class="el" href="../../d3/d0a/struct_material.html" title="Describes the physical properties of a shielding material.">Material</a> that fills the volume. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>if any min coordinate exceeds the corresponding max, or if the min and max corners are identical (zero-volume box). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a2b029bed5b783f4555e84dfac93d4496" name="a2b029bed5b783f4555e84dfac93d4496"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b029bed5b783f4555e84dfac93d4496">&#9670;&#160;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Shielding::contains </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test whether a particle is currently inside the shielding volume. </p>
+<p>Test whether a particle is currently inside the shielding volume. Uses normalised coordinates relative to the bounding box extents.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The particle to test. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if <code class="param">p</code> is within the shielding box, <code>false</code> otherwise.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The particle to test. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all normalised coordinates of <code class="param">p</code> are in [0, 1], <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="../../de/d71/_shielding_8h_source.html">Shielding.h</a></li>
-<li>src/<b>Shielding.cpp</b></li>
+<li>src/<a class="el" href="../../dd/dda/_shielding_8cpp.html">Shielding.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

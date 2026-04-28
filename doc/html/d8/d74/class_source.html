@@ -91,28 +91,124 @@ $(function(){initNavTree('d8/d74/class_source.html','../../','d8/dbf/class_sourc
   <div class="headertitle"><div class="title">Source Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Models a radioactive point source that emits particles every time step.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/df9/_source_8h_source.html">Source.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a285cd103a60c84b992940280c9f5dcf7" id="r_a285cd103a60c84b992940280c9f5dcf7"><td class="memItemLeft"><a id="a285cd103a60c84b992940280c9f5dcf7" name="a285cd103a60c84b992940280c9f5dcf7"></a>
-&#160;</td><td class="memItemRight"><b>Source</b> (double x, double y, double z, int rate)</td></tr>
-<tr class="memitem:a4e866367450b565fcc29078878018759" id="r_a4e866367450b565fcc29078878018759"><td class="memItemLeft"><a id="a4e866367450b565fcc29078878018759" name="a4e866367450b565fcc29078878018759"></a>
-std::vector&lt; <a class="el" href="../../de/d85/class_particle.html">Particle</a> &gt;&#160;</td><td class="memItemRight"><b>emit</b> () const</td></tr>
+<tr class="memitem:af7bb98b31a1c16a819cd31b332742cb5" id="r_af7bb98b31a1c16a819cd31b332742cb5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af7bb98b31a1c16a819cd31b332742cb5">Source</a> (double <a class="el" href="#ae0e7e5bfd8c3116d91e6015fe2d8a7bd">x</a>, double <a class="el" href="#ae72db92a96c217019d06cab995b93d7b">y</a>, double <a class="el" href="#ac9ce9f792814763198e8f9f778950b00">z</a>, int <a class="el" href="#a906290ff71b92466c193b08633e19ae9">rate</a>, double <a class="el" href="#a5beaff1c1f283a9a13b03a1862c68ad8">half_life</a>=1e9)</td></tr>
+<tr class="memdesc:af7bb98b31a1c16a819cd31b332742cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a source at a given position with a given emission rate.  <br /></td></tr>
+<tr class="memitem:a4e866367450b565fcc29078878018759" id="r_a4e866367450b565fcc29078878018759"><td class="memItemLeft">std::vector&lt; <a class="el" href="../../de/d85/class_particle.html">Particle</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a4e866367450b565fcc29078878018759">emit</a> () const</td></tr>
+<tr class="memdesc:a4e866367450b565fcc29078878018759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emit one batch of particles for the current time step. The number of particles returned equals <code>rate</code>. Each particle's direction and speed are sampled from normal distributions, and its type is chosen randomly (75 % proton, 25 % neutron).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ae0e7e5bfd8c3116d91e6015fe2d8a7bd" id="r_ae0e7e5bfd8c3116d91e6015fe2d8a7bd"><td class="memItemLeft"><a id="ae0e7e5bfd8c3116d91e6015fe2d8a7bd" name="ae0e7e5bfd8c3116d91e6015fe2d8a7bd"></a>
 double&#160;</td><td class="memItemRight"><b>x</b></td></tr>
+<tr class="memdesc:ae0e7e5bfd8c3116d91e6015fe2d8a7bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">X-coordinate of the source position (metres). <br /></td></tr>
 <tr class="memitem:ae72db92a96c217019d06cab995b93d7b" id="r_ae72db92a96c217019d06cab995b93d7b"><td class="memItemLeft"><a id="ae72db92a96c217019d06cab995b93d7b" name="ae72db92a96c217019d06cab995b93d7b"></a>
 double&#160;</td><td class="memItemRight"><b>y</b></td></tr>
+<tr class="memdesc:ae72db92a96c217019d06cab995b93d7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y-coordinate of the source position (metres). <br /></td></tr>
 <tr class="memitem:ac9ce9f792814763198e8f9f778950b00" id="r_ac9ce9f792814763198e8f9f778950b00"><td class="memItemLeft"><a id="ac9ce9f792814763198e8f9f778950b00" name="ac9ce9f792814763198e8f9f778950b00"></a>
 double&#160;</td><td class="memItemRight"><b>z</b></td></tr>
+<tr class="memdesc:ac9ce9f792814763198e8f9f778950b00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Z-coordinate of the source position (metres). <br /></td></tr>
 <tr class="memitem:a906290ff71b92466c193b08633e19ae9" id="r_a906290ff71b92466c193b08633e19ae9"><td class="memItemLeft"><a id="a906290ff71b92466c193b08633e19ae9" name="a906290ff71b92466c193b08633e19ae9"></a>
 int&#160;</td><td class="memItemRight"><b>rate</b></td></tr>
+<tr class="memdesc:a906290ff71b92466c193b08633e19ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of particles emitted per time step (at t = 0). <br /></td></tr>
+<tr class="memitem:a5beaff1c1f283a9a13b03a1862c68ad8" id="r_a5beaff1c1f283a9a13b03a1862c68ad8"><td class="memItemLeft"><a id="a5beaff1c1f283a9a13b03a1862c68ad8" name="a5beaff1c1f283a9a13b03a1862c68ad8"></a>
+double&#160;</td><td class="memItemRight"><b>half_life</b></td></tr>
+<tr class="memdesc:a5beaff1c1f283a9a13b03a1862c68ad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Radioactive half-life in time steps. After <code>half_life</code> steps the effective emission rate halves. Defaults to <code>1e9</code> (essentially no decay). <br /></td></tr>
+<tr class="memitem:acc4ad938c2f92302e307f847e6ca3500" id="r_acc4ad938c2f92302e307f847e6ca3500"><td class="memItemLeft"><a id="acc4ad938c2f92302e307f847e6ca3500" name="acc4ad938c2f92302e307f847e6ca3500"></a>
+int&#160;</td><td class="memItemRight"><b>steps_elapsed</b> = 0</td></tr>
+<tr class="memdesc:acc4ad938c2f92302e307f847e6ca3500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal step counter (mutable so <a class="el" href="#a4e866367450b565fcc29078878018759" title="Emit one batch of particles for the current time step. The number of particles returned equals rate....">emit()</a> can stay logically const). <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Models a radioactive point source that emits particles every time step. </p>
+<p>The source is located at a fixed 3-D position and emits a given number of particles per time step. Each emitted particle has a randomised direction and speed drawn from statistical distributions, and its type (proton or neutron) is chosen randomly with a 3:1 proton-to-neutron ratio. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af7bb98b31a1c16a819cd31b332742cb5" name="af7bb98b31a1c16a819cd31b332742cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7bb98b31a1c16a819cd31b332742cb5">&#9670;&#160;</a></span>Source()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Source::Source </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>y_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>z_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>rate_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>half_life_</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e9</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a source at a given position with a given emission rate. </p>
+<p>Construct a source at the specified position with the given emission rate.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#ae0e7e5bfd8c3116d91e6015fe2d8a7bd" title="X-coordinate of the source position (metres).">x</a></td><td>X-coordinate of the source (metres). </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ae72db92a96c217019d06cab995b93d7b" title="Y-coordinate of the source position (metres).">y</a></td><td>Y-coordinate of the source (metres). </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ac9ce9f792814763198e8f9f778950b00" title="Z-coordinate of the source position (metres).">z</a></td><td>Z-coordinate of the source (metres). </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a906290ff71b92466c193b08633e19ae9" title="Number of particles emitted per time step (at t = 0).">rate</a></td><td>Number of particles to emit per time step. Must be positive. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a5beaff1c1f283a9a13b03a1862c68ad8" title="Radioactive half-life in time steps. After half_life steps the effective emission rate halves....">half_life</a></td><td>Decay half-life in time steps (default: effectively infinite).</td></tr>
+    <tr><td class="paramname">x_</td><td>X-coordinate of the source (metres). </td></tr>
+    <tr><td class="paramname">y_</td><td>Y-coordinate of the source (metres). </td></tr>
+    <tr><td class="paramname">z_</td><td>Z-coordinate of the source (metres). </td></tr>
+    <tr><td class="paramname">rate_</td><td>Number of particles to emit per time step. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a4e866367450b565fcc29078878018759" name="a4e866367450b565fcc29078878018759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e866367450b565fcc29078878018759">&#9670;&#160;</a></span>emit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="../../de/d85/class_particle.html">Particle</a> &gt; Source::emit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Emit one batch of particles for the current time step. The number of particles returned equals <code>rate</code>. Each particle's direction and speed are sampled from normal distributions, and its type is chosen randomly (75 % proton, 25 % neutron). </p>
+<p>Emit one batch of particles for the current time step. Direction angles (theta, phi) and speed norm are drawn from normal distributions to produce a realistic, slightly spread-out beam. <a class="el" href="../../de/d85/class_particle.html" title="Represents a single physical particle moving through the simulation domain.">Particle</a> type is chosen randomly: 75 % proton, 25 % neutron.</p>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing the newly emitted <a class="el" href="../../de/d85/class_particle.html" title="Represents a single physical particle moving through the simulation domain.">Particle</a> objects.</dd>
+<dd>
+A vector of <code>rate</code> newly created <a class="el" href="../../de/d85/class_particle.html" title="Represents a single physical particle moving through the simulation domain.">Particle</a> objects, all originating from the source position. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="../../db/df9/_source_8h_source.html">Source.h</a></li>
-<li>src/<b>Source.cpp</b></li>
+<li>src/<a class="el" href="../../dd/d6e/_source_8cpp.html">Source.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

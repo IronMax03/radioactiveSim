@@ -1,43 +1,179 @@
 \doxysection{Particle Class Reference}
 \hypertarget{class_particle}{}\label{class_particle}\index{Particle@{Particle}}
+
+
+Represents a single physical particle moving through the simulation domain.  
+
+
+
+
+{\ttfamily \+\#include $<$Particle.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_particle_a2ee948a7db884d814a6a5971a45dd2ca}\label{class_particle_a2ee948a7db884d814a6a5971a45dd2ca} 
-{\bfseries Particle} (double x, double y, double z, double vx, double vy, double vz, std::\+string type)
-\item 
-\Hypertarget{class_particle_acf830f9e25ec182d6a39f04d705b41ba}\label{class_particle_acf830f9e25ec182d6a39f04d705b41ba} 
-{\bfseries Particle} (double x, double y, double z, double vx, double vy, double vz, double m, int ec, std::\+string type)
-\item 
+\doxymbox{\hyperlink{class_particle_a40f4c7e248029d72e7714b7802d5e5e1}{Particle}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Creates a stationary, uncharged, dead particle at the origin. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_particle_a2ee948a7db884d814a6a5971a45dd2ca}{Particle}} (double x, double y, double z, double vx, double vy, double vz, std::\+string \doxymbox{\hyperlink{class_particle_ac5b51d11f535f3b806fff965414e0410}{type}})
+\begin{DoxyCompactList}\small\item\em Construct a particle with position, velocity, and type. Mass and electric charge are inferred from {\ttfamily type}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_particle_acf830f9e25ec182d6a39f04d705b41ba}{Particle}} (double x, double y, double z, double vx, double vy, double vz, double m, int ec, std::\+string \doxymbox{\hyperlink{class_particle_ac5b51d11f535f3b806fff965414e0410}{type}})
+\begin{DoxyCompactList}\small\item\em Construct a particle with position, velocity, explicit mass, charge, and type. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_particle_a952cf3e369a2580bf0f56545f4577171}{move}} (double dt)
-\begin{DoxyCompactList}\small\item\em Move the particle by updating its position and velocity based on its acceleration and the time step dt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Advance the particle by one time step {\ttfamily dt}. Updates velocity from acceleration, then position from velocity. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_particle_a62e09cb8b75fc0e83472779dbcf097e5}\label{class_particle_a62e09cb8b75fc0e83472779dbcf097e5} 
 \doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries position}
-\item 
+\begin{DoxyCompactList}\small\item\em Current 3-\/D position of the particle (metres). \end{DoxyCompactList}\item 
 \Hypertarget{class_particle_a3118c47b933c96ab93b7d49eb7cc79a4}\label{class_particle_a3118c47b933c96ab93b7d49eb7cc79a4} 
 \doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries velocity}
-\item 
+\begin{DoxyCompactList}\small\item\em Current 3-\/D velocity of the particle (metres per second). \end{DoxyCompactList}\item 
 \Hypertarget{class_particle_ad8f5fb3077746ec9034c4e57f164b44e}\label{class_particle_ad8f5fb3077746ec9034c4e57f164b44e} 
 \doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries acceleration}
-\item 
+\begin{DoxyCompactList}\small\item\em Current 3-\/D acceleration of the particle (metres per second squared). \end{DoxyCompactList}\item 
 \Hypertarget{class_particle_ae6d46dc24a6666d526f211151fecca5f}\label{class_particle_ae6d46dc24a6666d526f211151fecca5f} 
 double {\bfseries mass}
-\item 
+\begin{DoxyCompactList}\small\item\em Mass of the particle expressed in units of proton mass. \end{DoxyCompactList}\item 
 \Hypertarget{class_particle_ae90740a152e14b96632dd9c3fc631f3b}\label{class_particle_ae90740a152e14b96632dd9c3fc631f3b} 
 int {\bfseries electric\+\_\+charge}
-\item 
+\begin{DoxyCompactList}\small\item\em Electric charge of the particle in coulomb units (integer). \end{DoxyCompactList}\item 
 \Hypertarget{class_particle_ac5b51d11f535f3b806fff965414e0410}\label{class_particle_ac5b51d11f535f3b806fff965414e0410} 
 std::\+string {\bfseries type}
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{class_particle}{Particle} species identifier (e.\+g. {\ttfamily "{}proton"{}} or {\ttfamily "{}neutron"{}}). \end{DoxyCompactList}\item 
 \Hypertarget{class_particle_a94a340bb5ba69aa7ce14dac62c88a0ee}\label{class_particle_a94a340bb5ba69aa7ce14dac62c88a0ee} 
 double {\bfseries distance\+\_\+in\+\_\+shield}
-\item 
+\begin{DoxyCompactList}\small\item\em Cumulative distance the particle has travelled inside a shielding volume (metres). \end{DoxyCompactList}\item 
 \Hypertarget{class_particle_affebffa1e11f05041c9c46e8b684275b}\label{class_particle_affebffa1e11f05041c9c46e8b684275b} 
 bool {\bfseries alive}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Whether the particle is still active in the simulation. Set to {\ttfamily false} once the particle is absorbed or leaves the domain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single physical particle moving through the simulation domain. 
+
+A \doxylink{class_particle}{Particle} carries kinematic state (position, velocity, acceleration), physical properties (mass, electric charge, type), and bookkeeping information used by the simulation loop (distance travelled inside a shield, alive flag). 
+
+\label{doc-constructors}
+\Hypertarget{class_particle_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_particle_a40f4c7e248029d72e7714b7802d5e5e1}\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_particle_a40f4c7e248029d72e7714b7802d5e5e1} 
+Particle::\+\+Particle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. Creates a stationary, uncharged, dead particle at the origin. 
+
+Default constructor. Initialises all kinematic fields to zero and marks the particle as dead. \Hypertarget{class_particle_a2ee948a7db884d814a6a5971a45dd2ca}\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_particle_a2ee948a7db884d814a6a5971a45dd2ca} 
+Particle::\+\+Particle (\begin{DoxyParamCaption}\item[{double}]{x\+\_\+}{, }\item[{double}]{y\+\_\+}{, }\item[{double}]{z\+\_\+}{, }\item[{double}]{vx\+\_\+}{, }\item[{double}]{vy\+\_\+}{, }\item[{double}]{vz\+\_\+}{, }\item[{std::\+string}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Construct a particle with position, velocity, and type. Mass and electric charge are inferred from {\ttfamily type}. 
+
+Construct a particle from position, velocity, and type string. Mass and electric charge are inferred automatically from {\ttfamily t}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Initial x-\/coordinate (metres). \\
+\hline
+{\em y} & Initial y-\/coordinate (metres). \\
+\hline
+{\em z} & Initial z-\/coordinate (metres). \\
+\hline
+{\em vx} & Initial x-\/component of velocity (m/\+s). \\
+\hline
+{\em vy} & Initial y-\/component of velocity (m/\+s). \\
+\hline
+{\em vz} & Initial z-\/component of velocity (m/\+s). \\
+\hline
+{\em \doxylink{class_particle_ac5b51d11f535f3b806fff965414e0410}{type}} & \doxylink{class_particle}{Particle} species. Accepted values:\+ {\ttfamily "{}proton"{}}, {\ttfamily "{}neutron"{}}. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & if {\ttfamily type} is not a recognised particle species.\\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+} & Initial x-\/coordinate. \\
+\hline
+{\em y\+\_\+} & Initial y-\/coordinate. \\
+\hline
+{\em z\+\_\+} & Initial z-\/coordinate. \\
+\hline
+{\em vx\+\_\+} & Initial x-\/component of velocity. \\
+\hline
+{\em vy\+\_\+} & Initial y-\/component of velocity. \\
+\hline
+{\em vz\+\_\+} & Initial z-\/component of velocity. \\
+\hline
+{\em t} & \doxylink{class_particle}{Particle} type string. Accepted values:\+ {\ttfamily "{}proton"{}}, {\ttfamily "{}neutron"{}}. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & if {\ttfamily t} is not a recognised particle type. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_particle_acf830f9e25ec182d6a39f04d705b41ba}\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_particle_acf830f9e25ec182d6a39f04d705b41ba} 
+Particle::\+\+Particle (\begin{DoxyParamCaption}\item[{double}]{x\+\_\+}{, }\item[{double}]{y\+\_\+}{, }\item[{double}]{z\+\_\+}{, }\item[{double}]{vx\+\_\+}{, }\item[{double}]{vy\+\_\+}{, }\item[{double}]{vz\+\_\+}{, }\item[{double}]{m}{, }\item[{int}]{ec}{, }\item[{std::\+string}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Construct a particle with position, velocity, explicit mass, charge, and type. 
+
+Construct a particle with explicitly provided mass, charge, and type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Initial x-\/coordinate (metres). \\
+\hline
+{\em y} & Initial y-\/coordinate (metres). \\
+\hline
+{\em z} & Initial z-\/coordinate (metres). \\
+\hline
+{\em vx} & Initial x-\/component of velocity (m/\+s). \\
+\hline
+{\em vy} & Initial y-\/component of velocity (m/\+s). \\
+\hline
+{\em vz} & Initial z-\/component of velocity (m/\+s). \\
+\hline
+{\em m} & Mass in units of proton mass. \\
+\hline
+{\em ec} & Electric charge in coulomb units. \\
+\hline
+{\em \doxylink{class_particle_ac5b51d11f535f3b806fff965414e0410}{type}} & \doxylink{class_particle}{Particle} species label.\\
+\hline
+{\em x\+\_\+} & Initial x-\/coordinate. \\
+\hline
+{\em y\+\_\+} & Initial y-\/coordinate. \\
+\hline
+{\em z\+\_\+} & Initial z-\/coordinate. \\
+\hline
+{\em vx\+\_\+} & Initial x-\/component of velocity. \\
+\hline
+{\em vy\+\_\+} & Initial y-\/component of velocity. \\
+\hline
+{\em vz\+\_\+} & Initial z-\/component of velocity. \\
+\hline
+{\em m} & Mass in units of proton mass. \\
+\hline
+{\em ec} & Electric charge in coulomb units. \\
+\hline
+{\em t} & \doxylink{class_particle}{Particle} type label. \\
+\hline
+\end{DoxyParams}
 
 
 \label{doc-func-members}
@@ -51,8 +187,20 @@ void Particle::\+move (\begin{DoxyParamCaption}\item[{double}]{dt}{}\end{DoxyPar
 
 
 
-Move the particle by updating its position and velocity based on its acceleration and the time step dt. 
+Advance the particle by one time step {\ttfamily dt}. Updates velocity from acceleration, then position from velocity. 
 
+Move the particle by updating its position and velocity based on its acceleration and the time step dt.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Time step duration (seconds). Must be strictly positive. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & if {\ttfamily dt} is less than or equal to zero.\\
+\hline
+\end{DoxyExceptions}
 
 \begin{DoxyParams}{Parameters}
 {\em dt} & The time step to move the particle. Must be positive and not equal to zero. \\
@@ -72,5 +220,5 @@ This error is mainly here to prevent the user from accidentally using a negative
 
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
 \item 
-src/\+Particle.\+h\item 
+src/\+\doxymbox{\hyperlink{_particle_8h}{Particle.\+h}}\item 
 src/\+\doxymbox{\hyperlink{_particle_8cpp}{Particle.\+cpp}}\end{DoxyCompactItemize}

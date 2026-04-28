@@ -91,19 +91,68 @@ $(function(){initNavTree('d3/d0a/struct_material.html','../../','d4/dc1/struct_m
   <div class="headertitle"><div class="title">Material Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Describes the physical properties of a shielding material.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d3/d09/_material_8h_source.html">Material.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3953f2157993a6cc0320d67ddd7d059a" id="r_a3953f2157993a6cc0320d67ddd7d059a"><td class="memItemLeft"><a id="a3953f2157993a6cc0320d67ddd7d059a" name="a3953f2157993a6cc0320d67ddd7d059a"></a>
-&#160;</td><td class="memItemRight"><b>Material</b> (std::string n=&quot;Vacuum&quot;, double mfp=1e9)</td></tr>
+<tr class="memitem:a3953f2157993a6cc0320d67ddd7d059a" id="r_a3953f2157993a6cc0320d67ddd7d059a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3953f2157993a6cc0320d67ddd7d059a">Material</a> (std::string n=&quot;Vacuum&quot;, double mfp=1e9)</td></tr>
+<tr class="memdesc:a3953f2157993a6cc0320d67ddd7d059a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a material with a given name and mean free path.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:affe06990f884293d0fe2f39110f71730" id="r_affe06990f884293d0fe2f39110f71730"><td class="memItemLeft"><a id="affe06990f884293d0fe2f39110f71730" name="affe06990f884293d0fe2f39110f71730"></a>
 std::string&#160;</td><td class="memItemRight"><b>name</b></td></tr>
+<tr class="memdesc:affe06990f884293d0fe2f39110f71730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable name of the material (e.g. <code>"Lead"</code>, <code>"Vacuum"</code>). <br /></td></tr>
 <tr class="memitem:aa4ecf6ccdb5f3110b8e0482903e6dea8" id="r_aa4ecf6ccdb5f3110b8e0482903e6dea8"><td class="memItemLeft"><a id="aa4ecf6ccdb5f3110b8e0482903e6dea8" name="aa4ecf6ccdb5f3110b8e0482903e6dea8"></a>
 double&#160;</td><td class="memItemRight"><b>mean_free_path</b></td></tr>
+<tr class="memdesc:aa4ecf6ccdb5f3110b8e0482903e6dea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mean free path of the material in metres. Larger values mean the material is more transparent to radiation. Defaults to <code>1e9</code> (effectively transparent, i.e. vacuum). <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Describes the physical properties of a shielding material. </p>
+<p>Currently the only property used by the simulation is the mean free path, which governs exponential attenuation of particles passing through the material. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3953f2157993a6cc0320d67ddd7d059a" name="a3953f2157993a6cc0320d67ddd7d059a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3953f2157993a6cc0320d67ddd7d059a">&#9670;&#160;</a></span>Material()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Material::Material </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>n</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Vacuum&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>mfp</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e9</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a material with a given name and mean free path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Name of the material. Defaults to <code>"Vacuum"</code>. </td></tr>
+    <tr><td class="paramname">mfp</td><td>Mean free path in metres. Defaults to <code>1e9</code> (vacuum). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/<a class="el" href="../../d3/d09/_material_8h_source.html">Material.h</a></li>
 </ul>

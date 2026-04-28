@@ -1,22 +1,57 @@
 \doxysection{Material Struct Reference}
 \hypertarget{struct_material}{}\label{struct_material}\index{Material@{Material}}
+
+
+Describes the physical properties of a shielding material.  
+
+
+
+
+{\ttfamily \+\#include $<$Material.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{struct_material_a3953f2157993a6cc0320d67ddd7d059a}\label{struct_material_a3953f2157993a6cc0320d67ddd7d059a} 
-{\bfseries Material} (std::\+string n="{}Vacuum"{}, double mfp=1e9)
-\end{DoxyCompactItemize}
+\doxymbox{\hyperlink{struct_material_a3953f2157993a6cc0320d67ddd7d059a}{Material}} (std::\+string n="{}Vacuum"{}, double mfp=1e9)
+\begin{DoxyCompactList}\small\item\em Construct a material with a given name and mean free path. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{struct_material_affe06990f884293d0fe2f39110f71730}\label{struct_material_affe06990f884293d0fe2f39110f71730} 
 std::\+string {\bfseries name}
-\item 
+\begin{DoxyCompactList}\small\item\em Human-\/readable name of the material (e.\+g. {\ttfamily "{}\+Lead"{}}, {\ttfamily "{}\+Vacuum"{}}). \end{DoxyCompactList}\item 
 \Hypertarget{struct_material_aa4ecf6ccdb5f3110b8e0482903e6dea8}\label{struct_material_aa4ecf6ccdb5f3110b8e0482903e6dea8} 
 double {\bfseries mean\+\_\+free\+\_\+path}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Mean free path of the material in metres. Larger values mean the material is more transparent to radiation. Defaults to {\ttfamily 1e9} (effectively transparent, i.\+e. vacuum). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describes the physical properties of a shielding material. 
+
+Currently the only property used by the simulation is the mean free path, which governs exponential attenuation of particles passing through the material. 
+
+\label{doc-constructors}
+\Hypertarget{struct_material_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_material_a3953f2157993a6cc0320d67ddd7d059a}\index{Material@{Material}!Material@{Material}}
+\index{Material@{Material}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{Material()}{Material()}}
+{\footnotesize\ttfamily \label{struct_material_a3953f2157993a6cc0320d67ddd7d059a} 
+Material::\+\+Material (\begin{DoxyParamCaption}\item[{std::\+string}]{n}{ = {\ttfamily "{}Vacuum"{}}, }\item[{double}]{mfp}{ = {\ttfamily 1e9}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a material with a given name and mean free path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Name of the material. Defaults to {\ttfamily "{}\+Vacuum"{}}. \\
+\hline
+{\em mfp} & Mean free path in metres. Defaults to {\ttfamily 1e9} (vacuum). \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
 \item 
-src/\+Material.\+h\end{DoxyCompactItemize}
+src/\+\doxymbox{\hyperlink{_material_8h}{Material.\+h}}\end{DoxyCompactItemize}

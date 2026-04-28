@@ -12,25 +12,55 @@ A spatial partitioning octree data structure for implementing the Barnes-\/\+Hut
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_octree_a046f8573a9cd686026baead26527778a}\label{class_octree_a046f8573a9cd686026baead26527778a} 
-{\bfseries Octree} (\doxymbox{\hyperlink{structvector3}{vector3}}$<$ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}} $>$ min\+Vec, \doxymbox{\hyperlink{structvector3}{vector3}}$<$ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}} $>$ max\+Vec)
-\item 
-\Hypertarget{class_octree_a6ad44acf3890a47e191fa6d9d8b63087}\label{class_octree_a6ad44acf3890a47e191fa6d9d8b63087} 
-void {\bfseries set\+\_\+default\+\_\+field} (\doxymbox{\hyperlink{class_octree}{Octree}} def)
-\item 
+\doxymbox{\hyperlink{class_octree_a046f8573a9cd686026baead26527778a}{Octree}} (\doxymbox{\hyperlink{structvector3}{vector3}}$<$ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}} $>$ min\+Vec, \doxymbox{\hyperlink{structvector3}{vector3}}$<$ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}} $>$ max\+Vec)
+\begin{DoxyCompactList}\small\item\em Construct an \doxylink{class_octree}{Octree} covering the axis-\/aligned box defined by {\ttfamily min\+Vec} and {\ttfamily max\+Vec}. The root node\textquotesingle{}s bounding box is the smallest cube that contains the input box. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_octree_a6ad44acf3890a47e191fa6d9d8b63087}{set\+\_\+default\+\_\+field}} (\doxymbox{\hyperlink{class_octree}{Octree}} def)
+\begin{DoxyCompactList}\small\item\em Replace the default field of the octree (reserved for future use). \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_octree_a05531d715b666bdf0cc63dd67b5191c4}{add\+\_\+particle}} (const \doxymbox{\hyperlink{class_particle}{Particle}} \&p)
-\begin{DoxyCompactList}\small\item\em Add a particle to the octree. This is a public wrapper function for the private add\+\_\+particle function that takes a node as an argument. \end{DoxyCompactList}\item 
-\Hypertarget{class_octree_aab0e872e9963fe536e9884bf078e4258}\label{class_octree_aab0e872e9963fe536e9884bf078e4258} 
-void {\bfseries calc\+\_\+force} (\doxymbox{\hyperlink{class_particle}{Particle}} \&p)
-\item 
+\begin{DoxyCompactList}\small\item\em Add a single particle to the octree (public wrapper). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_octree_aab0e872e9963fe536e9884bf078e4258}{calc\+\_\+force}} (\doxymbox{\hyperlink{class_particle}{Particle}} \&p)
+\begin{DoxyCompactList}\small\item\em Calculate the electrostatic force acting on {\ttfamily p} using the Barnes-\/\+Hut approximation and store the result in {\ttfamily p.\+acceleration}. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{class_octree_a834963289ae58c88ec625a52739f73a9}{build}} (const std::\+vector$<$ \doxymbox{\hyperlink{class_particle}{Particle}} $>$ \&particles)
-\begin{DoxyCompactList}\small\item\em Build the octree from a vector of particles. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Build the entire octree from a flat vector of particles. Equivalent to calling add\+\_\+particle() for each particle in {\ttfamily particles}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_octree_abf8682844f57cbe4ac2baf9d4e362c82}{set\+\_\+theta}} (float t)
+\begin{DoxyCompactList}\small\item\em Set the Barnes-\/\+Hut opening-\/angle parameter. \end{DoxyCompactList}\item 
+\Hypertarget{class_octree_ae9110da64c18d7683f0edaf598ef5593}\label{class_octree_ae9110da64c18d7683f0edaf598ef5593} 
+float {\bfseries get\+\_\+theta} () const
+\begin{DoxyCompactList}\small\item\em Return the current Barnes-\/\+Hut opening-\/angle parameter. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}}$<$ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}} $>$ \& \doxymbox{\hyperlink{class_octree_a251845ac6def2d95c5cc1fc89c6eb69c}{get\+\_\+root}} ()
-\begin{DoxyCompactList}\small\item\em return the root node of the octree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Return a mutable reference to the root node of the octree. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 A spatial partitioning octree data structure for implementing the Barnes-\/\+Hut algorithm. 
+
+\label{doc-constructors}
+\Hypertarget{class_octree_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_octree_a046f8573a9cd686026baead26527778a}\index{Octree@{Octree}!Octree@{Octree}}
+\index{Octree@{Octree}!Octree@{Octree}}
+\doxysubsubsection{\texorpdfstring{Octree()}{Octree()}}
+{\footnotesize\ttfamily \label{class_octree_a046f8573a9cd686026baead26527778a} 
+Octree::\+\+Octree (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structvector3}{vector3}}$<$ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}} $>$}]{min\+Vec}{, }\item[{\doxymbox{\hyperlink{structvector3}{vector3}}$<$ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}} $>$}]{max\+Vec}{}\end{DoxyParamCaption})}
+
+
+
+Construct an \doxylink{class_octree}{Octree} covering the axis-\/aligned box defined by {\ttfamily min\+Vec} and {\ttfamily max\+Vec}. The root node\textquotesingle{}s bounding box is the smallest cube that contains the input box. 
+
+Construct an \doxylink{class_octree}{Octree} that covers the axis-\/aligned box \+[min\+Vec, max\+Vec]\+. The root bounding box becomes the smallest cube enclosing that box.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Vec} & Minimum corner of the initial bounding volume. \\
+\hline
+{\em max\+Vec} & Maximum corner of the initial bounding volume.\\
+\hline
+{\em min\+Vec} & Minimum corner of the region to partition. \\
+\hline
+{\em max\+Vec} & Maximum corner of the region to partition. \\
+\hline
+\end{DoxyParams}
+
 
 \label{doc-func-members}
 \Hypertarget{class_octree_doc-func-members}
@@ -43,10 +73,14 @@ void Octree::\+add\+\_\+particle (\begin{DoxyParamCaption}\item[{const \doxymbox
 
 
 
-Add a particle to the octree. This is a public wrapper function for the private add\+\_\+particle function that takes a node as an argument. 
+Add a single particle to the octree (public wrapper). 
+
+Add a particle to the octree. This is a public wrapper function for the private add\+\_\+particle function that takes a node as an argument.
 
 
 \begin{DoxyParams}{Parameters}
+{\em p} & The particle to insert.\\
+\hline
 {\em p} & The particle to add to the octree. \\
 \hline
 \end{DoxyParams}
@@ -58,11 +92,39 @@ void Octree::\+build (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \dox
 
 
 
-Build the octree from a vector of particles. 
+Build the entire octree from a flat vector of particles. Equivalent to calling add\+\_\+particle() for each particle in {\ttfamily particles}. 
+
+Build the octree from a vector of particles.
 
 
 \begin{DoxyParams}{Parameters}
+{\em particles} & The collection of particles to insert into the octree.\\
+\hline
 {\em particles} & The vector of particles to build the octree from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_octree_aab0e872e9963fe536e9884bf078e4258}\index{Octree@{Octree}!calc\_force@{calc\_force}}
+\index{calc\_force@{calc\_force}!Octree@{Octree}}
+\doxysubsubsection{\texorpdfstring{calc\_force()}{calc\_force()}}
+{\footnotesize\ttfamily \label{class_octree_aab0e872e9963fe536e9884bf078e4258} 
+void Octree::\+calc\+\_\+force (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_particle}{Particle}} \&}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Calculate the electrostatic force acting on {\ttfamily p} using the Barnes-\/\+Hut approximation and store the result in {\ttfamily p.\+acceleration}. 
+
+Compute the net electrostatic force on {\ttfamily p} via the Barnes-\/\+Hut approximation and update {\ttfamily p.\+acceleration} accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The particle for which to compute the force. Modified in-\/place.\\
+\hline
+\end{DoxyParams}
+The tree must already be populated (via \doxylink{class_octree_a834963289ae58c88ec625a52739f73a9}{build()} /\+ add\+\_\+particle()). This function first calls eval() on the root to (re-\/)compute aggregate charges and centres-\/of-\/charge, then performs the recursive traversal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The particle for which to compute the acceleration. Modified in-\/place. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_octree_a251845ac6def2d95c5cc1fc89c6eb69c}\index{Octree@{Octree}!get\_root@{get\_root}}
@@ -73,11 +135,49 @@ Build the octree from a vector of particles.
 
 
 
-return the root node of the octree. 
+Return a mutable reference to the root node of the octree. 
 
+return the root node of the octree.
+
+\begin{DoxyNote}{Note}
+Intended for testing and future scaling. In production code prefer the higher-\/level interface (add\+\_\+particle, calc\+\_\+force, build). 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Reference to the root \doxylink{structlazy__node}{lazy\+\_\+node}.
+\end{DoxyReturn}
 \begin{DoxyNote}{Note}
 This function is intended for future scaling purposes, the current implementation is intrusive for testing purposes and should be replaced with a encapsulated version. 
 \end{DoxyNote}
+\Hypertarget{class_octree_a6ad44acf3890a47e191fa6d9d8b63087}\index{Octree@{Octree}!set\_default\_field@{set\_default\_field}}
+\index{set\_default\_field@{set\_default\_field}!Octree@{Octree}}
+\doxysubsubsection{\texorpdfstring{set\_default\_field()}{set\_default\_field()}}
+{\footnotesize\ttfamily \label{class_octree_a6ad44acf3890a47e191fa6d9d8b63087} 
+void Octree::\+set\+\_\+default\+\_\+field (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_octree}{Octree}}}]{def}{}\end{DoxyParamCaption})}
+
+
+
+Replace the default field of the octree (reserved for future use). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em def} & The default-\/field octree to apply. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_octree_abf8682844f57cbe4ac2baf9d4e362c82}\index{Octree@{Octree}!set\_theta@{set\_theta}}
+\index{set\_theta@{set\_theta}!Octree@{Octree}}
+\doxysubsubsection{\texorpdfstring{set\_theta()}{set\_theta()}}
+{\footnotesize\ttfamily \label{class_octree_abf8682844f57cbe4ac2baf9d4e362c82} 
+void Octree::\+set\+\_\+theta (\begin{DoxyParamCaption}\item[{float}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Barnes-\/\+Hut opening-\/angle parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Values closer to 0 give higher accuracy; typical default is 0.\+5. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}

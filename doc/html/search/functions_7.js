@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['norm_0',['norm',['../dd/d53/structvector3.html#a4405b7efa1f89f60923c4008647c9be0',1,'vector3']]],
-  ['normalize_1',['normalize',['../dd/d53/structvector3.html#aa5916ec6ffe3ad4b5143261669108557',1,'vector3']]]
+  ['material_0',['Material',['../d3/d0a/struct_material.html#a3953f2157993a6cc0320d67ddd7d059a',1,'Material']]],
+  ['move_1',['move',['../de/d85/class_particle.html#a952cf3e369a2580bf0f56545f4577171',1,'Particle']]]
 ];

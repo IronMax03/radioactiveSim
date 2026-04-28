@@ -91,39 +91,49 @@ $(function(){initNavTree('de/d71/_shielding_8h_source.html','../../',''); });
   <div class="headertitle"><div class="title">Shielding.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;Material.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Particle.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="../../d8/df1/_box_8hpp.html">Box.hpp</a>&quot;</span></div>
+<a href="../../de/d71/_shielding_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d6/dbd/class_shielding.html">    7</a></span><span class="keyword">class </span>Shielding {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">//double xmin, xmax, ymin, ymax, zmin, zmax;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_struct" href="../../dd/d53/structvector3.html">vector3&lt;double&gt;</a> min_corner;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_struct" href="../../dd/d53/structvector3.html">vector3&lt;double&gt;</a> max_corner;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_struct" href="../../d3/d0a/struct_material.html">Material</a> material;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    Shielding(<span class="keywordtype">double</span> xmin, <span class="keywordtype">double</span> xmax,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>              <span class="keywordtype">double</span> ymin, <span class="keywordtype">double</span> ymax,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>              <span class="keywordtype">double</span> zmin, <span class="keywordtype">double</span> zmax,</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>              <a class="code hl_struct" href="../../d3/d0a/struct_material.html">Material</a> m);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">bool</span> contains(<span class="keyword">const</span> <a class="code hl_class" href="../../de/d85/class_particle.html">Particle</a>&amp; p) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="../../d3/d09/_material_8h.html">Material.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="../../d4/d15/_particle_8h.html">Particle.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Box.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d6/dbd/class_shielding.html">   15</a></span><span class="keyword">class </span><a class="code hl_function" href="../../d6/dbd/class_shielding.html#aefdc50abf3bf18a7371fcd3cbbb047df">Shielding</a> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d6/dbd/class_shielding.html#a05deacaaaa9bbcac807e2658e0331fdd">   19</a></span>    <a class="code hl_struct" href="../../dd/d53/structvector3.html">vector3&lt;double&gt;</a> <a class="code hl_variable" href="../../d6/dbd/class_shielding.html#a05deacaaaa9bbcac807e2658e0331fdd">min_corner</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d6/dbd/class_shielding.html#aeb953127c23574c017ddfdca4d805052">   22</a></span>    <a class="code hl_struct" href="../../dd/d53/structvector3.html">vector3&lt;double&gt;</a> <a class="code hl_variable" href="../../d6/dbd/class_shielding.html#aeb953127c23574c017ddfdca4d805052">max_corner</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d6/dbd/class_shielding.html#a46b89d3cc4f457e0e75b68469c79ab03">   25</a></span>    <a class="code hl_struct" href="../../d3/d0a/struct_material.html">Material</a> <a class="code hl_variable" href="../../d6/dbd/class_shielding.html#a46b89d3cc4f457e0e75b68469c79ab03">material</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="../../d6/dbd/class_shielding.html#aefdc50abf3bf18a7371fcd3cbbb047df">Shielding</a>(<span class="keywordtype">double</span> xmin, <span class="keywordtype">double</span> xmax,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>              <span class="keywordtype">double</span> ymin, <span class="keywordtype">double</span> ymax,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>              <span class="keywordtype">double</span> zmin, <span class="keywordtype">double</span> zmax,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>              <a class="code hl_struct" href="../../d3/d0a/struct_material.html">Material</a> m);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d6/dbd/class_shielding.html#a2b029bed5b783f4555e84dfac93d4496">contains</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../de/d85/class_particle.html">Particle</a>&amp; p) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
 </div>
-<div class="ttc" id="a_box_8hpp_html"><div class="ttname"><a href="../../d8/df1/_box_8hpp.html">Box.hpp</a></div><div class="ttdoc">Defines the Box class representing a 3D box in space, used for shielding and geometry output.</div></div>
-<div class="ttc" id="aclass_particle_html"><div class="ttname"><a href="../../de/d85/class_particle.html">Particle</a></div><div class="ttdef"><b>Definition</b> Particle.h:7</div></div>
-<div class="ttc" id="astruct_material_html"><div class="ttname"><a href="../../d3/d0a/struct_material.html">Material</a></div><div class="ttdef"><b>Definition</b> Material.h:5</div></div>
-<div class="ttc" id="astructvector3_html"><div class="ttname"><a href="../../dd/d53/structvector3.html">vector3</a></div><div class="ttdoc">A 3D vector. The type of the components of this vector is defined by T wich can be: int,...</div><div class="ttdef"><b>Definition</b> utils.h:12</div></div>
+<div class="ttc" id="a_material_8h_html"><div class="ttname"><a href="../../d3/d09/_material_8h.html">Material.h</a></div><div class="ttdoc">Declaration of the Material struct, which describes the physical properties of a shielding material r...</div></div>
+<div class="ttc" id="a_particle_8h_html"><div class="ttname"><a href="../../d4/d15/_particle_8h.html">Particle.h</a></div><div class="ttdoc">Declaration of the Particle class, representing a physical particle (e.g. proton or neutron) tracked ...</div></div>
+<div class="ttc" id="aclass_particle_html"><div class="ttname"><a href="../../de/d85/class_particle.html">Particle</a></div><div class="ttdoc">Represents a single physical particle moving through the simulation domain.</div><div class="ttdef"><b>Definition</b> Particle.h:16</div></div>
+<div class="ttc" id="aclass_shielding_html_a05deacaaaa9bbcac807e2658e0331fdd"><div class="ttname"><a href="../../d6/dbd/class_shielding.html#a05deacaaaa9bbcac807e2658e0331fdd">Shielding::min_corner</a></div><div class="ttdeci">vector3&lt; double &gt; min_corner</div><div class="ttdoc">Minimum corner of the axis-aligned bounding box (metres).</div><div class="ttdef"><b>Definition</b> Shielding.h:19</div></div>
+<div class="ttc" id="aclass_shielding_html_a2b029bed5b783f4555e84dfac93d4496"><div class="ttname"><a href="../../d6/dbd/class_shielding.html#a2b029bed5b783f4555e84dfac93d4496">Shielding::contains</a></div><div class="ttdeci">bool contains(const Particle &amp;p) const</div><div class="ttdoc">Test whether a particle is currently inside the shielding volume.</div><div class="ttdef"><b>Definition</b> Shielding.cpp:34</div></div>
+<div class="ttc" id="aclass_shielding_html_a46b89d3cc4f457e0e75b68469c79ab03"><div class="ttname"><a href="../../d6/dbd/class_shielding.html#a46b89d3cc4f457e0e75b68469c79ab03">Shielding::material</a></div><div class="ttdeci">Material material</div><div class="ttdoc">Physical material that fills this shielding volume.</div><div class="ttdef"><b>Definition</b> Shielding.h:25</div></div>
+<div class="ttc" id="aclass_shielding_html_aeb953127c23574c017ddfdca4d805052"><div class="ttname"><a href="../../d6/dbd/class_shielding.html#aeb953127c23574c017ddfdca4d805052">Shielding::max_corner</a></div><div class="ttdeci">vector3&lt; double &gt; max_corner</div><div class="ttdoc">Maximum corner of the axis-aligned bounding box (metres).</div><div class="ttdef"><b>Definition</b> Shielding.h:22</div></div>
+<div class="ttc" id="aclass_shielding_html_aefdc50abf3bf18a7371fcd3cbbb047df"><div class="ttname"><a href="../../d6/dbd/class_shielding.html#aefdc50abf3bf18a7371fcd3cbbb047df">Shielding::Shielding</a></div><div class="ttdeci">Shielding(double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, Material m)</div><div class="ttdoc">Construct a shielding volume from explicit axis-aligned bounds and a material.</div><div class="ttdef"><b>Definition</b> Shielding.cpp:16</div></div>
+<div class="ttc" id="astruct_material_html"><div class="ttname"><a href="../../d3/d0a/struct_material.html">Material</a></div><div class="ttdoc">Describes the physical properties of a shielding material.</div><div class="ttdef"><b>Definition</b> Material.h:13</div></div>
+<div class="ttc" id="astructvector3_html"><div class="ttname"><a href="../../dd/d53/structvector3.html">vector3</a></div><div class="ttdoc">A generic 3-D vector whose component type is T.</div><div class="ttdef"><b>Definition</b> utils.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Shielding.h</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="../../de/d71/_shielding_8h.html">Shielding.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

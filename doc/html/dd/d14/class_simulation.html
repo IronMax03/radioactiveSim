@@ -91,31 +91,121 @@ $(function(){initNavTree('dd/d14/class_simulation.html','../../','d6/d9d/class_s
   <div class="headertitle"><div class="title">Simulation Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Top-level simulation driver.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/ded/_simulation_8h_source.html">Simulation.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab9aef2b60ae1933e64a1ebb1c3b4e9c2" id="r_ab9aef2b60ae1933e64a1ebb1c3b4e9c2"><td class="memItemLeft"><a id="ab9aef2b60ae1933e64a1ebb1c3b4e9c2" name="ab9aef2b60ae1933e64a1ebb1c3b4e9c2"></a>
-&#160;</td><td class="memItemRight"><b>Simulation</b> (double dt, unsigned steps, <a class="el" href="../../d8/d74/class_source.html">Source</a> sr, <a class="el" href="../../d6/dbd/class_shielding.html">Shielding</a> s, <a class="el" href="../../d2/d47/class_r_o_i.html">ROI</a> r)</td></tr>
+<tr class="memitem:ab9aef2b60ae1933e64a1ebb1c3b4e9c2" id="r_ab9aef2b60ae1933e64a1ebb1c3b4e9c2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab9aef2b60ae1933e64a1ebb1c3b4e9c2">Simulation</a> (double <a class="el" href="#af43e498bfc83c777db5f5ac4025ff923">dt</a>, unsigned <a class="el" href="#ab9556a6f49d03a8ea25f7f42fe256082">steps</a>, <a class="el" href="../../d8/d74/class_source.html">Source</a> sr, <a class="el" href="../../d6/dbd/class_shielding.html">Shielding</a> s, <a class="el" href="../../d2/d47/class_r_o_i.html">ROI</a> r)</td></tr>
+<tr class="memdesc:ab9aef2b60ae1933e64a1ebb1c3b4e9c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a simulation with all required physical parameters.  <br /></td></tr>
 <tr class="memitem:ae5c367f87c0b5dc9740bc6d00e44e72c" id="r_ae5c367f87c0b5dc9740bc6d00e44e72c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae5c367f87c0b5dc9740bc6d00e44e72c">run</a> ()</td></tr>
-<tr class="memitem:a09ed6991fa2444be1bcc43e7b5a48a13" id="r_a09ed6991fa2444be1bcc43e7b5a48a13"><td class="memItemLeft"><a id="a09ed6991fa2444be1bcc43e7b5a48a13" name="a09ed6991fa2444be1bcc43e7b5a48a13"></a>
-void&#160;</td><td class="memItemRight"><b>print</b> ()</td></tr>
+<tr class="memdesc:ae5c367f87c0b5dc9740bc6d00e44e72c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the simulation for <code>steps</code> time steps. Each step: emits new particles, moves all live particles, handles shielding absorption, scores the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a>, and writes periodic CSV output.  <br /></td></tr>
+<tr class="memitem:a09ed6991fa2444be1bcc43e7b5a48a13" id="r_a09ed6991fa2444be1bcc43e7b5a48a13"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a09ed6991fa2444be1bcc43e7b5a48a13">print</a> ()</td></tr>
+<tr class="memdesc:a09ed6991fa2444be1bcc43e7b5a48a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a human-readable summary of the simulation parameters to <code>stdout</code>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:af43e498bfc83c777db5f5ac4025ff923" id="r_af43e498bfc83c777db5f5ac4025ff923"><td class="memItemLeft"><a id="af43e498bfc83c777db5f5ac4025ff923" name="af43e498bfc83c777db5f5ac4025ff923"></a>
 double&#160;</td><td class="memItemRight"><b>dt</b></td></tr>
+<tr class="memdesc:af43e498bfc83c777db5f5ac4025ff923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time step duration in seconds. <br /></td></tr>
 <tr class="memitem:ab9556a6f49d03a8ea25f7f42fe256082" id="r_ab9556a6f49d03a8ea25f7f42fe256082"><td class="memItemLeft"><a id="ab9556a6f49d03a8ea25f7f42fe256082" name="ab9556a6f49d03a8ea25f7f42fe256082"></a>
 unsigned&#160;</td><td class="memItemRight"><b>steps</b></td></tr>
+<tr class="memdesc:ab9556a6f49d03a8ea25f7f42fe256082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of time steps to simulate. <br /></td></tr>
 <tr class="memitem:a2daffe4caebb766c0c050fccb89a1fb3" id="r_a2daffe4caebb766c0c050fccb89a1fb3"><td class="memItemLeft"><a id="a2daffe4caebb766c0c050fccb89a1fb3" name="a2daffe4caebb766c0c050fccb89a1fb3"></a>
 <a class="el" href="../../d8/d74/class_source.html">Source</a>&#160;</td><td class="memItemRight"><b>source</b></td></tr>
+<tr class="memdesc:a2daffe4caebb766c0c050fccb89a1fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The radioactive point source that emits particles each time step. <br /></td></tr>
 <tr class="memitem:a43630d63fec2527d729ef58c14cfc132" id="r_a43630d63fec2527d729ef58c14cfc132"><td class="memItemLeft"><a id="a43630d63fec2527d729ef58c14cfc132" name="a43630d63fec2527d729ef58c14cfc132"></a>
 std::vector&lt; <a class="el" href="../../de/d85/class_particle.html">Particle</a> &gt;&#160;</td><td class="memItemRight"><b>particles</b></td></tr>
+<tr class="memdesc:a43630d63fec2527d729ef58c14cfc132"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of particles currently active in the simulation. <br /></td></tr>
 <tr class="memitem:a00174871f9b2ef8c21cfd1f0996a94e6" id="r_a00174871f9b2ef8c21cfd1f0996a94e6"><td class="memItemLeft"><a id="a00174871f9b2ef8c21cfd1f0996a94e6" name="a00174871f9b2ef8c21cfd1f0996a94e6"></a>
 <a class="el" href="../../d6/dbd/class_shielding.html">Shielding</a>&#160;</td><td class="memItemRight"><b>shielding</b></td></tr>
+<tr class="memdesc:a00174871f9b2ef8c21cfd1f0996a94e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The shielding volume that attenuates particles passing through it. <br /></td></tr>
 <tr class="memitem:a200e0e49c49a5ff2f906c59c42bcddc8" id="r_a200e0e49c49a5ff2f906c59c42bcddc8"><td class="memItemLeft"><a id="a200e0e49c49a5ff2f906c59c42bcddc8" name="a200e0e49c49a5ff2f906c59c42bcddc8"></a>
 <a class="el" href="../../d2/d47/class_r_o_i.html">ROI</a>&#160;</td><td class="memItemRight"><b>roi</b></td></tr>
+<tr class="memdesc:a200e0e49c49a5ff2f906c59c42bcddc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The region of interest used to score particles. <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Top-level simulation driver. </p>
+<p>The <a class="el" href="../../dd/d14/class_simulation.html" title="Top-level simulation driver.">Simulation</a> class owns all physical objects (source, shielding, <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a>) and the list of live particles. Calling <a class="el" href="#ae5c367f87c0b5dc9740bc6d00e44e72c" title="Execute the simulation for steps time steps. Each step: emits new particles, moves all live particles...">run()</a> advances the simulation for the configured number of time steps, handling emission, movement, shielding absorption, <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a> scoring, and periodic CSV output. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab9aef2b60ae1933e64a1ebb1c3b4e9c2" name="ab9aef2b60ae1933e64a1ebb1c3b4e9c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9aef2b60ae1933e64a1ebb1c3b4e9c2">&#9670;&#160;</a></span>Simulation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Simulation::Simulation </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>dt_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>steps_</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d8/d74/class_source.html">Source</a></td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d6/dbd/class_shielding.html">Shielding</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d2/d47/class_r_o_i.html">ROI</a></td>          <td class="paramname"><span class="paramname"><em>r</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a simulation with all required physical parameters. </p>
+<p>Construct a <a class="el" href="../../dd/d14/class_simulation.html" title="Top-level simulation driver.">Simulation</a> with the given physical parameters.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#af43e498bfc83c777db5f5ac4025ff923" title="Time step duration in seconds.">dt</a></td><td>Time step duration (seconds). </td></tr>
+    <tr><td class="paramname"><a class="el" href="#ab9556a6f49d03a8ea25f7f42fe256082" title="Total number of time steps to simulate.">steps</a></td><td>Number of time steps to run. </td></tr>
+    <tr><td class="paramname">sr</td><td>Radioactive source configuration. </td></tr>
+    <tr><td class="paramname">s</td><td><a class="el" href="../../d6/dbd/class_shielding.html" title="An axis-aligned rectangular volume of shielding material.">Shielding</a> volume and material. </td></tr>
+    <tr><td class="paramname">r</td><td>Region of interest for particle scoring.</td></tr>
+    <tr><td class="paramname">dt_</td><td>Time step duration (seconds). </td></tr>
+    <tr><td class="paramname">steps_</td><td>Total number of time steps to run. </td></tr>
+    <tr><td class="paramname">src</td><td>Radioactive source configuration. </td></tr>
+    <tr><td class="paramname">s</td><td><a class="el" href="../../d6/dbd/class_shielding.html" title="An axis-aligned rectangular volume of shielding material.">Shielding</a> volume and material. </td></tr>
+    <tr><td class="paramname">r</td><td>Region of interest for scoring particles. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a09ed6991fa2444be1bcc43e7b5a48a13" name="a09ed6991fa2444be1bcc43e7b5a48a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09ed6991fa2444be1bcc43e7b5a48a13">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Simulation::print </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print a human-readable summary of the simulation parameters to <code>stdout</code>. </p>
+<p>Print a human-readable summary of the simulation parameters to <code>stdout</code>. Includes time step, number of steps, total simulated time, source position and rate, shielding centre and material, and <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a> centre. </p>
+
+</div>
+</div>
 <a id="ae5c367f87c0b5dc9740bc6d00e44e72c" name="ae5c367f87c0b5dc9740bc6d00e44e72c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5c367f87c0b5dc9740bc6d00e44e72c">&#9670;&#160;</a></span>run()</h2>
 
@@ -130,13 +220,16 @@ std::vector&lt; <a class="el" href="../../de/d85/class_particle.html">Particle</
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Execute the simulation for <code>steps</code> time steps. Each step: emits new particles, moves all live particles, handles shielding absorption, scores the <a class="el" href="../../d2/d47/class_r_o_i.html" title="An axis-aligned bounding box used to score particles entering the region.">ROI</a>, and writes periodic CSV output. </p>
+<p>Execute the simulation for the configured number of time steps. </p>
 <p>new</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="../../d2/ded/_simulation_8h_source.html">Simulation.h</a></li>
-<li>src/<b>Simulation.cpp</b></li>
+<li>src/<a class="el" href="../../db/d98/_simulation_8cpp.html">Simulation.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

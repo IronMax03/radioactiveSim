@@ -23,16 +23,6 @@ Simulation::Simulation(double dt_, unsigned steps_, Source src,
 {}
 
 /// @brief Execute the simulation for the configured number of time steps.
-///
-/// Each step:
-/// -# Emits new particles from the source and appends them to the particle list.
-/// -# Moves every live particle by @c dt using its current kinematics.
-/// -# Checks whether each particle is still inside the simulation bounding box.
-/// -# Applies exponential attenuation to particles inside the shielding volume.
-/// -# Scores particles that have entered the ROI.
-/// -# Removes dead particles from the list to keep memory usage bounded.
-/// -# Writes a CSV snapshot every 10 steps to the @c output/ directory.
-/// -# Prints progress to @c stdout every 10 % of total steps.
 void Simulation::run() {
     
     std::cout << "Starting simulation..." << std::endl;
@@ -85,6 +75,8 @@ void Simulation::run() {
         }
 
         // Move particles
+        std::vector<Particle> secondaries; // collect secondaries outside the loop
+
         for (auto& p : particles) {
             if (!p.alive) continue;
 
@@ -99,10 +91,56 @@ void Simulation::run() {
                 if (uniform01() > survival) {
                     p.alive = false;
                 }
+
+                if (p.alive && uniform01() < 0.10) {
+                    double speed = std::sqrt(p.velocity * p.velocity);
+                    p.velocity.x += speed * 0.2 * (uniform01() - 0.5);
+                    p.velocity.y += speed * 0.2 * (uniform01() - 0.5);
+                    p.velocity.z += speed * 0.2 * (uniform01() - 0.5);
+                    // Re-normalise so the total speed *decreases* (5 % energy loss).
+                    double new_speed = std::sqrt(p.velocity * p.velocity);
+                    if (new_speed > 0) {
+                        double scale = speed * 0.95 / new_speed;
+                        p.velocity = p.velocity * scale;
+                    }
+                }
+
+                if (p.alive && p.type != "photon" && uniform01() < 0.01) {
+                    if (p.type == "proton") {
+                        if (uniform01() < 0.5) {
+                            // 50 %: 1 neutron + 1 photon
+                            secondaries.emplace_back(p.position.x, p.position.y, p.position.z,
+                                                     p.velocity.x, p.velocity.y, p.velocity.z, "neutron");
+                            secondaries.emplace_back(p.position.x, p.position.y, p.position.z,
+                                                     p.velocity.x, p.velocity.y, p.velocity.z, "photon");
+                        } else {
+                            // 50 %: 1 photon
+                            secondaries.emplace_back(p.position.x, p.position.y, p.position.z,
+                                                     p.velocity.x, p.velocity.y, p.velocity.z, "photon");
+                        }
+                    } else if (p.type == "neutron") {
+                        if (uniform01() < 0.5) {
+                            // 50 %: 1 proton + 1 neutron
+                            secondaries.emplace_back(p.position.x, p.position.y, p.position.z,
+                                                     p.velocity.x, p.velocity.y, p.velocity.z, "proton");
+                            secondaries.emplace_back(p.position.x, p.position.y, p.position.z,
+                                                     p.velocity.x, p.velocity.y, p.velocity.z, "neutron");
+                        } else {
+                            // 50 %: 2 photons
+                            secondaries.emplace_back(p.position.x, p.position.y, p.position.z,
+                                                     p.velocity.x, p.velocity.y, p.velocity.z, "photon");
+                            secondaries.emplace_back(p.position.x, p.position.y, p.position.z,
+                                                     p.velocity.x, p.velocity.y, p.velocity.z, "photon");
+                        }
+                    }
+                }
             }
 
             roi.score(p);
         }
+
+        // Append any secondaries generated this step
+        particles.insert(particles.end(), secondaries.begin(), secondaries.end());
 
         // Remove particles that are dead from simulation
         // this makes use of Modern C++ algorithm and lambda function
@@ -115,7 +153,7 @@ void Simulation::run() {
 
 
         // Output every N steps
-        if (step % 10 == 0) {
+        if (step % 2 == 0) {
             write_particles_csv(particles, "output/particles_" + std::to_string(step) + ".csv");
         }
 

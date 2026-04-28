@@ -91,35 +91,51 @@ $(function(){initNavTree('db/df9/_source_8h_source.html','../../',''); });
   <div class="headertitle"><div class="title">Source.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Particle.h&quot;</span></div>
+<a href="../../db/df9/_source_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d8/d74/class_source.html">    7</a></span><span class="keyword">class </span>Source {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">// Source position</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">double</span> x, y, z;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">// Emission rate (particles per timestep)</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> rate;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Source(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>           <span class="keywordtype">int</span> rate);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// Emit particles for one timestep</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    std::vector&lt;Particle&gt; emit() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="../../d4/d15/_particle_8h.html">Particle.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d8/d74/class_source.html">   17</a></span><span class="keyword">class </span><a class="code hl_function" href="../../d8/d74/class_source.html#af7bb98b31a1c16a819cd31b332742cb5">Source</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d8/d74/class_source.html#ae0e7e5bfd8c3116d91e6015fe2d8a7bd">   20</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="../../d8/d74/class_source.html#ae0e7e5bfd8c3116d91e6015fe2d8a7bd">x</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d8/d74/class_source.html#ae72db92a96c217019d06cab995b93d7b">   23</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="../../d8/d74/class_source.html#ae72db92a96c217019d06cab995b93d7b">y</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d8/d74/class_source.html#ac9ce9f792814763198e8f9f778950b00">   26</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="../../d8/d74/class_source.html#ac9ce9f792814763198e8f9f778950b00">z</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../d8/d74/class_source.html#a906290ff71b92466c193b08633e19ae9">   29</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d8/d74/class_source.html#a906290ff71b92466c193b08633e19ae9">rate</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d8/d74/class_source.html#a5beaff1c1f283a9a13b03a1862c68ad8">   34</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="../../d8/d74/class_source.html#a5beaff1c1f283a9a13b03a1862c68ad8">half_life</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d8/d74/class_source.html#acc4ad938c2f92302e307f847e6ca3500">   37</a></span>    <span class="keyword">mutable</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d8/d74/class_source.html#acc4ad938c2f92302e307f847e6ca3500">steps_elapsed</a> = 0;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="../../d8/d74/class_source.html#af7bb98b31a1c16a819cd31b332742cb5">Source</a>(<span class="keywordtype">double</span> <a class="code hl_variable" href="../../d8/d74/class_source.html#ae0e7e5bfd8c3116d91e6015fe2d8a7bd">x</a>, <span class="keywordtype">double</span> <a class="code hl_variable" href="../../d8/d74/class_source.html#ae72db92a96c217019d06cab995b93d7b">y</a>, <span class="keywordtype">double</span> <a class="code hl_variable" href="../../d8/d74/class_source.html#ac9ce9f792814763198e8f9f778950b00">z</a>,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>           <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d8/d74/class_source.html#a906290ff71b92466c193b08633e19ae9">rate</a>, <span class="keywordtype">double</span> <a class="code hl_variable" href="../../d8/d74/class_source.html#a5beaff1c1f283a9a13b03a1862c68ad8">half_life</a> = 1e9);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    std::vector&lt;Particle&gt; <a class="code hl_function" href="../../d8/d74/class_source.html#a4e866367450b565fcc29078878018759">emit</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
 </div>
+<div class="ttc" id="a_particle_8h_html"><div class="ttname"><a href="../../d4/d15/_particle_8h.html">Particle.h</a></div><div class="ttdoc">Declaration of the Particle class, representing a physical particle (e.g. proton or neutron) tracked ...</div></div>
+<div class="ttc" id="aclass_source_html_a4e866367450b565fcc29078878018759"><div class="ttname"><a href="../../d8/d74/class_source.html#a4e866367450b565fcc29078878018759">Source::emit</a></div><div class="ttdeci">std::vector&lt; Particle &gt; emit() const</div><div class="ttdoc">Emit one batch of particles for the current time step. The number of particles returned equals rate....</div><div class="ttdef"><b>Definition</b> Source.cpp:25</div></div>
+<div class="ttc" id="aclass_source_html_a5beaff1c1f283a9a13b03a1862c68ad8"><div class="ttname"><a href="../../d8/d74/class_source.html#a5beaff1c1f283a9a13b03a1862c68ad8">Source::half_life</a></div><div class="ttdeci">double half_life</div><div class="ttdoc">Radioactive half-life in time steps. After half_life steps the effective emission rate halves....</div><div class="ttdef"><b>Definition</b> Source.h:34</div></div>
+<div class="ttc" id="aclass_source_html_a906290ff71b92466c193b08633e19ae9"><div class="ttname"><a href="../../d8/d74/class_source.html#a906290ff71b92466c193b08633e19ae9">Source::rate</a></div><div class="ttdeci">int rate</div><div class="ttdoc">Number of particles emitted per time step (at t = 0).</div><div class="ttdef"><b>Definition</b> Source.h:29</div></div>
+<div class="ttc" id="aclass_source_html_ac9ce9f792814763198e8f9f778950b00"><div class="ttname"><a href="../../d8/d74/class_source.html#ac9ce9f792814763198e8f9f778950b00">Source::z</a></div><div class="ttdeci">double z</div><div class="ttdoc">Z-coordinate of the source position (metres).</div><div class="ttdef"><b>Definition</b> Source.h:26</div></div>
+<div class="ttc" id="aclass_source_html_acc4ad938c2f92302e307f847e6ca3500"><div class="ttname"><a href="../../d8/d74/class_source.html#acc4ad938c2f92302e307f847e6ca3500">Source::steps_elapsed</a></div><div class="ttdeci">int steps_elapsed</div><div class="ttdoc">Internal step counter (mutable so emit() can stay logically const).</div><div class="ttdef"><b>Definition</b> Source.h:37</div></div>
+<div class="ttc" id="aclass_source_html_ae0e7e5bfd8c3116d91e6015fe2d8a7bd"><div class="ttname"><a href="../../d8/d74/class_source.html#ae0e7e5bfd8c3116d91e6015fe2d8a7bd">Source::x</a></div><div class="ttdeci">double x</div><div class="ttdoc">X-coordinate of the source position (metres).</div><div class="ttdef"><b>Definition</b> Source.h:20</div></div>
+<div class="ttc" id="aclass_source_html_ae72db92a96c217019d06cab995b93d7b"><div class="ttname"><a href="../../d8/d74/class_source.html#ae72db92a96c217019d06cab995b93d7b">Source::y</a></div><div class="ttdeci">double y</div><div class="ttdoc">Y-coordinate of the source position (metres).</div><div class="ttdef"><b>Definition</b> Source.h:23</div></div>
+<div class="ttc" id="aclass_source_html_af7bb98b31a1c16a819cd31b332742cb5"><div class="ttname"><a href="../../d8/d74/class_source.html#af7bb98b31a1c16a819cd31b332742cb5">Source::Source</a></div><div class="ttdeci">Source(double x, double y, double z, int rate, double half_life=1e9)</div><div class="ttdoc">Construct a source at a given position with a given emission rate.</div><div class="ttdef"><b>Definition</b> Source.cpp:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Source.h</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="../../db/df9/_source_8h.html">Source.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

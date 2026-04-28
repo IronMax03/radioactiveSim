@@ -91,48 +91,67 @@ $(function(){initNavTree('d4/d15/_particle_8h_source.html','../../',''); });
   <div class="headertitle"><div class="title">Particle.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;utils.h&quot;</span></div>
+<a href="../../d4/d15/_particle_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../de/d85/class_particle.html">    7</a></span><span class="keyword">class </span>Particle {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_struct" href="../../dd/d53/structvector3.html">vector3&lt;double&gt;</a> position;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_struct" href="../../dd/d53/structvector3.html">vector3&lt;double&gt;</a> velocity;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_struct" href="../../dd/d53/structvector3.html">vector3&lt;double&gt;</a> acceleration;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">double</span> mass; <span class="comment">// ! new, units of proton mass</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> electric_charge; <span class="comment">// ! new, coulomb units</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    std::string type;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">double</span> distance_in_shield;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">bool</span> alive;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    Particle();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    Particle(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z,</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>             <span class="keywordtype">double</span> vx, <span class="keywordtype">double</span> vy, <span class="keywordtype">double</span> vz,</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>             std::string type);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    Particle(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z,</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>             <span class="keywordtype">double</span> vx, <span class="keywordtype">double</span> vy, <span class="keywordtype">double</span> vz,</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>             <span class="keywordtype">double</span> m,</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>             <span class="keywordtype">int</span> ec,</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>             std::string type);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d85/class_particle.html#a952cf3e369a2580bf0f56545f4577171">move</a>(<span class="keywordtype">double</span> dt);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d60/utils_8h.html">utils.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../de/d85/class_particle.html">   16</a></span><span class="keyword">class </span><a class="code hl_function" href="../../de/d85/class_particle.html#a40f4c7e248029d72e7714b7802d5e5e1">Particle</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../de/d85/class_particle.html#a62e09cb8b75fc0e83472779dbcf097e5">   19</a></span>    <a class="code hl_struct" href="../../dd/d53/structvector3.html">vector3&lt;double&gt;</a> <a class="code hl_variable" href="../../de/d85/class_particle.html#a62e09cb8b75fc0e83472779dbcf097e5">position</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../de/d85/class_particle.html#a3118c47b933c96ab93b7d49eb7cc79a4">   22</a></span>    <a class="code hl_struct" href="../../dd/d53/structvector3.html">vector3&lt;double&gt;</a> <a class="code hl_variable" href="../../de/d85/class_particle.html#a3118c47b933c96ab93b7d49eb7cc79a4">velocity</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../de/d85/class_particle.html#ad8f5fb3077746ec9034c4e57f164b44e">   25</a></span>    <a class="code hl_struct" href="../../dd/d53/structvector3.html">vector3&lt;double&gt;</a> <a class="code hl_variable" href="../../de/d85/class_particle.html#ad8f5fb3077746ec9034c4e57f164b44e">acceleration</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../de/d85/class_particle.html#ae6d46dc24a6666d526f211151fecca5f">   28</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="../../de/d85/class_particle.html#ae6d46dc24a6666d526f211151fecca5f">mass</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../de/d85/class_particle.html#ae90740a152e14b96632dd9c3fc631f3b">   31</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="../../de/d85/class_particle.html#ae90740a152e14b96632dd9c3fc631f3b">electric_charge</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../de/d85/class_particle.html#ac5b51d11f535f3b806fff965414e0410">   34</a></span>    std::string <a class="code hl_variable" href="../../de/d85/class_particle.html#ac5b51d11f535f3b806fff965414e0410">type</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../de/d85/class_particle.html#a94a340bb5ba69aa7ce14dac62c88a0ee">   37</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="../../de/d85/class_particle.html#a94a340bb5ba69aa7ce14dac62c88a0ee">distance_in_shield</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../de/d85/class_particle.html#affebffa1e11f05041c9c46e8b684275b">   41</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../de/d85/class_particle.html#affebffa1e11f05041c9c46e8b684275b">alive</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="../../de/d85/class_particle.html#a40f4c7e248029d72e7714b7802d5e5e1">Particle</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_function" href="../../de/d85/class_particle.html#a40f4c7e248029d72e7714b7802d5e5e1">Particle</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>             <span class="keywordtype">double</span> vx, <span class="keywordtype">double</span> vy, <span class="keywordtype">double</span> vz,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>             std::string <a class="code hl_variable" href="../../de/d85/class_particle.html#ac5b51d11f535f3b806fff965414e0410">type</a>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_function" href="../../de/d85/class_particle.html#a40f4c7e248029d72e7714b7802d5e5e1">Particle</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>             <span class="keywordtype">double</span> vx, <span class="keywordtype">double</span> vy, <span class="keywordtype">double</span> vz,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>             <span class="keywordtype">double</span> m,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>             <span class="keywordtype">int</span> ec,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>             std::string <a class="code hl_variable" href="../../de/d85/class_particle.html#ac5b51d11f535f3b806fff965414e0410">type</a>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d85/class_particle.html#a952cf3e369a2580bf0f56545f4577171">move</a>(<span class="keywordtype">double</span> dt);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
 </div>
-<div class="ttc" id="aclass_particle_html_a952cf3e369a2580bf0f56545f4577171"><div class="ttname"><a href="../../de/d85/class_particle.html#a952cf3e369a2580bf0f56545f4577171">Particle::move</a></div><div class="ttdeci">void move(double dt)</div><div class="ttdoc">Move the particle by updating its position and velocity based on its acceleration and the time step d...</div><div class="ttdef"><b>Definition</b> Particle.cpp:61</div></div>
-<div class="ttc" id="astructvector3_html"><div class="ttname"><a href="../../dd/d53/structvector3.html">vector3</a></div><div class="ttdoc">A 3D vector. The type of the components of this vector is defined by T wich can be: int,...</div><div class="ttdef"><b>Definition</b> utils.h:12</div></div>
+<div class="ttc" id="aclass_particle_html_a3118c47b933c96ab93b7d49eb7cc79a4"><div class="ttname"><a href="../../de/d85/class_particle.html#a3118c47b933c96ab93b7d49eb7cc79a4">Particle::velocity</a></div><div class="ttdeci">vector3&lt; double &gt; velocity</div><div class="ttdoc">Current 3-D velocity of the particle (metres per second).</div><div class="ttdef"><b>Definition</b> Particle.h:22</div></div>
+<div class="ttc" id="aclass_particle_html_a40f4c7e248029d72e7714b7802d5e5e1"><div class="ttname"><a href="../../de/d85/class_particle.html#a40f4c7e248029d72e7714b7802d5e5e1">Particle::Particle</a></div><div class="ttdeci">Particle()</div><div class="ttdoc">Default constructor. Creates a stationary, uncharged, dead particle at the origin.</div><div class="ttdef"><b>Definition</b> Particle.cpp:7</div></div>
+<div class="ttc" id="aclass_particle_html_a62e09cb8b75fc0e83472779dbcf097e5"><div class="ttname"><a href="../../de/d85/class_particle.html#a62e09cb8b75fc0e83472779dbcf097e5">Particle::position</a></div><div class="ttdeci">vector3&lt; double &gt; position</div><div class="ttdoc">Current 3-D position of the particle (metres).</div><div class="ttdef"><b>Definition</b> Particle.h:19</div></div>
+<div class="ttc" id="aclass_particle_html_a94a340bb5ba69aa7ce14dac62c88a0ee"><div class="ttname"><a href="../../de/d85/class_particle.html#a94a340bb5ba69aa7ce14dac62c88a0ee">Particle::distance_in_shield</a></div><div class="ttdeci">double distance_in_shield</div><div class="ttdoc">Cumulative distance the particle has travelled inside a shielding volume (metres).</div><div class="ttdef"><b>Definition</b> Particle.h:37</div></div>
+<div class="ttc" id="aclass_particle_html_a952cf3e369a2580bf0f56545f4577171"><div class="ttname"><a href="../../de/d85/class_particle.html#a952cf3e369a2580bf0f56545f4577171">Particle::move</a></div><div class="ttdeci">void move(double dt)</div><div class="ttdoc">Advance the particle by one time step dt. Updates velocity from acceleration, then position from velo...</div><div class="ttdef"><b>Definition</b> Particle.cpp:86</div></div>
+<div class="ttc" id="aclass_particle_html_ac5b51d11f535f3b806fff965414e0410"><div class="ttname"><a href="../../de/d85/class_particle.html#ac5b51d11f535f3b806fff965414e0410">Particle::type</a></div><div class="ttdeci">std::string type</div><div class="ttdoc">Particle species identifier (e.g. &quot;proton&quot; or &quot;neutron&quot;).</div><div class="ttdef"><b>Definition</b> Particle.h:34</div></div>
+<div class="ttc" id="aclass_particle_html_ad8f5fb3077746ec9034c4e57f164b44e"><div class="ttname"><a href="../../de/d85/class_particle.html#ad8f5fb3077746ec9034c4e57f164b44e">Particle::acceleration</a></div><div class="ttdeci">vector3&lt; double &gt; acceleration</div><div class="ttdoc">Current 3-D acceleration of the particle (metres per second squared).</div><div class="ttdef"><b>Definition</b> Particle.h:25</div></div>
+<div class="ttc" id="aclass_particle_html_ae6d46dc24a6666d526f211151fecca5f"><div class="ttname"><a href="../../de/d85/class_particle.html#ae6d46dc24a6666d526f211151fecca5f">Particle::mass</a></div><div class="ttdeci">double mass</div><div class="ttdoc">Mass of the particle expressed in units of proton mass.</div><div class="ttdef"><b>Definition</b> Particle.h:28</div></div>
+<div class="ttc" id="aclass_particle_html_ae90740a152e14b96632dd9c3fc631f3b"><div class="ttname"><a href="../../de/d85/class_particle.html#ae90740a152e14b96632dd9c3fc631f3b">Particle::electric_charge</a></div><div class="ttdeci">int electric_charge</div><div class="ttdoc">Electric charge of the particle in coulomb units (integer).</div><div class="ttdef"><b>Definition</b> Particle.h:31</div></div>
+<div class="ttc" id="aclass_particle_html_affebffa1e11f05041c9c46e8b684275b"><div class="ttname"><a href="../../de/d85/class_particle.html#affebffa1e11f05041c9c46e8b684275b">Particle::alive</a></div><div class="ttdeci">bool alive</div><div class="ttdoc">Whether the particle is still active in the simulation. Set to false once the particle is absorbed or...</div><div class="ttdef"><b>Definition</b> Particle.h:41</div></div>
+<div class="ttc" id="astructvector3_html"><div class="ttname"><a href="../../dd/d53/structvector3.html">vector3</a></div><div class="ttdoc">A generic 3-D vector whose component type is T.</div><div class="ttdef"><b>Definition</b> utils.h:26</div></div>
+<div class="ttc" id="autils_8h_html"><div class="ttname"><a href="../../d5/d60/utils_8h.html">utils.h</a></div><div class="ttdoc">Utility types and functions shared across the simulation.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>Particle.h</b></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="../../d4/d15/_particle_8h.html">Particle.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

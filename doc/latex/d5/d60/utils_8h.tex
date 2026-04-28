@@ -2,7 +2,7 @@
 \hypertarget{utils_8h}{}\label{utils_8h}\index{src/utils.h@{src/utils.h}}
 
 
-This file contains utility functions and data structures used in the simulation.  
+Utility types and functions shared across the simulation.  
 
 
 {\ttfamily \+\#include $<$random$>$}\newline
@@ -14,7 +14,7 @@ This file contains utility functions and data structures used in the simulation.
 \begin{DoxyCompactItemize}
 \item 
 struct \doxymbox{\hyperlink{structvector3}{vector3$<$ T $>$}}
-\begin{DoxyCompactList}\small\item\em A 3D vector. The type of the components of this vector is defined by T wich can be:\+ int, long, short, double, float, etc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A generic 3-\/D vector whose component type is {\ttfamily T}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,9 +26,14 @@ double {\bfseries uniform01} ()
 
 
 \doxysubsection{Detailed Description}
-This file contains utility functions and data structures used in the simulation. 
+Utility types and functions shared across the simulation. 
 
-
+Provides:\+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{structvector3}{vector3$<$\+T$>$}}:\+ a generic 3-\/D vector with arithmetic operators, norm, and normalisation.
+\item {\ttfamily \doxylink{utils_8h_a9a99ce05b0cc43df1e62dd059648e899}{uniform01()}}:\+ a convenience function returning a uniform random double in \+[0, 1).
+\item {\ttfamily \doxylink{utils_8h_a822a6abad40d2de0d2cd246f81af5fac}{distance()}}:\+ Euclidean distance between two {\ttfamily \doxylink{structvector3}{vector3}} values. 
+\end{DoxyItemize}
 
 \label{doc-func-members}
 \Hypertarget{utils_8h_doc-func-members}

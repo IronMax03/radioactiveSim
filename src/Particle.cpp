@@ -44,8 +44,13 @@ Particle::Particle(double x_, double y_, double z_,
         electric_charge = 0;
         mass = 1;
     }
+    else if (t == "photon")
+    {
+        electric_charge = 0;
+        mass = 0;
+    }
     else
-        throw std::runtime_error("Particle constructor error: Invalid particle type. Valid types are: 'proton', 'neutron', and 'electron'.");
+        throw std::runtime_error("Particle constructor error: Invalid particle type. Valid types are: 'proton', 'neutron', and 'photon'.");
 }
 
 /// @brief Construct a particle with explicitly provided mass, charge, and type.
