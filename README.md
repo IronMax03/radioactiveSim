@@ -28,7 +28,8 @@ radioactiveSim/
 ├── Makefile              # Root-level wrapper that forwards targets to src/makefile
 ├── README.md
 ├── doc/
-│   └── html/             # Generated HTML documentation (produced by `make gen-doc`)
+│   ├── html/             # Generated HTML documentation (produced by `make gen-doc`)
+│   └── images&animations/ # Images and animations used in the documentation
 └── src/
     ├── makefile          # Primary build system
     ├── main.cpp          # Entry point – creates and launches a Simulation object
