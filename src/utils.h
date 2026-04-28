@@ -90,6 +90,9 @@ struct vector3
     constexpr T operator*(const vector3 &n) const { return x*n.x + y*n.y + z*n.z; }
 
     /// @brief In-place component-wise multiplication (replaces each component with the dot product).
+    ///        @note Due to the implementation delegating to the scalar dot-product @c operator*(vector3),
+    ///              the resulting assignment of a scalar @p T to a @c vector3 is unusual and may not
+    ///              compile for all types. Prefer explicit dot-product usage where needed.
     /// @param n Right-hand-side vector.
     constexpr void operator*=(const vector3 &n) { (*this) = (*this) * n; }
 
@@ -110,8 +113,10 @@ struct vector3
     }
 
     /// @brief In-place scalar division.
+    ///        Divides each component by @p n and stores the result in @c *this.
+    ///        @note The declared return type is @c vector3 but the function body does not include
+    ///              an explicit @c return statement; treat this as an in-place mutation only.
     /// @param n Scalar divisor.
-    /// @return Reference to @c *this after dividing each component by @p n.
     constexpr vector3 operator/=(const T &n) { (*this) = (*this) / n; }
 
     /// @brief Equality comparison.
