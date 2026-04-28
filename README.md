@@ -4,6 +4,8 @@ A 3-D radioactive particle transport simulator developed for **COSC 1560 – Com
 The program models the emission of particles from a radioactive point source, their propagation through a configurable shielding volume, and their scoring inside a user-defined Region of Interest (ROI).  
 Coulomb interactions between particles are approximated with the [Barnes-Hut algorithm](https://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation) via an octree spatial index.
 
+The simulation outputs data in formats compatible with **[ParaView](https://www.paraview.org/)**, a powerful open-source tool for scientific visualization, allowing full 3-D inspection of particle trajectories, geometry, and simulation state over time.
+
 ---
 
 ## Table of Contents
@@ -13,8 +15,9 @@ Coulomb interactions between particles are approximated with the [Barnes-Hut alg
 3. [Running the Simulation](#running-the-simulation)
 4. [Running the Tests](#running-the-tests)
 5. [Makefile Reference](#makefile-reference)
-6. [API Documentation](#api-documentation)
-7. [Bug Reporting](#bug-reporting)
+6. [ParaView Visualization](#paraview-visualization)
+7. [API Documentation](#api-documentation)
+8. [Bug Reporting](#bug-reporting)
 
 ---
 
@@ -125,6 +128,28 @@ All commands below can be run from the **repository root**.
 | `make clean` | Removes all compiled object files and executables (`*.o`, `shielding_sim`, `runTests`). |
 | `make rebuild` | Equivalent to `make clean` followed by `make` — performs a full recompilation from scratch. |
 | `make gen-doc` | Generates HTML API documentation in `doc/html/` using Doxygen. Requires Doxygen to be installed. |
+
+---
+
+## ParaView Visualization
+
+The simulation outputs two types of files that can be loaded into [ParaView](https://www.paraview.org/) for interactive 3-D visualization:
+
+| File | Location | Format | Contents |
+|---|---|---|---|
+| `shielding.vtp` | `src/` | VTK PolyData | 3-D box mesh of the shielding volume |
+| `roi.vtp` | `src/` | VTK PolyData | 3-D box mesh of the Region of Interest |
+| `source.vtp` | `src/` | VTK PolyData | 3-D box mesh representing the radioactive source |
+| `particles_<step>.csv` | `src/output/` | CSV | Particle positions (`x`, `y`, `z`), status (`alive`), and `type` at each recorded timestep |
+
+### Loading the files in ParaView
+
+1. **Open the geometry files** – use *File → Open* to load `shielding.vtp`, `roi.vtp`, and `source.vtp`. Click **Apply** after each to display them.
+2. **Load particle data** – open any `particles_<step>.csv` file. After clicking **Apply**, apply a **TableToPoints** filter (*Filters → Alphabetical → TableToPoints*) and set the X, Y, Z columns to `x`, `y`, `z` respectively. Click **Apply** to display the particle cloud.
+3. **Colour by particle type** – in the *Coloring* section of the Properties panel, select `type` to distinguish particle types by colour.
+4. **Animate over time** – load multiple `particles_<step>.csv` snapshots and use ParaView's animation controls to step through the simulation timesteps.
+
+![ParaView screenshot showing shielding, ROI, source geometry, and particle cloud coloured by type](https://github.com/user-attachments/assets/1ad7ed3e-229b-4f7a-8aa1-ee6ac3c76506)
 
 ---
 
