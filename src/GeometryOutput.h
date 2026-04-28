@@ -1,8 +1,8 @@
-#ifndef GEOMETRY_OUTPUT_H
-#define GEOMETRY_OUTPUT_H
+#pragma once
 
 #include <string>
 #include "Particle.h"
+#include "Box.hpp"
 
 void write_box_vtp(double xmin, double xmax,
                    double ymin, double ymax,
@@ -10,5 +10,3 @@ void write_box_vtp(double xmin, double xmax,
                    const std::string& filename);
 
 void is_in_bounding_box(Particle& p);
-
-#endif

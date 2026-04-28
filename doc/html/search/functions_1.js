@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['contains_0',['contains',['../d2/d47/class_r_o_i.html#a94668fb2b467f311e8f7d968df364bb1',1,'ROI']]]
+  ['bh_5fcriteria_0',['BH_criteria',['../dd/d85/structlazy__node.html#a766aa4d3eea3f24430e2a15b7aac0f9e',1,'lazy_node::BH_criteria(const T &amp;x, const T &amp;y, const T &amp;z, float theta) const'],['../dd/d85/structlazy__node.html#a6d6ff07dfd3e0e0b9f3b508ded3c43e4',1,'lazy_node::BH_criteria(vector3&lt; T &gt; position, float theta) const']]],
+  ['build_1',['build',['../de/da5/class_octree.html#a834963289ae58c88ec625a52739f73a9',1,'Octree']]]
 ];

@@ -12,24 +12,75 @@ A spatial partitioning octree data structure for implementing the Barnes-\/\+Hut
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_octree_a70bedbd8ed0478406f63c39dd20e72e9}\label{class_octree_a70bedbd8ed0478406f63c39dd20e72e9} 
-{\bfseries Octree} (nt bound\+\_\+xmin, nt bound\+\_\+xmax, nt bound\+\_\+ymin, nt bound\+\_\+ymax, nt bound\+\_\+zmin, nt bound\+\_\+zmax)
-\item 
-\Hypertarget{class_octree_ae2786956f35ae09138ea6768295f0660}\label{class_octree_ae2786956f35ae09138ea6768295f0660} 
-\doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}}$<$ nt $>$ \& {\bfseries get\+\_\+root} ()
+\Hypertarget{class_octree_a046f8573a9cd686026baead26527778a}\label{class_octree_a046f8573a9cd686026baead26527778a} 
+{\bfseries Octree} (\doxymbox{\hyperlink{structvector3}{vector3}}$<$ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}} $>$ min\+Vec, \doxymbox{\hyperlink{structvector3}{vector3}}$<$ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}} $>$ max\+Vec)
 \item 
 \Hypertarget{class_octree_a6ad44acf3890a47e191fa6d9d8b63087}\label{class_octree_a6ad44acf3890a47e191fa6d9d8b63087} 
 void {\bfseries set\+\_\+default\+\_\+field} (\doxymbox{\hyperlink{class_octree}{Octree}} def)
 \item 
-\Hypertarget{class_octree_a8e45cc24d31571cca553f86af40c7326}\label{class_octree_a8e45cc24d31571cca553f86af40c7326} 
-void {\bfseries add\+\_\+point} (const \doxymbox{\hyperlink{class_particle}{Particle}} \&p)
-\end{DoxyCompactItemize}
+void \doxymbox{\hyperlink{class_octree_a05531d715b666bdf0cc63dd67b5191c4}{add\+\_\+particle}} (const \doxymbox{\hyperlink{class_particle}{Particle}} \&p)
+\begin{DoxyCompactList}\small\item\em Add a particle to the octree. This is a public wrapper function for the private add\+\_\+particle function that takes a node as an argument. \end{DoxyCompactList}\item 
+\Hypertarget{class_octree_aab0e872e9963fe536e9884bf078e4258}\label{class_octree_aab0e872e9963fe536e9884bf078e4258} 
+void {\bfseries calc\+\_\+force} (\doxymbox{\hyperlink{class_particle}{Particle}} \&p)
+\item 
+void \doxymbox{\hyperlink{class_octree_a834963289ae58c88ec625a52739f73a9}{build}} (const std::\+vector$<$ \doxymbox{\hyperlink{class_particle}{Particle}} $>$ \&particles)
+\begin{DoxyCompactList}\small\item\em Build the octree from a vector of particles. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}}$<$ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}} $>$ \& \doxymbox{\hyperlink{class_octree_a251845ac6def2d95c5cc1fc89c6eb69c}{get\+\_\+root}} ()
+\begin{DoxyCompactList}\small\item\em return the root node of the octree. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 A spatial partitioning octree data structure for implementing the Barnes-\/\+Hut algorithm. 
 
+\label{doc-func-members}
+\Hypertarget{class_octree_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_octree_a05531d715b666bdf0cc63dd67b5191c4}\index{Octree@{Octree}!add\_particle@{add\_particle}}
+\index{add\_particle@{add\_particle}!Octree@{Octree}}
+\doxysubsubsection{\texorpdfstring{add\_particle()}{add\_particle()}}
+{\footnotesize\ttfamily \label{class_octree_a05531d715b666bdf0cc63dd67b5191c4} 
+void Octree::\+add\+\_\+particle (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_particle}{Particle}} \&}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Add a particle to the octree. This is a public wrapper function for the private add\+\_\+particle function that takes a node as an argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The particle to add to the octree. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_octree_a834963289ae58c88ec625a52739f73a9}\index{Octree@{Octree}!build@{build}}
+\index{build@{build}!Octree@{Octree}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily \label{class_octree_a834963289ae58c88ec625a52739f73a9} 
+void Octree::\+build (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{class_particle}{Particle}} $>$ \&}]{particles}{}\end{DoxyParamCaption})}
+
+
+
+Build the octree from a vector of particles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em particles} & The vector of particles to build the octree from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_octree_a251845ac6def2d95c5cc1fc89c6eb69c}\index{Octree@{Octree}!get\_root@{get\_root}}
+\index{get\_root@{get\_root}!Octree@{Octree}}
+\doxysubsubsection{\texorpdfstring{get\_root()}{get\_root()}}
+{\footnotesize\ttfamily \label{class_octree_a251845ac6def2d95c5cc1fc89c6eb69c} 
+\doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}}$<$ \doxymbox{\hyperlink{_octree_8h_a837d9894112773d3fda9ee117ebe0a42}{nt}} $>$ \& Octree::\+get\+\_\+root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+return the root node of the octree. 
+
+\begin{DoxyNote}{Note}
+This function is intended for future scaling purposes, the current implementation is intrusive for testing purposes and should be replaced with a encapsulated version. 
+\end{DoxyNote}
+
+
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
 \item 
-src/\+Octree.\+h\item 
-src/\+Octree.\+cpp\end{DoxyCompactItemize}
+src/\+\doxymbox{\hyperlink{_octree_8h}{Octree.\+h}}\item 
+src/\+\doxymbox{\hyperlink{_octree_8cpp}{Octree.\+cpp}}\end{DoxyCompactItemize}

@@ -96,9 +96,10 @@ $(function(){initNavTree('de/d85/class_particle.html','../../','df/de0/class_par
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ee948a7db884d814a6a5971a45dd2ca" id="r_a2ee948a7db884d814a6a5971a45dd2ca"><td class="memItemLeft"><a id="a2ee948a7db884d814a6a5971a45dd2ca" name="a2ee948a7db884d814a6a5971a45dd2ca"></a>
 &#160;</td><td class="memItemRight"><b>Particle</b> (double x, double y, double z, double vx, double vy, double vz, std::string type)</td></tr>
-<tr class="memitem:ae76d15f7af3d1070a0eb494fc54b1f45" id="r_ae76d15f7af3d1070a0eb494fc54b1f45"><td class="memItemLeft"><a id="ae76d15f7af3d1070a0eb494fc54b1f45" name="ae76d15f7af3d1070a0eb494fc54b1f45"></a>
-&#160;</td><td class="memItemRight"><b>Particle</b> (double x, double y, double z, double vx, double vy, double vz, int ec, std::string type)</td></tr>
+<tr class="memitem:acf830f9e25ec182d6a39f04d705b41ba" id="r_acf830f9e25ec182d6a39f04d705b41ba"><td class="memItemLeft"><a id="acf830f9e25ec182d6a39f04d705b41ba" name="acf830f9e25ec182d6a39f04d705b41ba"></a>
+&#160;</td><td class="memItemRight"><b>Particle</b> (double x, double y, double z, double vx, double vy, double vz, double m, int ec, std::string type)</td></tr>
 <tr class="memitem:a952cf3e369a2580bf0f56545f4577171" id="r_a952cf3e369a2580bf0f56545f4577171"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a952cf3e369a2580bf0f56545f4577171">move</a> (double dt)</td></tr>
+<tr class="memdesc:a952cf3e369a2580bf0f56545f4577171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the particle by updating its position and velocity based on its acceleration and the time step dt.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -106,6 +107,10 @@ Public Attributes</h2></td></tr>
 <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; double &gt;&#160;</td><td class="memItemRight"><b>position</b></td></tr>
 <tr class="memitem:a3118c47b933c96ab93b7d49eb7cc79a4" id="r_a3118c47b933c96ab93b7d49eb7cc79a4"><td class="memItemLeft"><a id="a3118c47b933c96ab93b7d49eb7cc79a4" name="a3118c47b933c96ab93b7d49eb7cc79a4"></a>
 <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; double &gt;&#160;</td><td class="memItemRight"><b>velocity</b></td></tr>
+<tr class="memitem:ad8f5fb3077746ec9034c4e57f164b44e" id="r_ad8f5fb3077746ec9034c4e57f164b44e"><td class="memItemLeft"><a id="ad8f5fb3077746ec9034c4e57f164b44e" name="ad8f5fb3077746ec9034c4e57f164b44e"></a>
+<a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; double &gt;&#160;</td><td class="memItemRight"><b>acceleration</b></td></tr>
+<tr class="memitem:ae6d46dc24a6666d526f211151fecca5f" id="r_ae6d46dc24a6666d526f211151fecca5f"><td class="memItemLeft"><a id="ae6d46dc24a6666d526f211151fecca5f" name="ae6d46dc24a6666d526f211151fecca5f"></a>
+double&#160;</td><td class="memItemRight"><b>mass</b></td></tr>
 <tr class="memitem:ae90740a152e14b96632dd9c3fc631f3b" id="r_ae90740a152e14b96632dd9c3fc631f3b"><td class="memItemLeft"><a id="ae90740a152e14b96632dd9c3fc631f3b" name="ae90740a152e14b96632dd9c3fc631f3b"></a>
 int&#160;</td><td class="memItemRight"><b>electric_charge</b></td></tr>
 <tr class="memitem:ac5b51d11f535f3b806fff965414e0410" id="r_ac5b51d11f535f3b806fff965414e0410"><td class="memItemLeft"><a id="ac5b51d11f535f3b806fff965414e0410" name="ac5b51d11f535f3b806fff965414e0410"></a>
@@ -130,9 +135,11 @@ bool&#160;</td><td class="memItemRight"><b>alive</b></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Move the particle by updating its position and velocity based on its acceleration and the time step dt. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dt</td><td></td></tr>
+    <tr><td class="paramname">dt</td><td>The time step to move the particle. Must be positive and not equal to zero. </td></tr>
   </table>
   </dd>
 </dl>
@@ -150,7 +157,7 @@ This error is mainly here to prevent the user from accidentally using a negative
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="../../d4/d15/_particle_8h_source.html">Particle.h</a></li>
-<li>src/<b>Particle.cpp</b></li>
+<li>src/<a class="el" href="../../df/d47/_particle_8cpp.html">Particle.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

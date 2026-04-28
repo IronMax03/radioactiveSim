@@ -1,113 +1,109 @@
 \doxysection{utils.\+h}
 \hypertarget{utils_8h_source}{}\label{utils_8h_source}\index{src/utils.h@{src/utils.h}}
-\doxymbox{\hyperlink{utils_8h}{Go to the documentation of this file.}}
+
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ UTILS\_H}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ UTILS\_H}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include<fstream>}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <random>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include<fstream>}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structvector3}{vector3}}\ }
+\DoxyCodeLine{00012\ \{\ }
+\DoxyCodeLine{00013\ \ \ \ \ T\ x\{\},\ y\{\},\ z\{\};\ }
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structvector3}{vector3}}\ }
-\DoxyCodeLine{00018\ \{\ }
-\DoxyCodeLine{00019\ \ \ \ \ T\ x\{\},\ y\{\},\ z\{\};\ }
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_integral\_v<T>\ ||\ std::is\_floating\_point\_v<T>,\ \textcolor{stringliteral}{"{}T\ must\ be\ a\ numeric\ type."{}});}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{constexpr}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ operator+(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00024\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3}}\ sum;}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ sum.x\ =\ x\ +\ n.x;}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ sum.y\ =\ y\ +\ n.y;}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ sum.z\ =\ z\ +\ n.z;}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sum;}
-\DoxyCodeLine{00030\ \ \ \ \ \}}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{void}\ operator+=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\ \{\ (*this)\ =\ (*this)\ +\ n;\ \}}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{constexpr}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ operator-\/(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00035\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3}}\ diff;}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ diff.x\ =\ x\ -\/\ n.x;}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ diff.y\ =\ y\ -\/\ n.y;}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ diff.z\ =\ z\ -\/\ n.z;}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ diff;}
-\DoxyCodeLine{00041\ \ \ \ \ \}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{void}\ operator-\/=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\ \{\ (*this)\ =\ (*this)\ -\/\ n;\ \}}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{constexpr}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ operator*(\textcolor{keyword}{const}\ T\ \&n)\textcolor{keyword}{\ const\ }}
-\DoxyCodeLine{00046\ \textcolor{keyword}{\ \ \ \ }\{\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3}}\ product;}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ product.x\ =\ x\ *\ n;}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ product.y\ =\ y\ *\ n;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ product.z\ =\ z\ *\ n;}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ product;}
-\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_integral\_v<T>\ ||\ std::is\_floating\_point\_v<T>,\ \textcolor{stringliteral}{"{}T\ must\ be\ a\ numeric\ type."{}});}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{constexpr}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ operator+(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3}}\ sum;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ sum.x\ =\ x\ +\ n.x;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ sum.y\ =\ y\ +\ n.y;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ sum.z\ =\ z\ +\ n.z;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sum;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{void}\ operator+=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\ \{\ (*this)\ =\ (*this)\ +\ n;\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{constexpr}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ operator-\/(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3}}\ diff;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ diff.x\ =\ x\ -\/\ n.x;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ diff.y\ =\ y\ -\/\ n.y;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ diff.z\ =\ z\ -\/\ n.z;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ diff;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{void}\ operator-\/=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\ \{\ (*this)\ =\ (*this)\ -\/\ n;\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{constexpr}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ operator*(\textcolor{keyword}{const}\ T\ \&n)\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{00040\ \textcolor{keyword}{\ \ \ \ }\{\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3}}\ product;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ product.x\ =\ x\ *\ n;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ product.y\ =\ y\ *\ n;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ product.z\ =\ z\ *\ n;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ product;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ defines\ n\ *\ v,\ since\ the\ scalar\ product\ function\ above\ only\ defined\ for\ v\ *\ n.}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{constexpr}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ operator*(\textcolor{keyword}{const}\ T\ \&scalar,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&v)\ \{\ \textcolor{keywordflow}{return}\ v\ *\ scalar;\ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{void}\ operator*=(\textcolor{keyword}{const}\ T\ \&n)\ \{\ (*this)\ =\ (*this)\ *\ n;\ \}}
 \DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ defines\ n\ *\ v,\ since\ the\ scalar\ product\ function\ above\ only\ defined\ for\ v\ *\ n.}}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{constexpr}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ operator*(\textcolor{keyword}{const}\ T\ \&scalar,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&v)\ \{\ \textcolor{keywordflow}{return}\ v\ *\ scalar;\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{constexpr}\ T\ operator*(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ x*n.x\ +\ y*n.y\ +\ z*n.z;\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{void}\ operator*=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\ \{\ (*this)\ =\ (*this)\ *\ n;\ \}}
 \DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{void}\ operator*=(\textcolor{keyword}{const}\ T\ \&n)\ \{\ (*this)\ =\ (*this)\ *\ n;\ \}}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{constexpr}\ T\ operator*(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ x*n.x\ +\ y*n.y\ +\ z*n.z;\ \}}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{void}\ operator*=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\ \{\ (*this)\ =\ (*this)\ *\ n;\ \}}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{constexpr}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ operator/(\textcolor{keyword}{const}\ T\ \&n)\textcolor{keyword}{\ const\ }}
-\DoxyCodeLine{00065\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 0)}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Vector\ Math\ error:\ Attempted\ to\ divide\ by\ Zero."{}});}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3}}\ ratio;}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ ratio.x\ =\ x\ /\ n;}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ ratio.y\ =\ y\ /\ n;}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ ratio.z\ =\ z\ /\ n;}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ratio;}
-\DoxyCodeLine{00074\ \ \ \ \ \}}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{constexpr}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ operator/=(\textcolor{keyword}{const}\ T\ \&n)\ \{\ (*this)\ =\ (*this)\ /\ n;\ \}}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ x\ ==\ n.x\ \&\&\ y\ ==\ n.y\ \&\&\ z\ ==\ n.z;\ \}}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \doxymbox{\hyperlink{structvector3_a73162c181f68ea321c51f6de3e39dfb2}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\&\ vec)\ }
-\DoxyCodeLine{00083\ \ \ \ \ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ vec.x\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ vec.y\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ vec.z\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
-\DoxyCodeLine{00086\ \ \ \ \ \}}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{structvector3_a4405b7efa1f89f60923c4008647c9be0}{norm}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ std::sqrt((*\textcolor{keyword}{this})\ *\ (*\textcolor{keyword}{this}));\ \}}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{structvector3_aa5916ec6ffe3ad4b5143261669108557}{normalize}}()\ }
-\DoxyCodeLine{00093\ \ \ \ \ \{\ }
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ T\ \doxymbox{\hyperlink{structvector3_a4405b7efa1f89f60923c4008647c9be0}{norm}}\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(this-\/>\doxymbox{\hyperlink{structvector3_a4405b7efa1f89f60923c4008647c9be0}{norm}}());}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (norm\ ==\ 0)}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Vector\ Math\ error:\ Zero\ norm\ vectors\ cant\ be\ normalized."{}});}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ *\textcolor{keyword}{this}\ =\ *\textcolor{keyword}{this}\ /\ \doxymbox{\hyperlink{structvector3_a4405b7efa1f89f60923c4008647c9be0}{norm}};\ }
-\DoxyCodeLine{00099\ \ \ \ \ \}}
-\DoxyCodeLine{00100\ \};}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00103\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{utils_8h_a9a99ce05b0cc43df1e62dd059648e899}{uniform01}}()\ \{}
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{static}\ std::mt19937\ gen(42);}
-\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{static}\ std::uniform\_real\_distribution<double>\ dist(0.0,\ 1.0);}
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{return}\ dist(gen);}
-\DoxyCodeLine{00107\ \}}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00113\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00114\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{utils_8h_a822a6abad40d2de0d2cd246f81af5fac}{distance}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3<T>}}\&\ v0,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3<T>}}\&\ v1)}
-\DoxyCodeLine{00115\ \{}
-\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_integral\_v<T>\ ||\ std::is\_floating\_point\_v<T>,\ \textcolor{stringliteral}{"{}T\ must\ be\ a\ numeric\ type."{}});}
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{return}\ std::sqrt((v1-\/v0)\ *\ (v1-\/v0));}
-\DoxyCodeLine{00118\ \}}
-\DoxyCodeLine{00119\ }
-\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{constexpr}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ operator/(\textcolor{keyword}{const}\ T\ \&n)\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{00059\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ ==\ 0)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Vector\ Math\ error:\ Attempted\ to\ divide\ by\ Zero."{}});}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{structvector3}{vector3}}\ ratio;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ ratio.x\ =\ x\ /\ n;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ ratio.y\ =\ y\ /\ n;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ ratio.z\ =\ z\ /\ n;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ratio;}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{constexpr}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ operator/=(\textcolor{keyword}{const}\ T\ \&n)\ \{\ (*this)\ =\ (*this)\ /\ n;\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\ \&n)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ x\ ==\ n.x\ \&\&\ y\ ==\ n.y\ \&\&\ z\ ==\ n.z;\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \doxymbox{\hyperlink{structvector3_a73162c181f68ea321c51f6de3e39dfb2}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3}}\&\ vec)\ }
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ vec.x\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ vec.y\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ vec.z\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{structvector3_a4405b7efa1f89f60923c4008647c9be0}{norm}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ std::sqrt((*\textcolor{keyword}{this})\ *\ (*\textcolor{keyword}{this}));\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{structvector3_aa5916ec6ffe3ad4b5143261669108557}{normalize}}()\ }
+\DoxyCodeLine{00087\ \ \ \ \ \{\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ T\ \doxymbox{\hyperlink{structvector3_a4405b7efa1f89f60923c4008647c9be0}{norm}}\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(this-\/>\doxymbox{\hyperlink{structvector3_a4405b7efa1f89f60923c4008647c9be0}{norm}}());}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (norm\ ==\ 0)}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Vector\ Math\ error:\ Zero\ norm\ vectors\ cant\ be\ normalized."{}});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ *\textcolor{keyword}{this}\ =\ *\textcolor{keyword}{this}\ /\ \doxymbox{\hyperlink{structvector3_a4405b7efa1f89f60923c4008647c9be0}{norm}};\ }
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ uniform01()\ }
+\DoxyCodeLine{00098\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{static}\ std::mt19937\ gen(42);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{static}\ std::uniform\_real\_distribution<double>\ dist(0.0,\ 1.0);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{return}\ dist(gen);}
+\DoxyCodeLine{00102\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00109\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ distance(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3<T>}}\&\ v0,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structvector3}{vector3<T>}}\&\ v1)}
+\DoxyCodeLine{00110\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_integral\_v<T>\ ||\ std::is\_floating\_point\_v<T>,\ \textcolor{stringliteral}{"{}T\ must\ be\ a\ numeric\ type."{}});}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ std::sqrt((v1-\/v0)\ *\ (v1-\/v0));}
+\DoxyCodeLine{00113\ \}}
 
 \end{DoxyCode}

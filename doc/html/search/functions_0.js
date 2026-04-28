@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bh_5fcriteria_0',['BH_criteria',['../dd/d85/structlazy__node.html#a766aa4d3eea3f24430e2a15b7aac0f9e',1,'lazy_node::BH_criteria(const T &amp;x, const T &amp;y, const T &amp;z, float theta) const'],['../dd/d85/structlazy__node.html#a6d6ff07dfd3e0e0b9f3b508ded3c43e4',1,'lazy_node::BH_criteria(vector3&lt; T &gt; position, float theta) const']]]
+  ['add_5fparticle_0',['add_particle',['../de/da5/class_octree.html#a05531d715b666bdf0cc63dd67b5191c4',1,'Octree']]]
 ];

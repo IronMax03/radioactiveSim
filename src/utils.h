@@ -1,5 +1,7 @@
-#ifndef UTILS_H
-#define UTILS_H
+/// @file utils.h
+/// @brief This file contains utility functions and data structures used in the simulation.
+
+#pragma once
 
 #include <random>
 #include <type_traits>
@@ -95,7 +97,8 @@ struct vector3
 };
 
 /// @brief Return a random double in the range [0, 1) using a Mersenne Twister random number generator.
-inline double uniform01() {
+inline double uniform01() 
+{
     static std::mt19937 gen(42);
     static std::uniform_real_distribution<double> dist(0.0, 1.0);
     return dist(gen);
@@ -111,5 +114,3 @@ inline double distance(const vector3<T>& v0, const vector3<T>& v1)
     static_assert(std::is_integral_v<T> || std::is_floating_point_v<T>, "T must be a numeric type.");
     return std::sqrt((v1-v0) * (v1-v0));
 }
-
-#endif

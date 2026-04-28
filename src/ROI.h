@@ -1,5 +1,4 @@
-#ifndef ROI_H
-#define ROI_H
+#pragma once
 
 #include "Particle.h"
 
@@ -16,5 +15,3 @@ public:
     bool contains(const Particle& p) const;
     void score(Particle& p);
 };
-
-#endif

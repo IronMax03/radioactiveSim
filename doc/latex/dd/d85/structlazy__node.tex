@@ -12,9 +12,16 @@ A lazy node for the octree data structure.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{structlazy__node_a6748eae9d6be9e9e2a444b3a9c1bfae8}\label{structlazy__node_a6748eae9d6be9e9e2a444b3a9c1bfae8} 
-constexpr bool {\bfseries is\+\_\+child\+\_\+inst} (int n) const
+constexpr size\+\_\+t \doxymbox{\hyperlink{structlazy__node_a7fa70835402047c51b0ac6579e762200}{child\+\_\+index}} (const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&p) const
+\item 
+\Hypertarget{structlazy__node_a7250f98b412f91051bf4f724af42386d}\label{structlazy__node_a7250f98b412f91051bf4f724af42386d} 
+constexpr bool {\bfseries is\+\_\+child\+\_\+inst} (const size\+\_\+t \&n) const
 \begin{DoxyCompactList}\small\item\em Return True if nth child is evaluated (exist). \end{DoxyCompactList}\item 
+\Hypertarget{structlazy__node_a76dc2911f89b0b3a9ae0a3d4293381b0}\label{structlazy__node_a76dc2911f89b0b3a9ae0a3d4293381b0} 
+constexpr bool {\bfseries is\+\_\+leaf} () const
+\begin{DoxyCompactList}\small\item\em Return True if the node is a leaf (has no children). \end{DoxyCompactList}\item 
+constexpr double \doxymbox{\hyperlink{structlazy__node_a62ed8754eec7908e765f2ed994e54612}{Calc\+\_\+\+BH\+\_\+criteria}} (\doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ position) const
+\begin{DoxyCompactList}\small\item\em Calculate the barnes hut criteria for the current node and a given position. \end{DoxyCompactList}\item 
 constexpr bool \doxymbox{\hyperlink{structlazy__node_a766aa4d3eea3f24430e2a15b7aac0f9e}{BH\+\_\+criteria}} (const T \&x, const T \&y, const T \&z, float theta) const
 \begin{DoxyCompactList}\small\item\em Return True if the barnes hut criteria is satisfied current node. \end{DoxyCompactList}\item 
 constexpr bool \doxymbox{\hyperlink{structlazy__node_a6d6ff07dfd3e0e0b9f3b508ded3c43e4}{BH\+\_\+criteria}} (\doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ position, float theta) const
@@ -22,25 +29,28 @@ constexpr bool \doxymbox{\hyperlink{structlazy__node_a6d6ff07dfd3e0e0b9f3b508ded
 \Hypertarget{structlazy__node_acaa9b90bd0ed2100c5bc563d5f9a6294}\label{structlazy__node_acaa9b90bd0ed2100c5bc563d5f9a6294} 
 void {\bfseries eval} ()
 \begin{DoxyCompactList}\small\item\em Calculate the center of mass and total charge. \end{DoxyCompactList}\item 
-\Hypertarget{structlazy__node_afd48d66cb75a8e4ade75a0e2a8177757}\label{structlazy__node_afd48d66cb75a8e4ade75a0e2a8177757} 
-void {\bfseries eval} (const size\+\_\+t \&n)
+void \doxymbox{\hyperlink{structlazy__node_afd48d66cb75a8e4ade75a0e2a8177757}{eval}} (const size\+\_\+t \&n)
 \begin{DoxyCompactList}\small\item\em Calculate the center of mass and total charge of the n-\/th child. \end{DoxyCompactList}\item 
-\Hypertarget{structlazy__node_a95549e9732b24f2993ce5d4f6d741aa5}\label{structlazy__node_a95549e9732b24f2993ce5d4f6d741aa5} 
-void {\bfseries instantiate\+\_\+child} (const size\+\_\+t \&n)
-\item 
+void \doxymbox{\hyperlink{structlazy__node_a95549e9732b24f2993ce5d4f6d741aa5}{instantiate\+\_\+child}} (const size\+\_\+t \&n)
+\begin{DoxyCompactList}\small\item\em Instantiate the nth child if it is not already instantiated. \end{DoxyCompactList}\item 
+const \doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}} \& \doxymbox{\hyperlink{structlazy__node_a35132440f36641c8eb18106bacd4ed0f}{read}} (const size\+\_\+t \&n) const
+\begin{DoxyCompactList}\small\item\em Return the nth child. This function is read-\/only and will throw an error if the child is not instantiated. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}} \& \doxymbox{\hyperlink{structlazy__node_a314e8b919ed648b4a5a782b19d115aa3}{get}} (const size\+\_\+t \&n)
 \begin{DoxyCompactList}\small\item\em Return the nth child. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{structlazy__node_a0b983b9a3a8360ca70fcfaee7b1c3a06}\label{structlazy__node_a0b983b9a3a8360ca70fcfaee7b1c3a06} 
-\doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ {\bfseries box\+\_\+center}
-\item 
+\Hypertarget{structlazy__node_a61f292979d512da153f91eabcbcb0874}\label{structlazy__node_a61f292979d512da153f91eabcbcb0874} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>T {\bfseries length}\\
+\>\doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ {\bfseries center}\\
+\} {\bfseries bounding\_box}\\
+
+\end{tabbing}\item 
 \Hypertarget{structlazy__node_a290089b6dc5094e6f4baf8e50882c4ae}\label{structlazy__node_a290089b6dc5094e6f4baf8e50882c4ae} 
 \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ {\bfseries center\+\_\+of\+\_\+charge}
-\item 
-\Hypertarget{structlazy__node_a0d69ace8d5af35c6674c97ee9de4be48}\label{structlazy__node_a0d69ace8d5af35c6674c97ee9de4be48} 
-T {\bfseries box\+\_\+length}
 \item 
 \Hypertarget{structlazy__node_a28d71952e1bcb9e189567293821d5fea}\label{structlazy__node_a28d71952e1bcb9e189567293821d5fea} 
 int {\bfseries total\+\_\+charge}
@@ -111,6 +121,61 @@ Return True if the barnes hut criteria is satisfied current node.
 {\em theta} & Theta parameter for the barnes hut criteria. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{structlazy__node_a62ed8754eec7908e765f2ed994e54612}\index{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!Calc\_BH\_criteria@{Calc\_BH\_criteria}}
+\index{Calc\_BH\_criteria@{Calc\_BH\_criteria}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Calc\_BH\_criteria()}{Calc\_BH\_criteria()}}
+{\footnotesize\ttfamily \label{structlazy__node_a62ed8754eec7908e765f2ed994e54612} 
+template$<$typename T$>$ \\
+double \doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}}$<$ T $>$::\+\+Calc\+\_\+\+BH\+\_\+criteria (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$}]{position}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the barnes hut criteria for the current node and a given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the particle we want to calculate the force from this node on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The barnes hut criteria for the current node and the given position. 
+\end{DoxyReturn}
+\Hypertarget{structlazy__node_a7fa70835402047c51b0ac6579e762200}\index{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!child\_index@{child\_index}}
+\index{child\_index@{child\_index}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{child\_index()}{child\_index()}}
+{\footnotesize\ttfamily \label{structlazy__node_a7fa70835402047c51b0ac6579e762200} 
+template$<$typename T$>$ \\
+size\+\_\+t \doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}}$<$ T $>$::\+child\+\_\+index (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{structvector3}{vector3}}$<$ T $>$ \&}]{p}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position of the particle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The child index of the particle position using morton indices. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & if the particle position is not within the bounding box of the node. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{structlazy__node_afd48d66cb75a8e4ade75a0e2a8177757}\index{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!eval@{eval}}
+\index{eval@{eval}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily \label{structlazy__node_afd48d66cb75a8e4ade75a0e2a8177757} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}}$<$ T $>$::\+eval (\begin{DoxyParamCaption}\item[{const size\+\_\+t \&}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate the center of mass and total charge of the n-\/th child. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The index of the child to evaluate. The indices are defined by the morton indices. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{structlazy__node_a314e8b919ed648b4a5a782b19d115aa3}\index{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!get@{get}}
 \index{get@{get}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{get()}{get()}}
@@ -127,8 +192,40 @@ Return the nth child.
 {\em n} & The index of the child to return. The indices are defined by the morton indices. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{structlazy__node_a95549e9732b24f2993ce5d4f6d741aa5}\index{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!instantiate\_child@{instantiate\_child}}
+\index{instantiate\_child@{instantiate\_child}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{instantiate\_child()}{instantiate\_child()}}
+{\footnotesize\ttfamily \label{structlazy__node_a95549e9732b24f2993ce5d4f6d741aa5} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}}$<$ T $>$::\+instantiate\+\_\+child (\begin{DoxyParamCaption}\item[{const size\+\_\+t \&}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiate the nth child if it is not already instantiated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The index of the child to instantiate. The indices are defined by the morton indices. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structlazy__node_a35132440f36641c8eb18106bacd4ed0f}\index{lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}!read@{read}}
+\index{read@{read}!lazy\_node$<$ T $>$@{lazy\_node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily \label{structlazy__node_a35132440f36641c8eb18106bacd4ed0f} 
+template$<$typename T$>$ \\
+const \doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}} \& \doxymbox{\hyperlink{structlazy__node}{lazy\+\_\+node}}$<$ T $>$::\+read (\begin{DoxyParamCaption}\item[{const size\+\_\+t \&}]{n}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the nth child. This function is read-\/only and will throw an error if the child is not instantiated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The index of the child to return. The indices are defined by the morton indices. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
 \item 
-src/\+Octree.\+h\end{DoxyCompactItemize}
+src/\+\doxymbox{\hyperlink{_octree_8h}{Octree.\+h}}\end{DoxyCompactItemize}

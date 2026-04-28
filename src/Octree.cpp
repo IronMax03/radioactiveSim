@@ -1,5 +1,10 @@
+/// @file Octree.cpp
+/// @brief This file contains the implementation of the Octree class and its member functions.
+/// @author Maximilien Notz
+
 #include "Octree.h"
 #include <cmath>
+#include <cstddef>
 #include <cstdlib>
 
 Octree::Octree(vector3<nt> minVec, vector3<nt> maxVec)
@@ -15,6 +20,8 @@ Octree::Octree(vector3<nt> minVec, vector3<nt> maxVec)
         root.bounding_box.length = std::abs(temp.z);
 }
 
+/// @brief return the root node of the octree.
+/// @note This function is intended for future scaling purposes, the current implementation is intrusive for testing purposes and should be replaced with a encapsulated version.
 lazy_node<nt>& Octree::get_root() { return this->root; }
 
 /// @brief This is a private helper function for the public add_particle function. It adds a particle to the octree by recursively traversing the tree and adding the particle to the appropriate node.
@@ -46,6 +53,15 @@ void Octree::add_particle(const Particle& p) { add_particle(p, this->root); }
 /// @param particles The vector of particles to build the octree from.
 void Octree::build(const std::vector<Particle>& particles)
 {
-    for (const auto& p : particles)
+    for (const Particle& p : particles)
         add_particle(p, this->root);
+}
+
+void Octree::calc_force(Particle& p)
+{
+    vector3<double> force{0.0, 0.0, 0.0};
+
+
+
+    p.acceleration = force;
 }

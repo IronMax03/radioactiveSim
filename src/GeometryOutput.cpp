@@ -6,7 +6,8 @@ double bounding_xmin, bounding_xmax, bounding_ymin, bounding_ymax, bounding_zmin
 void write_box_vtp(double xmin, double xmax,
                    double ymin, double ymax,
                    double zmin, double zmax,
-                   const std::string& filename) {
+                   const std::string& filename) 
+{
 
     std::ofstream file(filename);
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['particle_0',['Particle',['../de/d85/class_particle.html',1,'']]]
+  ['octree_0',['Octree',['../de/da5/class_octree.html',1,'']]]
 ];

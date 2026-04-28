@@ -1,5 +1,4 @@
-#ifndef OUTPUT_H
-#define OUTPUT_H
+#pragma once
 
 #include <vector>
 #include <string>
@@ -7,5 +6,3 @@
 
 void write_particles_csv(const std::vector<Particle>& particles,
                           const std::string& filename);
-
-#endif

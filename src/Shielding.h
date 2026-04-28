@@ -1,8 +1,8 @@
-#ifndef SHIELDING_H
-#define SHIELDING_H
+#pragma once
 
 #include "Material.h"
 #include "Particle.h"
+#include "Box.hpp"
 
 class Shielding {
 public:
@@ -18,5 +18,3 @@ public:
 
     bool contains(const Particle& p) const;
 };
-
-#endif

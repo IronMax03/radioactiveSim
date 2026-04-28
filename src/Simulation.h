@@ -1,5 +1,4 @@
-#ifndef SIMULATION_H
-#define SIMULATION_H
+#pragma once
 
 #include <vector>
 #include "Particle.h"
@@ -23,5 +22,3 @@ public:
     void run();
     void print();
 };
-
-#endif

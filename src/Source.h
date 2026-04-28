@@ -1,5 +1,4 @@
-#ifndef SOURCE_H
-#define SOURCE_H
+#pragma once
 
 #include <vector>
 #include <string>
@@ -19,5 +18,3 @@ public:
     // Emit particles for one timestep
     std::vector<Particle> emit() const;
 };
-
-#endif

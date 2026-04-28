@@ -6,11 +6,11 @@
 \Hypertarget{class_particle_a2ee948a7db884d814a6a5971a45dd2ca}\label{class_particle_a2ee948a7db884d814a6a5971a45dd2ca} 
 {\bfseries Particle} (double x, double y, double z, double vx, double vy, double vz, std::\+string type)
 \item 
-\Hypertarget{class_particle_ae76d15f7af3d1070a0eb494fc54b1f45}\label{class_particle_ae76d15f7af3d1070a0eb494fc54b1f45} 
-{\bfseries Particle} (double x, double y, double z, double vx, double vy, double vz, int ec, std::\+string type)
+\Hypertarget{class_particle_acf830f9e25ec182d6a39f04d705b41ba}\label{class_particle_acf830f9e25ec182d6a39f04d705b41ba} 
+{\bfseries Particle} (double x, double y, double z, double vx, double vy, double vz, double m, int ec, std::\+string type)
 \item 
 void \doxymbox{\hyperlink{class_particle_a952cf3e369a2580bf0f56545f4577171}{move}} (double dt)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Move the particle by updating its position and velocity based on its acceleration and the time step dt. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -19,6 +19,12 @@ void \doxymbox{\hyperlink{class_particle_a952cf3e369a2580bf0f56545f4577171}{move
 \item 
 \Hypertarget{class_particle_a3118c47b933c96ab93b7d49eb7cc79a4}\label{class_particle_a3118c47b933c96ab93b7d49eb7cc79a4} 
 \doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries velocity}
+\item 
+\Hypertarget{class_particle_ad8f5fb3077746ec9034c4e57f164b44e}\label{class_particle_ad8f5fb3077746ec9034c4e57f164b44e} 
+\doxymbox{\hyperlink{structvector3}{vector3}}$<$ double $>$ {\bfseries acceleration}
+\item 
+\Hypertarget{class_particle_ae6d46dc24a6666d526f211151fecca5f}\label{class_particle_ae6d46dc24a6666d526f211151fecca5f} 
+double {\bfseries mass}
 \item 
 \Hypertarget{class_particle_ae90740a152e14b96632dd9c3fc631f3b}\label{class_particle_ae90740a152e14b96632dd9c3fc631f3b} 
 int {\bfseries electric\+\_\+charge}
@@ -44,8 +50,12 @@ bool {\bfseries alive}
 void Particle::\+move (\begin{DoxyParamCaption}\item[{double}]{dt}{}\end{DoxyParamCaption})}
 
 
+
+Move the particle by updating its position and velocity based on its acceleration and the time step dt. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em dt} & \\
+{\em dt} & The time step to move the particle. Must be positive and not equal to zero. \\
 \hline
 \end{DoxyParams}
 
@@ -63,4 +73,4 @@ This error is mainly here to prevent the user from accidentally using a negative
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
 \item 
 src/\+Particle.\+h\item 
-src/\+Particle.\+cpp\end{DoxyCompactItemize}
+src/\+\doxymbox{\hyperlink{_particle_8cpp}{Particle.\+cpp}}\end{DoxyCompactItemize}

@@ -1,5 +1,4 @@
-#ifndef MATERIAL_H
-#define MATERIAL_H
+#pragma once
 
 #include <string>
 
@@ -10,5 +9,3 @@ struct Material {
     Material(std::string n = "Vacuum", double mfp = 1e9)
         : name(n), mean_free_path(mfp) {}
 };
-
-#endif

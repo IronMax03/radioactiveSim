@@ -99,9 +99,15 @@ $(function(){initNavTree('dd/d85/structlazy__node.html','../../','d1/d7b/structl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6748eae9d6be9e9e2a444b3a9c1bfae8" id="r_a6748eae9d6be9e9e2a444b3a9c1bfae8"><td class="memItemLeft"><a id="a6748eae9d6be9e9e2a444b3a9c1bfae8" name="a6748eae9d6be9e9e2a444b3a9c1bfae8"></a>
-constexpr bool&#160;</td><td class="memItemRight"><b>is_child_inst</b> (int n) const</td></tr>
-<tr class="memdesc:a6748eae9d6be9e9e2a444b3a9c1bfae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return True if nth child is evaluated (exist). <br /></td></tr>
+<tr class="memitem:a7fa70835402047c51b0ac6579e762200" id="r_a7fa70835402047c51b0ac6579e762200"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#a7fa70835402047c51b0ac6579e762200">child_index</a> (const <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; T &gt; &amp;p) const</td></tr>
+<tr class="memitem:a7250f98b412f91051bf4f724af42386d" id="r_a7250f98b412f91051bf4f724af42386d"><td class="memItemLeft"><a id="a7250f98b412f91051bf4f724af42386d" name="a7250f98b412f91051bf4f724af42386d"></a>
+constexpr bool&#160;</td><td class="memItemRight"><b>is_child_inst</b> (const size_t &amp;n) const</td></tr>
+<tr class="memdesc:a7250f98b412f91051bf4f724af42386d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return True if nth child is evaluated (exist). <br /></td></tr>
+<tr class="memitem:a76dc2911f89b0b3a9ae0a3d4293381b0" id="r_a76dc2911f89b0b3a9ae0a3d4293381b0"><td class="memItemLeft"><a id="a76dc2911f89b0b3a9ae0a3d4293381b0" name="a76dc2911f89b0b3a9ae0a3d4293381b0"></a>
+constexpr bool&#160;</td><td class="memItemRight"><b>is_leaf</b> () const</td></tr>
+<tr class="memdesc:a76dc2911f89b0b3a9ae0a3d4293381b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return True if the node is a leaf (has no children). <br /></td></tr>
+<tr class="memitem:a62ed8754eec7908e765f2ed994e54612" id="r_a62ed8754eec7908e765f2ed994e54612"><td class="memItemLeft">constexpr double&#160;</td><td class="memItemRight"><a class="el" href="#a62ed8754eec7908e765f2ed994e54612">Calc_BH_criteria</a> (<a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; T &gt; position) const</td></tr>
+<tr class="memdesc:a62ed8754eec7908e765f2ed994e54612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the barnes hut criteria for the current node and a given position.  <br /></td></tr>
 <tr class="memitem:a766aa4d3eea3f24430e2a15b7aac0f9e" id="r_a766aa4d3eea3f24430e2a15b7aac0f9e"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a766aa4d3eea3f24430e2a15b7aac0f9e">BH_criteria</a> (const T &amp;x, const T &amp;y, const T &amp;z, float theta) const</td></tr>
 <tr class="memdesc:a766aa4d3eea3f24430e2a15b7aac0f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return True if the barnes hut criteria is satisfied current node.  <br /></td></tr>
 <tr class="memitem:a6d6ff07dfd3e0e0b9f3b508ded3c43e4" id="r_a6d6ff07dfd3e0e0b9f3b508ded3c43e4"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a6d6ff07dfd3e0e0b9f3b508ded3c43e4">BH_criteria</a> (<a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; T &gt; position, float theta) const</td></tr>
@@ -109,22 +115,26 @@ constexpr bool&#160;</td><td class="memItemRight"><b>is_child_inst</b> (int n) c
 <tr class="memitem:acaa9b90bd0ed2100c5bc563d5f9a6294" id="r_acaa9b90bd0ed2100c5bc563d5f9a6294"><td class="memItemLeft"><a id="acaa9b90bd0ed2100c5bc563d5f9a6294" name="acaa9b90bd0ed2100c5bc563d5f9a6294"></a>
 void&#160;</td><td class="memItemRight"><b>eval</b> ()</td></tr>
 <tr class="memdesc:acaa9b90bd0ed2100c5bc563d5f9a6294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the center of mass and total charge. <br /></td></tr>
-<tr class="memitem:afd48d66cb75a8e4ade75a0e2a8177757" id="r_afd48d66cb75a8e4ade75a0e2a8177757"><td class="memItemLeft"><a id="afd48d66cb75a8e4ade75a0e2a8177757" name="afd48d66cb75a8e4ade75a0e2a8177757"></a>
-void&#160;</td><td class="memItemRight"><b>eval</b> (const size_t &amp;n)</td></tr>
-<tr class="memdesc:afd48d66cb75a8e4ade75a0e2a8177757"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the center of mass and total charge of the n-th child. <br /></td></tr>
-<tr class="memitem:a95549e9732b24f2993ce5d4f6d741aa5" id="r_a95549e9732b24f2993ce5d4f6d741aa5"><td class="memItemLeft"><a id="a95549e9732b24f2993ce5d4f6d741aa5" name="a95549e9732b24f2993ce5d4f6d741aa5"></a>
-void&#160;</td><td class="memItemRight"><b>instantiate_child</b> (const size_t &amp;n)</td></tr>
+<tr class="memitem:afd48d66cb75a8e4ade75a0e2a8177757" id="r_afd48d66cb75a8e4ade75a0e2a8177757"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afd48d66cb75a8e4ade75a0e2a8177757">eval</a> (const size_t &amp;n)</td></tr>
+<tr class="memdesc:afd48d66cb75a8e4ade75a0e2a8177757"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the center of mass and total charge of the n-th child.  <br /></td></tr>
+<tr class="memitem:a95549e9732b24f2993ce5d4f6d741aa5" id="r_a95549e9732b24f2993ce5d4f6d741aa5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a95549e9732b24f2993ce5d4f6d741aa5">instantiate_child</a> (const size_t &amp;n)</td></tr>
+<tr class="memdesc:a95549e9732b24f2993ce5d4f6d741aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiate the nth child if it is not already instantiated.  <br /></td></tr>
+<tr class="memitem:a35132440f36641c8eb18106bacd4ed0f" id="r_a35132440f36641c8eb18106bacd4ed0f"><td class="memItemLeft">const <a class="el" href="../../dd/d85/structlazy__node.html">lazy_node</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a35132440f36641c8eb18106bacd4ed0f">read</a> (const size_t &amp;n) const</td></tr>
+<tr class="memdesc:a35132440f36641c8eb18106bacd4ed0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the nth child. This function is read-only and will throw an error if the child is not instantiated.  <br /></td></tr>
 <tr class="memitem:a314e8b919ed648b4a5a782b19d115aa3" id="r_a314e8b919ed648b4a5a782b19d115aa3"><td class="memItemLeft"><a class="el" href="../../dd/d85/structlazy__node.html">lazy_node</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a314e8b919ed648b4a5a782b19d115aa3">get</a> (const size_t &amp;n)</td></tr>
 <tr class="memdesc:a314e8b919ed648b4a5a782b19d115aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the nth child.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a0b983b9a3a8360ca70fcfaee7b1c3a06" id="r_a0b983b9a3a8360ca70fcfaee7b1c3a06"><td class="memItemLeft"><a id="a0b983b9a3a8360ca70fcfaee7b1c3a06" name="a0b983b9a3a8360ca70fcfaee7b1c3a06"></a>
-<a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; T &gt;&#160;</td><td class="memItemRight"><b>box_center</b></td></tr>
+<tr class="memitem:"><td class="memItemLeft anon"><a id="a61f292979d512da153f91eabcbcb0874" name="a61f292979d512da153f91eabcbcb0874"></a>
+struct {&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ade8b07d30a95ebbfc4197d72a2c72dcc" id="r_ade8b07d30a95ebbfc4197d72a2c72dcc"><td class="memItemLeft anon">
+&#160;&#160;&#160;T&#160;&#160;&#160;<b>length</b>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:a83df8bf4b77dd0facdb9a7b259e7478a" id="r_a83df8bf4b77dd0facdb9a7b259e7478a"><td class="memItemLeft anon">
+&#160;&#160;&#160;<a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; T &gt;&#160;&#160;&#160;<b>center</b>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:a61f292979d512da153f91eabcbcb0874" id="r_a61f292979d512da153f91eabcbcb0874"><td class="memItemLeft anonEnd">}&#160;</td><td class="memItemRight"><b>bounding_box</b></td></tr>
 <tr class="memitem:a290089b6dc5094e6f4baf8e50882c4ae" id="r_a290089b6dc5094e6f4baf8e50882c4ae"><td class="memItemLeft"><a id="a290089b6dc5094e6f4baf8e50882c4ae" name="a290089b6dc5094e6f4baf8e50882c4ae"></a>
 <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; T &gt;&#160;</td><td class="memItemRight"><b>center_of_charge</b></td></tr>
-<tr class="memitem:a0d69ace8d5af35c6674c97ee9de4be48" id="r_a0d69ace8d5af35c6674c97ee9de4be48"><td class="memItemLeft"><a id="a0d69ace8d5af35c6674c97ee9de4be48" name="a0d69ace8d5af35c6674c97ee9de4be48"></a>
-T&#160;</td><td class="memItemRight"><b>box_length</b></td></tr>
 <tr class="memitem:a28d71952e1bcb9e189567293821d5fea" id="r_a28d71952e1bcb9e189567293821d5fea"><td class="memItemLeft"><a id="a28d71952e1bcb9e189567293821d5fea" name="a28d71952e1bcb9e189567293821d5fea"></a>
 int&#160;</td><td class="memItemRight"><b>total_charge</b></td></tr>
 <tr class="memitem:a53b03ef402863afe65ad04513063bd4e" id="r_a53b03ef402863afe65ad04513063bd4e"><td class="memItemLeft"><a id="a53b03ef402863afe65ad04513063bd4e" name="a53b03ef402863afe65ad04513063bd4e"></a>
@@ -235,6 +245,117 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
+<a id="a62ed8754eec7908e765f2ed994e54612" name="a62ed8754eec7908e765f2ed994e54612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62ed8754eec7908e765f2ed994e54612">&#9670;&#160;</a></span>Calc_BH_criteria()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="../../dd/d85/structlazy__node.html">lazy_node</a>&lt; T &gt;::Calc_BH_criteria </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>position</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate the barnes hut criteria for the current node and a given position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Position of the particle we want to calculate the force from this node on. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The barnes hut criteria for the current node and the given position. </dd></dl>
+
+</div>
+</div>
+<a id="a7fa70835402047c51b0ac6579e762200" name="a7fa70835402047c51b0ac6579e762200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fa70835402047c51b0ac6579e762200">&#9670;&#160;</a></span>child_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="../../dd/d85/structlazy__node.html">lazy_node</a>&lt; T &gt;::child_index </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The position of the particle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The child index of the particle position using morton indices. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if the particle position is not within the bounding box of the node. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afd48d66cb75a8e4ade75a0e2a8177757" name="afd48d66cb75a8e4ade75a0e2a8177757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd48d66cb75a8e4ade75a0e2a8177757">&#9670;&#160;</a></span>eval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dd/d85/structlazy__node.html">lazy_node</a>&lt; T &gt;::eval </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate the center of mass and total charge of the n-th child. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>The index of the child to evaluate. The indices are defined by the morton indices. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a314e8b919ed648b4a5a782b19d115aa3" name="a314e8b919ed648b4a5a782b19d115aa3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a314e8b919ed648b4a5a782b19d115aa3">&#9670;&#160;</a></span>get()</h2>
 
@@ -261,6 +382,76 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 
 <p>Return the nth child. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>The index of the child to return. The indices are defined by the morton indices. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a95549e9732b24f2993ce5d4f6d741aa5" name="a95549e9732b24f2993ce5d4f6d741aa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95549e9732b24f2993ce5d4f6d741aa5">&#9670;&#160;</a></span>instantiate_child()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dd/d85/structlazy__node.html">lazy_node</a>&lt; T &gt;::instantiate_child </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Instantiate the nth child if it is not already instantiated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>The index of the child to instantiate. The indices are defined by the morton indices. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a35132440f36641c8eb18106bacd4ed0f" name="a35132440f36641c8eb18106bacd4ed0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35132440f36641c8eb18106bacd4ed0f">&#9670;&#160;</a></span>read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../dd/d85/structlazy__node.html">lazy_node</a> &amp; <a class="el" href="../../dd/d85/structlazy__node.html">lazy_node</a>&lt; T &gt;::read </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the nth child. This function is read-only and will throw an error if the child is not instantiated. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>The index of the child to return. The indices are defined by the morton indices. </td></tr>

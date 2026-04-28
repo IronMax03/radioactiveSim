@@ -1,10 +1,11 @@
-/**
- * @file Octree.h
- * @brief This file contains the definition of the Octree class, which is a spatial partition.
- */
+/// @file Octree.h
+/// @brief This file contains the definition of the Octree class and lazy_node.
+/// @author Maximilien Notz
+
 #pragma once
 
 #include "Particle.h"
+#include "utils.h"
 
 #include <cstddef>
 #include <memory>
@@ -108,7 +109,6 @@ struct lazy_node
                 total_charge = particle->electric_charge;
             }
 
-
             return;
         }
             
@@ -149,13 +149,15 @@ struct lazy_node
         childs[n]->bounding_box.center.z += (n & 4) ? bounding_box.length/4 : -bounding_box.length/4;
     }
 
-    /// @brief Instantiate the nth child and set its particle to the given particle.
-    /// @param n The index of the child to instantiate. The indices are defined by the morton indices.
-    /// @param p The particle to set the nth child to.
-    inline void create_child(const size_t& n, const Particle& p)
+    /// @brief Return the nth child. This function is read-only and will throw an error if the child is not instantiated.
+    /// @param n The index of the child to return. The indices are defined by the morton indices.
+    inline const lazy_node& read(const size_t& n) const 
     {
-        instantiate_child(n);
-        childs[n]->particle = std::make_shared<Particle>(p);
+        if (n > 7)
+            throw  std::runtime_error("lazy_node.read(n): n must be smaller or equal to 7.");
+        else if (childs[n] == nullptr)
+            throw std::runtime_error("lazy_node.read(n): child is not instantiated.");
+        return *childs[n];
     }
 
 
@@ -185,10 +187,10 @@ class Octree
     public:
         Octree(vector3<nt> minVec, vector3<nt> maxVec);
 
-        lazy_node<nt>& get_root();
-        double calc_force(const Particle& p) const;
-
         void set_default_field(Octree def);
         void add_particle(const Particle& p);
+        void calc_force(Particle& p);
         void build(const std::vector<Particle>& particles);
+
+        lazy_node<nt>& get_root();
 };

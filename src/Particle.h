@@ -1,5 +1,4 @@
-#ifndef PARTICLE_H
-#define PARTICLE_H
+#pragma once
 
 #include "utils.h"
 
@@ -7,8 +6,10 @@
 
 class Particle {
 public:
-    vector3<double> position; //double x, y, z;
-    vector3<double> velocity; //double vx, vy, vz;
+    vector3<double> position;
+    vector3<double> velocity;
+    vector3<double> acceleration;
+    double mass; // ! new, units of proton mass
     int electric_charge; // ! new, coulomb units
     std::string type;
     double distance_in_shield;
@@ -22,10 +23,9 @@ public:
 
     Particle(double x, double y, double z,
              double vx, double vy, double vz,
+             double m,
              int ec,
              std::string type);
 
     void move(double dt);
 };
-
-#endif

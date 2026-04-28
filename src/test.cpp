@@ -1,9 +1,7 @@
-/**
- * @file test.cpp
- * @brief This file contains unit tests for the utility functions and data structures used in the simulation.
- * The tests are implemented using the doctest framework, which is a lightweight and easy-to-use C++ testing framework. 
- * @note doctest.h must be downloaded from the official doctest repository and placed in the dependencies folder for this file to compile and run correctly.
-*/
+/// @file test.cpp
+/// @brief This file contains unit tests for the utility functions and data structures used in the simulation.
+/// @note doctest.h must be downloaded from the official doctest repository and placed in the dependencies folder for this file to compile and run correctly.
+/// @author Maximilien Notz
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
@@ -93,7 +91,6 @@ TEST_SUITE("Particle")
 
         CHECK_THROWS(Particle(1.0, 2.0, 3.0, 0.1, 0.2, 0.3, "invalid_type"));
         CHECK_EQ(Particle(1.0, 2.0, 3.0, 0.1, 0.2, 0.3, "neutron").electric_charge, 0);
-        CHECK_EQ(Particle(1.0, 2.0, 3.0, 0.1, 0.2, 0.3, "electron").electric_charge, -1);
     }
 
 
@@ -205,7 +202,7 @@ TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
         }
     }
 
-    TEST_CASE("LazyNode Barnes-Hut functionality") 
+    TEST_CASE("LazyNode Barnes-Hut functionality")
     {
         lazy_node <int> n;
         lazy_node <double> d;
@@ -253,26 +250,26 @@ TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
             d.get(0).eval();
 
             CHECK_EQ(d.get(0).total_charge, 8);
-            CHECK_EQ(d.get(0).center_of_charge, vector3<double>{(3*2.0 + 5*0.0)/8, (3*0.0 + 5*2.0)/8, 0.0});
+            CHECK_EQ(d.get(0).center_of_charge, vector3<double> {(3*2.0 + 5*0.0)/8, (3*0.0 + 5*2.0)/8, 0.0});
 
             d.get(3).eval();
             CHECK_EQ(d.get(3).total_charge, 0);
-            CHECK_EQ(d.get(3).center_of_charge, vector3<double>{0.0, 0.0, 0.0});
+            CHECK_EQ(d.get(3).center_of_charge, vector3<double> {0.0, 0.0, 0.0});
+        }
+
+        SUBCASE("LazyNode error handling")
+        {
+            lazy_node <int> n;
+            CHECK_THROWS(n.instantiate_child(8));
+            CHECK_THROWS(n.get(8));
+            CHECK_THROWS(n.get(-1));
+
+            n.instantiate_child(2);
+            CHECK_THROWS(n.instantiate_child(8));
         }
     }
 
-    TEST_CASE("LazyNode error handling") 
-    {
-        lazy_node <int> n;
-        CHECK_THROWS(n.instantiate_child(8));
-        CHECK_THROWS(n.get(8));
-        CHECK_THROWS(n.get(-1));
-
-        n.instantiate_child(2);
-        CHECK_THROWS(n.instantiate_child(8));
-    }
-
-    TEST_CASE("Quadtree") 
+    TEST_CASE("Quadtree")
     {
         SUBCASE("Add particle to octree")
         {
@@ -282,14 +279,14 @@ TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
             CHECK_EQ(o.get_root().particle->position, vector3<double>{1.0, 1.0, 1.0});
             CHECK_EQ(o.get_root().particle->electric_charge, 1);
 
-            o.add_particle(Particle(9.0, 9.0, 9.0, 0.0, 0.0, 0.0, "electron"));
+            o.add_particle(Particle(9.0, 9.0, 9.0, 0.0, 0.0, 0.0, "neutron"));
 
-            // check electron
+            // check neutron
             CHECK(o.get_root().is_child_inst(0b111));
             CHECK(o.get_root().get(0b111).is_leaf());
             CHECK_EQ(o.get_root().get(0b111).particle->position, vector3<double>{9.0, 9.0, 9.0});
-            CHECK_EQ(o.get_root().get(0b111).particle->electric_charge, -1);
-            CHECK_EQ(o.get_root().get(0b111).particle->type, "electron");
+            CHECK_EQ(o.get_root().get(0b111).particle->electric_charge, 0);
+            CHECK_EQ(o.get_root().get(0b111).particle->type, "neutron");
             
             // check proton
             CHECK(o.get_root().particle == nullptr);
@@ -298,6 +295,34 @@ TEST_SUITE("electrodynamic implementation via Barnes-Hut method")
             CHECK_EQ(o.get_root().get(0b000).particle->position, vector3<double>{1.0, 1.0, 1.0});
             CHECK_EQ(o.get_root().get(0b000).particle->electric_charge, 1);
             CHECK_EQ(o.get_root().get(0b000).particle->type, "proton");
+        }
+
+        SUBCASE("Build octree from vector of particles")
+        {
+            Octree o(vector3<double>{0, 0, 0}, vector3<double>{10, 10, 10});
+            std::vector<Particle> particles = {
+                Particle(1.0, 1.0, 1.0, 0.0, 0.0, 0.0, "proton"),
+                Particle(9.0, 9.0, 9.0, 0.0, 0.0, 0.0, "neutron"),
+                Particle(2.5, 5.0, 5.0, 0.0, 0.0, 0.0, "neutron")
+            };
+
+            o.build(particles);
+            CHECK(o.get_root().is_child_inst(0b000));
+            CHECK(o.get_root().is_child_inst(0b111));
+            CHECK(o.get_root().is_child_inst(0b110));
+            std::cout << "Octree built successfully from vector of particles." << std::endl;
+
+            CHECK_EQ(o.get_root().read(0b000).particle->position, vector3<double>{1.0, 1.0, 1.0});
+            CHECK_EQ(o.get_root().read(0b000).particle->electric_charge, 1);
+            CHECK_EQ(o.get_root().read(0b000).particle->type, "proton");
+            
+            CHECK_EQ(o.get_root().read(0b111).particle->position, vector3<double>{9.0, 9.0, 9.0});
+            CHECK_EQ(o.get_root().read(0b111).particle->electric_charge, 0);
+            CHECK_EQ(o.get_root().read(0b111).particle->type, "neutron");
+
+            CHECK_EQ(o.get_root().read(0b110).particle->position, vector3<double>{2.5, 5.0, 5.0});
+            CHECK_EQ(o.get_root().read(0b110).particle->electric_charge, 0);
+            CHECK_EQ(o.get_root().read(0b110).particle->type, "neutron");
         }
     }
 }

@@ -99,20 +99,95 @@ $(function(){initNavTree('de/da5/class_octree.html','../../','dc/d4a/class_octre
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a70bedbd8ed0478406f63c39dd20e72e9" id="r_a70bedbd8ed0478406f63c39dd20e72e9"><td class="memItemLeft"><a id="a70bedbd8ed0478406f63c39dd20e72e9" name="a70bedbd8ed0478406f63c39dd20e72e9"></a>
-&#160;</td><td class="memItemRight"><b>Octree</b> (nt bound_xmin, nt bound_xmax, nt bound_ymin, nt bound_ymax, nt bound_zmin, nt bound_zmax)</td></tr>
-<tr class="memitem:ae2786956f35ae09138ea6768295f0660" id="r_ae2786956f35ae09138ea6768295f0660"><td class="memItemLeft"><a id="ae2786956f35ae09138ea6768295f0660" name="ae2786956f35ae09138ea6768295f0660"></a>
-<a class="el" href="../../dd/d85/structlazy__node.html">lazy_node</a>&lt; nt &gt; &amp;&#160;</td><td class="memItemRight"><b>get_root</b> ()</td></tr>
+<tr class="memitem:a046f8573a9cd686026baead26527778a" id="r_a046f8573a9cd686026baead26527778a"><td class="memItemLeft"><a id="a046f8573a9cd686026baead26527778a" name="a046f8573a9cd686026baead26527778a"></a>
+&#160;</td><td class="memItemRight"><b>Octree</b> (<a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; <a class="el" href="../../d4/da8/_octree_8h.html#a837d9894112773d3fda9ee117ebe0a42">nt</a> &gt; minVec, <a class="el" href="../../dd/d53/structvector3.html">vector3</a>&lt; <a class="el" href="../../d4/da8/_octree_8h.html#a837d9894112773d3fda9ee117ebe0a42">nt</a> &gt; maxVec)</td></tr>
 <tr class="memitem:a6ad44acf3890a47e191fa6d9d8b63087" id="r_a6ad44acf3890a47e191fa6d9d8b63087"><td class="memItemLeft"><a id="a6ad44acf3890a47e191fa6d9d8b63087" name="a6ad44acf3890a47e191fa6d9d8b63087"></a>
 void&#160;</td><td class="memItemRight"><b>set_default_field</b> (<a class="el" href="../../de/da5/class_octree.html">Octree</a> def)</td></tr>
-<tr class="memitem:a8e45cc24d31571cca553f86af40c7326" id="r_a8e45cc24d31571cca553f86af40c7326"><td class="memItemLeft"><a id="a8e45cc24d31571cca553f86af40c7326" name="a8e45cc24d31571cca553f86af40c7326"></a>
-void&#160;</td><td class="memItemRight"><b>add_point</b> (const <a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;p)</td></tr>
+<tr class="memitem:a05531d715b666bdf0cc63dd67b5191c4" id="r_a05531d715b666bdf0cc63dd67b5191c4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a05531d715b666bdf0cc63dd67b5191c4">add_particle</a> (const <a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;p)</td></tr>
+<tr class="memdesc:a05531d715b666bdf0cc63dd67b5191c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a particle to the octree. This is a public wrapper function for the private add_particle function that takes a node as an argument.  <br /></td></tr>
+<tr class="memitem:aab0e872e9963fe536e9884bf078e4258" id="r_aab0e872e9963fe536e9884bf078e4258"><td class="memItemLeft"><a id="aab0e872e9963fe536e9884bf078e4258" name="aab0e872e9963fe536e9884bf078e4258"></a>
+void&#160;</td><td class="memItemRight"><b>calc_force</b> (<a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;p)</td></tr>
+<tr class="memitem:a834963289ae58c88ec625a52739f73a9" id="r_a834963289ae58c88ec625a52739f73a9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a834963289ae58c88ec625a52739f73a9">build</a> (const std::vector&lt; <a class="el" href="../../de/d85/class_particle.html">Particle</a> &gt; &amp;particles)</td></tr>
+<tr class="memdesc:a834963289ae58c88ec625a52739f73a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the octree from a vector of particles.  <br /></td></tr>
+<tr class="memitem:a251845ac6def2d95c5cc1fc89c6eb69c" id="r_a251845ac6def2d95c5cc1fc89c6eb69c"><td class="memItemLeft"><a class="el" href="../../dd/d85/structlazy__node.html">lazy_node</a>&lt; <a class="el" href="../../d4/da8/_octree_8h.html#a837d9894112773d3fda9ee117ebe0a42">nt</a> &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a251845ac6def2d95c5cc1fc89c6eb69c">get_root</a> ()</td></tr>
+<tr class="memdesc:a251845ac6def2d95c5cc1fc89c6eb69c"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the root node of the octree.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A spatial partitioning octree data structure for implementing the Barnes-Hut algorithm. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a05531d715b666bdf0cc63dd67b5191c4" name="a05531d715b666bdf0cc63dd67b5191c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05531d715b666bdf0cc63dd67b5191c4">&#9670;&#160;</a></span>add_particle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Octree::add_particle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/d85/class_particle.html">Particle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a particle to the octree. This is a public wrapper function for the private add_particle function that takes a node as an argument. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The particle to add to the octree. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a834963289ae58c88ec625a52739f73a9" name="a834963289ae58c88ec625a52739f73a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a834963289ae58c88ec625a52739f73a9">&#9670;&#160;</a></span>build()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Octree::build </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../de/d85/class_particle.html">Particle</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Build the octree from a vector of particles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>The vector of particles to build the octree from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a251845ac6def2d95c5cc1fc89c6eb69c" name="a251845ac6def2d95c5cc1fc89c6eb69c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a251845ac6def2d95c5cc1fc89c6eb69c">&#9670;&#160;</a></span>get_root()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d85/structlazy__node.html">lazy_node</a>&lt; <a class="el" href="../../d4/da8/_octree_8h.html#a837d9894112773d3fda9ee117ebe0a42">nt</a> &gt; &amp; Octree::get_root </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>return the root node of the octree. </p>
+<dl class="section note"><dt>Note</dt><dd>This function is intended for future scaling purposes, the current implementation is intrusive for testing purposes and should be replaced with a encapsulated version. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="../../d4/da8/_octree_8h_source.html">Octree.h</a></li>
-<li>src/<b>Octree.cpp</b></li>
+<li>src/<a class="el" href="../../d9/d49/_octree_8cpp.html">Octree.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
