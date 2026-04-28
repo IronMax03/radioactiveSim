@@ -185,12 +185,33 @@ class Octree
         void add_particle(const Particle& p, lazy_node<nt>& node);
 
     public:
+        /// @brief Construct an Octree covering the axis-aligned box defined by @p minVec and @p maxVec.
+        ///        The root node's bounding box is the smallest cube that contains the input box.
+        /// @param minVec Minimum corner of the initial bounding volume.
+        /// @param maxVec Maximum corner of the initial bounding volume.
         Octree(vector3<nt> minVec, vector3<nt> maxVec);
 
+        /// @brief Replace the default field of the octree (reserved for future use).
+        /// @param def The default-field octree to apply.
         void set_default_field(Octree def);
+
+        /// @brief Add a single particle to the octree (public wrapper).
+        /// @param p The particle to insert.
         void add_particle(const Particle& p);
+
+        /// @brief Calculate the electrostatic force acting on @p p using the Barnes-Hut approximation
+        ///        and store the result in @p p.acceleration.
+        /// @param p The particle for which to compute the force. Modified in-place.
         void calc_force(Particle& p);
+
+        /// @brief Build the entire octree from a flat vector of particles.
+        ///        Equivalent to calling add_particle() for each particle in @p particles.
+        /// @param particles The collection of particles to insert into the octree.
         void build(const std::vector<Particle>& particles);
 
+        /// @brief Return a mutable reference to the root node of the octree.
+        /// @note Intended for testing and future scaling. In production code prefer
+        ///       the higher-level interface (add_particle, calc_force, build).
+        /// @return Reference to the root lazy_node.
         lazy_node<nt>& get_root();
 };

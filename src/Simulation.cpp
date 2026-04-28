@@ -1,3 +1,6 @@
+/// @file Simulation.cpp
+/// @brief Implementation of the Simulation class methods.
+
 #include "Simulation.h"
 #include "utils.h"
 #include "Output.h"
@@ -7,12 +10,29 @@
 #include <iostream>
 #include <algorithm>
 
+/// @brief Construct a Simulation with the given physical parameters.
+/// @param dt_    Time step duration (seconds).
+/// @param steps_ Total number of time steps to run.
+/// @param src    Radioactive source configuration.
+/// @param s      Shielding volume and material.
+/// @param r      Region of interest for scoring particles.
 Simulation::Simulation(double dt_, unsigned steps_, Source src,
                        Shielding s, ROI r)
     : dt(dt_), steps(steps_), source(src),
       shielding(s), roi(r)
 {}
 
+/// @brief Execute the simulation for the configured number of time steps.
+///
+/// Each step:
+/// -# Emits new particles from the source and appends them to the particle list.
+/// -# Moves every live particle by @c dt using its current kinematics.
+/// -# Checks whether each particle is still inside the simulation bounding box.
+/// -# Applies exponential attenuation to particles inside the shielding volume.
+/// -# Scores particles that have entered the ROI.
+/// -# Removes dead particles from the list to keep memory usage bounded.
+/// -# Writes a CSV snapshot every 10 steps to the @c output/ directory.
+/// -# Prints progress to @c stdout every 10 % of total steps.
 void Simulation::run() {
     
     std::cout << "Starting simulation..." << std::endl;
@@ -69,6 +89,9 @@ void Simulation::run() {
     std::cout << "Done." << std::endl;
 }
 
+/// @brief Print a human-readable summary of the simulation parameters to @c stdout.
+///        Includes time step, number of steps, total simulated time, source position
+///        and rate, shielding centre and material, and ROI centre.
 void Simulation::print() {
     std::cout << "--- Simulation parameters ---" << std::endl;
     std::cout << "| dt = " << dt << ", number of steps = " << steps << " => total time = " << steps * dt << std::endl;

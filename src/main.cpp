@@ -1,3 +1,10 @@
+/// @file main.cpp
+/// @brief Entry point for the radioactive particle transport simulation.
+///
+/// Sets up the physical geometry (shielding, ROI, source), writes initial VTP
+/// geometry files for visualisation, then constructs and runs the Simulation.
+/// Execution time is measured and printed at the end.
+
 #include "Simulation.h"
 #include "Material.h"
 #include "GeometryOutput.h"

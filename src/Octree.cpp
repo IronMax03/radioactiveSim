@@ -7,6 +7,10 @@
 #include <cstddef>
 #include <cstdlib>
 
+/// @brief Construct an Octree that covers the axis-aligned box [minVec, maxVec].
+///        The root bounding box becomes the smallest cube enclosing that box.
+/// @param minVec Minimum corner of the region to partition.
+/// @param maxVec Maximum corner of the region to partition.
 Octree::Octree(vector3<nt> minVec, vector3<nt> maxVec)
 {
     root.bounding_box.center = (maxVec + minVec)/2;
@@ -57,6 +61,11 @@ void Octree::build(const std::vector<Particle>& particles)
         add_particle(p, this->root);
 }
 
+/// @brief Compute the net electrostatic force on @p p via the Barnes-Hut approximation
+///        and update @p p.acceleration accordingly.
+/// @note The actual Barnes-Hut traversal is not yet implemented; the acceleration is
+///       currently set to zero as a placeholder.
+/// @param p The particle for which to compute the acceleration. Modified in-place.
 void Octree::calc_force(Particle& p)
 {
     vector3<double> force{0.0, 0.0, 0.0};

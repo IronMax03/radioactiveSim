@@ -1,8 +1,24 @@
+/// @file GeometryOutput.cpp
+/// @brief Implementation of geometry output utilities: VTP mesh writing and
+///        global bounding-box particle culling.
+
 #include "GeometryOutput.h"
 #include <fstream>
 
+/// @brief Module-level global bounding box updated by write_box_vtp().
+/// @{
 double bounding_xmin, bounding_xmax, bounding_ymin, bounding_ymax, bounding_zmin, bounding_zmax;
+/// @}
 
+/// @brief Write an axis-aligned box as a VTK PolyData (@c .vtp) file and update
+///        the global bounding box used by is_in_bounding_box().
+/// @param xmin     Minimum x-coordinate of the box (metres).
+/// @param xmax     Maximum x-coordinate of the box (metres).
+/// @param ymin     Minimum y-coordinate of the box (metres).
+/// @param ymax     Maximum y-coordinate of the box (metres).
+/// @param zmin     Minimum z-coordinate of the box (metres).
+/// @param zmax     Maximum z-coordinate of the box (metres).
+/// @param filename Path to the output @c .vtp file.
 void write_box_vtp(double xmin, double xmax,
                    double ymin, double ymax,
                    double zmin, double zmax,
@@ -60,6 +76,10 @@ void write_box_vtp(double xmin, double xmax,
 }
 
 
+/// @brief Kill a particle that has left the global bounding box.
+///        Uses normalised coordinates; sets @c p.alive = false if the particle
+///        is outside [0, 1] in any dimension of the accumulated bounding box.
+/// @param p The particle to test and potentially deactivate.
 void is_in_bounding_box(Particle& p)
 {
     //normalized coordinate
