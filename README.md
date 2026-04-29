@@ -4,7 +4,11 @@ A 3-D radioactive particle transport simulator developed for **COSC 1560 – Com
 The program models the emission of particles from a radioactive point source, their propagation through a configurable shielding volume, and their scoring inside a user-defined Region of Interest (ROI).  
 Coulomb interactions between particles are approximated with the [Barnes-Hut algorithm](https://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation) via an octree spatial index.
 
+> **Inspiration:** This project is inspired by real research in **Radiation Protection simulations at CERN**. The concepts of particle transport, shielding geometry, and region-of-interest scoring are drawn directly from techniques used in high-energy physics radiation studies.
+
 The simulation outputs data in formats compatible with **[ParaView](https://www.paraview.org/)**, a powerful open-source tool for scientific visualization, allowing full 3-D inspection of particle trajectories, geometry, and simulation state over time.
+
+![Simulation animation](doc/images%26animations/final%20animation/animation-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
@@ -16,8 +20,9 @@ The simulation outputs data in formats compatible with **[ParaView](https://www.
 4. [Running the Tests](#running-the-tests)
 5. [Makefile Reference](#makefile-reference)
 6. [ParaView Visualization](#paraview-visualization)
-7. [API Documentation](#api-documentation)
-8. [Bug Reporting](#bug-reporting)
+7. [Further Visualisation – Velocity Vectors with 3D Glyphs](#further-visualisation--velocity-vectors-with-3d-glyphs)
+8. [API Documentation](#api-documentation)
+9. [Bug Reporting](#bug-reporting)
 
 ---
 
@@ -150,6 +155,30 @@ The simulation outputs two types of files that can be loaded into [ParaView](htt
 4. **Animate over time** – load multiple `particles_<step>.csv` snapshots and use ParaView's animation controls to step through the simulation timesteps.
 
 ![ParaView screenshot showing shielding, ROI, source geometry, and particle cloud coloured by type](https://github.com/user-attachments/assets/1ad7ed3e-229b-4f7a-8aa1-ee6ac3c76506)
+
+---
+
+## Further Visualisation – Velocity Vectors with 3D Glyphs
+
+Beyond displaying static particle positions, ParaView can be used to visualise each particle's **velocity direction and relative speed** as a 3-D arrow glyph. This makes it easy to see how particles scatter, slow down, and interact with the shielding material in real time.
+
+### How to set it up
+
+1. **Build the velocity vector** – after applying the *TableToPoints* filter, add a **Calculator** filter (*Filters → Alphabetical → Calculator*). Set *Attribute Type* to **Point Data**, name the result array `velocity`, and enter the expression:
+   ```
+   vx*iHat + vy*jHat + vz*kHat
+   ```
+   Click **Apply**.
+
+2. **Add 3D Glyphs** – with the Calculator result selected in the Pipeline Browser, apply a **Glyph** filter (*Filters → Alphabetical → Glyph*). Set:
+   - *Glyph Type*: **Arrow**
+   - *Orientation Array*: `velocity`
+   - *Scale Array*: `velocity` (scales arrow length by speed)
+   - *Coloring*: `type` (to colour-code by particle type)
+
+3. **Interpret the result** – white arrows represent neutrons travelling through open space, green arrows show protons (or other charged particles) inside the ROI volume (green box), and red arrows indicate particles that have been deflected or absorbed by the shielding material (grey box). The cone-shaped spray of arrows emanating from the source clearly shows the emission pattern and how the shielding intercepts part of the beam.
+
+![ParaView screenshot showing 3D velocity-vector glyphs coloured by particle type, with shielding and ROI geometry](https://github.com/user-attachments/assets/e17b6484-a8fc-4253-8dcc-053157afbbd5)
 
 ---
 
