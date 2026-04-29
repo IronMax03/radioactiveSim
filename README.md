@@ -8,6 +8,8 @@ Coulomb interactions between particles are approximated with the [Barnes-Hut alg
 
 The simulation outputs data in formats compatible with **[ParaView](https://www.paraview.org/)**, a powerful open-source tool for scientific visualization, allowing full 3-D inspection of particle trajectories, geometry, and simulation state over time.
 
+![Simulation animation](doc/images%26animations/final%20animation/animation-ezgif.com-video-to-gif-converter.gif)
+
 ---
 
 ## Table of Contents
