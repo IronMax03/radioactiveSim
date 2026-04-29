@@ -176,8 +176,6 @@ Beyond displaying static particle positions, ParaView can be used to visualise e
    - *Scale Array*: `velocity` (scales arrow length by speed)
    - *Coloring*: `type` (to colour-code by particle type)
 
-3. **Interpret the result** – white arrows represent neutrons travelling through open space, green arrows show protons (or other charged particles) inside the ROI volume (green box), and red arrows indicate particles that have been deflected or absorbed by the shielding material (grey box). The cone-shaped spray of arrows emanating from the source clearly shows the emission pattern and how the shielding intercepts part of the beam.
-
 ![ParaView screenshot showing 3D velocity-vector glyphs coloured by particle type, with shielding and ROI geometry](https://github.com/user-attachments/assets/e17b6484-a8fc-4253-8dcc-053157afbbd5)
 
 ---
