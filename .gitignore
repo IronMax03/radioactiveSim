@@ -5,6 +5,13 @@ doctest.h
 .DS_Store
 .VSCodeCounter
 
+# latex files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+
 # Output files
 *.csv
 
