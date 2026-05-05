@@ -1,0 +1,53 @@
+# Auto detect text files and normalize line endings to LF
+* text=auto
+# C++ Source Files
+*.c text eol=lf
+*.cc text eol=lf
+*.cpp text eol=lf
+*.h text eol=lf
+*.hpp text eol=lf
+# Build System
+Makefile text eol=lf
+# Documentation
+*.md text eol=lf
+*.txt text eol=lf
+Doxyfile text eol=lf
+# LaTeX Files
+*.tex text eol=lf
+*.sty text eol=lf
+*.cls text eol=lf
+*.bib text eol=lf
+*.biblatex text eol=lf
+*.bbl text eol=lf
+latexmkrc text eol=lf
+*.fls text eol=lf
+# Test & Documentation Files
+*.doctest text eol=lf
+*.test text eol=lf
+*.gtest text eol=lf
+# Configuration Files
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.xml text eol=lf
+*.ini text eol=lf
+*.conf text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+# License & Project Files
+LICENSE text eol=lf
+CONTRIBUTING text eol=lf
+# Image Files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+# Audio/Video Files
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.avi filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+# PDF Files
+*.pdf binary
+# Binary Object/Library Files
+*.o binary
+*.lib binary

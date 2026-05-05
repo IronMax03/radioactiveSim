@@ -66,6 +66,7 @@ radioactiveSim/
 | make | any | Standard GNU make |
 | doctest | v2.5.1 | Required **only** for running tests (see [Running the Tests](#running-the-tests)) |
 | Doxygen | any | Required **only** for generating documentation |
+| Git LFS | any | Required only for handling large files (video files) in the repository |
 
 ---
 
