@@ -51,7 +51,7 @@ struct lazy_node
             p.x > bounding_box.center.x + bounding_box.length/2 ||
             p.y > bounding_box.center.y + bounding_box.length/2 ||
             p.z > bounding_box.center.z + bounding_box.length/2)
-            throw std::runtime_error("lazy_node.child_index(p): Particle position must be within the bounding box of the node.");
+            throw std::runtime_error("lazy_node.child_index(p): Particle position must be within the bounding box of the node. p = " + p.to_string());
 
         size_t child_index = 0;
         

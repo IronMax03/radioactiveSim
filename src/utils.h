@@ -125,6 +125,9 @@ struct vector3
     constexpr bool operator==(const vector3 &n) const { return x == n.x && y == n.y && z == n.z; }
 
 
+    constexpr std::string to_string() const { return "(" + std::to_string(this->x) + "," +  std::to_string(this->y) + "," + std::to_string(this->z) + ")"; }
+
+
     /// @brief Overload the << operator to print the vector in the format (x, y, z).
     friend std::ostream& operator<<(std::ostream& os, const vector3& vec) 
     {
