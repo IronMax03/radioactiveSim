@@ -64,17 +64,19 @@ TEST_SUITE("Vector3 struct")
         }
     }
 
-    TEST_CASE("stream output")
+    TEST_CASE("stream output & string conversion")
     {
         vector3<double> v{1.1, 2.0, 3.0};
         std::ostringstream oss;
         oss << v;
         CHECK_EQ(oss.str(), "(1.1,2,3)");
+        CHECK(oss.str() == v.to_string());
 
         vector3<int> v2{};
         oss.str("");
         oss << v2;
         CHECK_EQ(oss.str(), "(0,0,0)");
+        CHECK(oss.str() == v2.to_string());
     }
 }
 

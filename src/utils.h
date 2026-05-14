@@ -13,6 +13,7 @@
 #include <stdexcept>
 #include <cmath>
 #include<fstream>
+#include<sstream>
 
 /// @brief A generic 3-D vector whose component type is @p T.
 ///
@@ -124,15 +125,19 @@ struct vector3
     /// @return @c true if all three components are equal.
     constexpr bool operator==(const vector3 &n) const { return x == n.x && y == n.y && z == n.z; }
 
-
-    constexpr std::string to_string() const { return "(" + std::to_string(this->x) + "," +  std::to_string(this->y) + "," + std::to_string(this->z) + ")"; }
-
-
     /// @brief Overload the << operator to print the vector in the format (x, y, z).
     friend std::ostream& operator<<(std::ostream& os, const vector3& vec) 
     {
         os << "(" << vec.x << "," << vec.y << "," << vec.z << ")";
         return os;
+    }
+
+    /// @brief Return the string representation of the vector.
+    inline std::string to_string() const
+    {
+        std::ostringstream oss;
+        oss << *this;
+        return oss.str();
     }
 
     /// @return the euclidien norm of the vector as a double.
