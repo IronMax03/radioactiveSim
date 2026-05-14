@@ -4,7 +4,7 @@ A 3-D radioactive particle transport simulator developed for **COSC 1560 – Com
 The program models the emission of particles from a radioactive point source, their propagation through a configurable shielding volume, and their scoring inside a user-defined Region of Interest (ROI).  
 Coulomb interactions between particles are approximated with the [Barnes-Hut algorithm](https://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation) via an octree spatial index.
 
-> **Inspiration:** This project is inspired by real research in **Radiation Protection simulations at CERN**. The concepts of particle transport, shielding geometry, and region-of-interest scoring are drawn directly from techniques used in high-energy physics radiation studies.
+> **Inspiration:** This project is inspired by the [FLUKA](https://en.wikipedia.org/wiki/FLUKA) software used and developed at **CERN**, the teacher of the course is actively working on it. The concepts of particle transport, shielding geometry, and region-of-interest scoring are drawn directly from techniques used in high-energy physics radiation studies.
 
 The simulation outputs data in formats compatible with **[ParaView](https://www.paraview.org/)**, a powerful open-source tool for scientific visualization, allowing full 3-D inspection of particle trajectories, geometry, and simulation state over time.
 
