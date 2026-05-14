@@ -61,7 +61,7 @@ run: $(TARGET)
 .PHONY: all clean rebuild run
 
 # Test code
-test: clean run $(TEST_TARGET)
+test: clean $(TEST_TARGET)
 	./$(TEST_TARGET)
 
 $(TEST_TARGET): test.cpp $(TEST_OBJS)
